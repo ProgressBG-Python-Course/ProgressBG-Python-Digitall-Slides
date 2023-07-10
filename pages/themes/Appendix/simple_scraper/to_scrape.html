@@ -1,0 +1,4004 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class='ie' lang='bg'> <![endif]-->
+<!--[if gt IE 8]> <html class='ie9' lang='bg'> <![endif]-->
+<!--[if !IE]><!--><html lang='bg' xml:lang='bg' xmlns='http://www.w3.org/1999/xhtml'><!--<![endif]-->
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1b82faa199","applicationID":"1769311","transactionName":"IV9bFURXXFgGQhZAQQ1UQAJCSx9YCkNN","queueTime":1,"applicationTime":2508,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg8CV19XGwIHUlhRBgA="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+<title>
+Лаптопи Lenovo | Laptop.bg - Технологията с теб</title>
+<link rel="stylesheet" media="all" href="/assets/products-application-ad19c8aaa6a2cdf077acf8120614febaa2747378773ddc282a4a868faf00bc00.css" /><script>
+<!-- / Load stylesheets asynchronously -->
+/*!
+loadCSS: load a CSS file asynchronously.
+[c]2014 @scottjehl, Filament Group, Inc.
+Licensed MIT
+https://github.com/filamentgroup/loadCSS
+*/
+function loadCSS( href, before, media ){
+  "use strict";
+  var ss = window.document.createElement( "link" );
+  var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+  ss.rel = "stylesheet";
+  ss.href = href;
+  ss.media = "only x";
+  ref.parentNode.insertBefore( ss, ref );
+  setTimeout( function(){
+    ss.media = media || "all";
+  } );
+  return ss;
+}loadCSS('/assets/brands_1523394744.css');
+
+
+var scripts = [];
+scripts.push('/assets/list-a45f9fa765b9211863fdcc59ec2f66cf93d613f5e306f715af6bec47e978d428.js');scripts.push('/assets/products-common-bf9da3db5e32832cc8848e0b51a6e03e6bab0a730f55a679c34131d731426b49.js');window.intercomSettings = {
+  app_id: "vwyyml4f"
+};
+</script>
+<script src="/assets/products-application-bd58ab4cb857c77c6122dd5acc38ad0fc78a1bc84dcf530ad6a641cf35266853.js" async="async" defer="defer"></script><!--[if lt IE 9]>
+<script>
+window.html5 = {
+  elements : 'abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video svg text tspan'
+};
+</script>
+<script src="/assets/products-ie-008efc5aa3d5895e89a4dce84e6f91ea0c976f918f67ae0f0bc705c7048bd6e2.js"></script><![endif]-->
+<meta content='index,follow,noodp,noydir' name='robots'>
+<meta content='Списък на предлаганите лаптопи с марка Lenovo от laptop.bg' name='description'>
+<meta content='Лаптопи Lenovo, серии (4th, (5th, A10, B50-30, B50-45, B50-70, B51, B5400, B560, B570, B570/B570e, B580, B590, B70, Book, Carbon, E120, E130, E135, E220s, E31, E320, E330, E335, E420, E420s, E430, E431, E440, E450, E460, E470, E480, E520, E530, E530c, E531, E540, E550, E560, E570, E580, Edge, Essential, FLEX, FLEX2-15, Flex, G50-30, G50-45, G50-70, G50-80, G500, G500s, G505, G510, G520, G550, G560, G570A, G575, G580, G585, G70-70, G70-80, G700, G710, G770, G780, Gen, Gen), Gen2, Helix, IdeaPad, Ideapad, L, L420, L430, L440, L450, L460, L470, L512, L520, L530, L540, L560, L570, Legion, Lenovo, M30, M4400s, M5400, MIIX, Miix, P50, P51, P51s, Pro, R, S10-2, S10e, S12, S205, S210, S230u, S400, S430, S440, S500, S510, S531, S540, SL410, SL510, T400s, T410, T410s, T420, T420s, T430, T430u, T431s, T440, T440p, T450, T450s, T460, T460p, T460s, T470, T470p, T470s, T500, T510, T520, T530, T540p, T550, T560, T570, ThinkPad, Thinkpad, Twist, U300s, U31, U310, U350, U41, U410, U510, V110, V310, V320, V330, V510, V560, V570, W500, W510, W520, W540, W541, W550, W700, X, X1, X200, X220, X230, X240, X250, X260, X270, Y50, Y50-70, Y500, Y510p, Y520, Y560, Y570, Y580, Y70, Y700-15, Y700-17, Y720, Y900, Y910, Y920, YOGA, Yoga, Z360, Z370, Z380, Z470, Z50-70, Z50-75, Z500, Z51-70, Z510, Z560, Z570, Z580, Z70-80, Z710, new, red, x100e' name='keywords'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='laptop.bg' property='og:site_name'>
+<meta content='Лаптопи Lenovo' property='og:title'>
+<meta content='product.group' property='og:type'>
+<meta content='https://laptop.bg/laptops-lenovo' property='og:url'>
+<meta content='https://laptop.bg/assets/fb/laptop_fb-3e7ac18866a815d4dac085a8066471534e1f2900626c2409bc3ad3d005d3bc91.jpg' property='og:image'>
+<meta content='1000' property='og:image:width'>
+<meta content='525' property='og:image:height'>
+<meta content='Списък на предлаганите лаптопи с марка Lenovo от laptop.bg' property='og:description'>
+<meta content='710816341' property='fb:admins'>
+<meta content='1010534462369448' property='fb:app_id'>
+<link href='/assets/laptop/apple-touch-icon-4270d30502f816b2f25874690bdd3f00048a8a64105103ddf18f1e80f0abfc02.png' rel='apple-touch-icon-precomposed' sizes='180x180'>
+<link href='/assets/laptop/favicon-64x64-a72ceef742aa1b15cff46135e5f27268ec59c6ffdf33010cbd4a53aec492386d.png' rel='icon' sizes='64x64' type='image/png'>
+<link href='/assets/laptop/favicon-fadb5511b43a83fb555df0931a76f84fef4a8eb71b75291bbf3c8ae9accb6494.ico' rel='shortcut icon'>
+<meta content='Laptop.bg - Технологията с теб' name='application-name'>
+<meta content='#30425A' name='msapplication-TileColor'>
+<meta content='/assets/laptop/mstile-144x144-a2a92c2d9d1e883ce78f4765e67d70c49bda052e675ff6e9c9af3bcbdfd90493.png' name='msapplication-TileImage'><meta name="google-site-verification" content="CniWrbFeJTtjYn3kqCBkC4Q9y2eFC4gTtQSJ9C5bMWo" /><meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Ua93yWq50bqR4ne+2xOoXagIT75eCiK3NJp6EnkUuk45z2Lv5JXe6a95XCTPu4+bk68Cdbv8UZ8RfoDmrDyzrQ==" /></head>
+<body class='no-js non-fixed laptop spring listing' data-session='{"id":"868d46c89bed04e18c0e9253d6067e9b","authority":"https://laptop.bg/identity","resource":"/identity","firstRequest":false,"debug":false}'>
+<script>
+document.body.className = document.body.className.replace('no-js', 'js');
+</script>
+<div id='cookies'>
+<p>
+Бисквитките ни помагат да подобрим нашите услуги. Разглеждайки съдържанието на сайта, вие се съгласявате и с използването на бисквитки.
+<a href="/pages/cookies">Вижте подробности</a>
+</p>
+<a class="icon-only fa-times" id="allow-cookies" href="/laptops-lenovo?cookies=true">Съгласен съм</a>
+</div>
+<nav class='accessory'>
+<div class='frame'>
+<ul>
+<li>
+<a href="https://laptop.bg/discounts">Преоценени продукти</a></li><li><a href="https://laptop.bg/pages/delivery">Доставка</a></li><li><a href="https://laptop.bg/pages/pay">Плащане</a></li><li><a href="https://laptop.bg/pages/insurance">Застраховки</a></li><li><a href="https://laptop.bg/pages/contact">Контакти</a></li><li><a href="http://news.laptop.bg/">Новини и Ревюта</a></li><li><a href="http://forum.laptop.bg">Форум</a>
+</li>
+</ul>
+</div>
+</nav>
+<header id='branding' role='banner'>
+<div class='frame'>
+<ul class='contacts'>
+<li><a class='icon-before fa-comment' href='#chat' id='chat'>онлайн чат</a></li>
+<li><a class='icon-before fa-phone' href='tel:+35924901111'>02 490 11 11</a></li>
+</ul>
+<h1>
+<a href='/' id='logo' title='Лаптопи от laptop.bg'>
+<img alt="Лаптопи от laptop.bg" src="/assets/laptop/logo-94b425faa193bb903bfd5582dbbbbc1b6bef1fbd3ff8e9bbb9b7bbbf8cdcb999.svg" />
+</a>
+</h1>
+<nav class='header-nav'>
+<div class='primary common-nav' role='navigation'>
+<h2 tabindex='0'>
+<span>Продукти</span>
+</h2>
+<ul>
+<li class='current'>
+<h3>
+<a href="/">Лаптопи</a>
+</h3>
+<ul>
+<li aria-haspopup='true'>
+<a href="/laptops"><h4>Лаптопи</h4>
+<p>разнообразиe от над 1000 лаптопа</p>
+</a><div aria-hidden='true' data-menu='menu-Laptop'><section class='brands col-1'>
+<h5>Марки</h5>
+<ul class='brands'>
+<li><a href="/laptops-all">Всички</a></li>
+<li><a href="/laptops-alienware">Alienware</a></li>
+<li><a href="/laptops-asus">Asus</a></li>
+<li><a href="/laptops-acer">Acer</a></li>
+<li><a href="/laptops-hp">HP</a></li>
+<li><a href="/laptops-lenovo">Lenovo</a></li>
+<li><a href="/laptops-dell">Dell</a></li>
+<li><a href="/laptops-apple">Apple</a></li>
+<li><a href="/laptops-msi">MSI</a></li>
+<li><a href="/laptops-prestigio">Prestigio</a></li>
+</ul>
+</section>
+<section>
+<h5>Цена</h5>
+<ul>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=300__499&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">300 - 499 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=500__599&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">500 - 599 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=600__799&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">600 - 799 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=800__999&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">800 - 999 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=1000__1199&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">1000 - 1199 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_btw%5D%5B%5D=1200__1499&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">1200 - 1499 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?page=2&amp;search%5Bprice_btw%5D%5B%5D=1500__1999&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">1500 - 1999 лв.</a></li>
+<li><a href="https://laptop.bg/laptops-all?utf8=%E2%9C%93&amp;search%5Bprice_btw%5D%5B%5D=2000__2499&amp;search%5Bprice_btw%5D%5B%5D=2500__2999&amp;search%5Bprice_btw%5D%5B%5D=3000__4999&amp;search%5Bprice_btw%5D%5B%5D=5000__9999&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_laptop_id_in_all=all&amp;used_for_type_id_in_all=all&amp;basic_color_id_in_all=all&amp;cpu_type_id_in_all=all&amp;ram_type_capacity_id_in_all=all&amp;vga_type_id_in_all=all&amp;hdd_type_size_id_in_all=all&amp;ssd_size_id_in_all=all&amp;display_size_type_btw_all=all&amp;display_type_id_in_all=all&amp;resolution_size_id_in_all=all&amp;battery_type_id_in_all=all&amp;weight_type_btw_all=all&amp;os_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">над 2000 лв.</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Процесори</h5>
+<ul>
+<li><a href="https://laptop.bg/laptops-all?search[meta_sort]=promo_asc&amp;search[price_gte]=&amp;search[price_lte]=&amp;search[cpu_type_id_in][]=3">с Core i3</a></li>
+<li><a href="https://laptop.bg/laptops-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_laptop_id_in_all=all&amp;used_for_type_id_in_all=all&amp;basic_color_id_in_all=all&amp;search%5Bcpu_type_id_in%5D%5B%5D=18&amp;search%5Bcpu_type_id_in%5D%5B%5D=10&amp;ram_type_capacity_id_in_all=all&amp;vga_type_id_in_all=all&amp;hdd_type_size_id_in_all=all&amp;ssd_size_id_in_all=all&amp;display_size_type_btw_all=all&amp;display_type_id_in_all=all&amp;resolution_size_id_in_all=all&amp;battery_type_id_in_all=all&amp;weight_type_btw_all=all&amp;os_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;per_page=25&amp;search%5Bmeta_sort%5D=promo_asc">с Core i5</a></li>
+<li><a href="https://laptop.bg/laptops-all?search[meta_sort]=promo_asc&amp;search[cpu_type_id_in][]=4&amp;search[price_gte]=&amp;search[price_lte]=">с Core i7 (двуядрени)</a></li>
+<li><a href="https://laptop.bg/laptops-all?search[meta_sort]=promo_asc&amp;search[cpu_type_id_in][]=5&amp;search[price_gte]=&amp;search[price_lte]=">с Core i7 (четириядрени)</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bcpu_type_id_in%5D%5B%5D=8&amp;search%5Bmeta_sort%5D=promo_asc">с AMD (четириядрен)</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Други</h5>
+<ul>
+<li><a href="https://laptop.bg/laptops-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_laptop_id_in_all=all&amp;search%5Bused_for_type_id_in%5D%5B%5D=3&amp;search%5Bused_for_type_id_in%5D%5B%5D=7&amp;search%5Bused_for_type_id_in%5D%5B%5D=6&amp;basic_color_id_in_all=all&amp;cpu_type_id_in_all=all&amp;ram_type_capacity_id_in_all=all&amp;vga_type_id_in_all=all&amp;hdd_type_size_id_in_all=all&amp;ssd_size_id_in_all=all&amp;display_size_type_btw_all=all&amp;display_type_id_in_all=all&amp;resolution_size_id_in_all=all&amp;battery_type_id_in_all=all&amp;weight_type_btw_all=all&amp;os_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">Геймърски лаптопи</a></li>
+<li><a href="https://laptop.bg/laptops-all?search[price_gte]=&amp;search[price_lte]=&amp;search[ssd_equals]=1">Лаптопи със SSD</a></li>
+<li><a href="https://laptop.bg/laptops-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_laptop_id_in_all=all&amp;used_for_type_id_in_all=all&amp;basic_color_id_in_all=all&amp;cpu_type_id_in_all=all&amp;ram_type_capacity_id_in_all=all&amp;vga_type_id_in_all=all&amp;hdd_type_size_id_in_all=all&amp;ssd_size_id_in_all=all&amp;display_size_type_btw_all=all&amp;display_type_id_in_all=all&amp;resolution_size_id_in_all=all&amp;battery_type_id_in_all=all&amp;weight_type_btw_all=all&amp;os_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;search%5Bips_display_equals%5D=1&amp;search%5Bmeta_sort%5D=promo_asc">С IPS екран</a></li>
+<li><a href="https://laptop.bg/laptops-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bused_for_type_id_in%5D%5B%5D=5&amp;search%5Bmeta_sort%5D=promo_asc">Лаптопи за софтуерни инженери</a></li>
+<li><a href="https://laptop.bg/laptops-all?utf8=%E2%9C%93&amp;brand_id_in_all=all&amp;type_laptop_id_in_all=all&amp;search%5Btype_laptop_id_in%5D%5B%5D=2&amp;search%5Bmeta_sort%5D=promo_asc">Ултрабуци</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Размер на екрана</h5>
+<ul>
+<li><a href="https://laptop.bg/laptops-all?page=1&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=10.00__11.99&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=12.00__12.99&amp;search%5Bmeta_sort%5D=promo_asc">до 13 инча</a></li>
+<li><a href="https://laptop.bg/laptops-all?page=1&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=13.00__13.99&amp;search%5Bmeta_sort%5D=promo_asc">13 инча</a></li>
+<li><a href="https://laptop.bg/laptops-all?page=1&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=14.00__14.99&amp;search%5Bmeta_sort%5D=promo_asc">14 инча</a></li>
+<li><a href="https://laptop.bg/laptops-all?page=1&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=15.00__15.99&amp;search%5Bmeta_sort%5D=promo_asc">15 инча</a></li>
+<li><a href="https://laptop.bg/laptops-all?page=1&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bdisplay_size_type_btw%5D%5B%5D=16.00__17.99&amp;search%5Bmeta_sort%5D=promo_asc">17 инча</a></li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="#"><h4>Аксесоари и Софтуер</h4>
+<p>мишки, слушалки, подложки и други</p>
+</a><div aria-hidden='true' data-menu='menu-1'><section>
+<h5>Периферия</h5>
+<ul>
+<li>
+<a href="/mice">Мишки</a>
+</li>
+<li>
+<a href="/speakers">Колони</a>
+</li>
+<li>
+<a href="/headphones">Слушалки</a>
+</li>
+<li>
+<a href="/cooling_pads">Подложки</a>
+</li>
+<li>
+<a href="/adapters">Захранвания</a>
+</li>
+<li>
+<a href="/external_drives">Външни дискове</a>
+</li>
+<li>
+<a href="/routers">Рутери</a>
+</li>
+<li>
+<a href="/external_dvds">Външни DVD</a>
+</li>
+<li>
+<a href="/storages">Storage NAS</a>
+</li>
+<li>
+<a href="/docking_stations">Докинг станции</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Компоненти</h5>
+<ul>
+<li>
+<a href="/ram_memories">Оперативна памет</a>
+</li>
+<li>
+<a href="/ssd_drives">SSD</a>
+</li>
+<li>
+<a href="/hard_drives">Твърди дискове</a>
+</li>
+<li>
+<a href="/batteries">Батерии</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Други</h5>
+<ul>
+<li>
+<a href="/warranties">Гаранции</a>
+</li>
+<li>
+<a href="/gizmodos">Джаджи</a>
+</li>
+<li>
+<a href="/cleaningkits">За почистване</a>
+</li>
+<li>
+<a href="/cables">Кабели</a>
+</li>
+<li>
+<a href="/usb_sticks">USB памети</a>
+</li>
+<li>
+<a href="/microsds">Карти памет</a>
+</li>
+<li>
+<a href="/surge_protectors">Разклонители</a>
+</li>
+<li>
+<a href="https://desktop.bg/ip_cameras">IP камери</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Софтуер</h5>
+<ul>
+<li>
+<a href="/operating_systems">Операционни системи</a>
+</li>
+<li>
+<a href="/office_programs">Офис програми</a>
+</li>
+<li>
+<a href="/antivirus_software">Антивирусни</a>
+</li>
+<li>
+<a href="/adobe_cs">Adobe CC</a>
+</li>
+<li>
+<a href="/adobe">Adobe</a>
+</li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="/bags"><h4>Чанти и Раници</h4>
+<p>Golla, Dakine, Case Logic и други</p>
+</a><div aria-hidden='true' data-menu='menu-Bag'><section>
+<h5>Марки</h5>
+<ul>
+<li><a href="https://laptop.bg/bags-all">Всички</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602121&amp;search%5Bmeta_sort%5D=promo_asc">Golla</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602162&amp;search%5Bmeta_sort%5D=promo_asc">Dakine</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602139&amp;search%5Bmeta_sort%5D=promo_asc">Case Logic</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602124&amp;search%5Bmeta_sort%5D=promo_asc">Targus</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602131&amp;search%5Bmeta_sort%5D=promo_asc">Hama</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602128&amp;search%5Bmeta_sort%5D=promo_asc">HP</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602126&amp;search%5Bmeta_sort%5D=promo_asc">DELL</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=591149100&amp;search%5Bmeta_sort%5D=promo_asc">Lenovo</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602127&amp;search%5Bmeta_sort%5D=promo_asc">Dicota</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Цена</h5>
+<ul>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=0__29&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">29 лв</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=30__49&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">30 - 49 лв.</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=50__69&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">50 - 69 лв.</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=70__99&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">70 - 99 лв.</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=100__149&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">100 - 149 лв.</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">150 - 199 лв.</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_btw%5D%5B%5D=200__299&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">над 200 лв.</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Цвят</h5>
+<ul>
+<li><a href="https://laptop.bg/bags-all">всички</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=1&amp;search%5Bmeta_sort%5D=promo_asc">черни</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=17&amp;search%5Bmeta_sort%5D=promo_asc">многоцветни</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=2&amp;search%5Bmeta_sort%5D=promo_asc">бели</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=5&amp;search%5Bmeta_sort%5D=promo_asc">сини</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=3&amp;search%5Bmeta_sort%5D=promo_asc">червени</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbasic_color_id_in%5D%5B%5D=9&amp;search%5Bmeta_sort%5D=promo_asc">оранжеви</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Размер</h5>
+<ul>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bsize_btw%5D%5B%5D=12.00__12.99&amp;search%5Bsize_btw%5D%5B%5D=13.00__13.99&amp;search%5Bmeta_sort%5D=promo_asc">13 - 14 инча</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">14 - 15 инча</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bsize_btw%5D%5B%5D=15.00__15.99&amp;search%5Bmeta_sort%5D=promo_asc">15 - 16 инча</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bsize_btw%5D%5B%5D=16.00__17.99&amp;search%5Bsize_btw%5D%5B%5D=18.00__21.00&amp;search%5Bmeta_sort%5D=promo_asc">Над 16 инча</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Тип</h5>
+<ul>
+<li><a href="https://laptop.bg/bags-all?page=2&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmodels_id_in%5D%5B%5D=2&amp;search%5Bmeta_sort%5D=promo_asc">Чанти</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmodels_id_in%5D%5B%5D=3&amp;search%5Bmeta_sort%5D=promo_asc">Раници</a></li>
+<li><a href="https://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmodels_id_in%5D%5B%5D=4&amp;search%5Bmeta_sort%5D=promo_asc">Калъфи</a></li>
+</ul>
+
+</section>
+<div class='banner'>
+<a class="submenu_banner" href="http://laptop.bg/bags-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602121&amp;search%5Bmeta_sort%5D=promo_asc"><img data-src='/system/image_banners/images/golla_menu_ad-c4d6881162c1f2236e6bb99143c16db9aa053315.png' alt='Чанти и раници Golla' title='Чанти и раници Golla' class='lazyload'></a>
+</div>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="/headphones"><h4>Слушалки</h4>
+<p>разнообразие от над 500 слушалки</p>
+</a><div aria-hidden='true' data-menu='menu-Headphone'><section class='brands col-4'>
+<h5>Марки</h5>
+<ul class='brands'>
+<li><a href="/headphones-all">Всички</a></li>
+<li><a href="/headphones-jbl">JBL</a></li>
+<li><a href="/headphones-sennheiser">Sennheiser</a></li>
+<li><a href="/headphones-akg">AKG</a></li>
+<li><a href="/headphones-razer">Razer </a></li>
+<li><a href="/headphones-audiotechnica">Audio-Technica</a></li>
+<li><a href="/headphones-logitech">Logitech</a></li>
+<li><a href="/headphones-steelseries">SteelSeries</a></li>
+<li><a href="/headphones-roccat">Roccat</a></li>
+<li><a href="/headphones-beatsbydre">Beats By Dre</a></li>
+<li><a href="/headphones-plantronics">Plantronics</a></li>
+<li><a href="/headphones-skullcandy">Skullcandy</a></li>
+<li><a href="/headphones-samsung">Samsung</a></li>
+<li><a href="/headphones-jabra">Jabra</a></li>
+<li><a href="/headphones-canyon">Canyon</a></li>
+<li><a href="/headphones-creative">Creative</a></li>
+<li><a href="/headphones-hama">Hama</a></li>
+<li><a href="/headphones-apple">Apple</a></li>
+<li><a href="/headphones-asus">Asus</a></li>
+<li><a href="/headphones-philips">Philips</a></li>
+<li><a href="/headphones-sony">Sony</a></li>
+<li><a href="/headphones-coolermaster">CoolerMaster</a></li>
+<li><a href="/headphones-genius">Genius</a></li>
+<li><a href="/headphones-golla">Golla</a></li>
+<li><a href="/headphones-hp">HP</a></li>
+<li><a href="/headphones-lenovo">Lenovo</a></li>
+<li><a href="/headphones-maxell">Maxell</a></li>
+<li><a href="/headphones-microsoft">Microsoft</a></li>
+<li><a href="/headphones-modecom">Modecom</a></li>
+<li><a href="/headphones-trust">Trust</a></li>
+<li><a href="/headphones-afourtech">A4tech</a></li>
+<li><a href="/headphones-aula">AULA</a></li>
+<li><a href="/headphones-acer">Acer</a></li>
+<li><a href="/headphones-beoplay">BeoPlay</a></li>
+<li><a href="/headphones-kingston">Kingston</a></li>
+<li><a href="/headphones-natecgenesis">Natec Genesis</a></li>
+<li><a href="/headphones-parrot">Parrot</a></li>
+<li><a href="/headphones-bose">Bose</a></li>
+<li><a href="/headphones-cougar">COUGAR</a></li>
+<li><a href="/headphones-cellular_line">Cellularline</a></li>
+<li><a href="/headphones-freshandrebel">Fresh and Rebel</a></li>
+<li><a href="/headphones-huawei">Huawei</a></li>
+<li><a href="/headphones-marshall">Marshall</a></li>
+<li><a href="/headphones-moshi">Moshi</a></li>
+<li><a href="/headphones-motorola">Motorola</a></li>
+<li><a href="/headphones-mydoodles">My Doodles</a></li>
+<li><a href="/headphones-tribe">Tribe</a></li>
+</ul>
+</section>
+<section>
+<h5>Опции</h5>
+<ul>
+<li><a href="https://laptop.bg/headphones-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_headphone_id_in_all=all&amp;basic_color_id_in_all=all&amp;search%5Bwireless_equals%5D=1&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">Безжични</a></li>
+<li><a href="https://laptop.bg/headphones-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_headphone_id_in_all=all&amp;basic_color_id_in_all=all&amp;search%5Bmicrophone_equals%5D=1&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">с Микрофон</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Тип</h5>
+<ul>
+<li><a href="https://laptop.bg/headphones-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;type_headphone_id_in_all=all&amp;search%5Btype_headphone_id_in%5D%5B%5D=3&amp;basic_color_id_in_all=all&amp;search%5Bmicrophone_equals%5D=1&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">Диадеми</a></li>
+<li><a href="https://laptop.bg/headphones-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;search%5Btype_headphone_id_in%5D%5B%5D=2&amp;basic_color_id_in_all=all&amp;search%5Bmicrophone_equals%5D=1&amp;warranty_size_btw_all=all&amp;search%5Bmeta_sort%5D=promo_asc">Тапи</a></li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="/ssd_drives"><h4>SSD</h4>
+<p>Samsung, Intel, Kingston и много други</p>
+</a><div aria-hidden='true' data-menu='menu-SsdDrive'><section class='brands col-1'>
+<h5>Марки</h5>
+<ul class='brands'>
+<li><a href="/ssd_drives-all">Всички</a></li>
+<li><a href="/ssd_drives-samsung">Samsung</a></li>
+<li><a href="/ssd_drives-intel">Intel</a></li>
+<li><a href="/ssd_drives-kingston">Kingston</a></li>
+<li><a href="/ssd_drives-sandisk">SanDisk</a></li>
+<li><a href="/ssd_drives-transcend">Transcend</a></li>
+<li><a href="/ssd_drives-adata">ADATA</a></li>
+<li><a href="/ssd_drives-corsair">Corsair </a></li>
+<li><a href="/ssd_drives-crucial">Crucial</a></li>
+<li><a href="/ssd_drives-silicon_power">Silicon Power</a></li>
+<li><a href="/ssd_drives-amd">AMD</a></li>
+<li><a href="/ssd_drives-western_digital">Western Digital</a></li>
+</ul>
+</section>
+<section>
+<h5>Размер</h5>
+<ul>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;search%5Bsize_id_in%5D%5B%5D=3&amp;search%5Bsize_id_in%5D%5B%5D=4&amp;ssd_standart_id_in_all=all&amp;readspeed_btw_all=all&amp;writespeed_btw_all=all&amp;warranty_id_in_all=all&amp;per_page=25&amp;search%5Bmeta_sort%5D=promo_asc">120 - 128 GB</a></li>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;search%5Bsize_id_in%5D%5B%5D=5&amp;search%5Bsize_id_in%5D%5B%5D=6&amp;search%5Bsize_id_in%5D%5B%5D=7&amp;ssd_standart_id_in_all=all&amp;readspeed_btw_all=all&amp;writespeed_btw_all=all&amp;warranty_id_in_all=all&amp;per_page=25&amp;search%5Bmeta_sort%5D=promo_asc">240 - 258 GB</a></li>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;search%5Bsize_id_in%5D%5B%5D=8&amp;search%5Bsize_id_in%5D%5B%5D=9&amp;search%5Bsize_id_in%5D%5B%5D=10&amp;ssd_standart_id_in_all=all&amp;readspeed_btw_all=all&amp;writespeed_btw_all=all&amp;warranty_id_in_all=all&amp;per_page=25&amp;search%5Bmeta_sort%5D=promo_asc">480 - 512 GB</a></li>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;search%5Bsize_id_in%5D%5B%5D=13&amp;search%5Bsize_id_in%5D%5B%5D=12&amp;ssd_standart_id_in_all=all&amp;readspeed_btw_all=all&amp;writespeed_btw_all=all&amp;warranty_id_in_all=all&amp;per_page=25&amp;search%5Bmeta_sort%5D=promo_asc">750 - 1000 GB</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Тип</h5>
+<ul>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;ssdsize_btw_all=all&amp;ssd_standart_id_in_all=all&amp;search%5Bssd_standart_id_in%5D%5B%5D=1&amp;sata_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">SATA</a></li>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;ssdsize_btw_all=all&amp;ssd_standart_id_in_all=all&amp;search%5Bssd_standart_id_in%5D%5B%5D=3&amp;sata_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">M.2</a></li>
+<li><a href="https://laptop.bg/ssd_drives-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;ssdsize_btw_all=all&amp;ssd_standart_id_in_all=all&amp;search%5Bssd_standart_id_in%5D%5B%5D=4&amp;sata_type_id_in_all=all&amp;warranty_size_btw_all=all&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">PCI-E</a></li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="/batteries"><h4>Батерии</h4>
+<p>Оригинални и съвместими</p>
+</a><div aria-hidden='true' data-menu='menu-Battery'><section>
+<h5>Оригинални</h5>
+<ul>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">Всички</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=690933841&amp;search%5Bmeta_sort%5D=promo_asc">Apple</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602126&amp;search%5Bmeta_sort%5D=promo_asc">Dell</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602157&amp;search%5Bmeta_sort%5D=promo_asc">Fujitsu</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602128&amp;search%5Bmeta_sort%5D=promo_asc">HP</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=591149100&amp;search%5Bmeta_sort%5D=promo_asc">Lenovo</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Съвместими</h5>
+<ul>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bmeta_sort%5D=promo_asc">Всички</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602462&amp;search%5Bmeta_sort%5D=promo_asc">За Acer</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602465&amp;search%5Bmeta_sort%5D=promo_asc">За Apple</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602463&amp;search%5Bmeta_sort%5D=promo_asc">За Asus</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602464&amp;search%5Bmeta_sort%5D=promo_asc">За Dell</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602466&amp;search%5Bmeta_sort%5D=promo_asc">За Fujitsu</a></li>
+<li><a href="https://laptop.bg/batteries-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602472&amp;search%5Bmeta_sort%5D=promo_asc">За HP</a></li>
+</ul>
+
+</section>
+<div class='banner'>
+<a class="submenu_banner" href="http://laptop.bg/batteries-all"><img data-src='/system/image_banners/images/batteries-b08140c35c430ac9d6d473a3d1929255860674c2.png' alt='Батерии' title='Батерии' class='lazyload'></a>
+</div>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+</ul>
+</li>
+<li aria-haspopup='true'>
+<a href="https://smartphone.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-Смартфони-1442561404.svg" /></i>Смартфони
+</h3>
+</a><div aria-hidden='true' data-menu='menu-smartphone'><section>
+<h5>Смартфони</h5>
+<ul>
+<li><a href="https://smartphone.bg/smartphones-all">Всички</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602198&amp;search%5Bmeta_sort%5D=promo_asc">Motorola</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602135&amp;search%5Bmeta_sort%5D=promo_asc">Samsung</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=591149100&amp;search%5Bmeta_sort%5D=promo_asc">Lenovo</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602152&amp;search%5Bmeta_sort%5D=promo_asc">LG</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=690933841&amp;search%5Bmeta_sort%5D=promo_asc">Apple</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602156&amp;search%5Bmeta_sort%5D=promo_asc">Microsoft</a></li>
+<li><a href="https://smartphone.bg/smartphones-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bbrand_id_in%5D%5B%5D=1239602189&amp;search%5Bmeta_sort%5D=promo_asc">Prestigio</a></li>
+</ul>
+
+</section>
+<section>
+<h5>Аксесоари</h5>
+<ul>
+<li>
+<a href="https://smartphone.bg/microsds">Карти памет</a>
+</li>
+<li>
+<a href="https://smartphone.bg/handsfrees">Handsfree</a>
+</li>
+<li>
+<a href="https://smartphone.bg/headphones">Слушалки</a>
+</li>
+<li>
+<a href="https://smartphone.bg/folios">Защитно фолио</a>
+</li>
+<li>
+<a href="https://smartphone.bg/smartphone_batteries">Батерии</a>
+</li>
+<li>
+<a href="https://smartphone.bg/smartphone_adapters">Захранвания</a>
+</li>
+<li>
+<a href="https://smartphone.bg/stands">Стойки</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Калъфи</h5>
+<ul>
+<li>
+<a href="https://smartphone.bg/smartphone_sleeves">Калъфи за смартфони</a>
+</li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="https://smartwatch.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-Смарт часовници и Гривни-1442561412.svg" /></i>Смарт часовници и Гривни
+</h3>
+</a><div aria-hidden='true' data-menu='menu-smartwatch'><section class='brands col-1'>
+<h5>Смарт часовници</h5>
+<ul class='brands'>
+<li><a href="https://smartwatch.bg/smartwatches-all">Всички</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-garmin">Garmin</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-suunto">Suunto</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-fitbit">Fitbit</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-samsung">Samsung</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-motorola">Motorola</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-pebble">Pebble</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-huawei">Huawei</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-beurer">Beurer</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-nokia">Nokia</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-polar">Polar</a></li>
+</ul>
+</section>
+<section class='brands col-1'>
+<h5>Гривни</h5>
+<ul class='brands'>
+<li><a href="https://smartwatch.bg/smartbands-all">Всички</a></li>
+<li><a href="https://smartwatch.bg/smartbands-fitbit">Fitbit</a></li>
+<li><a href="https://smartwatch.bg/smartbands-garmin">Garmin</a></li>
+<li><a href="https://smartwatch.bg/smartbands-polar">Polar</a></li>
+<li><a href="https://smartwatch.bg/smartbands-withings">Withings</a></li>
+<li><a href="https://smartwatch.bg/smartbands-samsung">Samsung</a></li>
+<li><a href="https://smartwatch.bg/smartbands-suunto">Suunto</a></li>
+<li><a href="https://smartwatch.bg/smartbands-beurer">Beurer</a></li>
+<li><a href="https://smartwatch.bg/smartbands-huawei">Huawei</a></li>
+<li><a href="https://smartwatch.bg/smartbands-lenovo">Lenovo</a></li>
+<li><a href="https://smartwatch.bg/smartbands-nokia">Nokia</a></li>
+</ul>
+</section>
+<section>
+<h5>Функции</h5>
+<ul>
+<li><a href="https://smartwatch.bg/smartwatches-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;basic_color_id_in_all=all&amp;weight_type_btw_all=all&amp;warranty_size_btw_all=all&amp;search%5Bpulse_equals%5D=1&amp;search%5Bmeta_sort%5D=promo_asc">Пулс монитор</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;basic_color_id_in_all=all&amp;weight_type_btw_all=all&amp;warranty_size_btw_all=all&amp;search%5Bwaterproof_equals%5D=1&amp;search%5Bmeta_sort%5D=promo_asc">Водоустойчив</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-all?utf8=✓&amp;search%5Bprice_btw%5D%5B%5D=1000__1499&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;basic_color_id_in_all=all&amp;weight_type_btw_all=all&amp;warranty_size_btw_all=all&amp;search%5Bgps_equals%5D=1&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">GPS</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;os_id_in_all=all&amp;basic_color_id_in_all=all&amp;weight_type_btw_all=all&amp;warranty_size_btw_all=all&amp;search%5Bnfc_equals%5D=1&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">NFC</a></li>
+<li><a href="https://smartwatch.bg/smartwatches-all?utf8=✓&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;os_id_in_all=all&amp;basic_color_id_in_all=all&amp;weight_type_btw_all=all&amp;warranty_size_btw_all=all&amp;search%5Bwifi_equals%5D=1&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">Wi-Fi</a></li>
+</ul>
+
+</section>
+<section class='brands col-1'>
+<h5>Аксесосари за часовници</h5>
+<ul class='brands'>
+<li><a href="https://smartwatch.bg/straps-all">Всички</a></li>
+<li><a href="https://smartwatch.bg/straps-fitbit">Fitbit</a></li>
+<li><a href="https://smartwatch.bg/straps-garmin">Garmin</a></li>
+<li><a href="https://smartwatch.bg/straps-jawbone">Jawbone</a></li>
+<li><a href="https://smartwatch.bg/straps-nokia">Nokia</a></li>
+<li><a href="https://smartwatch.bg/straps-polar">Polar</a></li>
+<li><a href="https://smartwatch.bg/straps-suunto">Suunto</a></li>
+</ul>
+</section>
+<div class='banner'>
+<a class="submenu_banner" href="http://smartwatch.bg/smartbands-fitbit-Charge_2?utm_source=laptop.bg&amp;utm_medium=menu+banner&amp;utm_campaign=fitbit+charge+2"><img data-src='/system/image_banners/images/fitbit_menuad-2-a18ee86681501ef59a2fb0f130d90122ac642880.png' alt='Fitbit Charge 2' title='Fitbit Charge 2' class='lazyload'></a>
+</div>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="https://tablet.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-Таблети-1442561423.svg" /></i>Таблети
+</h3>
+</a><div aria-hidden='true' data-menu='menu-tablet'><section class='brands col-1'>
+<h5>Таблети</h5>
+<ul class='brands'>
+<li><a href="https://tablet.bg/tablets-all">Всички</a></li>
+<li><a href="https://tablet.bg/tablets-apple">Apple</a></li>
+<li><a href="https://tablet.bg/tablets-acer">Acer</a></li>
+<li><a href="https://tablet.bg/tablets-asus">Asus</a></li>
+<li><a href="https://tablet.bg/tablets-samsung">Samsung</a></li>
+<li><a href="https://tablet.bg/tablets-lenovo">Lenovo</a></li>
+<li><a href="https://tablet.bg/tablets-prestigio">Prestigio</a></li>
+<li><a href="https://tablet.bg/tablets-microsoft">Microsoft</a></li>
+<li><a href="https://tablet.bg/tablets-fujitsu">Fujitsu</a></li>
+<li><a href="https://tablet.bg/tablets-hannspree">HANNSpree</a></li>
+<li><a href="https://tablet.bg/tablets-huawei">Huawei</a></li>
+</ul>
+</section>
+<section class='brands col-1'>
+<h5>Електронни четци</h5>
+<ul class='brands'>
+<li><a href="https://tablet.bg/ereaders-all">Всички</a></li>
+<li><a href="https://tablet.bg/ereaders-amazon">Amazon</a></li>
+<li><a href="https://tablet.bg/ereaders-bookeen">BOOKEEN</a></li>
+<li><a href="https://tablet.bg/ereaders-pocketbook">PocketBook</a></li>
+</ul>
+</section>
+<section>
+<h5>Аксесоари</h5>
+<ul>
+<li>
+<a href="https://tablet.bg/microsds">Карти памет</a>
+</li>
+<li>
+<a href="https://tablet.bg/folio_tablets">Защитно фолио</a>
+</li>
+<li>
+<a href="https://tablet.bg/stands">Стойки</a>
+</li>
+<li>
+<a href="https://tablet.bg/headphones">Слушалки</a>
+</li>
+<li>
+<a href="https://tablet.bg/smartphone_adapters">Захранвания</a>
+</li>
+<li>
+<a href="https://tablet.bg/smartphone_batteries">Батерии</a>
+</li>
+<li>
+<a href="https://tablet.bg/tablet_accessories">Още аксесоари</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Калъфи</h5>
+<ul>
+<li>
+<a href="https://tablet.bg/tablet_sleeves">Калъфи за таблети</a>
+</li>
+</ul>
+
+</section>
+<div class='banner'>
+<a class="submenu_banner" href="http://tablet.bg/ereaders-amazon-Kindle_2016?utm_source=laptop.bg&amp;utm_medium=menu+banner&amp;utm_campaign=kindle+2016+white"><img data-src='/system/image_banners/images/kindle_white_menuad-bffbb9a1975a7ae34d2824e2a2213d3dbccee9fd.png' alt='Amazon Kindle 2016 White' title='Amazon Kindle 2016 White' class='lazyload'></a>
+</div>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="https://desktop.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-Компютри и IT продукти-1442561433.svg" /></i>Компютри и IT продукти
+</h3>
+</a><div aria-hidden='true' data-menu='menu-desktop'><section class='brands col-1'>
+<h5>G:RIGS</h5>
+<ul class='brands'>
+<li><a href="https://desktop.bg/grigs-all">Всички</a></li>
+<li><a href="https://desktop.bg/grigs-siegfried">Siegfried</a></li>
+<li><a href="https://desktop.bg/grigs-airbender">AirBender</a></li>
+<li><a href="https://desktop.bg/grigs-force_unleashed">Force Unleashed</a></li>
+<li><a href="https://desktop.bg/grigs-liquidpower">LiquidPower</a></li>
+<li><a href="https://desktop.bg/grigs-little_beast">Little Beast</a></li>
+<li><a href="https://desktop.bg/grigs-project">Project</a></li>
+<li><a href="https://desktop.bg/grigs-silentshade">SilentShade</a></li>
+</ul>
+</section>
+<section>
+<h5>Компютри</h5>
+<ul>
+<li>
+<a href="https://desktop.bg/computers">Компютри</a>
+</li>
+<li>
+<a href="https://desktop.bg/allinones">All in One</a>
+</li>
+<li>
+<a href="https://desktop.bg/mini_pcs">Mini PC</a>
+</li>
+</ul>
+
+</section>
+<section class='brands col-2'>
+<h5>Монитори</h5>
+<ul class='brands'>
+<li><a href="https://desktop.bg/displays-all">Всички</a></li>
+<li><a href="https://desktop.bg/displays-dell">Dell</a></li>
+<li><a href="https://desktop.bg/displays-acer">Acer</a></li>
+<li><a href="https://desktop.bg/displays-lg">LG</a></li>
+<li><a href="https://desktop.bg/displays-asus">Asus</a></li>
+<li><a href="https://desktop.bg/displays-benq">BenQ</a></li>
+<li><a href="https://desktop.bg/displays-hp">HP</a></li>
+<li><a href="https://desktop.bg/displays-philips">Philips</a></li>
+<li><a href="https://desktop.bg/displays-aoc">AOC</a></li>
+<li><a href="https://desktop.bg/displays-eizo">Eizo</a></li>
+<li><a href="https://desktop.bg/displays-fujitsu">Fujitsu</a></li>
+<li><a href="https://desktop.bg/displays-hannspree">HANNSpree</a></li>
+<li><a href="https://desktop.bg/displays-iiyama">IIYAMA</a></li>
+<li><a href="https://desktop.bg/displays-lenovo">Lenovo</a></li>
+<li><a href="https://desktop.bg/displays-nec">NEC</a></li>
+<li><a href="https://desktop.bg/displays-samsung">Samsung</a></li>
+<li><a href="https://desktop.bg/displays-viewsonic">ViewSonic</a></li>
+<li><a href="https://desktop.bg/displays-agneovo">AG Neovo</a></li>
+<li><a href="https://desktop.bg/displays-elago">Elago</a></li>
+<li><a href="https://desktop.bg/displays-zowie">ZOWIE</a></li>
+</ul>
+</section>
+<section>
+<h5>Компоненти</h5>
+<ul>
+<li>
+<a href="https://desktop.bg/motherboards">Дънни платки</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_cpus">Процесори</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_video_cards">Видео карти</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_rams">Оперативна памет</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_cases">Кутии</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_power_supplies">Захранвания</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_harddrives">Твърди дискове</a>
+</li>
+<li>
+<a href="https://desktop.bg/desktop_optical_drives">DVD устройства</a>
+</li>
+<li>
+<a href="https://desktop.bg/ssd_drives">SSD</a>
+</li>
+<li>
+<a href="https://desktop.bg/sound_cards">Звукови карти</a>
+</li>
+<li>
+<a href="https://desktop.bg/case_fans">Вентилатори</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Периферия</h5>
+<ul>
+<li>
+<a href="https://desktop.bg/mice">Мишки</a>
+</li>
+<li>
+<a href="https://desktop.bg/keyboards">Клавиатури</a>
+</li>
+<li>
+<a href="https://desktop.bg/speakers">Колони</a>
+</li>
+<li>
+<a href="https://desktop.bg/routers">Рутери</a>
+</li>
+<li>
+<a href="https://desktop.bg/storages">Storage </a>
+</li>
+<li>
+<a href="https://desktop.bg/racing_wheels">Волани</a>
+</li>
+<li>
+<a href="https://desktop.bg/ups">UPS</a>
+</li>
+<li>
+<a href="https://desktop.bg/cables">Кабели</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Принтери</h5>
+<ul>
+<li><a href="https://desktop.bg/printers-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bprinter_type_id_in%5D%5B%5D=2&amp;search%5Bmeta_sort%5D=promo_asc">Лазерен чернобял</a></li>
+<li><a href="https://desktop.bg/printers-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bprinter_type_id_in%5D%5B%5D=3&amp;search%5Bmeta_sort%5D=promo_asc">Лазерен цветен</a></li>
+<li><a href="https://desktop.bg/printers-all?search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;search%5Bprinter_type_id_in%5D%5B%5D=1&amp;search%5Bmeta_sort%5D=promo_asc">Мастилоструен цветен</a></li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="https://photocamera.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-Фото и видео-1442561442.svg" /></i>Фото и видео
+</h3>
+</a><div aria-hidden='true' data-menu='menu-photocamera'><section class='brands col-1'>
+<h5>DSLR</h5>
+<ul class='brands'>
+<li><a href="https://photocamera.bg/dslrs-all">Всички</a></li>
+<li><a href="https://photocamera.bg/dslrs-canon">Canon </a></li>
+<li><a href="https://photocamera.bg/dslrs-nikon">Nikon</a></li>
+<li><a href="https://photocamera.bg/dslrs-sony">Sony</a></li>
+<li><a href="https://photocamera.bg/dslrs-pentax">Pentax</a></li>
+<li><a href="https://photocamera.bg/dslrs-leica">Leica</a></li>
+</ul>
+</section>
+<section class='brands col-1'>
+<h5>Mirrorless</h5>
+<ul class='brands'>
+<li><a href="https://photocamera.bg/mirrorles-all">Всички</a></li>
+<li><a href="https://photocamera.bg/mirrorles-canon">Canon </a></li>
+<li><a href="https://photocamera.bg/mirrorles-sony">Sony</a></li>
+<li><a href="https://photocamera.bg/mirrorles-olympus">Olympus</a></li>
+<li><a href="https://photocamera.bg/mirrorles-pentax">Pentax</a></li>
+<li><a href="https://photocamera.bg/mirrorles-fujifilm">Fujifilm</a></li>
+<li><a href="https://photocamera.bg/mirrorles-leica">Leica</a></li>
+<li><a href="https://photocamera.bg/mirrorles-panasonic">Panasonic</a></li>
+<li><a href="https://photocamera.bg/mirrorles-sigma">Sigma</a></li>
+<li><a href="https://photocamera.bg/mirrorles-yi_technology">YI Technology</a></li>
+</ul>
+</section>
+<section>
+<h5>Екстремни камери</h5>
+<ul>
+<li>
+<a href="https://photocamera.bg/extreme_cameras">Екстремни камери</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Аксесоари</h5>
+<ul>
+<li>
+<a href="https://photocamera.bg/flashes">Светкавици</a>
+</li>
+<li>
+<a href="https://photocamera.bg/tripods">Стативи</a>
+</li>
+<li>
+<a href="https://photocamera.bg/camera_filters">Филтри</a>
+</li>
+<li>
+<a href="https://photocamera.bg/camera_adapters">Адаптери</a>
+</li>
+<li>
+<a href="https://photocamera.bg/camera_converters">Конвертори</a>
+</li>
+<li>
+<a href="https://photocamera.bg/camera_batteries">Батерии</a>
+</li>
+<li>
+<a href="https://photocamera.bg/camera_charges">Захранвания</a>
+</li>
+<li>
+<a href="https://photocamera.bg/extreme_accessories">GoPro аксесоари</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Обективи</h5>
+<ul>
+<li>
+<a href="https://photocamera.bg/dslr_lens">DSLR обективи</a>
+</li>
+<li>
+<a href="https://photocamera.bg/mirrorless_lens">Mirrorless обективи</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Компактни камери</h5>
+<ul>
+<li>
+<a href="https://photocamera.bg/compacts">Компактни фотоапарати</a>
+</li>
+</ul>
+
+</section>
+<section class='brands col-1'>
+<h5>Дронове</h5>
+<ul class='brands'>
+<li><a href="https://photocamera.bg/drones-all">Всички</a></li>
+<li><a href="https://photocamera.bg/drones-dji">DJI</a></li>
+<li><a href="https://photocamera.bg/drones-mikrokopter">MikroKopter</a></li>
+<li><a href="https://photocamera.bg/drones-pointofview">Point of View</a></li>
+<li><a href="https://photocamera.bg/drones-yuneec">Yuneec</a></li>
+</ul>
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+<li aria-haspopup='true'>
+<a href="https://ele.bg"><h3><i><img alt="" class="icon" src="/system/menu_icons_svg/laptop-ТВ, Аудио и Проектори-1442561458.svg" /></i>ТВ, Аудио и Проектори
+</h3>
+</a><div aria-hidden='true' data-menu='menu-ele'><section class='brands col-1'>
+<h5>Телевизори</h5>
+<ul class='brands'>
+<li><a href="https://ele.bg/tvs-all">Всички</a></li>
+<li><a href="https://ele.bg/tvs-lg">LG</a></li>
+<li><a href="https://ele.bg/tvs-samsung">Samsung</a></li>
+<li><a href="https://ele.bg/tvs-sony">Sony</a></li>
+<li><a href="https://ele.bg/tvs-philips">Philips</a></li>
+<li><a href="https://ele.bg/tvs-panasonic">Panasonic</a></li>
+</ul>
+</section>
+<section class='brands col-1'>
+<h5>Проектори</h5>
+<ul class='brands'>
+<li><a href="https://ele.bg/projectors-all">Всички</a></li>
+<li><a href="https://ele.bg/projectors-benq">BenQ</a></li>
+<li><a href="https://ele.bg/projectors-acer">Acer</a></li>
+<li><a href="https://ele.bg/projectors-epson">Epson</a></li>
+<li><a href="https://ele.bg/projectors-optoma">Optoma</a></li>
+<li><a href="https://ele.bg/projectors-lg">LG</a></li>
+<li><a href="https://ele.bg/projectors-asus">Asus</a></li>
+<li><a href="https://ele.bg/projectors-nec">NEC</a></li>
+<li><a href="https://ele.bg/projectors-vivitek">Vivitek</a></li>
+</ul>
+</section>
+<section>
+<h5>Аудио</h5>
+<ul>
+<li>
+<a href="https://ele.bg/audios">Домашно кино</a>
+</li>
+<li>
+<a href="https://ele.bg/speakers">Колони</a>
+</li>
+<li>
+<a href="https://ele.bg/hifi_systems">HiFi системи</a>
+</li>
+<li>
+<a href="https://ele.bg/radios">Радио</a>
+</li>
+<li>
+<a href="https://ele.bg/radioclocks">Радиочасовници</a>
+</li>
+<li>
+<a href="https://ele.bg/headphones">Слушалки</a>
+</li>
+</ul>
+
+</section>
+<section>
+<h5>Аксесоари</h5>
+<ul>
+<li>
+<a href="https://ele.bg/cables">Кабели</a>
+</li>
+<li>
+<a href="https://ele.bg/tv_stands">Стойки и маси</a>
+</li>
+<li>
+<a href="https://ele.bg/screens">Екрани</a>
+</li>
+<li>
+<a href="https://ele.bg/players">Плейъри</a>
+</li>
+<li>
+<a href="https://ele.bg/glas">Очила</a>
+</li>
+<li>
+<a href="https://ele.bg/cifrovizacia">Цифровизация</a>
+</li>
+<li>
+<a href="https://ele.bg/antennas">Антени</a>
+</li>
+<li>
+<a href="https://ele.bg/others">Други</a>
+</li>
+</ul>
+
+</section>
+<button class='button-plain' type='button'>
+<span>Назад</span>
+</button></div></li>
+</ul>
+<p>
+<a href="/promotions"><svg>
+<text style='fill:url(#promo-gradient);' x='0' y='75%'>Промоции</text>
+</svg>
+</a></p>
+</div>
+
+<form id="search" role="search" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="text" name="q" id="q" size="85" tabindex="1" placeholder="търси лаптопи" required="required" />
+<label for="q">Търсене</label>
+<button type='submit'>Търси</button>
+<button type='reset'>
+<i class='icon-only fa-times'></i>
+</button>
+<div class='live-search-box' id='search-loading'>
+<p>Зареждане на резултати...</p>
+</div>
+<div class='live-search-box' id='search-results'></div>
+<script>
+var categories = [];
+categories.push("лаптопи");
+categories.push("аксесоари и софтуер");
+categories.push("чанти и раници");
+categories.push("слушалки");
+categories.push("ssd");
+categories.push("батерии");
+categories[0] = "лаптопи";
+
+</script>
+</form>
+
+
+<ul aria-live='polite' class='session' role='navigation'>
+<li aria-haspopup='true' aria-live='polite' class='cart-small empty' id='compare' title='Сравнение на продукти'>
+<a href='#'>
+<i class='icon-only fa-retweet'></i>
+<span>
+0
+</span>
+</a>
+<div aria-hidden='true' class='tabs-container'>
+<div class='message mini'>
+<h2>Добавете продукти за сравнение</h2>
+</div>
+
+</div>
+</li>
+<li aria-haspopup='true' aria-live='polite' class='cart-small empty' id='cart' title='Вашата количка'>
+<a href='/cart'>
+<i class='icon-only fa-shopping-cart'></i>
+<span>0</span>
+</a>
+<div aria-hidden='true'>
+<div class='message mini error'>
+<h2>Няма стоки във вашата количка</h2>
+<p>Моля, добавете продукти към количката!</p>
+</div>
+</div>
+</li>
+<li aria-haspopup='true' id='my-profile'>
+<a href="/account"><i class='icon-only fa-user'></i>
+<span>Моят профил</span>
+</a><div aria-hidden='true'>
+<ul>
+<li>
+<a href="/account">Моят профил</a>
+</li>
+<li>
+<a href="/account/order_history">Моите поръчки</a>
+</li>
+<li>
+<a href="/account/addresses">Адреси</a>
+</li>
+<li>
+<a href="/account/companies">Фирмени данни</a>
+</li>
+<li>
+<a href="/account/my_settings">Настройки</a>
+</li>
+</ul>
+<p>
+<a class="special" href="/sign_in">Вход</a>
+<br>
+<a href="/sign_up">Създай профил</a>
+</p>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+<hr>
+</header><div id='content'>
+<div class='frame'>
+<header>
+<h1>
+Лаптопи Lenovo
+<span class='count'>(435)</span>
+</h1>
+<nav class='breadcrumbs'><span itemscope itemtype='http://data-vocabulary.org/Breadcrumb'><a id="root_breadcrumb" itemprop="url" href="/"><span itemprop='title'>Начало</span></a><span class='separator'></span><span itemprop='child' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'><a itemprop="url" href="/laptops-all"><span itemprop='title'>Лаптопи</span></a><span class='separator'></span><span class='current'>Lenovo</span></span></span></nav>
+</header>
+
+<div class='sidebar' id='filters' role='search'>
+<h2>Филтри</h2>
+<form id="filters-form" action="/laptops-lenovo" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<div class='filter-group' id='attr_other'>
+<h3>Други</h3>
+<p class=''>
+<input type="checkbox" name="search[state_in][]" id="state_in_fresh" value="fresh" class="scope" data-count="0" />
+<label class="new" for="state_in_fresh">Нови модели
+<span class='filter-count'>
+(8)
+</span>
+</label></p>
+
+<p class=''>
+<input type="checkbox" name="search[state_in][]" id="state_in_promo" value="promo" class="scope" data-count="0" />
+<label class="promo" for="state_in_promo">Промо модели
+<span class='filter-count'>
+(8)
+</span>
+</label></p>
+
+<p class=''>
+<input type="checkbox" name="search[state_in][]" id="state_in_best-selling" value="best-selling" class="scope" data-count="0" />
+<label class="best-selling" for="state_in_best-selling">Най-продавани модели
+<span class='filter-count'>
+(13)
+</span>
+</label></p>
+
+<p class='inactive-filter'>
+<input type="checkbox" name="search[state_in][]" id="state_in_pre-ordered" value="pre-ordered" class="scope" data-count="0" disabled="disabled" />
+<label class="pre-ordered" for="state_in_pre-ordered">Очаквайте
+<span class='filter-count'>
+(0)
+</span>
+</label></p>
+
+<p class=''>
+<input type="checkbox" name="search[state_in][]" id="state_in_with_gift" value="with_gift" class="scope" data-count="0" />
+<label class="withgift" for="state_in_with_gift">С подарък
+<span class='filter-count'>
+(251)
+</span>
+</label></p>
+
+</div>
+
+
+
+
+<div class='filter-group' id='price'>
+<h3>Цена</h3>
+<div class='custom-scroll'>
+<p>
+<input type="checkbox" name="price_btw_all" id="price_btw_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="price_btw_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_300__499" value="300__499" class="scope" data-count="1" />
+<label for="price_btw_300__499">300 - 499 лв
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_500__599" value="500__599" class="scope" data-count="11" />
+<label for="price_btw_500__599">500 - 599 лв
+<span class='filter-count'>
+(11)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_600__799" value="600__799" class="scope" data-count="26" />
+<label for="price_btw_600__799">600 - 799 лв
+<span class='filter-count'>
+(26)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_800__999" value="800__999" class="scope" data-count="46" />
+<label for="price_btw_800__999">800 - 999 лв
+<span class='filter-count'>
+(46)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_1000__1199" value="1000__1199" class="scope" data-count="26" />
+<label for="price_btw_1000__1199">1000 - 1199 лв
+<span class='filter-count'>
+(26)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_1200__1499" value="1200__1499" class="scope" data-count="54" />
+<label for="price_btw_1200__1499">1200 - 1499 лв
+<span class='filter-count'>
+(54)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_1500__1999" value="1500__1999" class="scope" data-count="87" />
+<label for="price_btw_1500__1999">1500 - 1999 лв
+<span class='filter-count'>
+(87)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_2000__2499" value="2000__2499" class="scope" data-count="53" />
+<label for="price_btw_2000__2499">2000 - 2499 лв
+<span class='filter-count'>
+(53)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_2500__2999" value="2500__2999" class="scope" data-count="46" />
+<label for="price_btw_2500__2999">2500 - 2999 лв
+<span class='filter-count'>
+(46)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_3000__4999" value="3000__4999" class="scope" data-count="73" />
+<label for="price_btw_3000__4999">3000 - 4999 лв
+<span class='filter-count'>
+(73)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[price_btw][]" id="price_btw_5000__9999" value="5000__9999" class="scope" data-count="11" />
+<label for="price_btw_5000__9999">5000 - 9999 лв
+<span class='filter-count'>
+(11)
+</span>
+</label></p>
+<p class='price-plain'>
+<label for="price_gte">от</label>
+<input type="text" name="search[price_gte]" id="price_gte" size="4" class="lower scope small" />
+<label for="price_lte">до</label>
+<input type="text" name="search[price_lte]" id="price_lte" size="4" class="upper scope small" />
+<span class='postfix'>лв</span>
+<span class='filter-count'></span>
+</p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='type_laptop'>
+<h3>Вид лаптоп</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="type_laptop_id_in_all" id="type_laptop_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="type_laptop_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[type_laptop_id_in][]" id="type_laptop_id_in_1" value="1" class="scope " data-count="404" />
+<label for="type_laptop_id_in_1">Notebook
+<span class='filter-count'>
+(404)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[type_laptop_id_in][]" id="type_laptop_id_in_2" value="2" class="scope " data-count="25" />
+<label for="type_laptop_id_in_2">Ultrabook
+<span class='filter-count'>
+(25)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[type_laptop_id_in][]" id="type_laptop_id_in_5" value="5" class="scope " data-count="3" />
+<label for="type_laptop_id_in_5">2-in-1 convertible
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[type_laptop_id_in][]" id="type_laptop_id_in_6" value="6" class="scope " data-count="3" />
+<label for="type_laptop_id_in_6">Workstation
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='used_for_type'>
+<h3>Подходящ за</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="used_for_type_id_in_all" id="used_for_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="used_for_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[used_for_type_id_in][]" id="used_for_type_id_in_2" value="2" class="scope " data-count="240" />
+<label for="used_for_type_id_in_2">Бизнес и образование
+<span class='filter-count'>
+(240)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[used_for_type_id_in][]" id="used_for_type_id_in_1" value="1" class="scope " data-count="118" />
+<label for="used_for_type_id_in_1">Интернет, музика и филми
+<span class='filter-count'>
+(118)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[used_for_type_id_in][]" id="used_for_type_id_in_7" value="7" class="scope " data-count="33" />
+<label for="used_for_type_id_in_7">Умерено игрово натоварване
+<span class='filter-count'>
+(33)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[used_for_type_id_in][]" id="used_for_type_id_in_6" value="6" class="scope " data-count="44" />
+<label for="used_for_type_id_in_6">Тежко игрово натоварване
+<span class='filter-count'>
+(44)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='basic_color'>
+<h3>Цвят</h3>
+<div class='custom-scroll'>
+<p class='hidden'>
+<input type="checkbox" name="basic_color_id_in_all" id="basic_color_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="basic_color_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_1" value="1" class="scope scope-color color-black" data-count="254" />
+<label title="Черен (254)" for="basic_color_id_in_1">Черен
+<span class='filter-count'>
+(254)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_2" value="2" class="scope scope-color color-white" data-count="8" />
+<label title="Бял (8)" for="basic_color_id_in_2">Бял
+<span class='filter-count'>
+(8)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_3" value="3" class="scope scope-color color-red" data-count="18" />
+<label title="Червен (18)" for="basic_color_id_in_3">Червен
+<span class='filter-count'>
+(18)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_5" value="5" class="scope scope-color color-blue" data-count="6" />
+<label title="Син (6)" for="basic_color_id_in_5">Син
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_7" value="7" class="scope scope-color color-gray" data-count="71" />
+<label title="Сив (71)" for="basic_color_id_in_7">Сив
+<span class='filter-count'>
+(71)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_9" value="9" class="scope scope-color color-darkorange" data-count="2" />
+<label title="Оранжев (2)" for="basic_color_id_in_9">Оранжев
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_10" value="10" class="scope scope-color color-brown" data-count="10" />
+<label title="Кафяв (10)" for="basic_color_id_in_10">Кафяв
+<span class='filter-count'>
+(10)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_13" value="13" class="scope scope-color color-blueviolet" data-count="6" />
+<label title="Виолетов (6)" for="basic_color_id_in_13">Виолетов
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_14" value="14" class="scope scope-color color-gold" data-count="36" />
+<label title="Златист (36)" for="basic_color_id_in_14">Златист
+<span class='filter-count'>
+(36)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[basic_color_id_in][]" id="basic_color_id_in_15" value="15" class="scope scope-color color-silver" data-count="24" />
+<label title="Сребрист (24)" for="basic_color_id_in_15">Сребрист
+<span class='filter-count'>
+(24)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='series'>
+<h3>Серия</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="series_id_in_all" id="series_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="series_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9655" value="9655" class="scope " data-count="1" />
+<label for="series_id_in_9655">IdeaPad 100s
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_8257" value="8257" class="scope " data-count="5" />
+<label for="series_id_in_8257">IdeaPad 110
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_8708" value="8708" class="scope " data-count="7" />
+<label for="series_id_in_8708">IdeaPad 310
+<span class='filter-count'>
+(7)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9576" value="9576" class="scope " data-count="92" />
+<label for="series_id_in_9576">IdeaPad 320
+<span class='filter-count'>
+(92)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9654" value="9654" class="scope " data-count="9" />
+<label for="series_id_in_9654">IdeaPad 320s
+<span class='filter-count'>
+(9)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_8710" value="8710" class="scope " data-count="6" />
+<label for="series_id_in_8710">IdeaPad 510
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9658" value="9658" class="scope " data-count="17" />
+<label for="series_id_in_9658">IdeaPad 520
+<span class='filter-count'>
+(17)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9575" value="9575" class="scope " data-count="10" />
+<label for="series_id_in_9575">IdeaPad 520s
+<span class='filter-count'>
+(10)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9704" value="9704" class="scope " data-count="9" />
+<label for="series_id_in_9704">IdeaPad 720s
+<span class='filter-count'>
+(9)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_4629" value="4629" class="scope " data-count="3" />
+<label for="series_id_in_4629">IdeaPad U41
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_8722" value="8722" class="scope " data-count="21" />
+<label for="series_id_in_8722">IdeaPad V310
+<span class='filter-count'>
+(21)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9213" value="9213" class="scope " data-count="3" />
+<label for="series_id_in_9213">IdeaPad V510
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_4617" value="4617" class="scope " data-count="1" />
+<label for="series_id_in_4617">IdeaPad Y700-15
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_5134" value="5134" class="scope " data-count="4" />
+<label for="series_id_in_5134">IdeaPad Y700-17
+<span class='filter-count'>
+(4)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9181" value="9181" class="scope " data-count="15" />
+<label for="series_id_in_9181">Ideapad V110
+<span class='filter-count'>
+(15)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9279" value="9279" class="scope " data-count="49" />
+<label for="series_id_in_9279">Legion Y520
+<span class='filter-count'>
+(49)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9385" value="9385" class="scope " data-count="16" />
+<label for="series_id_in_9385">Legion Y720
+<span class='filter-count'>
+(16)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9582" value="9582" class="scope " data-count="7" />
+<label for="series_id_in_9582">Legion Y920
+<span class='filter-count'>
+(7)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9343" value="9343" class="scope " data-count="5" />
+<label for="series_id_in_9343">ThinkPad 13
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9321" value="9321" class="scope " data-count="2" />
+<label for="series_id_in_9321">ThinkPad 13 Gen2
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_4797" value="4797" class="scope " data-count="3" />
+<label for="series_id_in_4797">ThinkPad E560
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9277" value="9277" class="scope " data-count="1" />
+<label for="series_id_in_9277">ThinkPad Edge E470
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9276" value="9276" class="scope " data-count="3" />
+<label for="series_id_in_9276">ThinkPad Edge E570
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_8897" value="8897" class="scope " data-count="3" />
+<label for="series_id_in_8897">ThinkPad L460
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9675" value="9675" class="scope " data-count="5" />
+<label for="series_id_in_9675">ThinkPad L470
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9527" value="9527" class="scope " data-count="5" />
+<label for="series_id_in_9527">ThinkPad L570
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9559" value="9559" class="scope " data-count="1" />
+<label for="series_id_in_9559">ThinkPad P51
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9676" value="9676" class="scope " data-count="2" />
+<label for="series_id_in_9676">ThinkPad P51s
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9669" value="9669" class="scope " data-count="2" />
+<label for="series_id_in_9669">ThinkPad T470p
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9548" value="9548" class="scope " data-count="3" />
+<label for="series_id_in_9548">ThinkPad T470s
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9341" value="9341" class="scope " data-count="9" />
+<label for="series_id_in_9341">ThinkPad X1 Carbon (5th Gen)
+<span class='filter-count'>
+(9)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_5162" value="5162" class="scope " data-count="5" />
+<label for="series_id_in_5162">ThinkPad X1 Yoga
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9699" value="9699" class="scope " data-count="2" />
+<label for="series_id_in_9699">ThinkPad X1 Yoga 2nd Gen
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9547" value="9547" class="scope " data-count="5" />
+<label for="series_id_in_9547">ThinkPad X270
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9521" value="9521" class="scope " data-count="5" />
+<label for="series_id_in_9521">ThinkPad Yoga 370
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9317" value="9317" class="scope " data-count="9" />
+<label for="series_id_in_9317">Thinkpad T470
+<span class='filter-count'>
+(9)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9357" value="9357" class="scope " data-count="8" />
+<label for="series_id_in_9357">Thinkpad T570
+<span class='filter-count'>
+(8)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_10024" value="10024" class="scope " data-count="3" />
+<label for="series_id_in_10024">V320
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_10029" value="10029" class="scope " data-count="6" />
+<label for="series_id_in_10029">V330
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9026" value="9026" class="scope " data-count="6" />
+<label for="series_id_in_9026">YOGA 510 14
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9025" value="9025" class="scope " data-count="7" />
+<label for="series_id_in_9025">YOGA 510 15
+<span class='filter-count'>
+(7)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_2824" value="2824" class="scope " data-count="3" />
+<label for="series_id_in_2824">Yoga 3 Pro
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_4380" value="4380" class="scope " data-count="3" />
+<label for="series_id_in_4380">Yoga 500
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9690" value="9690" class="scope " data-count="26" />
+<label for="series_id_in_9690">Yoga 520
+<span class='filter-count'>
+(26)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9395" value="9395" class="scope " data-count="14" />
+<label for="series_id_in_9395">Yoga 720
+<span class='filter-count'>
+(14)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_4805" value="4805" class="scope " data-count="2" />
+<label for="series_id_in_4805">Yoga 900-13
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_5313" value="5313" class="scope " data-count="1" />
+<label for="series_id_in_5313">Yoga 900s-12
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[series_id_in][]" id="series_id_in_9752" value="9752" class="scope " data-count="11" />
+<label for="series_id_in_9752">Yoga 920
+<span class='filter-count'>
+(11)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='cpu_type'>
+<h3>Процесор</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="cpu_type_id_in_all" id="cpu_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="cpu_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_5" value="5" class="scope " data-count="95" />
+<label for="cpu_type_id_in_5">Intel Core i7  (четириядрен)
+<span class='filter-count'>
+(95)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_4" value="4" class="scope " data-count="84" />
+<label for="cpu_type_id_in_4">Intel Core i7  (двуядрен)
+<span class='filter-count'>
+(84)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_18" value="18" class="scope " data-count="40" />
+<label for="cpu_type_id_in_18">Intel Core i5  (четириядрен)
+<span class='filter-count'>
+(40)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_10" value="10" class="scope " data-count="62" />
+<label for="cpu_type_id_in_10">Intel Core i5  (двуядрен)
+<span class='filter-count'>
+(62)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_3" value="3" class="scope " data-count="80" />
+<label for="cpu_type_id_in_3">Intel Core i3  (двуядрен)
+<span class='filter-count'>
+(80)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_9" value="9" class="scope " data-count="4" />
+<label for="cpu_type_id_in_9">Intel Core M (двуядрен)
+<span class='filter-count'>
+(4)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_12" value="12" class="scope " data-count="48" />
+<label for="cpu_type_id_in_12">Intel Pentium (четириядрен)
+<span class='filter-count'>
+(48)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_11" value="11" class="scope " data-count="19" />
+<label for="cpu_type_id_in_11">Intel Celeron (двуядрен)
+<span class='filter-count'>
+(19)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[cpu_type_id_in][]" id="cpu_type_id_in_6" value="6" class="scope " data-count="3" />
+<label for="cpu_type_id_in_6">AMD (двуядрен)
+<span class='filter-count'>
+(3)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='ram_type_capacity'>
+<h3>Оперативна памет</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="ram_type_capacity_id_in_all" id="ram_type_capacity_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="ram_type_capacity_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[ram_type_capacity_id_in][]" id="ram_type_capacity_id_in_2" value="2" class="scope " data-count="125" />
+<label for="ram_type_capacity_id_in_2">4GB
+<span class='filter-count'>
+(125)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ram_type_capacity_id_in][]" id="ram_type_capacity_id_in_4" value="4" class="scope " data-count="280" />
+<label for="ram_type_capacity_id_in_4">8GB
+<span class='filter-count'>
+(280)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ram_type_capacity_id_in][]" id="ram_type_capacity_id_in_6" value="6" class="scope " data-count="29" />
+<label for="ram_type_capacity_id_in_6">16GB
+<span class='filter-count'>
+(29)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ram_type_capacity_id_in][]" id="ram_type_capacity_id_in_1" value="1" class="scope " data-count="1" />
+<label for="ram_type_capacity_id_in_1">2GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='vga_type'>
+<h3>Видео памет</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="vga_type_id_in_all" id="vga_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="vga_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[vga_type_id_in][]" id="vga_type_id_in_5" value="5" class="scope " data-count="156" />
+<label for="vga_type_id_in_5">с 2 GB собствена памет
+<span class='filter-count'>
+(156)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[vga_type_id_in][]" id="vga_type_id_in_7" value="7" class="scope " data-count="63" />
+<label for="vga_type_id_in_7">с 4 GB собствена памет
+<span class='filter-count'>
+(63)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[vga_type_id_in][]" id="vga_type_id_in_1" value="1" class="scope " data-count="189" />
+<label for="vga_type_id_in_1">без собствена памет
+<span class='filter-count'>
+(189)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[vga_type_id_in][]" id="vga_type_id_in_10" value="10" class="scope " data-count="23" />
+<label for="vga_type_id_in_10">с 6 GB собствена памет
+<span class='filter-count'>
+(23)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[vga_type_id_in][]" id="vga_type_id_in_2" value="2" class="scope " data-count="4" />
+<label for="vga_type_id_in_2">с 8 GB собствена памет
+<span class='filter-count'>
+(4)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='hdd_type_size'>
+<h3>Памет</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="hdd_type_size_id_in_all" id="hdd_type_size_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="hdd_type_size_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_9" value="9" class="scope " data-count="1" />
+<label for="hdd_type_size_id_in_9">120-200GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_1" value="1" class="scope " data-count="103" />
+<label for="hdd_type_size_id_in_1">240-256GB
+<span class='filter-count'>
+(103)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_2" value="2" class="scope " data-count="126" />
+<label for="hdd_type_size_id_in_2">480-532GB
+<span class='filter-count'>
+(126)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_13" value="13" class="scope " data-count="1" />
+<label for="hdd_type_size_id_in_13">620-628GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_3" value="3" class="scope " data-count="1" />
+<label for="hdd_type_size_id_in_3">750-782GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_4" value="4" class="scope " data-count="119" />
+<label for="hdd_type_size_id_in_4">1000-1080GB
+<span class='filter-count'>
+(119)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_15" value="15" class="scope " data-count="6" />
+<label for="hdd_type_size_id_in_15">1120-1152GB
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_16" value="16" class="scope " data-count="24" />
+<label for="hdd_type_size_id_in_16">1240-1280GB
+<span class='filter-count'>
+(24)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_5" value="5" class="scope " data-count="25" />
+<label for="hdd_type_size_id_in_5">1500-1512GB
+<span class='filter-count'>
+(25)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_6" value="6" class="scope " data-count="22" />
+<label for="hdd_type_size_id_in_6">2000GB
+<span class='filter-count'>
+(22)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_18" value="18" class="scope " data-count="2" />
+<label for="hdd_type_size_id_in_18">2240-2256GB
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_21" value="21" class="scope " data-count="2" />
+<label for="hdd_type_size_id_in_21">2480-2512GB 
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_7" value="7" class="scope " data-count="2" />
+<label for="hdd_type_size_id_in_7">3000GB
+<span class='filter-count'>
+(2)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[hdd_type_size_id_in][]" id="hdd_type_size_id_in_10" value="10" class="scope " data-count="1" />
+<label for="hdd_type_size_id_in_10">32GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='ssd_size'>
+<h3>SSD</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="ssd_size_id_in_all" id="ssd_size_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="ssd_size_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_2" value="2" class="scope " data-count="7" />
+<label for="ssd_size_id_in_2">120-200GB
+<span class='filter-count'>
+(7)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_3" value="3" class="scope " data-count="130" />
+<label for="ssd_size_id_in_3">250-280GB
+<span class='filter-count'>
+(130)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_4" value="4" class="scope " data-count="147" />
+<label for="ssd_size_id_in_4">500-512GB
+<span class='filter-count'>
+(147)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_5" value="5" class="scope " data-count="65" />
+<label for="ssd_size_id_in_5">1000-1024GB
+<span class='filter-count'>
+(65)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_6" value="6" class="scope " data-count="1" />
+<label for="ssd_size_id_in_6">32GB
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[ssd_size_id_in][]" id="ssd_size_id_in_1" value="1" class="scope " data-count="85" />
+<label for="ssd_size_id_in_1">Без SSD
+<span class='filter-count'>
+(85)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='display_size_type'>
+<h3>Екран </h3>
+<div class='custom-scroll'>
+<p>
+<input type="checkbox" name="display_size_type_btw_all" id="display_size_type_btw_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="display_size_type_btw_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[display_size_type_btw][]" id="display_size_type_btw_12_00__12_99" value="12.00__12.99" class="scope" data-count="6" />
+<label for="display_size_type_btw_12_00__12_99">12.00 - 12.99 -инча
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[display_size_type_btw][]" id="display_size_type_btw_13_00__13_99" value="13.00__13.99" class="scope" data-count="40" />
+<label for="display_size_type_btw_13_00__13_99">13.00 - 13.99 -инча
+<span class='filter-count'>
+(40)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[display_size_type_btw][]" id="display_size_type_btw_14_00__14_99" value="14.00__14.99" class="scope" data-count="89" />
+<label for="display_size_type_btw_14_00__14_99">14.00 - 14.99 -инча
+<span class='filter-count'>
+(89)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[display_size_type_btw][]" id="display_size_type_btw_15_00__15_99" value="15.00__15.99" class="scope" data-count="284" />
+<label for="display_size_type_btw_15_00__15_99">15.00 - 15.99 -инча
+<span class='filter-count'>
+(284)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[display_size_type_btw][]" id="display_size_type_btw_16_00__17_99" value="16.00__17.99" class="scope" data-count="16" />
+<label for="display_size_type_btw_16_00__17_99">16.00 - 17.99 -инча
+<span class='filter-count'>
+(16)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='filter-group' id='display_type'>
+<h3>Екран</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="display_type_id_in_all" id="display_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="display_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[display_type_id_in][]" id="display_type_id_in_1" value="1" class="scope " data-count="35" />
+<label for="display_type_id_in_1">гланцов дисплей
+<span class='filter-count'>
+(35)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[display_type_id_in][]" id="display_type_id_in_2" value="2" class="scope " data-count="384" />
+<label for="display_type_id_in_2">матов дисплей
+<span class='filter-count'>
+(384)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='resolution_size'>
+<h3>Разделителна способност</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="resolution_size_id_in_all" id="resolution_size_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="resolution_size_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_2" value="2" class="scope " data-count="47" />
+<label for="resolution_size_id_in_2">1366x768
+<span class='filter-count'>
+(47)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_4" value="4" class="scope " data-count="6" />
+<label for="resolution_size_id_in_4">1600x900  HD+
+<span class='filter-count'>
+(6)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_5" value="5" class="scope " data-count="355" />
+<label for="resolution_size_id_in_5">1920x1080 Full HD
+<span class='filter-count'>
+(355)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_7" value="7" class="scope " data-count="10" />
+<label for="resolution_size_id_in_7">2560x1440 Quad HD
+<span class='filter-count'>
+(10)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_11" value="11" class="scope " data-count="5" />
+<label for="resolution_size_id_in_11">3200x1800 Quad HD+
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[resolution_size_id_in][]" id="resolution_size_id_in_10" value="10" class="scope " data-count="12" />
+<label for="resolution_size_id_in_10">3840x2160 Ultra HD
+<span class='filter-count'>
+(12)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='battery_type'>
+<h3>Батерия</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="battery_type_id_in_all" id="battery_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="battery_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[battery_type_id_in][]" id="battery_type_id_in_2" value="2" class="scope " data-count="35" />
+<label for="battery_type_id_in_2">до 3 часа
+<span class='filter-count'>
+(35)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[battery_type_id_in][]" id="battery_type_id_in_3" value="3" class="scope " data-count="44" />
+<label for="battery_type_id_in_3">до 4 часа
+<span class='filter-count'>
+(44)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[battery_type_id_in][]" id="battery_type_id_in_4" value="4" class="scope " data-count="93" />
+<label for="battery_type_id_in_4">до 5 часa
+<span class='filter-count'>
+(93)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[battery_type_id_in][]" id="battery_type_id_in_5" value="5" class="scope " data-count="152" />
+<label for="battery_type_id_in_5">над 5 часа
+<span class='filter-count'>
+(152)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='weight_type'>
+<h3>Тегло </h3>
+<div class='custom-scroll'>
+<p>
+<input type="checkbox" name="weight_type_btw_all" id="weight_type_btw_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="weight_type_btw_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_1_00__1_50" value="1.00__1.50" class="scope" data-count="63" />
+<label for="weight_type_btw_1_00__1_50">1.00 - 1.50  кг.
+<span class='filter-count'>
+(63)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_1_60__2_00" value="1.60__2.00" class="scope" data-count="123" />
+<label for="weight_type_btw_1_60__2_00">1.60 - 2.00  кг.
+<span class='filter-count'>
+(123)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_2_00__2_50" value="2.00__2.50" class="scope" data-count="199" />
+<label for="weight_type_btw_2_00__2_50">2.00 - 2.50  кг.
+<span class='filter-count'>
+(199)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_2_60__3_00" value="2.60__3.00" class="scope" data-count="14" />
+<label for="weight_type_btw_2_60__3_00">2.60 - 3.00  кг.
+<span class='filter-count'>
+(14)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_3_10__4_00" value="3.10__4.00" class="scope" data-count="16" />
+<label for="weight_type_btw_3_10__4_00">3.10 - 4.00  кг.
+<span class='filter-count'>
+(16)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[weight_type_btw][]" id="weight_type_btw_4_10__5_00" value="4.10__5.00" class="scope" data-count="7" />
+<label for="weight_type_btw_4_10__5_00">4.10 - 5.00  кг.
+<span class='filter-count'>
+(7)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='os_type'>
+<h3>Операционна система</h3>
+<div class='custom-scroll'>
+<p class=''>
+<input type="checkbox" name="os_type_id_in_all" id="os_type_id_in_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="os_type_id_in_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[os_type_id_in][]" id="os_type_id_in_1" value="1" class="scope " data-count="247" />
+<label for="os_type_id_in_1">Без операционна система
+<span class='filter-count'>
+(247)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[os_type_id_in][]" id="os_type_id_in_10" value="10" class="scope " data-count="187" />
+<label for="os_type_id_in_10">С Windows 10
+<span class='filter-count'>
+(187)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[os_type_id_in][]" id="os_type_id_in_8" value="8" class="scope " data-count="1" />
+<label for="os_type_id_in_8">С Windows 8
+<span class='filter-count'>
+(1)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='warranty_size'>
+<h3>Гаранция </h3>
+<div class='custom-scroll'>
+<p>
+<input type="checkbox" name="warranty_size_btw_all" id="warranty_size_btw_all" value="all" class="all-scope" data-count="0" checked="checked" />
+<label for="warranty_size_btw_all">Всички</label>
+</p>
+<p>
+<input type="checkbox" name="search[warranty_size_btw][]" id="warranty_size_btw_24__24" value="24__24" class="scope" data-count="369" />
+<label for="warranty_size_btw_24__24">24 - 24  месеца
+<span class='filter-count'>
+(369)
+</span>
+</label></p>
+<p>
+<input type="checkbox" name="search[warranty_size_btw][]" id="warranty_size_btw_36__36" value="36__36" class="scope" data-count="66" />
+<label for="warranty_size_btw_36__36">36 - 36  месеца
+<span class='filter-count'>
+(66)
+</span>
+</label></p>
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='collapsed filter-group' id='_checkboxes'>
+<h3>Други опции</h3>
+<div class='custom-scroll'>
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[ssd_eq]" id="ssd_eq" value="1" class="scope" data-count="348" />
+<label for="ssd_eq">SSD
+<span class='filter-count'>
+(348)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[ips_display_eq]" id="ips_display_eq" value="1" class="scope" data-count="251" />
+<label for="ips_display_eq">IPS екран
+<span class='filter-count'>
+(251)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[touch_display_eq]" id="touch_display_eq" value="1" class="scope" data-count="84" />
+<label for="touch_display_eq">Сензорен екран
+<span class='filter-count'>
+(84)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[gddr_eq]" id="gddr_eq" value="1" class="scope" data-count="170" />
+<label for="gddr_eq">GDDR5 видеопамет
+<span class='filter-count'>
+(170)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[led_light_eq]" id="led_light_eq" value="1" class="scope" data-count="139" />
+<label for="led_light_eq">Подсветка на клавиатурата
+<span class='filter-count'>
+(139)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[displayport_eq]" id="displayport_eq" value="1" class="scope" data-count="77" />
+<label for="displayport_eq">DisplayPort/Thunderbolt
+<span class='filter-count'>
+(77)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[dvd_eq]" id="dvd_eq" value="1" class="scope" data-count="213" />
+<label for="dvd_eq">С оптично устройство
+<span class='filter-count'>
+(213)
+</span>
+</label></p>
+</div>
+
+<div class='filter-simple'>
+<p>
+<input type="checkbox" name="search[umts_eq]" id="umts_eq" value="1" class="scope" data-count="5" />
+<label for="umts_eq">3G модул
+<span class='filter-count'>
+(5)
+</span>
+</label></p>
+</div>
+
+<p class='empty-filter-msg'>
+Няма опции, съответстващи на активните филтри
+</p>
+</div>
+<button class='show button-plain' type='button'>покажи всички</button>
+<button class='hide button-plain' type='button'>покажи по-малко</button>
+</div>
+
+<div class='footer'>
+<button type='submit'>Филтрирай</button>
+</div>
+</form>
+
+</div>
+
+<main id='products-container'>
+<div class='applied-filters'>
+<header>
+<h3 aria-hidden='true'>Активни филтри</h3>
+<button aria-hidden='true' type='reset'>
+Изчисти
+</button>
+<button id='filters-show' type='button'>
+<span class='icon-only fa-plus'>покажи филтрите</span>
+</button>
+</header>
+</div>
+<footer>
+<span class='paging-info'>
+Показани са 1 - 25 от 435 продукта
+</span>
+<menu>
+<form>
+<label for='per_page'>Покажи по</label>
+<span class='select small'>
+<select form='filters-form' id='per_page' name='per_page'>
+<option selected='selected' value='25'>25 продукта</option>
+<option value='50'>50 продукта</option>
+<option value='100'>100 продукта</option>
+</select>
+</span>
+</form>
+<span>
+<label for='sort'>Подреди по</label>
+<span class='select small'>
+<select form='filters-form' id='sort' name='search[s]'>
+<option selected='selected' value='promo_asc'>Промоции</option>
+<option value='price_asc'>Най-ниска цена</option>
+<option value='price_desc'>Най-висока цена</option>
+<option value='created_at_desc'>Най-нови</option>
+<option value='created_at_asc'>Най-стари</option>
+</select>
+</span>
+</span>
+<a class="icon-only fa-th-large on" href="/laptops-lenovo?list_view=false"></a>
+<a class="icon-only fa-th-list" href="/laptops-lenovo?list_view=true"></a>
+</menu>
+</footer>
+
+<ul class='products'>
+<li class=' promo with-percent' id='product_54310'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR0121BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/152839/large/lenovo_ideapad_320_80XR0121BM.jpg' srcset='/system/images/152839/small/lenovo_ideapad_320_80XR0121BM.jpg 80w, /system/images/152839/medium/lenovo_ideapad_320_80XR0121BM.jpg 145w, /system/images/152839/large/lenovo_ideapad_320_80XR0121BM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>AMD Radeon M530</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>649</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>769лв.</em>
+(-15%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12017" action="/products/toggle_compare?id=12017&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12017" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12017" value="1" />
+<label for="compare-checkbox-12017">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-15%</span>
+</article>
+</li>
+<li class=' promo with-percent' id='product_51011'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00DHBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/142750/large/lenovo_ideapad_320_80XR00DHBM.jpg' srcset='/system/images/142750/small/lenovo_ideapad_320_80XR00DHBM.jpg 80w, /system/images/142750/medium/lenovo_ideapad_320_80XR00DHBM.jpg 145w, /system/images/142750/large/lenovo_ideapad_320_80XR00DHBM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>AMD Radeon 530</li>
+<li>8GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>759</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>859лв.</em>
+(-11%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10839" action="/products/toggle_compare?id=10839&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10839" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10839" value="1" />
+<label for="compare-checkbox-10839">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-11%</span>
+</article>
+</li>
+<li class=' promo with-percent' id='product_52226'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_32015isk_80XH009BBM' title='Lenovo IdeaPad 320-15ISK'>
+<h2>Lenovo IdeaPad 320-15ISK</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320-15ISK' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/146633/large/lenovo_ideapad_32015isk_80XH009BBM.jpg' srcset='/system/images/146633/small/lenovo_ideapad_32015isk_80XH009BBM.jpg 80w, /system/images/146633/medium/lenovo_ideapad_32015isk_80XH009BBM.jpg 145w, /system/images/146633/large/lenovo_ideapad_32015isk_80XH009BBM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Core i3-6006U</li>
+<li>NVIDIA GeForce 920MX</li>
+<li>4GB DDR4</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>919</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>1019лв.</em>
+(-9%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11428" action="/products/toggle_compare?id=11428&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11428" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11428" value="1" />
+<label for="compare-checkbox-11428">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-9%</span>
+</article>
+</li>
+<li class=' promo with-percent' id='product_54422'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XH01KGBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/153238/large/lenovo_ideapad_320_80XH01KGBM.png' srcset='/system/images/153238/small/lenovo_ideapad_320_80XH01KGBM.png 80w, /system/images/153238/medium/lenovo_ideapad_320_80XH01KGBM.png 145w, /system/images/153238/large/lenovo_ideapad_320_80XH01KGBM.png 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Core i3-6006U</li>
+<li>NVIDIA GeForce 920MX</li>
+<li>8GB DDR4</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>919</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>1009лв.</em>
+(-8%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12041" action="/products/toggle_compare?id=12041&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12041" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12041" value="1" />
+<label for="compare-checkbox-12041">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-8%</span>
+</article>
+</li>
+<li class=' promo with-percent' id='product_52223'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_32015ikb_80XL00EYBM' title='Lenovo IdeaPad 320-15IKB'>
+<h2>Lenovo IdeaPad 320-15IKB</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320-15IKB' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/153213/large/lenovo_ideapad_32015ikb_80XL00EYBM.png' srcset='/system/images/153213/small/lenovo_ideapad_32015ikb_80XL00EYBM.png 80w, /system/images/153213/medium/lenovo_ideapad_32015ikb_80XL00EYBM.png 145w, /system/images/153213/large/lenovo_ideapad_32015ikb_80XL00EYBM.png 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Core i3-7100U</li>
+<li>NVIDIA GeForce 940MX</li>
+<li>4GB DDR4</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>979</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>1079лв.</em>
+(-9%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11425" action="/products/toggle_compare?id=11425&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11425" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11425" value="1" />
+<label for="compare-checkbox-11425">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-9%</span>
+</article>
+</li>
+<li class=' promo' id='product_51039'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-Legion_Y520-lenovo_legion_y520_80WK00UDBM' title='Lenovo Legion Y520'>
+<h2>Lenovo Legion Y520</h2>
+<img alt='Лаптопи Lenovo Legion Y520' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/132581/large/Legion_Y520.jpg' srcset='/system/images/132581/small/Legion_Y520.jpg 80w, /system/images/132581/medium/Legion_Y520.jpg 145w, /system/images/132581/large/Legion_Y520.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Core i5-7300HQ</li>
+<li>NVIDIA GeForce GTX 1050</li>
+<li>8GB DDR4</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>1599</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>1649лв.</em>
+(-50лв.)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10844" action="/products/toggle_compare?id=10844&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10844" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10844" value="1" />
+<label for="compare-checkbox-10844">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class=' promo' id='product_50328'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-Legion_Y520-lenovo_legion_y520_80WK00NVBM' title='Lenovo Legion Y520'>
+<h2>Lenovo Legion Y520</h2>
+<img alt='Лаптопи Lenovo Legion Y520' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/132581/large/Legion_Y520.jpg' srcset='/system/images/132581/small/Legion_Y520.jpg 80w, /system/images/132581/medium/Legion_Y520.jpg 145w, /system/images/132581/large/Legion_Y520.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Core i7-7700HQ</li>
+<li>NVIDIA GeForce GTX 1050 Ti</li>
+<li>8GB DDR4</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>1799</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>1849лв.</em>
+(-50лв.)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10758" action="/products/toggle_compare?id=10758&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10758" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10758" value="1" />
+<label for="compare-checkbox-10758">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class=' promo with-percent' id='product_52583'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-ThinkPad_X1_Yoga_2nd_Gen-lenovo_thinkpad_x1_yoga_2nd_gen_20JD0057BM' title='Lenovo ThinkPad X1 Yoga 2nd Gen'>
+<h2>Lenovo ThinkPad X1 Yoga 2nd Gen</h2>
+<img alt='Лаптопи Lenovo ThinkPad X1 Yoga 2nd Gen' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/147461/large/ThinkPad_X1_Yoga_2nd_Gen.jpg' srcset='/system/images/147461/small/ThinkPad_X1_Yoga_2nd_Gen.jpg 80w, /system/images/147461/medium/ThinkPad_X1_Yoga_2nd_Gen.jpg 145w, /system/images/147461/large/ThinkPad_X1_Yoga_2nd_Gen.jpg 190w'>
+</a>
+<ul>
+<li>Intel Core i7-7500U</li>
+<li>Intel HD Graphics 620</li>
+<li>16GB LPDDR3</li>
+<li>512GB SSD NVMe</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" style="fill:url(#promo-gradient);"><tspan>4859</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<span class='visuallyhidden'>Намален от</span>
+<del>
+<em>5159лв.</em>
+(-5%)
+</del>
+
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11552" action="/products/toggle_compare?id=11552&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11552" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11552" value="1" />
+<label for="compare-checkbox-11552">сравни</label>
+</form>
+
+
+</div>
+<span aria-hidden='true' class='promo-percent'>-5%</span>
+</article>
+</li>
+<li class='' id='product_51993'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_110-lenovo_ideapad_11015_80T700EDBM256gbssd' title='Lenovo IdeaPad 110-15'>
+<h2>Lenovo IdeaPad 110-15</h2>
+<img alt='Лаптопи Lenovo IdeaPad 110-15' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/115841/large/IdeaPad_110.jpg' srcset='/system/images/115841/small/IdeaPad_110.jpg 80w, /system/images/115841/medium/IdeaPad_110.jpg 145w, /system/images/115841/large/IdeaPad_110.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N3710</li>
+<li>Intel HD Graphics 405</li>
+<li>8GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>217</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11273" action="/products/toggle_compare?id=11273&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11273" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11273" value="1" />
+<label for="compare-checkbox-11273">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='ad'>
+<a href="https://laptop.bg/acer_aspire_7?utm_source=laptop.bg&amp;utm_medium=listing+banner&amp;utm_campaign=Acer+Aspire+7"><img alt="Aspire 7" title="Aspire 7" src="/system/image_banners/images/aspire_7_220x360-1fc0e20c808bc85fdf7962e5cf72e6943c371fec.jpg" /></a>
+</li>
+<li class='' id='product_51658'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_100s-lenovo_ideapad_100s_80R900NKBM' title='Lenovo IdeaPad 100s'>
+<h2>Lenovo IdeaPad 100s</h2>
+<img alt='Лаптопи Lenovo IdeaPad 100s' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/144852/large/lenovo_ideapad_100s_80R900NKBM.jpg' srcset='/system/images/144852/small/lenovo_ideapad_100s_80R900NKBM.jpg 80w, /system/images/144852/medium/lenovo_ideapad_100s_80R900NKBM.jpg 145w, /system/images/144852/large/lenovo_ideapad_100s_80R900NKBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3060</li>
+<li>Intel HD Graphics 400</li>
+<li>2GB DDR3</li>
+<li>32GB SSD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>429</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11061" action="/products/toggle_compare?id=11061&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11061" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11061" value="1" />
+<label for="compare-checkbox-11061">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_55582'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_32015_80XR00CQBM' title='Lenovo IdeaPad 320-15'>
+<h2>Lenovo IdeaPad 320-15</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320-15' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/157188/large/lenovo_ideapad_32015_80XR00CQBM.jpg' srcset='/system/images/157188/small/lenovo_ideapad_32015_80XR00CQBM.jpg 80w, /system/images/157188/medium/lenovo_ideapad_32015_80XR00CQBM.jpg 145w, /system/images/157188/large/lenovo_ideapad_32015_80XR00CQBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>509</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12450" action="/products/toggle_compare?id=12450&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12450" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12450" value="1" />
+<label for="compare-checkbox-12450">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_53476'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00N4BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/150019/large/lenovo_ideapad_320_80XR00N4BM.jpg' srcset='/system/images/150019/small/lenovo_ideapad_320_80XR00N4BM.jpg 80w, /system/images/150019/medium/lenovo_ideapad_320_80XR00N4BM.jpg 145w, /system/images/150019/large/lenovo_ideapad_320_80XR00N4BM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>509</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11832" action="/products/toggle_compare?id=11832&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11832" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11832" value="1" />
+<label for="compare-checkbox-11832">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_51001'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00CRBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/142713/large/lenovo_ideapad_320_80XR00CRBM.jpg' srcset='/system/images/142713/small/lenovo_ideapad_320_80XR00CRBM.jpg 80w, /system/images/142713/medium/lenovo_ideapad_320_80XR00CRBM.jpg 145w, /system/images/142713/large/lenovo_ideapad_320_80XR00CRBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>509</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10835" action="/products/toggle_compare?id=10835&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10835" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10835" value="1" />
+<label for="compare-checkbox-10835">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_51000'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00CTBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/142706/large/lenovo_ideapad_320_80XR00CTBM.jpg' srcset='/system/images/142706/small/lenovo_ideapad_320_80XR00CTBM.jpg 80w, /system/images/142706/medium/lenovo_ideapad_320_80XR00CTBM.jpg 145w, /system/images/142706/large/lenovo_ideapad_320_80XR00CTBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>509</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10834" action="/products/toggle_compare?id=10834&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10834" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10834" value="1" />
+<label for="compare-checkbox-10834">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_51513'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-Ideapad_V110-lenovo_v11015iap_80TG0128BM' title='Lenovo V110-15IAP'>
+<h2>Lenovo V110-15IAP</h2>
+<img alt='Лаптопи Lenovo V110-15IAP' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/144301/large/lenovo_v11015iap_80TG0128BM.png' srcset='/system/images/144301/small/lenovo_v11015iap_80TG0128BM.png 80w, /system/images/144301/medium/lenovo_v11015iap_80TG0128BM.png 145w, /system/images/144301/large/lenovo_v11015iap_80TG0128BM.png 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>539</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11002" action="/products/toggle_compare?id=11002&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11002" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11002" value="1" />
+<label for="compare-checkbox-11002">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_52237'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_32015iap_80XR00CSBM' title='Lenovo IdeaPad 320-15IAP'>
+<h2>Lenovo IdeaPad 320-15IAP</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320-15IAP' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/150000/large/lenovo_ideapad_32015iap_80XR00CSBM.jpg' srcset='/system/images/150000/small/lenovo_ideapad_32015iap_80XR00CSBM.jpg 80w, /system/images/150000/medium/lenovo_ideapad_32015iap_80XR00CSBM.jpg 145w, /system/images/150000/large/lenovo_ideapad_32015iap_80XR00CSBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>549</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11434" action="/products/toggle_compare?id=11434&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11434" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11434" value="1" />
+<label for="compare-checkbox-11434">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_55578'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_15_80XR011RBM' title='Lenovo IdeaPad 320-15'>
+<h2>Lenovo IdeaPad 320-15</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320-15' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/157164/large/lenovo_ideapad_320_15_80XR011RBM.jpg' srcset='/system/images/157164/small/lenovo_ideapad_320_15_80XR011RBM.jpg 80w, /system/images/157164/medium/lenovo_ideapad_320_15_80XR011RBM.jpg 145w, /system/images/157164/large/lenovo_ideapad_320_15_80XR011RBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Celeron N3350</li>
+<li>Intel HD Graphics 500</li>
+<li>4GB DDR3</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>549</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12447" action="/products/toggle_compare?id=12447&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12447" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12447" value="1" />
+<label for="compare-checkbox-12447">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_53483'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00D1BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/150040/large/lenovo_ideapad_320_80XR00D1BM.jpg' srcset='/system/images/150040/small/lenovo_ideapad_320_80XR00D1BM.jpg 80w, /system/images/150040/medium/lenovo_ideapad_320_80XR00D1BM.jpg 145w, /system/images/150040/large/lenovo_ideapad_320_80XR00D1BM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>589</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11835" action="/products/toggle_compare?id=11835&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11835" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11835" value="1" />
+<label for="compare-checkbox-11835">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='ad'>
+<a href="https://laptop.bg/acer_aspire_7?utm_source=laptop.bg&amp;utm_medium=listing+banner&amp;utm_campaign=Acer+Aspire+7"><img alt="Aspire 7" title="Aspire 7" src="/system/image_banners/images/aspire_7_220x360-1fc0e20c808bc85fdf7962e5cf72e6943c371fec.jpg" /></a>
+</li>
+<li class='' id='product_51003'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00D3BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/142726/large/lenovo_ideapad_320_80XR00D3BM.jpg' srcset='/system/images/142726/small/lenovo_ideapad_320_80XR00D3BM.jpg 80w, /system/images/142726/medium/lenovo_ideapad_320_80XR00D3BM.jpg 145w, /system/images/142726/large/lenovo_ideapad_320_80XR00D3BM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>589</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10837" action="/products/toggle_compare?id=10837&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10837" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10837" value="1" />
+<label for="compare-checkbox-10837">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_51002'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR00D4BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/142719/large/lenovo_ideapad_320_80XR00D4BM.jpg' srcset='/system/images/142719/small/lenovo_ideapad_320_80XR00D4BM.jpg 80w, /system/images/142719/medium/lenovo_ideapad_320_80XR00D4BM.jpg 145w, /system/images/142719/large/lenovo_ideapad_320_80XR00D4BM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>589</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-10836" action="/products/toggle_compare?id=10836&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="10836" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-10836" value="1" />
+<label for="compare-checkbox-10836">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_55587'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR011WBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/157207/large/lenovo_ideapad_320_80XR011WBM.jpg' srcset='/system/images/157207/small/lenovo_ideapad_320_80XR011WBM.jpg 80w, /system/images/157207/medium/lenovo_ideapad_320_80XR011WBM.jpg 145w, /system/images/157207/large/lenovo_ideapad_320_80XR011WBM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>589</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12453" action="/products/toggle_compare?id=12453&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12453" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12453" value="1" />
+<label for="compare-checkbox-12453">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_53602'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR011UBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/150431/large/lenovo_ideapad_320_80XR011UBM.jpg' srcset='/system/images/150431/small/lenovo_ideapad_320_80XR011UBM.jpg 80w, /system/images/150431/medium/lenovo_ideapad_320_80XR011UBM.jpg 145w, /system/images/150431/large/lenovo_ideapad_320_80XR011UBM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>609</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11896" action="/products/toggle_compare?id=11896&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11896" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11896" value="1" />
+<label for="compare-checkbox-11896">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_53094'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-Ideapad_V110-lenovo_v11015iap_80TG011GBM' title='Lenovo V110-15IAP'>
+<h2>Lenovo V110-15IAP</h2>
+<img alt='Лаптопи Lenovo V110-15IAP' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/148933/large/lenovo_v11015iap_80TG011GBM.jpg' srcset='/system/images/148933/small/lenovo_v11015iap_80TG011GBM.jpg 80w, /system/images/148933/medium/lenovo_v11015iap_80TG011GBM.jpg 145w, /system/images/148933/large/lenovo_v11015iap_80TG011GBM.jpg 190w'>
+</a>
+<ul>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+<li>500GB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>619</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11730" action="/products/toggle_compare?id=11730&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11730" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11730" value="1" />
+<label for="compare-checkbox-11730">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_53134'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XV00B9BM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/149060/large/lenovo_ideapad_320_80XV00B9BM.png' srcset='/system/images/149060/small/lenovo_ideapad_320_80XV00B9BM.png 80w, /system/images/149060/medium/lenovo_ideapad_320_80XV00B9BM.png 145w, /system/images/149060/large/lenovo_ideapad_320_80XV00B9BM.png 190w'>
+</a>
+<ul>
+<li>AMD A6-9220</li>
+<li>AMD Radeon R4 Graphics</li>
+<li>4GB DDR4</li>
+<li>1TB HDD</li>
+</ul>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>619</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-11740" action="/products/toggle_compare?id=11740&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="11740" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-11740" value="1" />
+<label for="compare-checkbox-11740">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='' id='product_56363'>
+<article>
+<div>
+<a href='https://laptop.bg/laptops-lenovo-IdeaPad_320-lenovo_ideapad_320_80XR011YBM' title='Lenovo IdeaPad 320'>
+<h2>Lenovo IdeaPad 320</h2>
+<img alt='Лаптопи Lenovo IdeaPad 320' aria-hidden='true' sizes='(min-width: 50em) 11.875em, 5em' src='/system/images/159511/large/lenovo_ideapad_320_80XR011YBM.jpg' srcset='/system/images/159511/small/lenovo_ideapad_320_80XR011YBM.jpg 80w, /system/images/159511/medium/lenovo_ideapad_320_80XR011YBM.jpg 145w, /system/images/159511/large/lenovo_ideapad_320_80XR011YBM.jpg 190w'>
+</a>
+<ul>
+<li class='withgift'>Подарък профили от Лаптоп.бг</li>
+<li>Intel Pentium N4200</li>
+<li>Intel HD Graphics 505</li>
+<li>4GB DDR3</li>
+</ul>
+</div>
+<div class='gift-container'>
+<div class='gift'>
+<a title="Пакет от Профили за Работа, Гейминг и Защита на здравето" href="https://laptop.bg/office_programs-laptopbg-paket_ot_profili_laptopbg"><img alt="Офис програми Пакет от Профили за Работа, Гейминг и Защита на здравето" width="80" height="60" src="/system/images/103724/small/_________.jpg" /></a>
+</div>
+</div>
+<div class='price-container'>
+<span class='visuallyhidden'>Цена:</span>
+<span class='price'>
+<svg><text x="0" y="80%" ><tspan>629</tspan><tspan class="currency">лв.</tspan></text></svg>
+
+
+</span>
+<a class="brand-logo brand-lenovo" title="Виж всички продукти с марка Lenovo" href="/brands-lenovo">Виж всички продукти с марка Lenovo</a>
+</div>
+<div class='product-footer'>
+<form class="compare-form" id="compare-form-12652" action="/products/toggle_compare?id=12652&amp;model_type=laptop" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="tabname" value="laptop-tab" />
+<input type="hidden" name="id" value="12652" />
+<input type="checkbox" name="compare-checkbox" id="compare-checkbox-12652" value="1" />
+<label for="compare-checkbox-12652">сравни</label>
+</form>
+
+
+</div>
+</article>
+</li>
+<li class='next-page'>
+<a href="/laptops-lenovo?page=2"><h2>Следваща страница</h2>
+<p class='small'>1 от 18 страници</p>
+</a></li>
+
+</ul>
+<div class="pagination"><span class="previous_page disabled">предишна</span><em class="current">1</em><a rel="next" href="/laptops-lenovo?page=2">2</a><a href="/laptops-lenovo?page=3">3</a><a href="/laptops-lenovo?page=4">4</a><a href="/laptops-lenovo?page=5">5</a><a href="/laptops-lenovo?page=6">6</a><a href="/laptops-lenovo?page=7">7</a><a href="/laptops-lenovo?page=8">8</a><a href="/laptops-lenovo?page=9">9</a><span class="gap">&hellip;</span><a class="next_page" rel="next" href="/laptops-lenovo?page=2">следваща</a></div>
+<i class='loading-icon'>
+<span></span>
+</i>
+</main>
+<div class='alert-container'>
+<template>
+<div aria-hidden='true' aria-live='polite' class='alert' id='price-alert' role='alert'>
+<p>
+Към цената бяха добавени <span class="price"><span>0</span>лв.</span>
+</p>
+<button class='close' type='button'>
+<span>затвори</span>
+</button>
+</div>
+<div aria-hidden='true' aria-live='polite' class='alert' id='cart-alert' role='alert'>
+<p>
+Продуктът беше добавен в кошницата
+</p>
+<p>
+<a class='arrow-after' href='/cart'>към количката</a>
+</p>
+<button class='close' type='button'>
+<span>затвори</span>
+</button>
+</div>
+<div aria-hidden='true' aria-live='polite' class='alert' id='compare-alert' role='alert'>
+<p>
+Продуктът беше добавен за сравнение
+</p>
+<p>
+<a class="arrow-after" href="/laptops/compare">сравни продуктите</a>
+</p>
+<button class='close' type='button'>
+<span>затвори</span>
+</button>
+</div>
+<div aria-hidden='true' aria-live='polite' class='alert' id='compare-error-alert' role='alert'>
+<p>Не можете да добавите повече от 4 продукта за сравнение.</p>
+<button class='close'>
+<span>затвори</span>
+</button>
+</div>
+</template>
+</div>
+
+</div><div aria-hidden='true' aria-labeledby='lightboxHeader' id='lightbox' role='dialog'></div>
+</div>
+<footer>
+<div class='frame'>
+<nav role='navigation'>
+<ul>
+<li>
+<h2>Помощ</h2>
+<ul>
+<li>
+<a href="https://laptop.bg/pages/pay">Как да платя?</a>
+</li>
+<li>
+<a href="https://laptop.bg/pages/delivery">Доставка</a>
+</li>
+<li>
+<a href="/pages/services">Сервизи</a>
+</li>
+<li>
+<a href="/pages/insurance">Застраховки</a>
+</li>
+<li>
+<a href="https://laptop.bg/pages/returns">Връщане и замяна</a>
+</li>
+</ul>
+</li>
+<li>
+<h2>За нас</h2>
+<ul>
+<li>
+<a href="https://laptop.bg/pages/aboutus">За Лаптоп.БГ ООД</a>
+</li>
+<li>
+<a href="https://laptop.bg/pages/contact">Контакти</a>
+</li>
+<li>
+<a href="/archive">Архив</a>
+</li>
+<li>
+<a href="/discounts">Преоценени продукти</a>
+</li>
+</ul>
+</li>
+<li>
+<h2>&nbsp;</h2>
+<ul class='social'>
+<li>
+<a href='https://www.facebook.com/laptop.bg/'><img alt='лого на Facebook' height='20' src='/assets/logos/facebook-logo-6b492c8c884e6baa8f952120211db01160f370218cd41dbce4f041d2d1ab4652.svg' width='20'>Харесай ни</a>
+</li>
+<li>
+<a href='https://www.youtube.com/user/laptopbg'><img alt='лого на YouTube' height='20' src='/assets/logos/youtube-logo-5b868b26e1142a0a403a28ecb6c53ea04929a2c90b0f62cd1034cdd84bbae5a1.svg' width='20'>Гледай ни</a>
+</li>
+<li>
+<a href="https://twitter.com/laptopbg"><img alt='лого на Twitter' height='20' src='/assets/logos/twitter-logo-f01913696f1cabde06452b5c77d6feb26778104abe9c84bc3aa357adfc3fc6f7.svg' width='20'>Следвай ни</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class='ad'>
+<a href="https://desktop.bg/gaming_rigs?utm_source=laptop.bg&amp;utm_medium=home+footer&amp;utm_campaign=G:RIGS"><img alt="Геймърски конфигурации от desktop.bg" width="460" height="140" src="/assets/banners/banner_footer_gaming-587ebc62325efca5a6a2ef65a7a37c43c66a254d2ce5e8e2652807911b9bc13e.png" />
+</a></div>
+<div class='copyright' role='contentinfo'>
+2018
+<span>Laptop.bg &reg;</span>
+<a href="https://creativecommons.org/licenses/by/3.0/deed.bg">
+Някои права запазени
+</a>
+<a href="/pages/conditions">Условия за ползване</a>
+Всички цени са в лева, с ДДС
+<a class="icon-only fa-arrow-up" id="gototop" href="#">Върни се горе</a>
+<a class="full" href="/laptops-lenovo?rwd=false">Към пълната версия</a>
+<a class="mobile" href="/laptops-lenovo?rwd=true">Към мобилната версия</a>
+</div>
+<nav class='external'>
+<h2 class='logo'>
+<a href='/' title='Лаптопи от laptop.bg'>
+<img alt="Лаптопи от laptop.bg" src="/assets/laptop/logo-94b425faa193bb903bfd5582dbbbbc1b6bef1fbd3ff8e9bbb9b7bbbf8cdcb999.svg" />
+</a>
+</h2>
+<ul>
+<li>
+<a href="https://tablet.bg/tablets">Таблети</a>
+</li>
+<li>
+<a href="https://tablet.bg/ereaders">Електронни четци</a>
+</li>
+<li>
+<a href="https://tablet.bg/graphical_tablets">Графични таблети</a>
+</li>
+<li>
+<a href="https://tablet.bg/tablet_sleeves">Калъфи и Чанти</a>
+</li>
+<li>
+<a href="https://tablet.bg/headphones">Аксесоари</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://smartphone.bg/smartphones">Смартфони</a>
+</li>
+<li>
+<a href="https://smartphone.bg/smartphone_sleeves">Калъфи</a>
+</li>
+<li>
+<a href="https://smartphone.bg/microsds">Аксесоари</a>
+</li>
+<li>
+<a href="https://smartphone.bg/headphones">Слушалки и Handsfree</a>
+</li>
+<li>
+<a href="https://smartphone.bg/smartphone_batteries-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;basic_color_id_in_all=all&amp;capacity_size_btw_all=all&amp;compability_id_in_all=all&amp;search%5Bexternal_battery_eq%5D=1&amp;warranty_size_btw_all=all&amp;per_page=27&amp;search%5Bs%5D=promo_asc">Външни батерии</a>
+</li>
+<li>
+<a href="https://smartphone.bg/speakers-all?utf8=%E2%9C%93&amp;price_btw_all=all&amp;search%5Bprice_gte%5D=&amp;search%5Bprice_lte%5D=&amp;brand_id_in_all=all&amp;channels_id_in_all=all&amp;category_id_in_all=all&amp;search%5Bcategory_id_in%5D%5B%5D=1&amp;power_size_btw_all=all&amp;warranty_size_btw_all=all&amp;per_page=27&amp;search%5Bmeta_sort%5D=promo_asc">Колонки за смартфон</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://smartwatch.bg/smartwatches">Смарт часовници</a>
+</li>
+<li>
+<a href="https://smartwatch.bg/smartbands">Гривни</a>
+</li>
+<li>
+<a href="https://smartwatch.bg/body_scales">Тракери</a>
+</li>
+<li>
+<a href="https://smartwatch.bg/watches">Часовници</a>
+</li>
+<li>
+<a href="https://smartwatch.bg/smart_gadgets">Smart Home</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://ele.bg/tvs">Телевизори</a>
+</li>
+<li>
+<a href="https://ele.bg/projectors">Проектори</a>
+</li>
+<li>
+<a href="https://ele.bg/audios">Аудио и Аксесоари</a>
+</li>
+<li>
+<a href="https://ele.bg/smart_gadgets">Smart Home</a>
+</li>
+<li>
+<a href="https://ele.bg/dehumidifiers">Въздушни пречистватели</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://desktop.bg/grigs">G:RIGS</a>
+</li>
+<li>
+<a href="https://desktop.bg/computers">Компютри и Конзоли</a>
+</li>
+<li>
+<a href="https://desktop.bg/displays">Монитори</a>
+</li>
+<li>
+<a href="https://desktop.bg/headphones">Слушалки</a>
+</li>
+<li>
+<a href="https://desktop.bg/printers">Принтери и Консумативи</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://photocamera.bg/dslrs">DSLR и Обективи</a>
+</li>
+<li>
+<a href="https://photocamera.bg/mirrorles">Mirrorless и Обективи</a>
+</li>
+<li>
+<a href="https://photocamera.bg/extreme_cameras">Екстремни и Компактни</a>
+</li>
+<li>
+<a href="https://photocamera.bg/videocameras">Видеокамери и Blackmagic</a>
+</li>
+<li>
+<a href="https://photocamera.bg/drones">Дронове</a>
+</li>
+<li>
+<a href="https://photocamera.bg/binoculars">Оптични продукти</a>
+</li>
+</ul>
+</nav>
+</div>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="promo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E43723; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#E20CA7; stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="new-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14BAAA; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#58AE16; stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="preorder-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff9600; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f2b600; stop-opacity:1"/>
+    </linearGradient>
+    <filter id="greyscale">
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <filter id="header-drop-shadow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1 7" />
+      <feOffset dx="0" dy="2" />
+      <feMerge>
+          <feMergeNode in="SourceGraphic" />
+          <feMergeNode />
+      </feMerge>
+    </filter>
+    <filter id="blur2px">
+      <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+    </filter>
+  </defs>
+</svg>
+
+<div class='hidden'>
+      <script>
+
+      function getViewportSize() {
+        if (typeof window.innerWidth !== 'undefined') {
+          return {
+            width  : window.innerWidth,
+            height : window.innerHeight
+          }
+        } else if (typeof document.documentElement !== 'undefined'
+            && typeof document.documentElement.clientWidth !== 'undefined'
+            && document.documentElement.clientWidth !== 0) {
+          return {
+            width  : document.documentElement.clientWidth,
+            height : document.documentElement.clientHeight
+          }
+        } else {
+          return {
+            width  : document.getElementsByTagName('body')[0].clientWidth,
+            height : document.getElementsByTagName('body')[0].clientHeight
+          }
+        }
+      }
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-638111-3', 'auto');
+
+      var viewport = getViewportSize();
+      ga('send', 'event', 'Viewport Initial', 'Size', viewport.width+'x'+viewport.height, {'nonInteraction': 1});
+      ga('send', 'event', 'Viewport Initial', 'Width', viewport.width, {'nonInteraction': 1});
+      ga('send', 'event', 'Viewport Initial', 'Height', viewport.height, {'nonInteraction': 1});
+
+      var rt = false;
+      window.addEventListener('resize orientationchange', function(){
+        if(rt) clearTimeout(rt);
+        rt = setTimeout(function(){
+          var viewport = getViewportSize();
+          ga('send', 'event', 'Viewport Resize', 'Size', viewport.width+'x'+viewport.height, {'nonInteraction': 1});
+          ga('send', 'event', 'Viewport Resize', 'Width', viewport.width, {'nonInteraction': 1});
+          ga('send', 'event', 'Viewport Resize', 'Height', viewport.height, {'nonInteraction': 1});
+        }, 500);
+      });
+
+      ga('send', 'pageview');
+
+      
+
+      // Track outgoing links
+      var links = document.getElementsByTagName('a');
+      for(var i = 0, l = links.length; i < l; i++){
+        var link = links[i];
+        if (link.href.indexOf('http') != -1) {
+          // We have a normal link that leads somewhere
+          if (link.href.indexOf('//' + document.location.host) == -1) {
+            // the link points to a different host
+            link.addEventListener('click', function(e){
+              var options = {}, href = this.href;
+              if (navigator.sendBeacon) {
+                options = { 'transport': 'beacon' }
+              }
+              else if ( !this.target || this.target == '' || this.target == '_self' ) {
+                options = { 'hitCallback': function(){document.location = href;} }
+                e.preventDefault();
+              }
+              ga('send', 'event', 'Outgoing Links', href, document.location.pathname + document.location.search, options);
+            });
+          }
+        }
+      }
+
+      </script>
+
+      <script type="text/javascript">
+      var google_tag_params = {
+      ecomm_prodid: [54310,51011,52226,54422,52223,51039,50328,52583,51993,51658,55582,53476,51001,51000,51513,52237,55578,53483,51003,51002,55587,53602,53094,53134,56363],
+      ecomm_pagetype: "category",
+      ecomm_totalvalue: [649,759,919,919,979,1599,1799,4859,217,429,509,509,509,509,539,549,549,589,589,589,589,609,619,619,629],
+      dynx_itemid: [54310,51011,52226,54422,52223,51039,50328,52583,51993,51658,55582,53476,51001,51000,51513,52237,55578,53483,51003,51002,55587,53602,53094,53134,56363],
+      dynx_pagetype: "searchresults",
+      
+      };
+      </script>
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 1055784650;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+      </script>
+      <noscript>
+      <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1055784650/?value=0&guid=ON&script=0"/>
+      </div>
+      </noscript>
+
+      <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+      <script type="text/javascript">
+      window.criteo_q = window.criteo_q || [];
+      window.criteo_q.push(
+      { event: "setAccount", account: 20478 },
+      { event: "setSiteType", type: "d" },
+      { event: "viewList", item: ["54310", "51011", "52226", "54422", "52223", "51039", "50328", "52583", "51993", "51658", "55582", "51000", "53476", "51001", "51513", "52237", "55578", "51002", "55587", "51003", "53483", "53602", "53134", "53094", "56363", "54872", "50763", "54933", "56392", "48567"] }
+      );
+      </script>
+
+      <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1608996452659962');
+      fbq('track', "PageView");
+      
+      
+
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1608996452659962&ev=PageView&noscript=1"
+      /></noscript>
+
+      <script>
+        (function(f,b){
+          var c;
+          f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+          f._hjSettings={hjid:26674, hjsv:3};
+          c=b.createElement("script");c.async=1;
+          c.src="//static.hotjar.com/c/hotjar-26674.js?sv=3";
+          b.getElementsByTagName("head")[0].appendChild(c);
+        })(window,document);
+      </script>
+
+</div>
+</footer></body></html>

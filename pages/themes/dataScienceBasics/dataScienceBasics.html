@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>dataScienceBasics</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#dataScienceBasics" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Data science basics</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<section><h1>Frame the concepts: Big data, Machine Learning, NLP, No SQL, Graph Database, Data Visualization</h1></section>
+<section><h2>Frame the concepts: Big data, Machine Learning, No SQL, Graph Database, NLP, Data Visualization</h2>
+	<section><h3 class="note">Big Data</h3>
+		<dl class="fa">
+			<dt>Collection of datasets being so large, that its difficult to process with the traditional techniques, like RDBMS</dt>
+			<dt>The rule of <b>V</b>s:</dt>
+			<dd>Volume - or how much are the data?</dd>
+			<dd>Variety - how diverse are different types of data?</dd>
+			<dd>Velocity - at what speed are the new data generated?</dd>
+			<dd>(Veracity - how accurate is the data?)</dd>
+		</dl>
+	</section>
+	<section><h3>Big Data - Tools and Techniques</h3>
+		<dl class="fa">
+			<dt><a href="http://hadoop.apache.org/">Apache Hadoop</a> - <span>The Apache™ Hadoop® project develops open-source software for reliable, scalable, distributed computing.</span></dt>
+			<dt>Python in Hadoop® ecosystem:</dt>
+			<dd>Use <a href="http://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming">Hadoop® Streaming API</a> and do Map-Reduce with simple python code.</dd>
+			<pre><code rel="Terminal" class="bash" style="width: 110%">
+				$HADOOP_HOME/bin/hadoop  jar $HADOOP_HOME/hadoop-streaming.jar \
+				-input myInputDirs \
+				-output myOutputDir \
+				-mapper myPythonScript.py \
+				-file myPythonScript.py
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Machine Learning</h3>
+		<blockquote cite="https://en.wikipedia.org/wiki/Machine_learning">Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) with data, without being explicitly programmed</blockquote>
+	</section>
+	<section><h3>Machine Learning</h3>
+		<dl class="fa">
+			<dt>Coined in 1959 by Arthur Samuel</dt>
+			<dt>Algorithm that can learn from data and predict new data states</dt>
+			<dd>Supervised and Unsupervised Learning</dd>
+			<dt>Interweaves the advantages in computational statistics, data mining, big data, neural networks, logic programming and rule-based computing</dt>
+		</dl>
+	</section>
+	<section><h3>Machine Learning with Python</h3>
+		<dl class="fa">
+			<dt><a href="http://www.numpy.org/">numpy</a></dt>
+			<dt><a href="https://pandas.pydata.org/">pandas</a></dt>
+			<dt><a href="https://www.tensorflow.org/">Tensorflow</a></dt>
+		</dl>
+	</section>
+	<section><h3>Natural Language Processing (NLP)</h3>
+		<dl class="fa">
+			<dt>Conceptualised in the 1950s</dt>
+			<dd>ELIZA by by Joseph Weizenbaum</dd>
+			<dd>MARGIE by Schank et all., 1975</dd>
+			<dt>Evolves rapidly with evolution of Machine Learning and Deep Learning</dt>
+			<dd>Google Translate</dd>
+			<dd>Inteligent Chat Bots</dd>
+		</dl>
+	</section>
+	<section><h3>NLP with Python</h3>
+		<dl class="fa">
+			<dt><a href="https://www.nltk.org/">NLTK</a></dt>
+			<dt><a href="https://stanfordnlp.github.io/CoreNLP/">Stanford CoreNLP</a></dt>
+		</dl>
+	</section>
+	<section><h3>NoSQL Data Stores</h3>
+		<dl class="fa">
+			<dt>Tries to solve the problems of storing and manipulating data, which can not be structured efficiently into tables</dt>
+			<dt>Variety of types, most popular:</dt>
+			<dd>Key-value pair</dd>
+			<dd>Document-oriented</dd>
+			<dd>Graph Database</dd>
+		</dl>
+	</section>
+		<section><h3>Python and NoSQL stores</h3>
+			<dl class="fa">
+				<dt><a href="https://pythonhosted.org/pickleDB/">pickleDB</a> for key-value pairs databases.</dt>
+				<dt><a href="https://api.mongodb.com/python/current/">PyMongo</a> for MongoDB document-oriented databases</dt>
+				<dt><a href="https://neo4j.com/developer/python/">Neo4j Python Driver</a> for Python Graph databases.</dt>
+			</dl>
+		</section>
+	</section>
+	<section><h3>Data Visualization</h3>
+		<dl class="fa">
+			<dt><a href="https://matplotlib.org/">Matplotlib</a> for classic visualizations</dt>
+			<dt><a href="https://bokeh.pydata.org/en/latest/">Bokeh</a> for interactive visualizations capable of handling very large and/or streaming datasets.</dt>
+			<dt><a href="http://lightning-viz.org/">Lightning</a> <a href="http://lightning-viz.org/clients/#python">python client</a> for reproducible and real-time visualization with Python and d3.js</dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>Anaconda notes</h1>
+	<p>Next sections demonstrate the usage of various Python's Data Science related packages. You can install them separatelly, as given in the slides, or you can skip the installations, and use the <a href="https://docs.anaconda.com/anaconda/install/">Anaconda</a> Python's distribution</a>, bundled with data science and machine learning related applications</p>
+</section>
+
+
+<section data-min="20"><h1>JupyterLab - the next-generation web-based user interface for Project Jupyter</h1></section>
+<section><h2>JupyterLab - the next-generation web-based user interface for Project Jupyter</h2>
+	<section><h3>Overview</h3>
+	<dl class="fa">
+		<dt>JupyterLab is the next-generation <span class="note">user interface</span> for Project Jupyter</dt>
+		<dt>It's a brand new implementation of the classic Jupyter Notebook, using the new Front-End technologies which allows for adding new features and extensions</dt>
+		<dt>The notebook document format used in JupyterLab is the same as in the classic Jupyter Notebook</dt>
+	</dl>
+	</section>
+	<section><h3>Overview</h3>
+	<dl class="fa">
+		<dt>JupyterLab offers an IDE-like experience to users</dt>
+		<dt>It puts together most of the instruments a data scientist need: code/text editors, terminals, image viewer, python console.</dt>
+		<dd>And they work in a synchronised way.</dd>
+		<dt>JupyterLab allows third-party sides to write extensions (<span class="note">npm packages</span>) for it through the JupyterLab public APIs</dt>
+	</dl>
+	</section>
+	<section><h3>Install JupyterLab</h3>
+	<dl class="fa">
+		<dt class="note">Conda</dt>
+		<dd><code>conda install -c conda-forge jupyterlab</code></dd>
+		<dt class="note">Pip</dt>
+		<dd><code>pip install jupyterlab</code></dd>
+		<dd>If installing using per user (--user), you must add the user-level bin directory to your PATH environment variable in order to launch jupyter lab</dd>
+		<dt class="note">Pipenv</dt>
+		<dd><code>pipenv install jupyterlab</code></dd>
+		<dd>In order to launch jupyter lab, you must activate the project’s virtualenv.</dd>
+		<dt>Reference: <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab>Installation</a></dt>
+	</dl>
+	</section>
+</section>
+<section><h2>Basic operations</h2>
+	<section><h3>Start the server</h3>
+		<dl class="fa">
+			<dt>Make sure you are in the folder, containing your project files</dt>
+			<dt>Activate the virtual environment and write:</dt>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				### start the server with Jupyter Lab front-end:
+				jupyter lab
+
+				### or
+				# start the server with Jupyter Notebook front-end:
+				jupyter notebook
+
+				### in case of problems: generate new config file:
+				jupyter lab --generate-config
+
+				# now start the server:
+				jupyter lab
+			</code></pre>
+			<dt>Jupyter Notebook will be opened automatically in your browser</dt>
+		</dl>
+	</section>
+	<section><h3>Stop the server</h3>
+		<dl class="fa">
+			<dt>Press <kbd>CTRL+C</kbd> on the Terminal running jupyterlab</dt>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				Shutdown this notebook server (y/[n])? y
+			</code></pre>
+			<dt>Or if you're lazy to type 'y', then double press <kbd>CTL+C</kbd> </dt>
+			<dt>Or just close the Terminal</dt>
+		</dl>
+	</section>
+	<section><h3 class="advanced">Managing Workspaces</h3>
+		<dl class="fa">
+			<dt>JupyterLab sessions always reside in a workspace</dt>
+			<dt>Workspaces contain the state of JupyterLab: the files that are currently open, the layout of the application areas and tabs, etc</dt>
+			<dt>The default workspace does not have a name and resides at the primary /lab URL</dt>
+			<dd><code>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab</code></dd>
+			<dt>All other workspaces have a name that is part of the URL:</dt>
+			<dd><code>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo</code></dd>
+			<dt>More on JupyterLab URLs and Workspaces: <a href="https://jupyterlab.readthedocs.io/en/stable/user/urls.html">JupyterLab URLs</a></dt>
+		</dl>
+	</section>
+	<section><h3>Working with Notebooks</h3>
+		<dl class="fa">
+			<dt><a href="https://nbviewer.org/github/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/JupyterNotebook_basics.ipynb">Jupyter Notebook Basics</a></dt>
+
+			<dt>reference: <a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html">Notebooks>Notebooks</a></dt>
+		</dl>
+	</section>
+</section>
+<section><h2>Upload your Jupyter Notebook to GitHub</h2>
+	<section>
+		<dl class="fa">
+			<dt>There is nothing different than pushing any other file to your github account:</dt>
+			<dd><span class="note">Add</span> your changes to the stage</dd>
+			<dd><span class="note">Commit</span> those changes</dd>
+			<dd><span class="note">Push</span> the branch to your GitHub repo</dd>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				# add your changes to the stage:
+				$ git add -A
+				# commit those changes:
+				$ git commit -m'__Describe your changes here__'
+				# push the branch (assuming "master" below)to your GitHub repo:
+				$ git push origin master
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Share/Render your JupyterNotebooks (GitHub Render)</h3>
+		<dl class="fa">
+			<dt>You can use <a href="https://github.com">github.com</a> to host your .ipynb files for free</dt>
+			<dt>GitHub can render .ipynb files. For more details check <a href="https://help.github.com/articles/working-with-jupyter-notebook-files-on-github/">github docs</a></dt>
+			<dd>when you click on it (the <code>.ipynb</code> extension) github will try to render the notebook in your browse</dd>
+			<dd>You can copy that URL and share it with anybody</dd>
+			<dd>Like that: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/JupyterNotebook_basics.ipynb">JupyterNotebook_basics</a></dd>
+		</dl>
+	</section>
+	<section><h3>Share/Render your JupyterNotebooks (nbviewer)</h3>
+		<p class="note">The preferred way</p>
+		<dl class="fa">
+			<dt><a href="https://nbviewer.jupyter.org/">nbviewer.jupyter.org</a> is a Web Service to render .ipynb files</dt>
+			<dt>You can render there your .ipynb files, hosted on github, or GoogleDrive, Dropbox, ...</dt>
+			<dt>Like that: <a href="https://nbviewer.org/github/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/JupyterNotebook_basics.ipynb">JupyterNotebook_introduction</a></dt>
+		</dl>
+	</section>
+</section>
+
+
+<section><h1>numpy</h1></section>
+<section><h2>numpy</h2>
+	<section><h3>numpy overview</h3>
+		<dl class="fa">
+			<dt><a href="https://pypi.org/project/numpy/">numpy</a> is a python package that adds support for:</dt>
+			<dd>large, multi-dimensional arrays and matrices</dd>
+			<dd>large collection of high-level mathematical functions to operate on these arrays</dd>
+			<dt>Written mainly in C langualge</dt>
+			<dt>numpy arrays and operations are much faster than Python's list equivalents.</dt>
+			<dt class="note">pandas is built on top of numpy</dt>
+		</dl>
+	</section>
+	<section><h3>data types</h3>
+		<dl class="fa">
+			<dt>Numpy supports much finer data types than Python </dt>
+			<dd><a href="https://docs.scipy.org/doc/numpy-1.14.0/user/basics.types.html">Data types @docs.scipy.org</a></dd>
+		</dl>
+	</section>
+	<section><h3>N-Dimensional Arrays</h3>
+		<dl class="fa">
+			<dt>The main object in numpy is the <span class="note">homogeneous</span> multidimensional array</dt>
+			<dt>It is a table of elements (usually numbers), <span class="note">all of the same type</span>, indexed by a tuple of positive integers for each dimension.</dt>
+			<dd>In numpy, dimensions are called <span class="note">axes</span></dd>
+			<dd>Number of axes defines the <span class="note">rank</span> of the array</dd>
+		</dl>
+	</section>
+	<section><h3>Examples</h3>
+		<dl class="fa">
+			<dt>numpy array examples in Jupyter Notebook:</dt>
+			<dd><a href="examples/numpy/NDArrays.html">See as html</a></dd>
+			<dd>Or play online at google colab:<a href="https://colab.research.google.com/drive/15rB08uVo-LVdcmPjqbnTnRiGW10_HAv2">NDArrays.ipynb</a></dd>
+		</dl>
+	</section>
+	<section><h3>References</h3>
+		<dl class="fa">
+			<dt><a href="https://docs.scipy.org/doc/numpy-1.13.0/user/quickstart.html#functions-and-methods-overview">Functions and Methods Overview</a></dt>
+			<dt><a href="https://pypi.org/project/numpy/">numpy</a> in PyPi</dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>pandas - Overview</h1></section>
+<section><h2>pandas - Overview</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/">pandas</a> is an open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language</dt>
+			<dt>pandas is great for data analysis and modeling</dt>
+			<dt>pandas combined with the IPython toolkit and other libraries creates environment for doing data analysis in Python, which excels in performance, productivity, and the ability to collaborate.</dt>
+		</dl>
+	</section>
+	<section><h3>Pandas Data Structures</h3>
+		<p style="font-size: 1.5em">The two primary data structures in pandas are <span class="note">Series</span> and <span class="note">DataFrame</span>.</p>
+	</section>
+</section>
+
+<section><h1>pandas - Series Object</h1></section>
+<section><h2>pandas - Series Object</h2>
+	<section><h3>Pandas Series Object</h3>
+		<dl class="fa">
+			<dt>A Pandas Series is <span class="note">a one-dimensional array</span> of indexed data, based on the NumPy ndarray.</dt>
+			<dt>But a Pandas Series object wraps both <span class="note">a sequence of values</span> and <span class="note">a sequence of indices</span></dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			import pandas as pd
+
+			ds = pd.Series([1,2,3,4])
+			print(ds)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			0    1
+			1    2
+			2    3
+			3    4
+			dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>Create Series with Explicit Indexing</h3>
+		<dl class="fa">
+			<dt>The explicit index definition gives the Series object additional capabilities compared to numpy arrays</dt>
+			<dd class="note">i.e. the index need not to be an integer, but can consist of values of any desired type</dd>
+		</dl>
+		<pre><code rel="Python" class="python">
+			ds = pd.Series([1,2,3,4], index=['a', 'b', 'c', 'd'])
+			print(ds)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			a    1
+			b    2
+			c    3
+			d    4
+			dtype: int6
+		</code></pre>
+	</section>
+	<section><h3>Create Series from dictionary</h3>
+		<dl class="fa">
+			<dt>By default, a Series index is drawn from <span class="note">the sorted keys</span> of the dict.</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			ds = pd.Series({
+				"d":4,
+				"a":1,
+				"c":3,
+				"b":2,
+				"e":5
+			})
+			print(ds)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			a    1
+			b    2
+			c    3
+			d    4
+			e    5
+			dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>Series Indexing</h3>
+		<dl class="fa">
+			<dt>You can use a single index value, or a list of indexes, or slicing</dt>
+			<pre><code rel="Python" class="python">
+				##get index object:
+				print(ds.index)
+				#Index(['apples', 'bananas', 'oranges'], dtype='object')
+
+				## numerical or keyword indexes
+				print(ds["a"])
+				print(ds[0])
+
+				## indexes as list:
+				print(ds[['a', 'c', 'e']])
+				#a    1
+				#c    3
+				#e    5
+				#dtype: int6
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Series slicing</h3>
+		<dl class="fa">
+			<dt>the Series also supports array-style operations such as slicing</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			## slicing
+			print(ds["a":"d"])
+			#a    1
+			#b    2
+			#c    3
+			#d    4
+			#dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>Altering index in place</h3>
+		<dl class="fa">
+			<dt>A Series’s index can be altered in place by assignment</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+			ds.index = ["A","B","C","D","E"]
+			print(ds)
+			#A    1
+			#B    2
+			#C    3
+			#D    4
+			#E    5
+			#dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>NumPy operations on Series</h3>
+		<pre><code rel="Python" class="python">
+			ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+			## filtering by value
+			ds[ds>2]
+			#c    3
+			#d    4
+			#e    5
+			#dtype: int64
+
+			## multiplication
+			ds*2
+			#a     2
+			#b     4
+			#c     6
+			#d     8
+			#e    10
+			#dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>Dictionary like operation on Series</h3>
+		<pre><code rel="Python" class="python">
+			ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+			"a" in ds
+			#True
+
+			"f" in ds
+			#False
+		</code></pre>
+	</section>
+	<section><h3>Missing Data</h3>
+		<dl class="fa">
+			<dt>Missing data can appear when we transform or make some operations on Series oject. These data values are marked as NaN (Not A Number) values</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			ds1 = pd.Series([1,3], index=["a","c"])
+			ds2 = pd.Series([2,3], index=["b","c"])
+
+			print(ds1+ds2)
+			#a    NaN
+			#b    NaN
+			#c    6.0
+			#dtype: float64
+		</code></pre>
+	</section>
+	<section><h3>All Examples</h3>
+		<dl class="fa">
+			<dt>Examples as HTML: <a href="examples/pandas/Series/Series.html">Series.html</a></dt>
+			<dt>Examples as ipynb: <a href="examples/pandas/Series/Series.ipynb">Series.ipynb</a></dt>
+			<dt>Examples as ipynb on Google Colab: <a href="https://colab.research.google.com/drive/1_Y21Ri_8nWVHu0PuDF5ammpPSD0Tduw2">Series.ipynb on Google Colab</a></dt>
+		</dl>
+	</section>
+	<section><h3>References</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">pandas.Series @pandas.pydata.org</a></dt>
+		</dl>
+	</section>
+</section>
+
+ <section><h1>pandas - DataFrame Object</h1></section>
+<section><h2>pandas - DataFrame Object</h2>
+	<section><h3>Pandas DataFrame Object</h3>
+		<dl class="fa">
+			<dt>a DataFrame is an analogue of <span class="note">a two-dimensional array or table</span> with flexible <span class="note">row and column indices</span>.</dt>
+			<dt>You can think of a DataFrame as a sequence of <span class="note">aligned (sharing same index) Series objects </span></dt>
+			<dd>i.e. each column in a DataFrame is represented by a Series Object</dd>
+		</dl>
+	</section>
+	<section><h3>Create DataFrame from a single Series object.</h3>
+		<dl class="fa">
+			<dt>A DataFrame is a collection of Series objects, and a single-column DataFrame can be constructed from a single Series.</dt>
+			<pre><code rel="Python" class="python">
+				# create Series Object:
+				prices_ds = pd.Series([1.5, 2, 2.5, 3],
+										index=["apples", "oranges", "bananas", "strawberries"])
+
+				# create DataFrame Object from prices Series:
+				prices_df = pd.DataFrame(prices_ds)
+				print(prices_df)
+
+				#                0
+				#apples        1.5
+				#oranges       2.0
+				#bananas       2.5
+				#strawberries  3
+			</code></pre>
+			<dt>We can pass columns names, instead of defaults</dt>
+			<pre><code rel="Python" class="python">
+				# create DataFrame Object from prices Series:
+				prices_df = pd.DataFrame(prices_ds,columns=["prices"])
+				print(prices_df)
+				#              prices
+				#apples           1.5
+				#oranges          2.0
+				#bananas          2.5
+				#strawberries     3.0
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Create DataFrame from a dictionary of Series object.</h3>
+		<dl class="fa">
+			<dt>A DataFrame can be thought as a dictionary of Series objects, where the dictionary <span class="note">keys</span> represent the <span class="note">columns names</span>.</dt>
+		</dl>
+		<pre><code rel="Python" class="python" style="width: 100%; font-size: .9em;">
+			prices_ds = pd.Series([1.5, 2, 2.5, 3],
+									index=["apples", "oranges", "bananas", "strawberries"])
+
+			suppliers_ds = pd.Series(["supplier1", "supplier2", "supplier4", "supplier3"],
+										 index=["apples", "oranges", "bananas", "strawberries"])
+
+			fruits_df = pd.DataFrame({
+				"prices": prices_ds,
+				"suppliers": suppliers_ds
+			})
+			print(fruits_df)
+			#              prices  suppliers
+			#apples           1.5  supplier1
+			#oranges          2.0  supplier2
+			#bananas          2.5  supplier4
+			#strawberries     3.0  supplier3
+		</code></pre>
+	</section>
+	<section><h3>All Examples</h3>
+		<dl class="fa">
+			<dt>Examples as HTML: <a href="examples/pandas/DataFrame/DataFrameOverview/DataFrameOverview.html">DataFrameOverview.html</a></dt>
+			<dt>Examples as ipynb: <a href="examples/pandas/DataFrame/DataFrameOverview/DataFrameOverview.ipynb">DataFrameOverview.ipynb</a></dt>
+		</dl>
+	</section>
+	<section><h3>More on pandas.DataFrame() class</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">class pandas.DataFrame() @pandas.pydata.org</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>Create DataFrame form csv files</h1></section>
+<section><h2>DataFrame form csv files</h2>
+	<section><h3>note</h3>
+		<dl class="fa">
+			<dt>In next slides, the term <span class="note">csv</span> is used in its broader meaning - i.e. it will be used for <span class="note">tab/semicolon/whatsoever separated values</span></dt>
+		</dl>
+	</section>
+	<section><h3>the Dataset</h3>
+		<dl class="fa">
+			<dt>In next examples the csv files used are taken from <a href="https://datasets.imdbws.com/">IMDb data files available for download</a></dt>
+			<dt>For test purposes, a shorten versions of the files, containing the first 500 records from each, are available:</dt>
+			<dd><a href="examples/pandas/read_csv/title.basics_sample_500.tsv">title.basics_sample_500.tsv</a></dd>
+			<dd><a href="examples/pandas/read_csv/name.basics_sample_500.tsv">name.basics_sample_500.tsv</a></dd>
+		</dl>
+	</section>
+	<section><h3><code>read_csv</code></h3>
+		<dl class="fa">
+			<dt><code>read_csv</code> is the preferred method for loading csv data into a DataFrame object</dt>
+			<dt>It provides a flourish amount of properties and methods for fine-tune loading, cleaning and manipulation of csv files.</dt>
+	</section>
+	<section><h3>Examples</h3>
+		<dl class="fa">
+			<dt>examples as HTML: <a href="examples/pandas/read_csv/imdb.html">imdb.html</a></dt>
+			<dt>example as ipynb: <a href="examples/pandas/read_csv/imdb.ipynb">imdb.ipynb</a></dt>
+		</dl>
+		</dl>
+	</section>
+	<section><h3>More on pandas.read_csv</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">pandas.read_csv @pandas.pydata.org</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="50"><h1>Processing various file formats with pandas</h1></section>
+<section><h2>Processing various file formats with pandas</h2>
+	<section><h3>CSV & text files</h3>
+	</section>
+</section>
+
+<section><h1>DataFrames Manipulations</h1></section>
+<section><h2>DataFrames Manipulations</h2>
+	<dl class="fa">
+		<dt>Examples as HTML: <a href="examples/pandas/DataFrame/DataFramesManipulations/DataFramesManipulations.html">DataFramesManipulations.html</a></dt>
+		<dt>Examples as ipynb: <a href="examples/pandas/DataFrame/DataFramesManipulations/DataFramesManipulations.ipynb">DataFramesManipulations.ipynb</a></dt>
+	</dl>
+</section>
+
+<section><h1>DataFrames Merge (aka SQL Join)</h1></section>
+<section><h2 class="advanced">DataFrames Merge</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt class="note"><code>merge</code> method in pandas is analogues to SQL <code>join</code> operation!</dt>
+			<dt>merge is the entry point for all standard database join operations between DataFrame objects:</dt>
+			<dt>The related <code>DataFrame.join</code> method, uses merge internally for the index-on-index (by default) and column(s)-on-index join.</dt>
+		</dl>
+		<a href="images/SQL_join_as_sets.jpg"><img src="images/SQL_join_as_sets.jpg" style="height: 30vh;"></a>
+	</section>
+	<section><h3>Syntax</h3>
+		<pre><code rel="Syntax" class="shell" data-noescape style="font-size: .9em">
+			pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None,
+							 left_index=False, right_index=False, sort=True,
+							 suffixes=('_x', '_y'), copy=True, indicator=False,
+							 validate=None)
+		</code></pre>
+	</section>
+	<section><h3>the datasets</h3>
+		<dl class="fa">
+			<dt><a href="examples/pandas/DataFrame/MergeJoin/datasets/developers/developers.csv">developers.csv</a> and <a href="examples/pandas/DataFrame/MergeJoin/datasets/developers/languages.csv">languages.csv</a></dt>
+		</dl>
+		<pre><code rel="developers" class="shell" data-noescape>
+			did;  dname
+			1;    Ivan
+			2;    Asen
+			3;    Maria
+			4;    Stoyan
+			5;    Aleks
+			6;    Svetlin
+		</code></pre>
+		<pre><code rel="languages" class="shell" data-noescape>
+			did;  language
+			2;    "C++"
+			3;    "Python"
+			3;    "R"
+			6;    "Java"
+		</code></pre>
+	</section>
+	<section><h3>Inner Join</h3>
+		<table>
+			<tr>
+				<td style="vertical-align:middle;"><a href="images/inner-join.png"><img src="images/inner-join.png" style="float: left"></a></td>
+				<td>Return only the rows in which the left table have matching keys in the right table</td>
+			</tr>
+		</table>
+		<pre><code rel="Python" class="python">
+			dev_langs_inner = pd.merge(devs,langs,on="did",how='inner')
+			print(dev_langs_inner)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			did dname language
+			0 2 Asen  "C++"
+			1 3 Maria "Python"
+			2 3 Maria "R"
+			3 6 Svetlin "Java"
+		</code></pre>
+	</section>
+	<section><h3>Output Join</h3>
+		<table>
+			<tr>
+				<td style="vertical-align:middle;"><a href="images/full-outer-join.png"><img src="images/full-outer-join.png" style="float: left"></a></td>
+				<td>Returns all rows from both tables, join records from the left which have matching keys in the right table.</td>
+			</tr>
+		</table>
+		<pre><code rel="Python" class="python">
+			dev_langs_outer = pd.merge(devs,langs,on="did",how='outer')
+			dev_langs_outer
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			did dname language
+			0 1 Ivan  NaN
+			1 2 Asen  "C++"
+			2 3 Maria "Python"
+			3 3 Maria "R"
+			4 4 Stoyan  NaN
+			5 5 Aleks NaN
+			6 6 Svetlin "Java"
+		</code></pre>
+	</section>
+	<section><h3>Left outer join</h3>
+		<table>
+			<tr>
+				<td style="vertical-align:middle;"><a href="images/left-outer-join.png"><img src="images/left-outer-join.png" style="float: left"></a></td>
+				<td>Return all rows from the left table, and any rows with matching keys from the right table.</td>
+			</tr>
+		</table>
+		<pre><code rel="Python" class="python">
+			dev_langs_left_outer = pd.merge(devs,langs,on="did",how='left')
+			dev_langs_left_outer
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			did dname language
+			0 1 Ivan  NaN
+			1 2 Asen  "C++"
+			2 3 Maria "Python"
+			3 3 Maria "R"
+			4 4 Stoyan  NaN
+			5 5 Aleks NaN
+			6 6 Svetlin "Java"
+		</code></pre>
+	</section>
+	<section><h3>Right outer join</h3>
+		<table>
+			<tr>
+				<td style="vertical-align:middle;"><a href="images/right-outer-join.png"><img src="images/right-outer-join.png" style="float: right"></a></td>
+				<td>Return all rows from the right table, and any rows with matching keys from the right table.</td>
+			</tr>
+		</table>
+		<pre><code rel="Python" class="python" style="font-size: 1em">
+			dev_langs_right_outer = pd.merge(devs,langs,on="did",how='right')
+			dev_langs_right_outer
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			did dname language
+			0 2 Asen  "C++"
+			1 3 Maria "Python"
+			2 3 Maria "R"
+			3 6 Svetlin "Java"
+		</code></pre>
+	</section>
+	<section><h3>All Examples</h3>
+		<dl class="fa">
+			<dt>Examples as HTML: <a href="examples/pandas/DataFrame/MergeJoin/DataFramesMerge.html">DataFramesMerge.html</a></dt>
+			<dt>Examples as ipynb: <a href="examples/pandas/DataFrame/MergeJoin/DataFramesMerge.ipynb">DataFramesMerge.ipynb</a></dt>
+		</dl>
+	</section>
+	<section><h3>resources</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html#pandas.merge">merge @pandas.pydata.org</a></dt>
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/merging.html">Merge, join, and concatenate @pandas.pydata.org</a></dt>
+			<dt><a href="https://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#compare-with-sql-join">Comparison with SQL @pandas.pydata.org</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>DataFrames Join</h1></section>
+<section><h2>DataFrames Join</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>Join columns with other DataFrame either <span class="note">on index</span> or on a key column</dt>
+			<dt>By default, join() will join the DataFrames <span class="note">on their indices</span></dt>
+			<dt>Efficiently Join multiple DataFrame objects <span class="note">by index</span> at once by passing a list</dt>
+		</dl>
+	</section>
+
+	<section><h3>All Examples</h3>
+		<dl class="fa">
+			<dt>Examples as HTML: <a href="examples/pandas/DataFrame/MergeJoin/DataFramesJoin.html">DataFramesJoin.html</a></dt>
+			<dt>Examples as ipynb: <a href="examples/pandas/DataFrame/MergeJoin/DataFramesJoin.ipynb">DataFramesJoin.ipynb</a></dt>
+		</dl>
+	</section>
+	<section><h3>references</h3>
+		<dl class="fa">
+			<dt><a href="http://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook-sql">Cookbook</a> @<a href="http://pandas.pydata.org/pandas-docs/stable/">pandas.pydata.org</a></dt>
+			<dt><a href="http://pandas.pydata.org/pandas-docs/stable/merging.html">Merge, join, and concatenate</a> @<a href="http://pandas.pydata.org/pandas-docs/stable/">pandas.pydata.org</a></dt>
+			<dt><a href="http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#compare-with-sql-join">Comparison with SQL JOIN</a> @<a href="http://pandas.pydata.org/pandas-docs/stable/">pandas.pydata.org</a></dt>
+		</dl>
+	</section>
+	<section><h3>YouTube</h3>
+		<iframe src="https://www.youtube.com/embed/8K8Bs7z6d2M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+</section>
+
+
+
+<!--
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1</h2>
+	<section><h3>The Task</h3>
+
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: dataScienceBasics">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section>
+
+ -->
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>OOP_basics</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+	<style type="text/css">
+		.reveal section iframe{
+			text-align: center;
+			margin: 0 auto;
+			height: 70vh;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#OOP_basics" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="160"><h1>OOP in Python</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+<section data-min="5" id="objectOrientedProgrammingParadigm"><h1>Object-oriented Programming Paradigm</h1></section>
+<section><h2>Object-oriented Programming Paradigm</h2>
+	<section><h3>A step over Procedural Programming</h3>
+		<dl class="fa">
+			<dt>In procedural-languages (C, Fortran, Pascal) the data structures are separated from algorithms of the software entities (a step over Assembly languages)</dt>
+			<dt>But in big projects (consider CRM) it is:
+			<dd>difficult to describe the problem solely in terms of procedures/functions.</dd>
+			<dd>more difficult to trace which function manipulates which data.</dd>
+		</dl>
+	</section>
+	<section><h3>The benefits</h3>
+		<dl class="fa">
+			<dt>A higher level of abstraction for solving real-life problems.</dt>
+			<dt>The software system can be think in therms of objects, communicating with each other.</dt>
+			<dt>Objects are reusable software components, as each encapsulates the data and logic for its operation.</dt>
+			<dd>A black-box, with input/output, which do what it has to do.</dd>
+		</dl>
+	</section>
+	<section><h3>OOP vs Procedural Paradigms</h3>
+		<a href="images/OOP_vs_Procedural.png"><img src="images/OOP_vs_Procedural.png"></a>
+	</section>
+</section>
+
+<section data-min="10" id="oopMainConcepts"><h1>OOP - Main Concepts</h1></section>
+<section><h2>OOP - Main Concepts</h2>
+	<section><h3>Class</h3>
+		<dl class="fa">
+			<dt>A class is a blueprint, template, or prototype that defines and describes objects attributes (data) and behaviour(methods)</dt>
+			<dt>Can be seen as a user-defined data type</dt>
+		</dl>
+	</section>
+	<section><h3>Object</h3>
+		<dl class="fa">
+			<dt>An <span class="note">instance</span> of a class - an entity of given class, that can be used in a program</dt>
+			<dt>Instances of same class have similar properties and behaviour</dt>
+		</dl>
+	</section>
+	<section><h3>Instances of a class - diagram</h3>
+		<a href="images/Objects_Comunication.png"><img src="images/Objects_Comunication.png" style="height: 70vh"></a>
+	</section>
+	<section><h3>Inheritance</h3>
+		<dl class="fa">
+			<dt>A class can <span class="note">inherit</span> attributes and methods from another base class, and at the same time to define its own.</dt>
+		</dl>
+		<a href="images/InheritanceOverview.png"><img src="images/InheritanceOverview.png"></a>
+	</section>
+</section>
+
+
+<section data-min="10" id="classesAndObjectsInPython"><h1>Classes and Objects in Python</h1></section>
+<section><h2>Classes and Objects in Python</h2>
+	<section><h3>Minimal Class definition</h3>
+		<p>The minimal class definition in Python looks like:</p>
+		<pre><code rel="Syntax" class="python">
+			class ClassName:
+			    pass
+		</code></pre>
+		<pre><code rel="Python" class="python">
+			# let's create the class Person (dummy, but real):
+			class Person:
+				pass
+		</code></pre>
+	</section>
+
+	<section><h3>Object Creation</h3>
+		<p>In Python, it's simple:</p>
+		<pre><code rel="Syntax" class="python">
+			object_name = ClassName()
+		</code></pre>
+		<pre><code rel="Python" class="python">
+			# create Person class (still dummy):
+			class Person:
+				pass
+
+			# create objects of class Person:
+			pesho = Person()
+			maria = Person()
+
+			# let's check:
+			print( type(pesho) )
+			print( type(maria) )
+			# &lt;class '__main__.Person'&gt;
+			# &lt;class '__main__.Person'&gt;
+		</code></pre>
+	</section>
+	<section>
+		<p>Objects created from the <b>same <code>class</code></b> have <b>same <code>type</code></b>, but they are different entities:</p>
+		<pre><code rel="Python" class="python">
+			class Person:
+				pass
+
+			maria = Person()
+			pesho = Person()
+
+			print( type(pesho) == type(maria) )
+			print(pesho == maria )
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			True
+			False
+		</code></pre>
+	</section>
+</section>
+
+<section data-min="10" id="Attributes"><h1>Attributes</h1></section>
+<section><h2>Attributes</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>The <span class="note">attributes</span> describes an object's characteristics. I.e. <span class="note">specific data</span> which characterize the object.</dt>
+			<dt>Usually, objects from same class, have same attributes, but with different values.</dt>
+			<dt>In Python,  we can dynamically create arbitrary new attributes for existing objects</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+				class Person:
+					pass
+
+				maria = Person()
+				pesho = Person()
+
+				# only maria object will have the attribute 'name'. Not a good practice...
+				maria.name = 'Maria Popova'
+			</code></pre>
+	</section>
+	<section><h3>Accessing Object's Attributes - the <span class="note">dot notation</span></h3>
+		<pre><code rel="Syntax" class="python">
+			# write in object attribute:
+			object_name.attribute = "value of any type"
+
+			# read from attribute:
+			var = object_name.attribute
+		</code></pre>
+		<pre><code rel="Python" class="python" style="font-size: .9em">
+			maria = Person()
+
+			# write in object attribute:
+			maria.name = "Maria"
+			print(maria.name)
+
+			# read from attribute:
+			mn = maria.name
+			print(mn)
+		</code></pre>
+		<p>As we'll see later, this is not the proper way <span class="note"> to create</span> object's attributes in Python. This is an example of dot notation, used to <span class="note">access</span> object's attributes</p>
+	</section>
+	<section><h3 class="advanced">Attributes - internal</h3>
+		<dl class="fa" style="font-size: .8em">
+			<dt>Attributes are stored internally in a dictionary structure</dt>
+			<dt>Each object has associated dictionary attribute, named <code>__dict__</code>, which stores an object's (writeable) attributes</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			class Person:
+				pass
+
+			maria = Person()
+
+			# set attribute:
+			maria.name = "Maria"
+			maria.age = 100
+
+			print(maria.__dict__)
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			{'name': 'Maria', 'age': 100}
+		</code></pre>
+	</section>
+	<section><h3>Class Attributes</h3>
+		<dl class="fa">
+			<dt>You can define Class Attributes, which <span class="note">will be shared across</span> all class instances (the objects)</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			class Person:
+				name = "Anonymous"
+				age = 100
+
+			maria = Person()
+			pesho = Person()
+
+			print(maria.name, maria.age)
+			print(pesho.name, pesho.age)
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			Anonymous 100
+			Anonymous 100
+		</code></pre>
+	</section>
+</section>
+
+<section data-min="10" id="Methods"><h1>Methods</h1></section>
+<section><h2>Methods</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A method is a function that <span class="note">belongs to</span> a class.</dt>
+			<dt>Class methods specify the class <span class="note">behaviour</span></dt>
+		</dl>
+	</section>
+	<section><h3>Syntax</h3>
+		<pre><code rel="Syntax" class="python">
+			class ClassName:
+				def method_name(self):
+					pass
+		</code></pre>
+		<dl class="fa">
+			<dt>Note, that <span class="note">you must define at least one parameter in the method</span>.</dt>
+			<dt>It will take (automatically) a reference to the object, which called that method.</dt>
+			<dt>You can name the parameter as you wish, but the <span class="note">convention is to name it <code>self</code></span></dt>
+		</dl>
+	</section>
+	<section><h3>Syntax - example</h3>
+		<pre><code rel="Python" class="python">
+			class Person:
+				def greet(self):
+					print("Hi there! I'm", self.name)
+
+			# create some objects of class Person:
+			maria = Person()
+			maria.name = "Maria Popova"
+			pesho = Person()
+			pesho.name = "Pesho"
+
+			# call greet() method on maria. Python will send the maria object reference to the self parameter.
+			maria.greet()
+			# call greet() method on pesho
+			pesho.greet()
+
+			# OUTPUT:
+			# Hi there! I'm Maria Popova
+			# Hi there! I'm Pesho
+		</code></pre>
+	</section>
+	<section><h3 class="advanced">more on self:</h3>
+		<p>When a method is invoked from an object, <span class="note">Python automatically passes the object reference to the first parameter in the method definition</span>.</p>
+		<pre><code rel="Python" class="python">
+			class TestSelf:
+				def test(self, obj):
+					print(self == obj)
+
+			obj1 = TestSelf()
+
+			# lets check if obj1 == self
+			obj1.test( obj1 )
+
+			# True
+		</code></pre>
+	</section>
+</section>
+
+<section data-min="10" id="classConstructor"><h1>Class Constructor
+	<br><br>the <code class="note">__init__()</code> method</h1>
+</section>
+<section><h2><code class="note">__init__()</code> method</h2>
+	<section><h3>What is a Class Constructor</h3>
+		<dl class="fa">
+			<dt>Class Constructor is <span class="note">a method, called automatically when each new object is created</span>.</dt>
+			<dt>A class constructor defines the action which will happens when a new object instance is created.</dt>
+			<dt>Usually, this actions include setting an initial value for the object attributes.</dt>
+		</dl>
+	</section>
+	<section><h3>Syntax</h3>
+		<dl class="fa">
+			<dt>In Python, the Class Constructor is implemented by a special method named <code class="note">__init__()</code></dt>
+			<pre><code rel="Syntax" class="python">
+				class ClassName:
+					def __init__(self):
+						pass
+			</code></pre>
+			<dt>Example - note that the <code>__init__</code> method is called each time an object is created:</dt>
+			<pre><code rel="Python" class="python">
+				# class definition
+				class ClassA:
+					def __init__(self):
+						print("An object of ClassA is created!")
+
+				# objects creation:
+				obj1 = ClassA()
+				obj2 = ClassA()
+
+				# output:
+				# An object of ClassA is created!
+				# An object of ClassA is created!
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Person Class Constructor - Example1</h3>
+		<dl class="fa">
+			<dt>Constructor is the place, where we set the initial instance attributes:</dt>
+			<pre><code rel="Python" class="python">
+				class Person:
+					def __init__(self, name, age):
+						self.name = name
+						self.age = age
+
+					def greet(self):
+						print(f"Hi there! I'm {self.name}, {self.age} years old!")
+
+				maria = Person("Maria Popova", 25)
+				pesho = Person("Pesho", 27)
+
+				maria.greet()
+				pesho.greet()
+
+				# Hi there! I'm Maria Popova, 25 years old!
+				# Hi there! I'm Pesho, 27 years old!
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Person Class Constructor - Example2</h3>
+		<dl class="fa">
+			<dt>Note, that instance methods are just an ordinary Python functions, so we can use everything we know on functions in instance methods:</dt>
+			<pre><code rel="Python" class="python">
+				class Person:
+					def __init__(self, sur_name="", **kw):
+						self.sur_name = sur_name
+						self.name = kw['name']
+						self.age = kw['age']
+
+					def greet(self):
+						print(f"Hi there! I'm {self.name}, {self.age} years old!")
+
+				maria = Person(name="Maria", sur_name="Popova", age=25)
+				pesho = Person(age=27, name="Petar")
+
+				maria.greet()
+				pesho.greet()
+			</code></pre>
+		</dl>
+	</section>
+</section>
+
+<section data-min="15" id="magicDunderMethods"><h1>Magic (dunder) methods</h1></section>
+<section><h2>Magic (dunder) methods</h2>
+	<section>
+		<dl class="fa">
+			<dt>Besides the <code class="note">__init__()</code> methods in Python, there are many other  <span class="note">predefined special methods</span>, also called <span class="note">magic (dunder) methods</span>.</dt>
+			<dd>The <b>double underscore</b> is often called <b>dunder</b>, thus the methods - <b>dunder methods</b>.</dd>
+			<dt>Reference: <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">Special method names @python.org</a></dt>
+		</dl>
+	</section>
+	<section><h3>__str__ method</h3>
+		<dl class="fa">
+			<dt>Called by <code>str(object)</code>, <code>format()</code> and <code>print()</code> built-in functions  to compute the “informal” or nicely printable string representation of an object.</dt>
+			<dt>You can define inside a class the <code>__str__()</code> method which will be used, when you call the str(), format() or print() functions of a class instance</dt>
+			<dt class="note">The return value must be a string!</dt>
+			<pre><code rel="Python" class="python">
+				class Person:
+					def __init__(self, name, age):
+						self.name = name
+						self.age = age
+
+					def __str__(self):
+						return f"name = {self.name}\nage = {self.age}\n"
+
+				maria = Person("Maria Popova", 25)
+
+				print(maria)
+				# name = Maria Popova
+				# age = 25
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>__repr__ method</h3>
+		<dl class="fa">
+			<dt>Called by the repr() built-in function, which is typically used for debugging</dt>
+			<dt class="note">The return value must be a string!</dt>
+			<dt>if a class has only the __repr__ method and no __str__ method, __repr__ will be applied in the situations, where __str__would be applied</dt>
+			<pre><code rel="Python" class="python">
+				class Person:
+					def __init__(self, name, age):
+						self.name = name
+						self.age = age
+
+					def __repr__(self):
+					return f"""
+						# This is representation of an object:
+						obj = Person()
+						obj.name = {self.name}
+						obj.age = {self.age}
+					"""
+
+				maria = Person("Maria Popova", 25)
+
+				print(maria)
+			</code></pre>
+			<p>Note, that the __repr__ method will be invoked, when <code>print(maria)</code> is executed!</p>
+		</dl>
+	</section>
+</section>
+
+<section data-min="15" id="exercisesOnClassConstructorAndDunderMethods"><h1>Exercises on Class Constructor and dunder methods</h1></section>
+<section><h2>Exercises on Class Constructor and dunder methods</h2>
+	<section><h3>The BankAccount Class</h3>
+		<dl class="fa">
+			<dt>Create a BankAccount class, and two objects, as given in the template code</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			class BankAccount():
+				pass
+
+			maria_account = BankAccount("Maria", 1_300)
+			pesho_account = BankAccount("Pesho", 100)
+
+			print(maria_account)
+			print(maria_account)
+
+			# OUTPUT:
+			#BankAccount:
+			# owner = Maria
+			# balance = 1300
+			#BankAccount:
+			# owner = Pesho
+			# balance = 100
+		</code></pre>
+	</section>
+</section>
+
+<section data-min="10" id="encapsulationAndDataHiding"><h1>Encapsulation and Data Hiding</h1></section>
+<section><h2>Encapsulation and Data Hiding</h2>
+	<section><h3></h3>
+		<dl class="fa">
+			<dt>Encapsulation is one of the fundamental concepts in object-oriented programming (OOP), which describes the idea of <span class="note">wrapping data and the methods that work on these data within one unit - an object</span></dt>
+			<dt>This puts restrictions on accessing variables and methods directly in order to prevent the accidental modification of data.</dt>
+			<dt>In classic OOP languages (C++, Java,...) we can define a class member as: <span class="note">private</span>, <span class="note">protected</span> or <span class="note">public</span></dt>
+			<dt>In Python we do not have such language mechanisms, but we can use next Conventions:</dt>
+			<table style="font-size: .8em">
+				<tr>
+					<th>Naming</th>
+					<th>Type</th>
+					<th>Meaning</th>
+				</tr>
+				<tr>
+					<td>name</td>
+					<td>Public</td>
+					<td>Attributes, that can be freely used inside or outside of a class definition.</td>
+				</tr>
+				<tr>
+					<td>_name</td>
+					<td>Protected</td>
+					<td>Protected attributes should not be used outside of the class definition, unless inside of a subclass definition.</td>
+				</tr>
+				<tr>
+					<td>__name</td>
+					<td>Private</td>
+					<td>This kind of attribute should be inaccessible and invisible. It's neither possible to read nor write to those attributes, except inside of the class definition itself.</td>
+				</tr>
+			</table>
+		</dl>
+	</section>
+	<section><h3>Private Attributes</h3>
+		<p class="note">Python did not provide a truly <b>private attributes!</b></p>
+		<p>The dunder attributes are just prefixed with the <code>_ClassName</code></p>
+		<pre><code rel="Python" class="python">
+			class Person:
+				def __init__(self, name, age):
+					self.name = name
+					self.__age = age
+
+				def __str__(self):
+					return "name = {}; __age = {}".format(self.name, self.__age)
+
+			maria = Person("Maria Popova", 25)
+
+			# let's try to change Maria's age:
+			maria.__age = 100
+			print("maria.__age is set to ", maria.__age)
+			print(maria)
+
+			# but __age is not hidden! Look:
+			maria._Person__age = 100
+			print("maria.__age is set to ", maria.__age)
+			print(maria)
+		</code></pre>
+	</section>
+	<section><h3>BankAccount and Client Example</h3>
+		<pre><code rel="Python" class="python" style="min-height:90vh">
+			class BankAccount(object):
+				"""Represent a simplified bank account
+
+				Attributes:
+					balance (float): current balance
+					owner (string): owner name
+				"""
+
+				def __init__(self, owner_obj, initial_balance, currency):
+					self.owner = owner_obj.get_name()
+					self.__balance = initial_balance
+					self.currency = currency
+
+				def deposit(self, amount):
+					self.__balance += amount
+
+				def withdraw(self, amount):
+					if amount > self.__balance:
+						print("Not enough funds!")
+						return False
+					else:
+						self.__balance -= amount
+
+				def report(self):
+					print("{} has {}{}".format(self.owner, self.__balance, self.currency))
+
+			class Client(object):
+				"""docstring for Client"""
+				def __init__(self, first_name, sur_name, addres):
+					self.first_name = first_name
+					self.sur_name = sur_name
+					self.addres = addres
+
+				def get_name(self):
+					return "{} {}".format(self.first_name, self.sur_name)
+
+			# make client objects
+			maria = Client("Maria", "Popova", {
+				"town": "Sofia",
+				"street": "Nezabravka",
+				"number": 14
+			})
+
+			pesho = Client("Pesho", "Ivanov", {
+				"town": "Sofia",
+				"street": "Nezabravka",
+				"number": 99
+			})
+
+
+			# make maria's account:
+			maria_account = BankAccount(maria, 0, "lv")
+			maria_account.deposit(100)
+
+			# note that everyone can change the "hidden" field:
+			maria_account._BankAccount__balance = 1_000_000
+			maria_account.report()
+
+			# make pesho's account:
+			pesho_account = BankAccount(pesho, 0, "$")
+			pesho_account.deposit(999)
+			pesho_account.report()
+
+		</code></pre>
+	</section>
+</section>
+
+<section data-min="10" id="inspectingClassesAndObjects"><h1>Inspecting Classes and Objects</h1></section>
+<section><h2>Inspecting Classes and Objects</h2>
+	<section><h3><code>__dict__ - revealing object's dictionary</code></h3>
+		<pre><code rel="Syntax" class="python">
+			class Person:
+				def __init__(self, name, age):
+					self.name = name
+					self.__age = age
+
+			maria = Person("Maria Popova", 25)
+
+			# inspect object attributes dictionary:
+			print( maria.__dict__ )
+
+			# inspect class attributes dictionary:
+			print( Person.__dict__ )
+		</code></pre>
+	</section>
+	<section><h3><code>dir()</code> - revealing all object's attributes</h3>
+		<dl class="fa">
+			<dt>The built-in function <code>dir()</code> used with an object name as argument will reveal most of the attributes defined for that object. <span style="font-size: .9em">Check <a href="https://docs.python.org/3/library/functions.html#dir">dir() on python3 docs</a> for more information.</span></dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			class Person:
+				def __init__(self, name, age):
+					self.name = name
+					self.__age = age
+
+			maria = Person("Maria Popova", 25)
+
+			print("maria has next attributes:")
+			print( dir(maria) )
+
+			# of course, dir() is calling the __dir__() method on the object, but it's better to use the function call, though you can do that:
+			print( maria.__dir__() )
+		</code></pre>
+	</section>
+	<section><h3><code>id()</code> - object identity</h3>
+		<dl class="fa">
+			<dt>The built-in <code>id()</code> functions returns the "identity" of an object.</dt>
+			<dd>an integer which is guaranteed to be unique and constant for this object during its lifetime</dd>
+			<dd>In CPython it is the address of memory where the object lives</dd>
+		</dl>
+	</section>
+	<section><h3><code>id()</code> - example</h3>
+		<pre><code rel="Python" class="python">
+			x = 42
+			y = x
+
+			print( id(x) )
+			print( id(y) )
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			10920736
+			10920736
+		</code></pre>
+	</section>
+</section>
+
+<section id="everythingIsAnObject"><h1>Everything is an object</h1></section>
+<section><h2>Everything is an object</h2>
+	<section>
+		<dl class="fa">
+			<dt>In Python every value is represented as an object</dt>
+			<dd>Numbers and Strings are objects</dd>
+			<dd>Sequences and Dictionary are objects</dd>
+			<dd>Functions are objects</dd>
+			<dd>Classes and Methods are objects</dd>
+			<dd>...</dd>
+		</dl>
+	</section>
+	<section><h3>"First-class Everything"</h3>
+		<blockquote>
+			One of my goals for Python was to make it so that all objects were "first class." By this, I meant that I wanted all objects that could be named in the language (e.g., integers, strings, functions, classes, modules, methods, etc.) to have equal status. That is, <span class="note">they can be assigned to variables, placed in lists, stored in dictionaries, passed as arguments, and so forth</span>.
+		</blockquote>
+		<a href="http://python-history.blogspot.com/2009/02/">A blog post by Guido van Rossum</a>
+	</section>
+</section>
+
+<section data-min="15" id="variablesNamesAndValuesDeepLook"><h1>Variables names and values - deep look</h1></section>
+<section><h2>Variables names and values - deep look</h2>
+  <section><h3>How assignment works?</h3>
+  	<dl class="fa">
+  		<dt><code>name = value</code></dt>
+  		<dt class="note">Names are references to values</dt>
+  		<dd>Assignment <span class="note">binds</span> a symbolic name (on the left side) with a value object (on the right side)</dd>
+  		<dt class="note">Many names can refer to one value.</dt>
+  		<dt class="note">Assignment never copies data</dt>
+  	</dl>
+  </section>
+  <section><h3>More on names and values in Python</h3>
+  	<dl class="fa">
+  		<dt><a href="https://nedbatchelder.com/text/names.html">Facts and myths about Python names and values</a>, 2013 by Ned Batchelder</dt>
+  	</dl>
+  </section>
+</section>
+
+<section data-min="5" id="Resources"><h1>Resources</h1></section>
+<section><h2>YouTube Videos</h2>
+	<section><h3>Python Classes and Objects - John Philip Jones</h3>
+		<p>Simple, a childish like, explained...</p>
+		<iframe src="https://www.youtube.com/embed/AaIdperUu-A?list=PL6lxxT7IdTxEloArZ2ZSRWCy5jQpD5VtT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+	<section><h3>Nina Zakharenko - Memory Management in Python - The Basics - PyCon 2016</h3>
+	  <iframe width="1280" height="720" src="https://www.youtube.com/embed/F6u5rhUQ6dU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+</section>
+<section><h2>blogs, tutorials</h2>
+	<section>
+		<dl class="fa">
+			<dt>If you want to go deep in OOP with Python:</dt>
+			<d><a href="https://www.python-course.eu/python3_object_oriented_programming.php">Object-Oriented Programming</a> www.python-course.eu</d>
+		</dl>
+	</section>
+</section>
+
+
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1: students_objects.py</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt>Define a class <code>Student</code> with method <code>__init__()</code>, such that the creation of objects from Student Class looks like:</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+				# objects creation:
+				ivan = Student("Ivan Ivanov", ["maths", "phisics"])
+				alex = Student("Alex Petrov", ["arts", "music"])
+				maria = Student("Maria Popova", ["chemistry", "biology"])
+		</code></pre>
+	</section>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt>Define method <code>greet()</code> which will print greeting message from each student, as in the next code snippet:</dt>
+		</dl>
+		<pre><code rel="Python" class="ascii">
+			# use objects:
+			ivan.greet()
+			alex.greet()
+			maria.greet()
+
+			#OUTPUT:
+			#Hello, I'm Ivan Ivanov. My favourite subjects are:
+			#	maths
+			#	phisics
+			#Hello, I'm Alex Petrov. My favourite subjects are:
+			#	arts
+			#	music
+			#Hello, I'm Maria Popova. My favourite subjects are:
+			#	chemistry
+			#	biology
+		</code></pre>
+		<p>You can align text one tab left, using the "\t" escape in the string.</p>
+	</section>
+</section>
+
+<!-- <section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:acad_to_astro_hours">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section> -->
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

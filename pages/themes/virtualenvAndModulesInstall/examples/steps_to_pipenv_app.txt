@@ -1,0 +1,28 @@
+# make sure you are in the root project folder
+pwd
+ll
+
+# try to run the program:
+python simple_plot.py
+
+# we don't have the matplotlib installed - let's do it in a save env with pipenv:
+
+
+
+
+#create virtenv
+pipenv --three
+pipenv shell
+python --version
+
+# install packages
+pipenv install matplotlib
+
+# run again in virtenv:
+python simple_plot.py
+
+# exit virtenv
+exit
+
+# remove virtenv
+pipenv --rm

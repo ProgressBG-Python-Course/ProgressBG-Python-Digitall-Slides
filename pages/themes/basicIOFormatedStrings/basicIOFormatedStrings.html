@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>basicIOFormatedStrings</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#variablesAndBasicIO" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Basic IO and string formatting</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<section data-min="5"><h1>Basic IO</h1></section>
+<section><h2>Basic IO - User input</h2>
+	<section><h3>Python3 print() function</h3>
+		<dl class="fa">
+			<dt style="font-size: .8em"><code>print()</code> is used to output <span class="note">text streams</span> to stdout or text files (working with files will be discussed deeply in next lectures)</dt>
+		</dl>
+		<pre><code rel="Syntax" class="python">
+			print(*objects, sep=' ', end='\n',file=sys.stdout, flush=False)
+		</code></pre>
+
+		<pre><code rel="Python3" class="python">
+			print("Hello")
+			print("World")
+			print(1,2,3)
+			print(1,2,3,sep="-")
+
+			print("Hello",end="")
+			print("World",end="")
+		</code></pre>
+	</section>
+	<!-- <section><h3>the raw_input() function - <span class="note">Python2 way</span></h3>
+		<p>Allows to prompt the user to enter some value.</p>
+		<pre><code rel="Syntax" class="python">
+			variable = raw_input("prompt message, to be displayed to the user: ")
+		</code></pre>
+		<pre><code rel="Python2" class="python">
+			>>> user_input = raw_input("enter some value: ")
+			enter some value: iva
+
+			>>> print user_input
+			iva
+
+			>>> print type(user_input)
+			&lt;type 'str'&gt;
+		</code></pre>
+	</section> -->
+	<section><h3>Python3 input() function</h3>
+		<p>Allows to prompt the user to enter some value.</p>
+		<pre><code rel="Syntax" class="python">
+			variable = input("prompt message, to be displayed to the user: ")
+		</code></pre>
+		<pre><code rel="Python3" class="python">
+			>>> user_input = input("enter some value: ")
+			enter some value: 42
+
+			>>> print(user_input)
+			42
+
+			>>> print(type(user_input))
+			&lt;class 'str'&gt;
+		</code></pre>
+		<p class="note">Note, that no matter what value the user entered, it will be stored as a string!</p>
+	</section>
+	<section><h3>Examples (python3)</h3>
+		<pre><code rel="Python" class="python">
+			user_name = input("hi, what's your name: ")
+			user_surname = input("will you tell me your sur name?:")
+
+			print("Nice to meet you, ", user_name.capitalize() + " " + user_surname.capitalize() + "!")
+		</code></pre>
+		<p class="note">please note, that using concatenation operation for strings containing variables values, is not the <b>pythonic way</b>! Next slides will illustrate the proper way to do it</p>
+	</section>
+</section>
+
+<section data-min="50"><h1>String Interpolation</h1></section>
+<section><h2>String Interpolation</h2>
+	<section><h3>Before Python 3.6</h3>
+		<dl class="fa">
+			<dt>Before Python 3.6 we have to use the concatenation operator when we want to display some string and some variables interpolated into it.</dt>
+			<dt>Python (before v.3.6)<span class="note">do not support variables interpolation in strings</span> like in bash/Perl/PHP/...</dt>
+			<pre><code rel="Terminal" class="shell">
+				# not possible in Python!!!
+				$name = "Iva";
+				print("Hello $name !")
+					Hello Iva !
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Literal String Interpolation (f-strings)</h3>
+		<dl class="fa">
+			<dt>Python 3.6 added "f-strings" which provide a way to embed expressions inside string literals, using a minimal syntax</dt>
+			<pre><code rel="Python" class="python">
+				value = 42
+				# str.format() method:
+				'The value is {}.'.format(value)
+
+				# f-strings:
+				f'The value is {value}'
+			</code></pre>
+			<dt>More on f-strings: </dt>
+			<dd><a href="https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings">Formatted String Literals</a> @python tutorial</dd>
+			<dd><a href="https://docs.python.org/3/library/string.html#formatstrings">Format String Syntax</a> @python docs</dd>
+		</dl>
+		</section>
+	<section><h3>Examples</h3>
+		<pre><code rel="Python" class="python">
+				user_name = input("hi, what's your name: ")
+				user_surname = input("will you tell me your sur name?:")
+
+				print(f"Nice to meet you, {user_name} {user_surname} !")
+		</code></pre>
+		<p><span class="note">Task:</span> modify the program, such that the user names will be displayed capitalized</p>
+	</section>
+</section>
+
+
+<section data-min="50"><h1>String Formatting</h1></section>
+<section><h2>"old-style" String Formatting in Python</h3>
+	<section><h3>syntax</h3>
+		<pre><code rel="Syntax" class="shell">
+			"format_string" % (values_tuple)
+		</code></pre>
+		<pre><code rel="Python" class="python">
+			>>> "%s died in %d year" % ("Ada Byron", 1852)
+			'Ada Byron died in 1852 year'
+		</code></pre>
+		<dl class="fa">
+			<dt><span class="note">format_string</span> -  a string with formatting placeholders in  it</dt>
+			<dt><span class="note">values_tuple</span> - the values which will be interpolated into the respective formatting placeholders.</dt>
+			<dt>Reference: <a href="https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting">printf-style String Formatting</a> @python docs</dt>
+		</dl>
+	</section>
+	<section><h3>how it works?</h3>
+		<a href="images/Python_formting_string.png"><img style="height: 40vh" src="images/Python_formting_string.png"></a>
+	</section>
+	<section><h3>Example - format data as table</h3>
+		<pre><code rel="Python" class="python">
+			print("| %10s | %10s |" % ("=" * 10, "=" * 10))
+			print("| %10d | %10d |" % (1,2) )
+			print("| %10d | %10d |" % (34,12) )
+			print("| %10d | %10d |" % (243,126) )
+			print("| %10s | %10s |" % ("=" * 10, "=" * 10))
+		</code></pre>
+		<pre><code rel="Output" class="shell">
+			| ========== | ========== |
+			|          1 |          2 |
+			|         34 |         12 |
+			|        243 |        126 |
+			| ========== | ========== |
+		</code></pre>
+	</section>
+	<section><h3>Examples - more</h3>
+		<pre><code rel="Python" class="python">
+			x = 1.2345678
+			y = 123
+			print("x = %d, y = %d" % (x,y))
+			print("x = %02d, y = %02d" % (x,y))
+			print("x = %f, y = %f" % (x, y))
+			print("x = %.2f, y = %.2f" % (x, y))
+		</code></pre>
+	</section>
+	<section><h3>it's the "old style of formatting" - should we use it?</h3>
+		<dl class="fa">
+			<dt>Though considered "the old way" it's still widely used and is not (still) deprecated in new Python3 versions</dt>
+			<dt>But the preferred way of formatting strings in Python is <span class="note">str.format() method</span></dt>
+			<dt>Knowing how this string formatting works, will help you to grasp the "new style", discussed in next slides.</dt>
+		</dl>
+	</section>
+	<section><h3>resources</h3>
+		<dl class="fa">
+			<dt><a href="https://www.python-course.eu/python3_formatted_output.php">Formatted Output @python-course.eu </a></dt>
+			<dt><a href="https://docs.python.org/3/library/stdtypes.html#old-string-formatting">printf-style String Formatting</a> @python docs</dt>
+		</dl>
+	</section>
+</section>
+
+<section><h2>format string syntax: <code>str.format()</code> method</h2>
+	<section><h3>Syntax</h3>
+		<pre><code rel="Syntax" class="shell">
+			"string_with_placeholders".format(values_to_be_substituted)
+		</code></pre>
+		<pre><code rel="Python" class="python">
+			>>> "{} died in {} year".format("Ada Byron", 1852)
+			'Ada Byron died in 1852 year'
+		</code></pre>
+		<dl class="fa">
+			<dt><span class="note">string_with_placeholders</span> is a string containing placeholders of the form <code>{}</code></dt>
+			<dt><span class="note">values_to_be_substituted</span> - a comma separated list of values, which will be replaced in the respective placeholders</dt>
+			<dt>Reference: <a href="https://docs.python.org/3/library/string.html#format-string-syntax">Format String Syntax</a> @python docs</dt>
+		</dl>
+	</section>
+	<section><h3>placeholders</h3>
+		<dl class="fa">
+			<dt>You can give in placeholders an explicit positional index (<span class="note">counting starts from 0</span>), which allows values to be printed in desired order</dt>
+		</dl><br>
+		<pre><code rel="Python" class="python">
+				>>> "{1} died in {0} year".format("Ada Byron", 1852)
+				'1852 died in Ada Byron year'
+			</code></pre>
+	</section>
+	<section><h3>new style vs old style?</h3>
+		<dl class="fa">
+			<dt>The format specifier syntax is similar to the old %-formatting, with the addition of the <code>{}</code> and with <code>:</code> used instead of <code>%</code>. For example, '<code>%10d</code>' can be translated to '<code>{:10d}</code>' and so on.</dt>
+		</dl><br><br>
+		<pre><code rel="Python" class="python">
+			print("| {:10s} | {:10s} |".format("=" * 10, "=" * 10))
+			print("| {:10d} | {:10d} |".format(1, 2))
+			print("| {:10d} | {:10d} |".format(34, 12))
+			print("| {:10d} | {:10d} |".format(243, 126))
+			print("| {:10s} | {:10s} |".format("=" * 10, "=" * 10))
+		</code></pre>
+	</section>
+</section>
+
+<section><h2>Escape Sequences</h2>
+	<section>
+		<dl class="fa">
+			<dt>The backslash (\) character is used to escape characters that otherwise have a special meaning, such as newline, backslash itself, or the quote character.</dt>
+			<dt>With escape sequence we can insert characters that are illegal in a string, like quotes or new line symbol.</dt>
+			<dt>The most used escape sequences are given bellow:</dt>
+		</dl>
+		<table>
+			<tr>
+				<th>escape character</th>
+				<th>result</th>
+			</tr>
+			<tr>
+				<td>\'</td>
+				<td>Single Quote</td>
+			</tr>
+			<tr>
+				<td>\"</td>
+				<td>Double Quote</td>
+			</tr>
+			<tr>
+				<td>\n</td>
+				<td>New Line</td>
+			</tr>
+			<tr>
+				<td>\t</td>
+				<td>Tab</td>
+			</tr>
+			<tr>
+				<td>\\</td>
+				<td>Backslash</td>
+			</tr>
+		</table>
+		<dl class="fa">
+			<dt>Reference: <a href="https://docs.python.org/3/reference/lexical_analysis.html#index-23">List of recognized escape sequences in Pyhton</a></dt>
+		</dl>
+	</section>
+	<section><h3>Example</h3>
+		<pre><code rel="Python" class="python">
+			print('|Jhoh\'s pub|')
+			print('|line1\nline2|')
+			print('|abc\t123|')
+
+
+			#OUTPUT
+			|Jhoh's pub|
+			|line1
+			line2|
+			|abc    123|
+		</code></pre>
+	</section>
+</section>
+
+
+<!-- <section id="hw">
+	<section><h1>Задачи за упражнения</h1></section>
+	<section id="task1"><h3>%%Task1_Title%%</h3>
+	</section>
+</section> -->
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

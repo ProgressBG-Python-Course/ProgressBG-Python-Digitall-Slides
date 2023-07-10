@@ -1,0 +1,13 @@
+t1 = 'А'.encode('cp1251').decode('cp1251')
+t2 = 'З'.encode('cp1251').decode('cp1251')
+t3 = 'Ж'.encode('cp1251').decode('cp1251')
+t4 = 'И'.encode('cp1251').decode('cp1251')
+t5 = 'Й'.encode('cp1251').decode('cp1251')
+t6 = 'К'.encode('cp1251').decode('cp1251')
+
+print(t1)
+print(t2)
+print(t3)
+print(t4)
+print(t5)
+print(t6)

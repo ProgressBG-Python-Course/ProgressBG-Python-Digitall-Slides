@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>processesAndOSServices</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>The Python process and OS services</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+<section><h1>Execute external commands with Python</h1></section>
+<section><h2>the <code>subprocess</code> module</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes</dt>
+			<dt>This module intends to replace several older modules and functions:</dt>
+			<dd>os.system</dd>
+			<dd>os.spawn</dd>
+		</dl>
+	</section>
+	<section><h3>subprocess.call(<em>args</em>)</h3>
+		<dl class="fa">
+			<dt>Run the command described by args. Wait for command to complete, then return the returncode attribute.</dt>
+			<dt>Note that, if the returncode is</dt>
+			<dd>0 => the command exit with success</dd>
+			<dd>!= 0 => command result in failure</dd>
+		</dl>
+		<pre><code rel="Python" class="python">
+			# execute 'date +%H:%M:%S' by Python:
+			>>> import subprocess
+			>>>
+			>>> subprocess.call(["date", "+%H:%M:%S"])
+			0
+		</code></pre>
+	</section>
+	<section><h3>subprocess.check_output(<em>args</em>)</h3>
+		<dl class="fa">
+			<dt>Run command with arguments and return its output</dt>
+			<dt>If the return code was non-zero it raises a CalledProcessError</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			# execute 'date +%H:%M:%S' and get output:
+
+			>>> import subprocess
+			>>> output = subprocess.check_output(["date", "+%H:%M:%S"])
+			>>> output
+			b'15:33:16\n'
+
+			# decode the bytestring to ascii
+			>>> output_ascii = output.decode('ascii')
+			>>> output_ascii
+			'15:33:16\n'
+
+			# strip leading and trailing spaces:
+			>>> output_ascii.strip()
+			'15:33:16'
+		</code></pre>
+	</section>
+	<section><h3>Open terminal - (MACOS/Unix) example</h3>
+		<p>Open a terminal with a custom profile in the given directory</p>
+		<pre><code rel="Python" class="python">
+			import subprocess
+
+			def open_terminal(profile, directory):
+				"""open a terminal with a custom profile in the given directory"""
+				cmd = "gnome-terminal"
+				args = (
+					"--window-with-profile",profile,
+					"--working-directory",directory
+				)
+
+				subprocess.call([cmd, *args])
+
+			open_terminal("day", "/data/python_demos/music")
+		</code></pre>
+	</section>
+	<section><h3>Open VS Code - (MACOS/Unix) example</h3>
+		<p>open VS Code editor and load given directory:</p>
+		<pre><code rel="Python" class="python">
+			import subprocess
+
+			def open_vscode(directory):
+				"""open VS Code editor and load given directory"""
+				cmd = "code"
+
+				subprocess.call([cmd, directory])
+
+			open_vscode("/data/python_demos/music")
+		</code></pre>
+	</section>
+	<section><h3>Open Chrome browser - example</h3>
+		<dl class="fa">
+			<dt>Open Chrome browser in a new window, with the given user profile and loads the specified URLs</dt>
+			<dt>This is just a demo. <span class="note">For controlling a browser with Python it's better to use the built-in <a href="https://docs.python.org/3.6/library/webbrowser.html">webbrowser</a> module</span>!</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			import subprocess
+
+			def load_browser(profile, url):
+				"""open Chrome browser in new window,
+				   with the given user profile and loads the specified URLs
+				"""
+				cmd = "google-chrome"
+				args = "--new-window --profile-directory=" + "'{:s}' {:s}".format(profile, url)
+
+				subprocess.call(cmd + " " + args, shell=True)
+
+
+			urls_to_load = [
+				"https://mail.google.com",
+				"http://wwwcourses.github.io/ProgressBG-Python-DigitalX"
+			]
+
+
+			load_browser("Profile 7",  " ".join(urls_to_load))
+		</code></pre>
+	</section>
+
+	<section><h3>Reference</h3>
+		<dl class="fa">
+			<dt><a href="https://docs.python.org/3/library/subprocess.html">subprocess @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+<!--
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=___MainSectionTitle___">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section> -->
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

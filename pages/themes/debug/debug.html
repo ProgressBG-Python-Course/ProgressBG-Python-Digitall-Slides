@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>debug</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#debug" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Debugging Python applications</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<section><h1>How to Debug A Python Code</h1></section>
+<section><h2>How to Debug A Python Code</h2>
+	<section><h3>print statements</h3>
+		<dl class="fa">
+			<dt>You can trace your code by putting a print statements in the problematic places</dt>
+			<dt>PROs:</dt>
+			<dd>Easy to use</dd>
+			<dt>CONs:</dt>
+			<dd>You have to remove them in production ready code</dd>
+			<dd>Too much useless typing</dd>
+		</dl>
+	</section>
+	<section><h3>Using <code>pdb</code> - The Python Debugger</h3>
+		<dl class="fa">
+			<dt>PROs:</dt>
+			<dd>you can use it on remote servers running Python</dd>
+			<dt>CONs:</dt>
+			<dd>requires time to master</dd>
+		</dl>
+	</section>
+	<section><h3>IDEs</h3>
+		<dl class="fa">
+			<dt><a href="https://www.jetbrains.com/help/pycharm/debugging-code.html">PyCharm Debugger</a> offers an easy to use, sophisticated debugger.</dt>
+			<dd>More on <a href="https://www.jetbrains.com/help/pycharm/part-1-debugging-python-code.html">Debugging Python Code @jetbrains.com</a></dd>
+			<dt><a href="https://code.visualstudio.com/">VS Code</a> also offers a very good visual debugger, capable of setting breakpoints, inspect data, and use the debug console as you run your program step by step. Debug a number of different type of Python applications, including multi-threaded, web, and remote applications.</dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1><code>pdb</code> - The Python Debugger</h1></section>
+<section><h2><code>pdb</code> - The Python Debugger</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>pdb is a built-in module, that defines an interactive source code debugger for Python programs.</dt>
+			<dt>It supports setting <span class="note">(conditional) breakpoints</span> and single <span class="note">stepping</span> at the source line level, <span class="note">inspection of stack frames</span>, <span class="note">source code listing</span>, and <span class="note">evaluation of arbitrary Python code</span> in the context of any stack frame. It also supports post-mortem debugging and can be called under program control.</dt>
+		</dl>
+	</section>
+	<section><h3>pdb - enter debug mode</h3>
+		<dl class="fa">
+			<dt>To enter into the debug mode from a normally running program, you can insert:
+				<pre><code rel="Python" class="python">
+					import pdb; pdb.set_trace()
+				</code></pre>
+				at the location you want to break into the debugger. This is useful to hard-code a breakpoint at a given point in a program
+			</dt>
+			<dt>pdb.py can also be invoked as a script to debug other scripts. For example:
+				<pre><code rel="Terminal" class="shell" data-noescape>
+					python3 -m pdb myscript.py
+				</code></pre>
+			</dt>
+		</dl>
+	</section>
+	<section><h3>Example</h3>
+		<pre><code rel="debug_demo.py" class="python">
+			def sum_numbers(num_range):
+			  suma = 0
+			  for i in num_range:
+			    suma =+ i
+			    #enter debug mode and set a breakpoint
+			    import pdb; pdb.set_trace()
+
+			  return suma
+
+			def main():
+			  print( sum_numbers(range(1,10)) )
+
+			if __name__ == '__main__':
+			  main()
+		</code></pre>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			$ python3 debug_demo.py
+			> /tmp/examples/debug_demo.py(3)sum_numbers()
+			-> for i in num_range:
+			(Pdb)
+		</code></pre>
+	</section>
+	<section><h3>Basic Commands</h3>
+		<table>
+			<tr><th>Command</th><th>Shortcut</th><th>Action</th></tr>
+			<tr><td>help</td><td><span class="note">?</span></td><td> Without argument, print the list of available commands. With a command name as argument, print help about that command.</td></tr>
+			<tr><td>list</td><td><span class="note">l</span></td><td>Displays 11 lines around the current line or continue the previous listing.</td></tr>
+			<tr><td>long list</td><td><span class="note">ll</span></td><td>In Python 3.2 and above, shows the source code for the current function or frame</td></tr>
+		</table>
+	</section>
+	<section><h3>Basic Commands</h3>
+		<table style="font-size: .8em">
+			<tr><th>Command</th><th>Shortcut</th><th>Action</th></tr>
+			<tr><td>step</td><td><span class="note">s</span></td><td>Execute the current line, stop at the first possible occasion.</td></tr>
+			<tr><td>next</td><td><span class="note">n</span></td><td>Continue execution until the next line in the current function is reached or it returns</td></tr>
+			<tr><td>break</td><td><span class="note">b</span></td><td>Without argument, list all breaks. A line number or a function name can be passed as first argument. As second argument can be passed an expression which must evaluate to true before the breakpoint is honoured.</td></tr>
+			<tr><td>return</td><td><span class="note">r</span></td><td>Continue execution until the current function returns.</td></tr>
+		</table>
+	</section>
+	<section><h3>Start debug mode and get help - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape style="font-size: 1em">
+			$ python3 -m pdb debug_demo.py
+			(Pdb) ?
+
+			Documented commands (type help &lt;topic&gt;):
+			========================================
+			EOF    c          d        h         list      q        rv       undisplay
+			a      cl         debug    help      ll        quit     s        unt
+			alias  clear      disable  ignore    longlist  r        source   until
+			args   commands   display  interact  n         restart  step     up
+			b      condition  down     j         next      return   tbreak   w
+			break  cont       enable   jump      p         retval   u        whatis
+			bt     continue   exit     l         pp        run      unalias  where
+
+			Miscellaneous help topics:
+			==========================
+			pdb  exec
+		</code></pre>
+	</section>
+	<section><h3>help for given command - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape style="font-size: 1em">
+			(Pdb) help break
+			b(reak) [ ([filename:]lineno | function) [, condition] ]
+			        Without argument, list all breaks.
+
+			        With a line number argument, set a break at this line in the
+			        current file.  With a function name, set a break at the first
+			        executable line of that function.  If a second argument is
+			        present, it is a string specifying an expression which must
+			        evaluate to true before the breakpoint is honored.
+
+			        The line number may be prefixed with a filename and a colon,
+			        to specify a breakpoint in another file (probably one that
+			        hasn't been loaded yet).  The file is searched for on
+			        sys.path; the .py suffix may be omitted.
+			(Pdb)
+		</code></pre>
+	</section>
+	<section><h3>long list - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape style="font-size: 1em">
+			(Pdb) ll
+			  1  ->	def sum_numbers(num_range):
+			  2  	  suma = 0
+			  3  	  for i in num_range:
+			  4  	    suma =+ i
+			  5  	    # import pdb; pdb.set_trace()
+			  6
+			  7  	  return suma
+			  8
+			  9  	def main():
+			 10  	  print( sum_numbers(range(1,10)) )
+			 11
+			 12  	if __name__ == '__main__':
+			 13  	  main()
+			(Pdb)
+		</code></pre>
+	</section>
+	<section><h3>Set breakpoint on given line number - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			(Pdb) b 4
+			Breakpoint 1 at /tmp/examples/debug_demo.py:4
+			(Pdb)
+		</code></pre>
+	</section>
+	<section><h3>Continue execution to next breakpoint - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			(Pdb) c
+			> /tmp/examples/debug_demo.py(4)sum_numbers()
+			-> suma =+ i
+			(Pdb)
+		</code></pre>
+	</section>
+	<section><h3>View current value of a variable:</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			(Pdb) p suma
+			3
+			(Pdb) p suma, i
+			(3, 4)
+		</code></pre>
+	</section>
+	<section><h3>Specify a list of commands for breakpoint - example</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			# list breakpoints:
+			(Pdb) b
+			Num Type         Disp Enb   Where
+			1   breakpoint   keep yes   at /tmp/examples/debug_demo.py:4
+
+			#set commands to be executed on breakpoint 1:
+			(Pdb) commands 1
+			(com) p suma, i
+			(com) end
+
+			# continue to breakpoint and look that commands was executed
+			(Pdb) c
+			(0, 1)
+		</code></pre>
+	</section>
+	<section><h3>Resources</h3>
+		<dl class="fa">
+			<dt><a href="https://medium.com/instamojo-matters/become-a-pdb-power-user-e3fc4e2774b2">Become a pdb power-user @medium</a></dt>
+			<dt><a href="https://docs.python.org/3/library/pdb.html">pdb @python3 docs</a></dt>
+		</dl>
+	</section>
+	<section><h3>Resources</h3>
+		<iframe style="margin: 0 auto; height: 70vh;" src="https://www.youtube.com/embed/VQjCx3P89yk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+</section>
+
+
+<section><h1>Debug Python with VS Code</h1></section>
+<section><h2>Debug Python with VS Code</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>The <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a> supports debugging of a number of types of Python applications, including the following general capabilities</dt>
+			<dd>Watch window</dd>
+			<dd>Evaluating expressions</dd>
+			<dd>Locals</dd>
+			<dd>Arguments</dd>
+			<dd>Expanding children</dd>
+			<dd>Breakpoints</dd>
+			<dd>Conditional breakpoints</dd>
+			<dd>Pausing (breaking into) running programs</dd>
+			<dd>Custom startup directory</dd>
+		</dl>
+	</section>
+	<section><h3>Start Debugger</h3>
+		<dl class="fa">
+			<dt>You can start VS Code debugger by:</dt>
+			<dd>Pressing <kbd>F5</kbd></dd>
+			<dd>Navigate to Debug Panel by clicking the icon <img src="images/debug_panel_icon.png" style="vertical-align: middle;">, and from the top of Debug Panel click on Start Debugging <img src="images/start_debug_from_panel.png"> </dd>
+		</dl>
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>When you start VS Code Debugger for the first time, it will prompt you to select a configuration</dt>
+		</dl>
+		<a href="images/first_time_debug_prompt.png"><img src="images/first_time_debug_prompt.png"></a>
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>To debug a simple app you can just select Python Environment from the Debug Prompt:</dt>
+		</dl>
+		<img src="images/simple_debug_no_conf.png">
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>But creating a launch configuration file is beneficial because it allows you to configure and save debugging setup details.</dt>
+			<dt> VS Code keeps debugging configuration information in a launch.json file located in a .vscode folder in your workspace (project root folder) or in your user settings or workspace settings.</dt>
+		</dl>
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>To create a launch.json file, open your project folder in VS Code (File > Open Folder) and then click on the Configure gear icon on the Debug view top bar.</dt>
+		</dl>
+		<a href="images/add_configuration.png"><img src="images/add_configuration.png"></a>
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>The VS Code will generate a common launch.json file for you, which you can easy modify or extend.</dt>
+		</dl>
+		<a href="images/launch.json.png"><img src="images/launch.json.png"></a>
+	</section>
+	<section><h3>Debug Configuration</h3>
+		<dl class="fa">
+			<dt>More info for <code>launch.json</code></dt>
+			<dd><a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations">Launch configurations @code.visualstudio.com</a></dd>
+		</dl>
+	</section>
+	<section><h3>Debug actions</h3>
+		<dl class="fa">
+			<table>
+				<tr><th>Command</th><th>Keyboard Shortcut</th></tr>
+				<tr><td>Continue / Pause</td><td>F5</td></tr>
+				<tr><td>Step Over</td><td>F10</td></tr>
+				<tr><td>Step Into</td><td>F11</td></tr>
+				<tr><td>Step Out</td><td>Shift+F11</td></tr>
+				<tr><td>Restart</td><td>Ctrl+Shift+F5</td></tr>
+				<tr><td>Stop</td><td>Shift+F5</td></tr>
+			</table>
+		</dl>
+	</section>
+	<section><h3>Breakpoints</h3>
+		<dl class="fa">
+			<dt>Breakpoints can be toggled by clicking on the editor margin</dt>
+			<dt>Finer breakpoint control (enable/disable/reapply) can be done in the Debug view's BREAKPOINTS section</dt>
+			<dt>Breakpoints in the editor margin are normally shown as red filled circles.</dt>
+			<dt>Disabled breakpoints have a filled gray circle.</dt>
+		</dl>
+	</section>
+	<section><h3>More "Break" points</h3>
+		<dl class="fa">
+			<dt>Clicking with right mouse button on the editor margin allows to add "Normal Breakpoint", "Conditional Breakpoint", "Log Point"</dt>
+		</dl>
+		<a href="images/cond_breakpoints_log_points.png"><img src="images/cond_breakpoints_log_points.png"></a>
+	</section>
+	<section><h3>Data inspection</h3>
+		<dl class="fa">
+			<dt>Variables can be inspected in the VARIABLES section of the Debug view or by hovering over their source in the editor.</dt>
+			<dt>Variables and expression evaluation is relative to the selected stack frame in the CALL STACK section.</dt>
+		</dl>
+	</section>
+	<section><h3>Data inspection</h3>
+		<a href="images/data_inspection.png"><img src="images/data_inspection.png"></a>
+	</section>
+	<section><h3>Variable's context menu</h3>
+		<dl class="fa">
+			<dt>Right clicking on a variable in the VARIABLES sections allows to</dt>
+			<dd>Set/Copy Variable Value, Add it to WATCH </dd>
+		</dl>
+		<a href="images/variables_context_menu.png"><img src="images/variables_context_menu.png"></a>
+	</section>
+	<section><h3>Conditional breakpoints</h3>
+		<dl class="fa">
+			<dt>Conditional Breakpoints can be set by</dt>
+			<dd><em>Expression condition</em> - breakpoint will be hit whenever the expression evaluates to true</dd>
+			<dd><em>Hit count</em> - controls how many times a breakpoint needs to be hit before it will 'break' execution.</dd>
+		</dl>
+	</section>
+	<section><h3>Remote Debugging</h3>
+		<dl class="fa">
+			<dt>VS Code allows remote debugging</dt>
+			<dd><a href="https://code.visualstudio.com/docs/python/debugging#_remote-debugging">Remote debugging @code.visualstudio.com</a></dd>
+		</dl>
+	</section>
+	<section><h3>Remote Debugging Steps</h3>
+		<dl class="fa">
+			<dt>pipenv install ptvsd==3.0.0</dt>
+		</dl>
+	</section>
+	<section><h3>Resources</h3>
+		<iframe style="margin: 0 auto; height: 70vh;" src="https://www.youtube.com/embed/UkPn3q_t4vU?start=281" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+</section>
+
+
+<!-- <section><h1>Resources</h1></section>
+<section><h2>Resources</h2>
+	<section>
+
+	</section>
+	<section><h3>Videos</h3>
+
+	</section>
+</section> -->
+
+<!--
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1</h2>
+	<section><h3>The Task</h3>
+
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: debug">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section>
+
+ -->
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

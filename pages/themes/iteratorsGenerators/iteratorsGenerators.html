@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>iteratorsGenerators</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Iterators and Generators in Python</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+<section><h1>Iterators</h1></section>
+<section><h2>Iterators</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt><span class="note">iterate</span> means to repeat something over and over again</dt>
+			<dd>exactly what we've done with loops.</dd>
+			<dt>An <span class="note">iterator</span> is an object that knows how to return items from a collection, <b>one at a time</b>, while keeping track of its current position within that collection.</dt>
+			<dt>An <span class="note">iterable</span> is an object, which has method for returning iterator.</dt>
+			<a href="./images/Iterators-in-Python.jpg"><img src="./images/Iterators-in-Python.jpg" alt="Iterators-in-Python.jpg" style="width: 60vw;"></a>
+		</dl>
+	</section>
+	<section><h3><code class="code">iterator</code> in Python and the <code class="note">__next__</code> method</h3>
+		<dl class="fa">
+			<dt><code class="code">iterator</code> is any object, implementing the <code>__next__</code> method</dt>
+			<dt>When  <code>__next__</code> method is called, the iterator should return its "next value".</dt>
+			<dt>If the iterator has no more values to return, it should raise a StopIteration exception</dt>
+			<dt>There is a built-in function called <code>next</code>, wrapping around <code>__next__</code> that you can use for convenience.</dt>
+			<dd><code>next(it)</code> is equivalent to <code>it.__next__()</code></dd>
+		</dl>
+	</section>
+	<section><h3><code class="note">iterable</code> in Python and the <code class="note">__iter__</code> method</h3>
+		<dl class="fa">
+			<dt><span class="note">itarable</span> is an object, implementing the <code>__iter__</code> method</dt>
+			<dt>The <code>__iter__</code> method returns an <em>iterator</em>.</dt>
+			<dt>The built-in function <code>iter()</code> can also be used to get an iterator from iterable.</dt>
+			<dt>Every sequence in Python is iterable. But there are other iterable types, which are not sequences, like <code>sets</code>.</dt>
+		</dl>
+	</section>
+	<section><h3><code class="note">iterable</code> vs <code class="note">iterator</code></h3>
+		<dl class="fa">
+			<dt>An iterable is any object, that can return an iterator</dt>
+			<dt>Iterator is any object that returns its next value.</dt>
+			<dt>Iterables can represent finite as well as infinite source of data</dt>
+		</dl>
+	</section>
+	<section><h3>iterables and iterators - examples</h3>
+		<p>for loop over iterable:</p>
+		<pre><code rel="Python" class="shell" data-noescape style="height: 30vh">
+			# strings are iterable in Python:
+			s = "abc"
+
+			# iterate over the string iterable with for loop
+			for i in s:
+					print(i, end=" ")
+
+			# OUTPUT
+			# a
+			# b
+			# c
+		</code></pre>
+		<p>for loop behaviour using iter() and next():</p>
+		<pre><code rel="Python" class="shell" data-noescape style="height: 30vh">
+			# strings are iterable in Python:
+			s = "abc"
+
+			# lets get an iterator from the string iterable:
+			s_iterator = iter(s)
+
+			#ask the string iterator for values
+			print( next(s_iterator) )
+			print( next(s_iterator) )
+			print( next(s_iterator) )
+
+			# OUTPUT
+			# a
+			# b
+			# c
+		</code></pre>
+	</section>
+	<section><h3>Custom Iterator Types</h3>
+		<dl class="fa">
+			<dt>A class that wants to be an iterator should implement the two methods:</dt>
+			<dd>__next__() - that implement the Iterator Protocol.</dd>
+			<dd>__iter__() - method that returns self</dd>
+			<dt>Which means that in Python an Iterator is also an Iterable!</dt>
+			<dt>This requirement is to make iterators to behave like sequences; in particular so that code receiving an iterator can use a for-loop over the iterator.</dt>
+			<dd>check <a href="https://www.python.org/dev/peps/pep-0234/#python-api-specification">Python API Specification in PEP 234 -- Iterators</a> for more details</dd>
+		</dl>
+	</section>
+	<section><h3>Custom Iterator Types - simplest example</h3>
+		<dt>An example of creating custom (very simple) iterator object.</dt>
+		<pre><code rel="Python" class="python" style="min-height:80vh">
+			class X():
+				"""Simplest Number Iterator, which can iterate on only two values - 1 and 2."""
+				def __init__(self, start, end):
+					self.num = start
+					self.max = end
+
+				# define X as Iterator
+				def __next__(self):
+					# generate a number to return
+					if self.num < self.max:
+						self.num += 1
+						return self.num
+					else:
+						raise StopIteration
+
+				# define X as Iterable
+				def __iter__(self):
+					return self
+
+			# define our custom iterable object:
+			x = X(0,4)
+
+			for el in x:
+				print(el)
+
+			# OUTPUT
+			# 1
+			# 2
+			# 3
+			# 4
+		</code></pre>
+	</section>
+
+	<section><h3>Custom Iterator on Fibonacci Sequence -  example</h3>
+		<a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Sequence @wikipedia</a>
+		<pre><code rel="Python" class="python" style="min-height: 60vh;">
+			class FibNumbers:
+				def __init__(self, limit):
+					self.a = 0
+					self.b = 1
+					self.limit = limit
+				def __next__(self):
+					self.a, self.b = self.b, self.a + self.b
+					if ( self.a < self.limit):
+						return self.a
+					else:
+						raise StopIteration
+				def __iter__(self):
+					return self
+
+			fib_numbers = FibNumbers(30)
+
+			for i in fib_numbers:
+				print( i, end=',' )
+
+			# OUTPUT:
+			# 1,1,2,3,5,8,13,21,
+		</code></pre>
+	</section>
+	<section><h3>Resources</h3>
+		<dl class="fa">
+			<dt><a href="https://docs.python.org/3/library/stdtypes.html#iterator-types">Iterator Types @Python3 docs</a></dt>
+			<dt><a href="https://www.python.org/dev/peps/pep-0234/" class="advanced">PEP 234 -- Iterators</a></dt>
+		</dl>
+	</section>
+</section>
+
+
+<section><h1><span class="advanced"></span>Generators</h1></section>
+<section><h2 class="advanced">Generators</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A Generator is a function that works as a factory for iterators.</dt>
+			<dt>Python’s generators provide a convenient way to implement the iterator protocol.</dt>
+			<dt>Or more formally: a Python generator is a function which returns an iterator by calling <code class="note">yield</code></dt>
+			<dt>Any function that contains a <code class="note">yield</code> statement can be called a generator!</dt>
+		</dl>
+	</section>
+	<section><h3>"lazy evaluation"</h3>
+		<dl class="fa">
+			<dt>Generators are the primary means by which Python implements so called <a href="https://en.wikipedia.org/wiki/Lazy_evaluation">lazy evaluation</a></dt>
+			<dt>The lazy (on demand) generation of values translates to lower memory usage and (most of the times) in a performance improvement</dt>
+			<a href="./images/generator_vs_normal_function.png"><img src="./images/generator_vs_normal_function.png" alt="generator_vs_normal_function.png" style="width: 50vw;"></a>
+		</dl>
+	</section>
+	<section><h3>How a generator function works?</h3>
+		<dl class="fa">
+			<dt>When a generator function is called, it returns an generator-iterator, that will controls the execution of the generator function.</dt>
+			<dt>When the <code>__next__</code> method of that generator is called, the execution of the function proceeds to the first yield expression,
+			and the execution is "freezed" - the current state of the function is preserved, and the yield value and the he control is transferred to the caller.
+			</dt>
+			<dt>When calling again the <code>__next__</code> method of that generator, the exection of the function continues from where it was freezed, and continues as described above.</dt>
+			<dt>If calling <code>__next__</code>, the execution code of the function contrains no yield statement - then the StopIteration error is raised.</dt>
+		</dl>
+	</section>
+	<section><h3>Making a Generator</h3>
+		<dt>Creating generator is like creating a normal function, but using <code class="note">yield</code> instead of <code>return</code></dt>
+		<pre><code rel="Python" class="python">
+			def foo_generator():
+				print('generator start')
+
+				# yield is almost like return, but it freezes the execution
+				yield 1
+				yield 2
+
+				print('generator end')
+
+			foo_gen = foo_generator()
+
+			for x in foo_gen:
+				print(x)
+
+			# OUTPUT
+			# generator start
+			# 1
+			# 2
+			# generator end
+		</code></pre>
+	</section>
+	<section><h3>Resources</h3>
+		<dl class="fa">
+			<dt><a href="https://www.python.org/dev/peps/pep-0255/" class="advanced">PEP 255 -- Simple Generators</a></dt>
+			<dt><a href="https://wiki.python.org/moin/Generators">Generators @python wiki</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="5"><h1>Examples</h1></section>
+<section><h2>Examples</h2>
+	<section><h3>Custom Generator vs Custom Iterator - Iterator example</h3>
+		<p class="note">The Iterator way:</p>
+		<pre><code rel="Python" class="python" style="min-height: 70vh;">
+			class SimplestNumbersIterable():
+			"""SimplestNumberIterable, which can iterate on only two values - 1 and 2."""
+			def __init__(self):
+				self.num = 0
+				self.max = 2
+
+			def __iter__(self):
+				return self
+
+			def __next__(self):
+				# generate a number to return
+				if self.num < self.max:
+					self.num += 1
+					print("Iterate on", self.num)
+					return self.num
+				else:
+					raise StopIteration
+
+
+			sni = SimplestNumbersIterable()
+
+			for el in sni:
+				print(el)
+
+			# OUTPUT:
+			# Iterate on 1
+			# 1
+			# Iterate on 2
+			# 2
+
+		</code></pre>
+		<!-- <p>Play with the full example @repl.it: <a href="https://repl.it/@IvaPopova/Custom-Generator-vs-Custom-Iterator">Custom-Generator-vs-Custom-Iterator</a></p> -->
+	</section>
+	<section><h3>Custom Generator vs Custom Iterator - Generator example</h3>
+		<p class="note">The Generator way:</p>
+		<pre><code rel="Python" class="python">
+			def simplest_numbers_generator():
+				"""simplest_numbers_generator, yielding only two values - 1 and 2."""
+				num = 1
+
+				while num<=2:
+					print("Yielding", num)
+					yield num
+					num+=1
+
+
+			sng = simplest_numbers_generator()
+
+			for el in sng:
+				print(el)
+
+			# OUTPUT
+			# Yielding 1
+			# 1
+			# Yielding 2
+			# 2
+		</code></pre>
+		<!-- <p>Play with the full example @repl.it: <a href="https://repl.it/@IvaPopova/Custom-Generator-vs-Custom-Iterator">Custom-Generator-vs-Custom-Iterator</a></p> -->
+	</section>
+	<section><h3>Example - integer numbers generator in range</h3>
+		<pre><code rel="Python" class="python">
+			#define the generator function:
+			def numbers_generator(start,end):
+				num  = start
+				while num<=end:
+					# yield is almost like return, but it freezes the execution
+					yield num
+					num += 1
+
+			my_numbers = numbers_generator(1,10)
+			# iterate over our generator:
+			for i in my_numbers:
+				print(i)
+			</code></pre>
+		</code></pre>
+	</section>
+	<section><h3>Example - nested list flatten generator</h3>
+		<pre><code rel="Python" class="python">
+			nested = [[1, 2], [3, 4], [5]]
+
+			def flatten(nested):
+				for sublist in nested:
+					for element in sublist:
+						yield element
+
+			print( list(flatten(nested)) )
+		</code></pre>
+	</section>
+	<section><h3>Iterable on random generated cyrillic "names"</h3>
+
+		<!-- <a href="https://gist.githubusercontent.com/WWWCourses/d61926a6b3dfd2c29e0be29b5b96520d/raw/913876678e078d9450b8dbccf4b5f91d9d3adf2b" title="click to view row code"> -->
+			<script src="https://gist.github.com/WWWCourses/d61926a6b3dfd2c29e0be29b5b96520d.js"></script>
+		<!-- </a> -->
+		<!-- <a href="https://repl.it/@IvaPopova/naiverandomnamesiterator">naive_random_names_iterator @repl.it</a> -->
+	</section>
+</section>
+
+
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1: Even Numbers Iterable</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt>Write an EvensRange iterable class, such that its objects can be used in for loops, iterating over the even numbers in specified [min, max] range.</dt>
+		</dl>
+		<pre><code rel="Python" class="shell" data-noescape>
+			class EvensRange:
+				pass
+
+			evens_range = EvensRange(1,10)
+
+			for i in evens_range(1,10):
+				print(i)
+
+			### expected result
+			#2
+			#4
+			#6
+			#8
+			#10
+		</code></pre>
+	</section>
+</section>
+
+<section><h2>Task2: Even Numbers generator</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt>Write a generator function, such that will yield an even number in pre-given interval</dt>
+		</dl>
+		<pre><code rel="Python" class="shell" data-noescape>
+			def even_numbers_generator(start,end):
+				# write your code here
+
+			for i in even_numbers_generator(1,10):
+				print(i)
+
+			### expected result
+			#2
+			#4
+			#6
+			#8
+			#10
+		</code></pre>
+	</section>
+</section>
+<section><h2>Task3: Cyrillic letter generator</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt>Define a generator function which will yield a Cyrillic letter, starting from 'А', to 'Я'</dt>
+			<dt>You can get a letter form its code, using the chr() built-in function, as shown in next example</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			print( chr(1040) )
+			# 'А''
+
+			print( chr(1041) )
+			# 'Б'
+
+			print( chr(1070) )
+			# 'Ю'
+			print( chr(1071) )
+			# 'Я'
+		</code></pre>
+	</section>
+</section>
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

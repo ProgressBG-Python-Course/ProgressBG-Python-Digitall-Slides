@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>virtualenvAndModulesInstall</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- CUSTOM -->
+	<style type="text/css">
+		.reveal section iframe{
+			text-align: center;
+			margin: 0 auto;
+			height: 70vh;
+		}
+
+	</style>
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-DigitalX-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Installing Python Packages - the safe way</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-DigitalX-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<section><h1>PIP - the Python Package Manager</h1></section>
+<section><h2>PIP - the Python Package Manager</h2>
+	<section><h3></h3>
+		<dl class="fa">
+			<dt>Python has a strong community which releases lot's of modules(packages), which you can use for free and focus on "get job done", instead of reinventing the wheel.</dt>
+			<dt>pip is the tool for installing Python packages from <a href="https://pypi.python.org/pypi">PyPI (Python Package Index)</a></dt>
+			<dt class="note">Note, that by using pip, a package will be installed in your system's python distribution.</dt>
+		</dl>
+	</section>
+	<section style="font-size: 1em"><h3>pip basic commands</h3>
+		<dl class="fa">
+			<dt>get help on pip:</dt>
+			<dd class="code">pip help</dd>
+			<dt>list installed packages:</dt>
+			<dd class="code">pip list</dd>
+			<dt>install a package from PyPI:</dt>
+			<dd class="code">pip install package_name</dd>
+			<dt>uninstall a package</dt>
+			<dd class="code">pip uninstall package_name</dd>
+			<dt>list outdated packages:</dt>
+			<dd class="code">pip list --outdated</dd>
+			<dt>upgrade a package:</dt>
+			<dd class="code">pip install --upgrade SomePackage</dd>
+
+		</dl>
+	</section>
+	<section><h3>More readings</h3>
+		<dl class="fa">
+			<dt><a href="https://pip.pypa.io/en/stable/">pip - The PyPA recommended tool for installing Python packages.</a></dt>
+			<dt><a href="https://pypi.python.org/pypi">PyPI - the Python Package Index</a></dt>
+		</dl>
+	</section>
+</section>
+
+
+<section><h1>Python Virtual Environments with Pipenv</h1></section>
+<section><h2>Python Virtual Environments with Pipenv</h2>
+	<section><h3>Virtual environment - Why?</h3>
+		<dl class="fa">
+			<dt>Python apps usually depends on many modules(packages), which depends on other packages, and very often - from a specific version of a package.</dt>
+			<dt>Many system tools also depends on specific versions of installed Python packages.</dt>
+			<dt class="note">You don't want to pollute your system's Python environment!</dt>
+		</dl>
+	</section>
+	<section><h3>Virtual environment - What?</h3>
+		<dl class="fa">
+			<dt>Virtual environments create an isolated Python environment for your project.</dt>
+			<dt>Keep workflows between projects independent.</dt>
+			<dt>Keeps <a href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025" class="advanced">dependency hell</a> away.</dt>
+			<dt>There are many tools for working with virtual environments in Python (virtualenv, pyenv, venv, virtualenvwrapper) ... and <a href="https://docs.pipenv.org/">pipenv</a></dt>
+		</dl>
+	</section>
+	<section><h3>Pipenv - What?</h3>
+		<dl class="fa">
+			<dt class="note">A dependency and virtual environments manager combined into one.</dt>
+			<dt>Automatically creates and manages a virtualenv for your projects.</dt>
+			<dt><a href="https://pypi.python.org/pypi/pipenv">The officially recommended Python packaging tool</a></dt>
+			<dt>Functionally similar to npm and other modern package managers.</dt>
+		</dl>
+	</section>
+	<section><h3>Pipenv - Install</h3>
+		<pre><code rel="Terminal" class="bash">
+			$ pip install --user pipenv
+
+			# or if you are on UNIX based system with python2 default:
+			pip3 install --user pipenv
+		</code></pre>
+	</section>
+	<section><h3>Pipenv - set up PATH</h3>
+		<dl class="fa" style="font-size: .8em">
+			<dt>If pipenv isn’t available in your shell after installation, you'll need to add the user base's binary directory to your PATH.</dt>
+			<dt>find the user base binary directory, and:</dt>
+			<dd>Linux and macOS:</dd>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+					python -m site --user-base
+					# /home/username/.local
+
+					# add it to your ~/.profile or ~/.bashrc file, or:
+					export PATH=$PATH:/home/username/.local/bin
+			</code></pre>
+			<dd>Windows:</dd>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				python -m site --user-site
+				#C:\Users\Username\AppData\Roaming\Python36\site-packages
+
+				# add to PATH:
+				C:\Users\Username\AppData\Roaming\Python36\Scripts
+			</code></pre>
+			<dd>You may need to log out for the PATH changes to take effect.</dd>
+		</dl>
+	</section>
+	<section><h3>Pipenv - manage virtualenv</h3>
+		<pre><code rel="Terminal" class="bash">
+				### Create virtualenv with system Python3:
+				$ pipenv --three
+				Creating a virtualenv for this project…
+
+
+				### Spawn a shell within the virtualenv
+				$ pipenv shell
+				Spawning environment shell...
+
+				### Exit the virtualenv
+				(course_intro-SmgljMaj) $ exit
+				exit
+				$
+
+				### Output virtualenv information
+				$ pipenv --venv
+
+				### Remove the virtualenv
+				$ pipenv --rm
+				Removing virtualenv...
+		</code></pre>
+		<p>All options available with: <code>pipenv --help</code></p>
+	</section>
+	<section><h3 class="advanced">PIPENV_VENV_IN_PROJECT</h3>
+		<dl class="fa">
+			<dt>Pipenv creates virtualenv automatically for you and stores it in a predefined path and gives it a random prefixed name.</dt>
+			<dt class="note">There is no way to control the name of the virtual environment being created.</dt>
+			<dt>But if you set the environment variable <code>PIPENV_VENV_IN_PROJECT=1</code>, pipenv will store the virtualenv in <code><strong>.venv/</strong></code> folder per project bases and will name the virtualenv after your project name.</dt>
+		</dl>
+	</section>
+	<section><h3>Pipenv - manage packages for your project</h3>
+		<pre><code rel="Terminal" class="bash">
+
+			### install requests package and create a virenv, if there is no one
+			$ pipenv install requests
+			Installing requests…
+
+			### remove package
+			$ pipenv uninstall requests
+			Uninstalling requests-2.18.4
+		</code></pre>
+	</section>
+	<section><h3>List as a graph the installed packages for the given virtualenv</h3>
+		<pre><code rel="Terminal" class="bash">
+			$ pipenv graph
+		</code></pre>
+	</section>
+	<section><h3>Use the installed module in your program</h3>
+		<dl class="fa">
+			<dt>Create a file <code>my_ip.py</code></dt>
+			<dt>Write in it:</dt>
+			<pre><code rel="Python" class="python">
+				import requests
+
+				response = requests.get('https://httpbin.org/ip')
+
+				print('Your IP is {0}'.format(response.json()['origin']))
+			</code></pre>
+			<dt>Execute your program within the pipenv shell:</dt>
+			<pre><code rel="Terminal" class="bash">
+				(course_intro-SmgljMaj) $ python my_ip.py
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Exit the virtual environment</h3>
+		<pre><code rel="Terminal" class="bash">
+			exit
+		</code></pre>
+		<p>Or type <kbd>ctrl-d</kbd></p>
+		<p>Or close your terminal window :)</p>
+	</section>
+	<section><h3 class="advanced">Let pipenv install Python distribution</h3>
+		<dl class="fa">
+			<dt>You can create a virtual environment with any Python version, without the need to have it system installed</dt>
+			<dt>Pipenv can install any Python version with the use of pyenv, so you have to install it.</dt>
+			<dd><a href="https://github.com/pyenv/pyenv#installation">pyenv installation</a></dd>
+		</dl>
+		<pre><code rel="Terminal" class="bash" data-noescape>
+			# install pyenv
+			curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+
+			# add it to path
+			echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+			echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+		</code></pre>
+	</section>
+	<section><h3>Let pipenv install Python distribution</h3>
+		<dl class="fa">
+			<dt class="note">Install <a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems">the Requirements</a>!</dt>
+			<dt>Now, you can make pipenv to create a virtualenv with any Python version:</dt>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				#Create a new project using Python 3.6, specifically:
+				$ pipenv --python 3.6
+
+				# you'll be asked by pipenv if you want it to install the Python 3.6, if it is not inyour system
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Pipenv - note</h3>
+		<p class="note">We'll speak more on importing modules and managing dependencies in the theme "Organizing code: more on importing modules", but for now remeber just to use <code>pipenv</code> instead of <code>pip</code> whenever you want to play with some Python module/code.</p>
+	</section>
+</section>
+<!--
+<section><h1>pipenv - example: simple_plot with matplotlib</h1></section>
+<section id="example_simple_plot_with_matplotlib"><h2 class="advanced">pipenv - example: simple_plot with matplotlib</h2>
+	<section><h3>Create the file</h3>
+		<dl class="fa">
+			<dt>create the file "simple_plot.py" in your project root folder.</dt>
+			<dt>Enter in it the code bellow:</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			import matplotlib.pyplot as plt
+			import numpy as np
+
+			t = np.arange(0.0, 2.0, 0.01)
+			s = 1 + np.sin(2*np.pi*t)
+			plt.plot(t, s)
+
+			plt.xlabel('time (s)')
+			plt.ylabel('voltage (mV)')
+			plt.title('About as simple as it gets, folks')
+			plt.grid(True)
+			plt.savefig("test.png")
+			plt.show()
+		</code></pre>
+		<p class="smallest">example from: <a href="https://matplotlib.org/examples/pylab_examples/simple_plot.html">matplotlib.org</a></p>
+	</section>
+	<section><h3>Prepare terminal</h3>
+		<dl class="fa">
+			<dt>Open a terminal window and navigate to your project root folder.</dt>
+			<dt>Make sure you are in it:</dt>
+		</dl>
+		<pre><code rel="Terminal" class="shell">
+			# navigate...
+			$ cd your/project/root/folder
+
+			# make sure you are in it - get your current working directory:
+			$ pwd
+			your/project/root/folder
+		</code></pre>
+	</section>
+	<section><h3>Run the program</h3>
+		<p>try to run the simple_plot.py program</p>
+		<pre><code rel="Terminal" class="bash">
+			$ python simple_plot.py
+			Traceback (most recent call last):
+			  File "simple_plot.py", line 1, in &lt;module&gt;
+			    import matplotlib.pyplot as plt
+			ImportError: No module named matplotlib.pyplot
+		</code></pre>
+		<p>Yes, an error occurs, because we do not have the required module (matplotlib) installed</p>
+	</section>
+	<section><h3>Install dependencies in a virtual environment</h3>
+		<p class="note">We will install the required modules in a safe virtual environment by pipenv!</p>
+		<pre><code rel="Terminal" class="bash">
+			# install packages safely with pipenv:
+			$ pipenv install matplotlib
+			Creating a virtualenv for this project…
+			...
+			To activate this project`s virtualenv, run the following
+			  $ pipenv shell
+		</code></pre>
+	</section>
+	<section><h3>Activate the virtual environment</h3>
+		<dl class="fa">
+			<pre><code rel="Terminal" class="bash">
+				$ pipenv shel
+				  Spawning environment shell...
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Run the program within the virtual environment</h3>
+		<dl class="fa">
+			<dt>Run the simple_plot.py program:</dt>
+			<pre><code rel="Terminal" class="bash">
+				python simple_plot.py
+			</code></pre>
+			<dt>It should run now - a windows with simple plots wil be opened: <br>
+				<a href="images/simple_plot.py_output.png"><img src="images/simple_plot.py_output.png"></a>
+			</dt>
+		</dl>
+	</section>
+	<section><h3>All the steps in a gif</h3>
+		<a href="images/pipenv/matplotlib_in_pipenv_croped.gif"><img src="images/pipenv/matplotlib_in_pipenv_croped.gif"></a>
+	</section>
+</section>
+
+<section><h1>pipenv with VS Code</h1></section>
+<section><h2>pipenv with VS Code</h2>
+	<section>
+		<dl class="fa">
+			<dt>The new versions of VSCode automatically find pipienv environment, if one is set up.</dt>
+			<dd><a href="https://code.visualstudio.com/docs/python/environments">Using Python environments in VS Code</a></dd>
+			<dt>If you have problems - continue with following slides</dt>
+		</dl>
+	</section>
+	<section><h3>Set up manually the virtual environment's python path:</h3>
+			<pre><code rel="Bash" class="bash">
+				# navigate to project folder
+				$ cd your/root/project/folder
+
+				# get into pipenv shell
+				$ pipenv shell
+				(my_project-hUoR8K1v) $
+
+				# get python path and copy it
+				(my_project-hUoR8K1v) $ which python
+					/home/nemsys/.local/share/virtualenvs/my_project-hUoR8K1v/bin/python
+			</code></pre>
+	</section>
+	<section><h3>Set up manually the virtual environment's python path</h3>
+			<dl class="fa">
+				<dt>Open VS Code project workspace settings.</dt>
+				<dd><kbd>ctrl+shift+p</kbd> and find <code>Preferences: Open Workspace Settings</code></dd>
+				<dd>search for <code>python.pythonPath</code> in left panel</dd>
+				<dd>click "edit" icon and "copy to settings"</dd>
+				<dd>in the right panel paste the pipenv venv path into the "python.pythonPath" value</dd>
+		</dl>
+	</section>
+	<section><h3>Workspace settings after the change</h3>
+		<p>Your workspace settings should look like:</p>
+		<pre><code rel="JSON" class="json">
+				{
+					"folders": [
+						{
+							"path": "."
+						}
+					],
+					"settings": {
+						"python.pythonPath": "/home/nemsys/.local/share/virtualenvs/my_project-hUoR8K1v/bin/python"
+					}
+				}
+			</code></pre>
+	</section>
+	<section><h3>Run the program</h3>
+		<dl class="fa">
+			<dt>Right click on the editor area and select "Run Python File in Terminal " </dt>
+		</dl>
+	</section>
+	<section><h3>pipenv with VS Code - as gif</h3>
+		<a href="images/vsCode/run_pipenved_app_in_vscode.gif"><img src="images/vsCode/run_pipenved_app_in_vscode.gif"></a>
+	</section>
+</section> -->
+
+<section><h1>Resources</h1></section>
+<section><h2>Resources</h2>
+	<section><h3>Readings</h3>
+		<!-- <dl class="fa">
+			<dt>The good parts:</dt>
+			<dd><a href="https://docs.pipenv.org/">docs.pipenv.org</a></dd>
+			<dd><a href="https://pipenv.readthedocs.io/en/latest/basics/">Basic Usage of Pipenv</a></dd>
+			<dd><a href="https://pipenv.readthedocs.io/en/latest/advanced/">Advanced Usage of Pipenv</a></dd>
+			<dt>The bad parts:</dt>
+			<dd><a href="https://chriswarrick.com/blog/2018/07/17/pipenv-promises-a-lot-delivers-very-little/">Pipenv: promises a lot, delivers very little</a></dd>
+		</dl> -->
+	</section>
+	<section><h3>Useful video</h3>
+		<p><a href="https://www.youtube.com/watch?v=GBQAKldqgZs">Kenneth Reitz - Pipenv: The Future of Python Dependency Management - PyCon 2018</a></p>
+		<iframe src="https://www.youtube.com/embed/GBQAKldqgZs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</section>
+	<!-- <section><h3>Useful video</h3>
+		<p><a href="https://www.youtube.com/watch?v=-1rG9ufKL2Y">Pipenv - a talk at the San Diego Python meetup on October 26, 2017</a> by <a href="https://www.youtube.com/channel/UCXU-oZwaHnoYUhja_yrrrGg">San Diego Python</a></p>
+		<iframe src="https://www.youtube.com/embed/-1rG9ufKL2Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section> -->
+	<section><h3>Useful video</h3>
+		<p><a href="https://www.youtube.com/watch?v=6Qmnh5C4Pmo">Pipenv Crash Course</a></p>
+		<iframe src="https://www.youtube.com/embed/6Qmnh5C4Pmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</section>
+</section>
+
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Exercises</h2>
+	<section id="task1"><h3>simple_plot with matplotlib</h3>
+		<dl>Look again at the "<a href="#example_simple_plot_with_matplotlib">Example: simple_plot with matplotlib</a>" and repeat the steps on your machine, such that the program "simple_plot.py"  will run without errors</dl>
+	</section>
+</section>
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-Python-DigitalX-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-DigitalX-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

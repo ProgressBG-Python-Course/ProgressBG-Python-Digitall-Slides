@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>process_user_data </title>
+	<link rel="stylesheet" href="/ProgressBG-Python-DigitalX-Slides/outfit/css/themes/light.css" id="theme">
+	<style>
+		body{
+			width: 80%;
+			margin: 0 auto;
+		}
+		pre{
+			width: 80%;
+			border: 1px dotted #999;
+		}
+	</style>
+</head>
+<body>
+	<h1>Задача 2 (process_user_data.py)</h1>
+	<p>Да се напише програма (<code>process_user_data.py</code> ), която да прочете от файл и представи в подходяща структура от данни следната информация за потребители:</p>
+	<pre>
+|--------|-------|----------|
+| name   |   age | city     |
+|--------|-------|----------|
+| Pier   |    40 | Paris    |
+| John   |    25 | New York |
+| Sara   |    45 | London   |
+| Mary   |    30 | Paris    |
+| Bob    |    35 | London   |
+| Mike   |    50 | London   |
+|--------|-------|----------|
+	</pre>
+
+
+	<p>При стартиране на програмата се представя меню със следните действия:</dt>
+		<dd><code>1. Print all users </code> - показва информацията за всички потребители</dd>
+		<dd><code>2. Print average users age </code> - показва средната възраст на потребителите</dd>
+		<dd><code>3. Find users by city </code> - показва информацията за потребителите от даден град</dd>
+		<dd><code>4. Sort users by name</code> - показва информацията за потребителите, сортирани по име, в нарастващ ред</dd>
+		<dd><code>5. Quit</code> - изход от програмата</dd>
+	</p>
+	<ol>
+		<li>Print all users:<pre><code rel="Terminal" class="bash">
+1. Print all users
+2. Print average users age
+3. Find users by city
+4. Sort users by name
+5. Quit
+******************************
+Enter your choice: 1
+All users:
+	User name: Pier
+	User age: 40
+	User city: Paris
+
+	User name: John
+	User age: 25
+	User city: New York
+
+	User name: Sara
+	User age: 45
+	User city: London
+
+	User name: Mary
+	User age: 30
+	User city: Paris
+
+	User name: Bob
+	User age: 35
+	User city: London
+
+	User name: Mike
+	User age: 50
+	User city: London
+		</code></pre></li>
+		<li>Print average users age:<pre><code rel="Terminal" class="bash">
+1. Print all users
+2. Print average users age
+3. Find users by city
+4. Sort users by name
+5. Quit
+******************************
+Enter your choice: 2
+Average age: 37.5
+		</code></pre></li>
+		<li>Find users by city: <pre><code rel="Terminal" class="bash">
+1. Print all users
+2. Print average users age
+3. Find users by city
+4. Sort users by name
+5. Quit
+******************************
+Enter your choice: 3
+Cities: ['New York', 'Paris', 'London']
+Enter city: London
+Users from London:
+	User name: Sara
+	User age: 45
+	User city: London
+
+	User name: Bob
+	User age: 35
+	User city: London
+
+	User name: Mike
+	User age: 50
+	User city: London
+		</code></pre></li>
+		<li>Sort users by name: <pre><code rel="Terminal" class="bash">
+1. Print all users
+2. Print average users age
+3. Find users by city
+4. Sort users by name
+5. Quit
+******************************
+Enter your choice: 4
+Users sorted by name:
+	User name: Bob
+	User age: 35
+	User city: London
+
+	User name: John
+	User age: 25
+	User city: New York
+
+	User name: Mary
+	User age: 30
+	User city: Paris
+
+	User name: Mike
+	User age: 50
+	User city: London
+
+	User name: Pier
+	User age: 40
+	User city: Paris
+
+	User name: Sara
+	User age: 45
+	User city: London
+
+		</code></pre></li>
+	</ol>
+
+
+</body>
+</html>
