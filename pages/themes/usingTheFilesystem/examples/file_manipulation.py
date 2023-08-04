@@ -15,7 +15,7 @@ import os
 
 # print(os.getcwd())
 
-# os.chdir("/media/nemsys/data/projects/courses/ProgressBG/ProgressBG-Python-DigitalX/ProgressBG-Python-DigitalX-Slides/pages/themes/usingTheFilesystem")
+# os.chdir("/media/nemsys/data/projects/courses/ProgressBG/ProgressBG-Python-Digitall/ProgressBG-Python-Digitall-Slides/pages/themes/usingTheFilesystem")
 # print(os.getcwd())
 
 

@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-addr = 'https://wwwcourses.github.io/ProgressBG-Python-DigitalX-Slides/pages/themes/beginners/variousFormatsHandling/Task_and_HW/get_books_by_category/pythonbooks.revolunet.com.issues.json'
+addr = 'https://wwwcourses.github.io/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/variousFormatsHandling/Task_and_HW/get_books_by_category/pythonbooks.revolunet.com.issues.json'
 with urllib.request.urlopen(addr) as url:
     data = json.load(url)
     i = 1

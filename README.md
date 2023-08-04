@@ -1,1 +1,1 @@
-A ProgressBG Python Course for DigitalX
+A ProgressBG Python Course for Digitall
