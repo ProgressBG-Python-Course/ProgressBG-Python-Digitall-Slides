@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>___title___</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#___title___" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div class="note">Keyboard shortcuts:</div>
+				<div><span>N/Спейс</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Bulk Mapping Update with Python</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2016-2023,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<section data-min="45" class="main-sesction-title"><h1>Introduction to Bulk Mapping Update with Python</h1></section>
+<section class="sub-sections"><h2>Introduction to Bulk Mapping Update with Python</h2>
+	<section><h3>Objectives</h3>
+		<dl class="fa">
+			<dt>Grasp the essentials of bulk mapping and its applications</dt>
+			<dt>Common use cases in data processing and transformation</dt>
+			<dt>Overview of mapping in Python.
+			</dt>
+		</dl>
+	</section>
+	<section id="Introduction"><h3>Introduction</h3>
+		<dl class="fa">
+			<dt>Bulk Mapping Update is a crucial technique in data processing</dt>
+			<dt>This method is essential when dealing with large datasets, where efficiency and speed are key factors</dt>
+			<dt>Python, with its powerful libraries and easy-to-understand syntax, offers a robust platform for performing these bulk operations</dt>
+			<dt>Whether you're updating databases, transforming data for machine learning models, or simply handling large volumes of data, understanding bulk mapping updates in Python is an invaluable skill</dt>
+		</dl>
+	</section>
+	<section><h3>What is Bulk Mapping?</h3>
+		<dl class="fa">
+			<dt>Bulk mapping refers to the process of applying a certain operation or set of operations to a large collection of data items simultaneously</dt>
+			<dt>Unlike iterative methods, where each item is processed individually, bulk mapping processes all items in a group together, drastically improving performance and efficiency</dt>
+			<dt>This technique is particularly useful in scenarios where the same operation needs to be applied to every element of a large dataset, such as updating database records, transforming data for analysis, or batch-processing data for machine learning algorithms</dt>
+		</dl>
+	</section>
+	<section><h3>Common Use Cases in Data Processing and Transformation</h3>
+		<dl class="fa">
+			<dt><b>Data Cleaning</b>: bulk mapping is used to standardize and clean data, such as normalizing text formats or converting data types.</dt>
+			<dd>Normalizing Text Formats: Text data often comes in varied formats, making it challenging to analyze consistently. For instance, consider a dataset with mixed-case country names (e.g., "United States", "united states", "UNITED STATES"). A bulk mapping operation can normalize these variations to a single format, like all lowercase ("united states") or title case ("United States").</dd>
+			<dd>Converting Data Types: Data often needs to be converted into different types for processing. For example, dates might be imported as strings and need conversion to a datetime data type for time-series analysis. Bulk mapping can efficiently apply these conversions across the entire dataset.</dd>
+			<dt><b>Data Integration</b>: bulk mapping techniques are crucial in merging datasets from different sources, ensuring that disparate data formats are homogenized. Key areas include standardizing column names and harmonizing data values</dt>
+			<dd>Standardizing Column Names: Different datasets might use varied column names for the same data (e.g., "DOB", "Date_of_Birth", "BirthDate"). Bulk mapping can rename these columns uniformly across all datasets to ensure consistency.</dd>
+			<dd>Harmonizing Data Values: Different datasets might represent the same data in different formats (e.g., "Yes/No" vs. "1/0" for binary data). Bulk mapping allows for the transformation of these values into a consistent format.</dd>
+			<dt><b>Analytics and Reporting</b>: bulk updates can facilitate the transformation of raw data into a format suitable for analysis or reporting.</dt>
+			<dd>Aggregating Data: Converting raw data into summarized forms suitable for analysis, like summing sales data by region or calculating average customer ratings.</dd>
+			<dd>Pivot Tables: Transforming data into a pivot table format for multi-dimensional analysis, which can be automated through bulk mapping.
+
+			</dd>
+		</dl>
+	</section>
+	<section><h3>Case Study Analysis: Customer Database Standardization</h3>
+		<p>This case study demonstrates the practical application of bulk mapping updates in standardizing and cleaning data, which is fundamental in leveraging data effectively for business decisions.</p>
+		<p>Consider a company with customer data collected from multiple sources, leading to inconsistencies in the dataset. The company needs to standardize this data for effective customer relationship management.</p>
+		<dl class="fa">
+			<dt>Problem: The dataset contains variations in customer names, addresses, and contact information. Additionally, the date formats are inconsistent, and the gender of customers is represented differently across sources (e.g., "Male", "M", "1").</dt>
+			<dt>Solution: A Python script is employed to perform bulk mapping updates. Key transformations include:</dt>
+			<dd>Standardizing text formats for names and addresses (e.g., converting all to title case).</dd>
+			<dd>Normalizing gender representations to a uniform format ("Male", "Female", "Other").</dd>
+			<dd>Converting date strings to a consistent datetime format.</dd>
+			<dt>Result: Post the bulk mapping updates, the dataset becomes uniform and clean, making it easier for the company to analyze customer data, segment customers for targeted marketing, and maintain accurate records.</dt>
+		</dl>
+	</section>
+	<section><h3>Overview of Mapping in Python</h3>
+		<dl class="fa">
+			<dt>Mapping in Python refers to the process of applying a function to each item of an iterable (like a list) and collecting the results. Python offers several built-in features and libraries for efficient mapping operations:</dt>
+			<dd>The map() Function</dd>
+			<dd>List Comprehensions:</dd>
+			<dd>Using Dictionaries for Mapping</dd>
+			<dd>Libraries for Enhanced Mapping, like numpy and pandas</dd>
+		</dl>
+	</section>
+	<section><h3>Map and List Comprehensions Example</h3>
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
+			numbers = [1, 2, 3, 4, 5]
+
+			squared = [x**2 for x in numbers]
+			squared_by_map = map(lambda x: x**2, numbers)
+
+			print(squared)
+			print(list(squared_by_map))
+		</code></pre>
+	</section>
+	<section><h3>Bulk Update with dictionaries</h3>
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
+			user_roles = {'Alice': 'user', 'Bob': 'admin', 'Charlie': 'user'}
+			update_roles = {'Alice': 'admin', 'Charlie': 'moderator'}
+
+			user_roles.update(update_roles)
+
+			print(user_roles)
+		</code></pre>
+	</section>
+	<section><h3>Basic Python Example for Bulk Mapping</h3>
+		<pre><code rel="Python" class="python">
+			import pandas as pd
+
+			# Sample dataset
+			data = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+
+			# Applying a bulk operation - adding 10 to each element
+			updated_data = data + 10
+
+			print(updated_data)
+		</code></pre>
+		<dl class="fa">
+			<dt>Here, we use Pandas to create a simple DataFrame. The bulk operation, in this case, is adding 10 to each element in the DataFrame. This operation is applied to the entire DataFrame in one go, showcasing the simplicity and power of bulk updates in Python</dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="50"><h1>Advanced Bulk Update Techniques</h1></section>
+<section><h2>Advanced Bulk Update Techniques</h2>
+    <section><h3>Vectorization with NumPy</h3>
+        <dl class="fa">
+            <dt>NumPy's vectorization capabilities allow for operations to be applied to entire arrays efficiently, bypassing the need for explicit loops</dt>
+            <dt>This technique is key in handling large numerical datasets quickly</dt>
+        </dl>
+    </section>
+    <section><h3>Pandas for DataFrame Updates</h3>
+        <dl class="fa">
+            <dt>Pandas provides a robust structure, the DataFrame, for handling tabular data</dt>
+            <dt>Bulk operations with Pandas are not only efficient but also intuitive, making complex data transformations and updates straightforward</dt>
+        </dl>
+    </section>
+    <section><h3>SQLAlchemy for Bulk Database Operations</h3>
+        <dl class="fa">
+            <dt>SQLAlchemy offers powerful ORM capabilities for Python, enabling efficient bulk updates and queries with minimal code</dt>
+            <dt>Example: Using SQLAlchemy for updating thousands of records in a database efficiently</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            from sqlalchemy import create_engine, update
+            from sqlalchemy.orm import sessionmaker
+            from my_database_model import MyTable
+
+            # Establishing a connection to the database
+            engine = create_engine('sqlite:///my_database.db')
+            Session = sessionmaker(bind=engine)
+            session = Session()
+
+            # Bulk update query
+            update_query = update(MyTable).where(MyTable.column_to_check == 'condition').values(column_to_update='new_value')
+            session.execute(update_query)
+            session.commit()
+        </code></pre>
+    </section>
+</section>
+
+<section data-min="20"><h1>Optimization and Best Practices</h1></section>
+<section><h2>Optimization and Best Practices</h2>
+    <section><h3>Optimizing Bulk Operations in Python</h3>
+        <dl class="fa">
+            <dt>Optimizing bulk operations is critical for handling very large datasets or when performance is a key concern</dt>
+            <dt>Techniques like parallel processing, using just-in-time compilers like Numba, and optimizing data structures can significantly enhance performance</dt>
+        </dl>
+    </section>
+    <section><h3>Best Practices for Bulk Mapping in Python</h3>
+        <dl class="fa">
+            <dt>Adhere to best practices including writing clean and readable code, properly handling exceptions, and ensuring data integrity</dt>
+            <dt>Testing bulk operations on a smaller dataset before applying them to the full dataset can help identify and rectify potential issues early</dt>
+        </dl>
+    </section>
+</section>
+
+<section><h1>Conclusion and Q&A</h1></section>
+<section><h2>Conclusion and Q&A</h2>
+    <section><h3>Conclusion</h3>
+        <dl class="fa">
+            <dt>We've covered the essentials of bulk mapping updates in Python, from basic concepts to advanced techniques and best practices</dt>
+            <dt>These skills are crucial in efficiently handling large datasets in various applications</dt>
+        </dl>
+    </section>
+    <section><h3>Q&A and Interactive Discussion</h3>
+        <dl class="fa">
+            <dt>Open the floor for questions, encouraging participants to share their experiences or queries related to bulk mapping updates</dt>
+            <dt>This interactive session helps in clarifying doubts and sharing knowledge</dt>
+        </dl>
+    </section>
+    <section><h3>Further Resources</h3>
+        <dl class="fa">
+            <dt>Encourage participants to explore further with additional resources such as online tutorials, Python documentation, and community forums</dt>
+            <dt>Provide recommended readings and online courses for deepening their understanding of Python's data handling capabilities</dt>
+        </dl>
+    </section>
+    <section><h3>Thank You</h3>
+        <dl class="fa">
+            <dt>Conclude with a thank you note, expressing appreciation for the participants' time and engagement</dt>
+            <dt>Provide contact information or ways to stay connected for further learning and discussion</dt>
+        </dl>
+    </section>
+</section>
+
+
+
+
+<section class="main-sesction-title" id="hw"><h1>Exercises</h1></section>
+<section class="sub-sections"><h2>Task1</h2>
+	<section><h3>The Task</h3>
+
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: ___title___">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section>
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1920,
+			height: 1280,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
