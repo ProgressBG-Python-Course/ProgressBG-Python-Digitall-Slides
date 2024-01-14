@@ -26,5 +26,14 @@
         "python",
         "html"
     ],
+    // "spellright.ignoreRegExpsByClass": {
+    //     "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
+    //     "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
+    //     "html": [
+    //         "/<script>[^]*?</script>/gm",
+    //         ""
+    //     ],
+    //     "latex": [ "/\\\\begin{minted}[^]*?\\\\end{minted}/gm" ]
+    // }
 
 }

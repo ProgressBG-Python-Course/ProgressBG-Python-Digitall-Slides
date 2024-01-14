@@ -103,9 +103,9 @@
 	</section>
 	<section><h3>Tech skills</h3>
 		<dl class="fa">
-			<dt>HTML, CSS, JS(ES6+), React.js, Vue.js,...</dt>
+			<dt>HTML, CSS, JavaScript(ES6+), React.js, Angular,...</dt>
 			<dt>Python, Perl, C++, Prolog.</dt>
-			<dt>GraphDB, MongoDB, MySQL/Postgre.</dt>
+			<dt>GraphDB, MongoDB, MySQL, PostgreSQL.</dt>
 			<dt>RDF, WordNet.</dt>
 			<dt>Knowledge representation, ontologies.</dt>
 		</dl>
@@ -130,31 +130,24 @@
 <section><h2>Course Resources</h2>
 	<section><h3>GitHub Labs Repo</h3>
 		<dl class="fa">
-			<dt>Every code sample written during the labs will be uploaded into GitHub, on respective group repository:</dt>
-			<dd><a href="https://github.com/wwwcourses/ProgressBG-Python-Digitall-Labs/tree/Python_Group1_Digitall">Python_Group1_Digitall</a></dd>
-			<dd><a href="https://github.com/wwwcourses/ProgressBG-Python-Digitall-Labs/tree/Python_Group2_Digitall">Python_Group2_Digitall</a></dd>
-			<dt class="advanced">You can clone that branch to your machine by opening a terminal in your course root folder, and paste (without leading '$' sign) :</dt>
-			<pre><code rel="Group1" class="bash">
-				$ git clone https://github.com/wwwcourses/ProgressBG-Python-Digitall-Labs.git -b Python_Group1_Digitall --single-branch
+			<dt>Every code sample written during the labs will be uploaded into GitHub course repository:</dt>
+			<dd><a href="https://github.com/ProgressBG-Python-Course/ProgressBG-Python-Digitall-Labs">ProgressBG-Python-Digitall-Labs</a></dd>
+
+			<dt class="advanced">You can clone that repository to your machine by opening a terminal in your course root folder, and paste :</dt>
+			<pre><code rel="CLI" class="bash">
+				git clone https://github.com/ProgressBG-Python-Course/ProgressBG-Python-Digitall-Labs
 			</code></pre>
-			<pre><code rel="Group2" class="bash">
-				$ git clone https://github.com/wwwcourses/ProgressBG-Python-Digitall-Labs.git -b Python_Group2_Digitall --single-branch
-			</code></pre>
-			<dt class="advanced">the folder 'ProgressBG-Python-Digitall-Labs' will be created</dt>
 		</dl>
 	</section>
 	<section><h3>Course Email</h3>
-		<p style="font-size: 1.5em; font-style: normal;" class="note">progressbg.www.courses@gmail.com</p>
+		<p style="font-size: 1.5em; font-style: normal;" class="note">progressbg.python.course@gmail.com</p>
 		<dl class="fa">
 			<dt>use it to ask any questions</dt>
 			<dt>give any feedback</dt>
 		</dl>
 	</section>
-	<section><h3><a href="https://calendar.google.com/calendar/u/0/embed?src=9hot2i0cn7onifcdvddgb3of4k@group.calendar.google.com&ctz=Europe/Sofia">Course Calendar - Group1</a></h3>
-		<iframe src="https://calendar.google.com/calendar/u/0/embed?src=9hot2i0cn7onifcdvddgb3of4k@group.calendar.google.com&ctz=Europe/Sofia" style="border: 0; height: 80vh;" frameborder="0" scrolling="no"></iframe>
-	</section>
-	<section><h3><a href="https://calendar.google.com/calendar/embed?src=ehf5i4jvssg80r1591g9kikoh8%40group.calendar.google.com&ctz=Europe%2FSofia">Course Calendar - Group2</a></h3>
-		<iframe src="https://calendar.google.com/calendar/embed?src=ehf5i4jvssg80r1591g9kikoh8%40group.calendar.google.com&ctz=Europe%2FSofia" style="border: 0;height: 80vh;" frameborder="0" scrolling="no"></iframe>
+	<section><h3><a href="https://calendar.google.com/calendar/embed?src=e6f958608f2b0d8e156173a4c616118bbfc742b9c01c01a902dcfabfc30baf3d%40group.calendar.google.com&ctz=Europe%2FSofia">Course Calendar</a></h3>
+		<iframe src="https://calendar.google.com/calendar/embed?src=e6f958608f2b0d8e156173a4c616118bbfc742b9c01c01a902dcfabfc30baf3d%40group.calendar.google.com&ctz=Europe%2FSofia" style="border: 0; height: 80vh;" frameborder="0" scrolling="no" style="height:90vh;"></iframe>
 	</section>
 </section>
 
@@ -200,6 +193,7 @@
 		<dl class="fa">
 			<dt><a href="https://www.python.org/">CPython</a> - the official Python distribution.</dt>
 			<dt><a href="https://pypy.org/">PyPy</a> - faster and compliant with Python2 and Python 3</dt>
+			<dt><a href="https://cython.org/">Cython</a> - C-Extensions for Python</dt>
 			<dt><a href="http://www.jython.org/">Jython</a> - Python for the Java Platform.</dt>
 			<dt><a href="http://ironpython.net/">IronPython</a> - the Python programming language for the .NET Framework.</dt>
 			<dt><a href="http://pyjs.org/">Pyjs</a> - contains a Python-to-JavaScript compiler, an AJAX framework and more.</dt>
@@ -213,22 +207,27 @@
 		<dl class="fa">
 			<dt>Download the <span class="note">Python3</span> Installer:</dt>
 			<dd><a href="https://www.python.org/downloads/windows/">Python Releases for Windows</a></dd>
-			<dd>Select 32-bit and 64-bit versions according to your system</dd>
-			<dt>Customize installation:</dt>
-			<dd>installation location:
-				<code>C:/Python310</code></dd>
-			<dd class="note">Select "Add Python to PATH"</dd>
+			<dd>Make sure you download the latest version of Python for Windows (select 32-bit or 64-bit versions according to your system)</dd>
+			<dd>Click on the download link to start the download.</dd>
+			<dt>Run the Installer:</dt>
+			<dd>Once the download is complete, locate the downloaded file (usually a .exe file).</dd>
+			<dd>Double-click on the installer to run it.</dd>
+			<dt>Customize Installation (Optional)</dt>
+			<dd>It's a good idea to check the box that says <b>Add Python to PATH</b> during installation. This makes it easier to run Python from the command line.</dd>
+			<dt>Install Python:</dt>
+			<dd>Click the "Install Now" button to start the installation process.</dd>
+			<dd>Python should be installed in <b>C:\Users\YourUsername\AppData\Local\Programs\Python\Python3x</b></dd>
 			<dt>Reference: <a href="https://docs.python.org/3/using/windows.html#installation-steps">Using Python on Windows - installation-steps @docs.python.org</a></dt>
 		</dl>
 	</section>
-	<section><h3>Install Git (and Git BASH) for Windowss</h3>
+	<section><h3>Install Git (and Git BASH) for Windows (Optional)</h3>
 		<dl class="fa">
 			<dt><a href="https://gitforwindows.org/">Git for Windows</a> provides a BASH emulation terminal used to run Git from the command line. </dt>
 		</dl>
 	</section>
-	<section><h3>Install Python on Mac - more info</h3>
+	<section><h3>Install Python on Mac</h3>
 		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/using/mac.html">Using Python on a Macintosh @docs.python.org</a></dt>
+			<dt><a href="https://docs.python.org/3/using/mac.html">Using Python on a MacOS @docs.python.org</a></dt>
 		</dl>
 	</section>
 	<section><h3>Install Python on Linux</h3>
@@ -238,15 +237,36 @@
 	</section>
 	<section><h3>Verify installation:</h3>
 		<dl class="fa">
-			<dt>Open a Terminal/Command Prompt and type:
+			<dt>To check for python installed version open a Terminal/Command Prompt and type:
 				<pre><code rel="Terminal" class="shell">
-					# check for python installed version:
-					python3 --version
+					# windows:
+					python --version
 
-					# check for pip installed version:
-					pip --version
+					# windows (using py launcher):
+					py --version
+
+					# Linux, MacOS:
+					python3 --version
 				</code></pre>
 			</dt>
+			<dt>If you receive error <span class="note">python command is not found</span>, make sure that Python executable path is in your PATH environment variable.</dt>
+			<dd>Reference: <a href="https://realpython.com/add-python-to-path/">How to Add Python to PATH @realpython.com</a></dd>
+			<dt>If on Windows the above command open the Microsoft Store, make sure that python installation path is the first one in PATH environment variable list, or check <a href="https://learn.microsoft.com/en-us/windows/python/faqs#why-does-running-python-exe-open-the-microsoft-store-">Why does running python.exe open the Microsoft Store?</a></dt>
+		</dl>
+	</section>
+	<section><h3>Using Multiple Python Versions on Windows - <code>py.exe launcher</code></h3>
+		<dl class="fa">
+			<dt>The Python launcher for Windows (<code>py.exe</code> ) is a utility which aids in locating and executing of different Python versions.</dt>
+			<dt>The <code>py</code> launcher will automatically select the most recent version of Python you've installed.</dt>
+			<dt>You can also use commands like <code>py -3.7</code> to select a particular version, or <code>py --list</code> to see which versions can be used. </dt>
+			<dt>References:</dt>
+			<dd><a href="https://docs.python.org/3/using/windows.html#python-launcher-for-windows">Python Launcher for Windows @python.org</a></dd>
+		</dl>
+	</section>
+	<section><h3>Using Multiple Python Versions on Linux/MacOS - <code>pyenv</code></h3>
+		<dl class="fa">
+			<dt>Pyenv is a simple tool to manage multiple versions of Python</dt>
+			<dt>Reference: <a href="https://github.com/pyenv/pyenv">pyenv @GitHub</a></dt>
 		</dl>
 	</section>
 </section>
@@ -281,7 +301,7 @@
 			<!-- <dt><a href="https://www.sublimetext.com/">Sublime Text</a></dt> -->
 		</dl>
 		<hr>
-		<p class="note">During the course, I'll be using VSCode.</p>
+		<p class="note">During the course I'll use VSCode.</p>
 	</section>
 </section>
 
@@ -297,7 +317,7 @@
 	<section><h3>Useful Extensions</h3>
 		<dl class="fa">
 			<dt><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python Extension from Microsoft</a></dt>
-			<dt><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Pylance Exception from Microsoft</a></dt>
+			<dt><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Pylance Extension from Microsoft</a></dt>
 		</dl>
 	</section>
 	<section><h3>Useful Keyboard Shortcuts</h3>
@@ -335,23 +355,26 @@
 			<dd>Store and restore UI state associated with that workspace (for example, the files that are opened).</dd>
 			<dd>Selectively enable or disable extensions only for that workspace.</dd>
 			<dd>Persist task and debugger launch configurations that are only valid in the context of that workspace.</dd>
+			<dd>Reference: <a href="https://code.visualstudio.com/docs/editor/workspaces">What is a VS Code "workspace"?</a></dd>
 		</dl>
 	</section>
-	<section><h3>Prepare your Workspace</h3>
+	<section><h3>Prepare your Course Folder Structure and Workspace</h3>
 		<dl class="fa">
-			<dt>Make a root folder for your python projects.</dt>
-			<dt>Open vscode.</dt>
-			<dt>Select "Add folder" and choose the folder you've made.</dt>
-			<dt>In the sidebar, the "Explorer" will show your folder.</dt>
-			<!-- <dt>Save your workspace (you can use the same name as the project)</dt> -->
-			<!-- <dd>Menu=>File=>save Workspace As...</dd> -->
-			<!-- <dd><kbd>CTRL+SHIFT+P</kbd>=>save Workspace As...</dd> -->
+			<dt>Make sure you have next folder structure to work in during the course:</dt>
+			<pre><code rel="Terminal" class="bash">
+				PythonCourse/
+				├── HW
+				└── Labs
+			</code></pre>
+			<dt>In File Explorer, right click on 'PythonCourse' folder and select "Open with"=>"Visual Studio Code"</dt>
+			<dt>Now you have a single-folder workspace!</dt>
+			<a href="./images/vsCode/PythonCourseWorkspace.png"><img src="./images/vsCode/PythonCourseWorkspace.png" alt="PythonCourseWorkspace"></a>
 		</dl>
 	</section>
-	<section><h3>Prepare your Workspace - demo</h3>
+	<!-- <section><h3>Prepare your Workspace - demo</h3>
 		<p>Your Workspace should look like: </p>
 		<a href="images/vsCode/PrepareWorkspaceWhite.png"><img src="images/vsCode/PrepareWorkspaceWhite.png" style="height: 70vh;"></a>
-	</section>
+	</section> -->
 	<section><h3 class="advanced">Workspace settings</h3>
 		<dl class="fa">
 			<dt>Press <kbd>CTRL+SHIFT+P</kbd> and type <code>Workspace Settings</code></dt>
@@ -360,8 +383,9 @@
 	</section>
 	<section><h3>Create and execute a Python file</h3>
 		<dl class="fa">
-			<dt>Right click on the root folder in VS Code Sidebar.</dt>
-			<dt>Select: "New File", enter the name: <code>say_hello.py</code> and press enter.</dt>
+			<dt>Right click on 'PythonCourse/Labs' folder in VS Code Sidebar.</dt>
+			<dt>Select: "New File" and in the input box enter the name: <code>say_hello.py</code> and press enter.</dt>
+			<a href="./images/vsCode/CreateNewFile.png"><img src="./images/vsCode/CreateNewFile.png" alt="CreateNewFile"></a>
 			<dt>Write down this code (<span class="note">put your name in the quotes</span>):</dt>
 			<pre><code rel="Python" class="python">
 				my_name = "Iva"
@@ -378,13 +402,16 @@
 	</section>
 	<section><h3>Setup 'Run with Python' Task</h3>
 		<dl class="fa">
-			<dt><a href="https://code.visualstudio.com/docs/editor/tasks">tasks @vscode</a></dt>
-			<script src="https://gist.github.com/WWWCourses/b0dcd6c2f052ae19a79006e496aa53e6.js"></script>
+			<dt>It's more flexible and convenient to run Python program by setting <a href="https://code.visualstudio.com/docs/editor/tasks">VSCode task</a>. After that we can run Python Program by pressing <kbd>CTRL+SHIFT+B</kbd>  </dt>
+			<dt>In 'PythonCourse' folder create new folder <code>.vscode</code> (if there is no one) and in it create the file <code>.tasks.json</code></dt>
+			<a href="./images/vsCode/setupTasksJson.png"><img src="./images/vsCode/setupTasksJson.png" alt="setupTasksJson"></a>
+			<dt>Paste <a href="https://gist.githubusercontent.com/WWWCourses/b0dcd6c2f052ae19a79006e496aa53e6/raw/225e5133abfb0fd5e8d98d6f4f4be04222bc6dfd/tasks.json">tasks.json</a> code in '.vscode/tasks.json' file: </dt>
+			<!-- <script src="https://gist.github.com/WWWCourses/b0dcd6c2f052ae19a79006e496aa53e6.js"></script> -->
 		</dl>
 	</section>
-	<section><h3>Select Python version</h3>
+	<!-- <section><h3>Select Python version</h3>
 		<p><kbd>ctrl+shift+p</kbd> and find <code>Python: Select interpreter</code></p>
-	</section>
+	</section> -->
 	<!-- <section><h3>Useful videos</h3>
 		<p><a href="https://www.youtube.com/watch?v=s30KQESSEYk">How to Install Python with Visual Studio Code [2018]</a> by <a href="https://www.youtube.com/channel/UCk8Kq6bH0fcmk9_wmlP50lg">Jason E.</a></p>
 		<iframe src="https://www.youtube.com/embed/s30KQESSEYk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -396,7 +423,7 @@
 	<section><h3>Useful Readings</h3>
 		<dl class="fa">
 			<dt><a href="https://code.visualstudio.com/docs/languages/python">Python in Visual Studio Code @code.visualstudio.com</a></dt>
-			<dt><a href="https://stackoverflow.com/questions/42606837/how-to-use-bash-on-windows-from-visual-studio-code-integrated-terminal">How to use bash on Windows from visual studio code integrated terminal?</a> @stackoverflow</dt>
+			<dt><a href="https://stackoverflow.com/questions/59313899/how-do-i-change-my-vs-code-terminal-to-cmd-exe-instead-of-powershell">How do I change my VS Code terminal to cmd.exe instead of powershell?</a> @stackoverflow</dt>
 		</dl>
 	</section>
 </section>

@@ -82,11 +82,11 @@
 		<dl class="fa">
 			<dt style="font-size: .8em"><code>print()</code> is used to output <span class="note">text streams</span> to stdout or text files (working with files will be discussed deeply in next lectures)</dt>
 		</dl>
-		<pre><code rel="Syntax" class="python">
+		<pre><code rel="Syntax" class="python3">
 			print(*objects, sep=' ', end='\n',file=sys.stdout, flush=False)
 		</code></pre>
 
-		<pre><code rel="Python3" class="python">
+		<pre><code rel="Python3" class="python3">
 			print("Hello")
 			print("World")
 			print(1,2,3)
@@ -98,10 +98,10 @@
 	</section>
 	<!-- <section><h3>the raw_input() function - <span class="note">Python2 way</span></h3>
 		<p>Allows to prompt the user to enter some value.</p>
-		<pre><code rel="Syntax" class="python">
+		<pre><code rel="Syntax" class="python3">
 			variable = raw_input("prompt message, to be displayed to the user: ")
 		</code></pre>
-		<pre><code rel="Python2" class="python">
+		<pre><code rel="Python2" class="python3">
 			>>> user_input = raw_input("enter some value: ")
 			enter some value: iva
 
@@ -114,10 +114,10 @@
 	</section> -->
 	<section><h3>Python3 input() function</h3>
 		<p>Allows to prompt the user to enter some value.</p>
-		<pre><code rel="Syntax" class="python">
+		<pre><code rel="Syntax" class="python3">
 			variable = input("prompt message, to be displayed to the user: ")
 		</code></pre>
-		<pre><code rel="Python3" class="python">
+		<pre><code rel="Python3" class="python3">
 			>>> user_input = input("enter some value: ")
 			enter some value: 42
 
@@ -129,14 +129,16 @@
 		</code></pre>
 		<p class="note">Note, that no matter what value the user entered, it will be stored as a string!</p>
 	</section>
-	<section><h3>Examples (python3)</h3>
-		<pre><code rel="Python" class="python">
-			user_name = input("hi, what's your name: ")
-			user_surname = input("will you tell me your sur name?:")
-
-			print("Nice to meet you, ", user_name.capitalize() + " " + user_surname.capitalize() + "!")
+	<section><h3>Example</h3>
+		<pre><code rel="Python" class="python3">
+			&gt;&gt;&gt; user_name = input(&quot;hi, what&#39;s your name: &quot;)
+			hi, what&#39;s your name:Iva
+			&gt;&gt;&gt; user_surname = input(&quot;will you tell me your sur name?:&quot;)
+			will you tell me your sur name?:Popova
+			&gt;&gt;&gt; print(&quot;Nice to meet you, &quot;, user_name.capitalize() + &quot; &quot; + user_surname.capitalize() + &quot;!&quot;)
+			Nice to meet you, Iva Popova!
 		</code></pre>
-		<p class="note">please note, that using concatenation operation for strings containing variables values, is not the <b>pythonic way</b>! Next slides will illustrate the proper way to do it</p>
+		<!-- <p class="note">please note, that using concatenation operation for strings containing variables values, is not the <b>pythonic way</b>! Next slides will illustrate the proper way to do it</p> -->
 	</section>
 </section>
 
@@ -157,7 +159,7 @@
 	<section><h3>Literal String Interpolation (f-strings)</h3>
 		<dl class="fa">
 			<dt>Python 3.6 added "f-strings" which provide a way to embed expressions inside string literals, using a minimal syntax</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python3">
 				value = 42
 				# str.format() method:
 				'The value is {}.'.format(value)
@@ -171,7 +173,7 @@
 		</dl>
 		</section>
 	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 				user_name = input("hi, what's your name: ")
 				user_surname = input("will you tell me your sur name?:")
 
@@ -188,7 +190,7 @@
 		<pre><code rel="Syntax" class="shell">
 			"format_string" % (values_tuple)
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			>>> "%s died in %d year" % ("Ada Byron", 1852)
 			'Ada Byron died in 1852 year'
 		</code></pre>
@@ -202,7 +204,7 @@
 		<a href="images/Python_formting_string.png"><img style="height: 40vh" src="images/Python_formting_string.png"></a>
 	</section>
 	<section><h3>Example - format data as table</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			print("| %10s | %10s |" % ("=" * 10, "=" * 10))
 			print("| %10d | %10d |" % (1,2) )
 			print("| %10d | %10d |" % (34,12) )
@@ -218,7 +220,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Examples - more</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			x = 1.2345678
 			y = 123
 			print("x = %d, y = %d" % (x,y))
@@ -247,7 +249,7 @@
 		<pre><code rel="Syntax" class="shell">
 			"string_with_placeholders".format(values_to_be_substituted)
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			>>> "{} died in {} year".format("Ada Byron", 1852)
 			'Ada Byron died in 1852 year'
 		</code></pre>
@@ -261,7 +263,7 @@
 		<dl class="fa">
 			<dt>You can give in placeholders an explicit positional index (<span class="note">counting starts from 0</span>), which allows values to be printed in desired order</dt>
 		</dl><br>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 				>>> "{1} died in {0} year".format("Ada Byron", 1852)
 				'1852 died in Ada Byron year'
 			</code></pre>
@@ -270,7 +272,7 @@
 		<dl class="fa">
 			<dt>The format specifier syntax is similar to the old %-formatting, with the addition of the <code>{}</code> and with <code>:</code> used instead of <code>%</code>. For example, '<code>%10d</code>' can be translated to '<code>{:10d}</code>' and so on.</dt>
 		</dl><br><br>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			print("| {:10s} | {:10s} |".format("=" * 10, "=" * 10))
 			print("| {:10d} | {:10d} |".format(1, 2))
 			print("| {:10d} | {:10d} |".format(34, 12))
@@ -318,7 +320,7 @@
 		</dl>
 	</section>
 	<section><h3>Example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			print('|Jhoh\'s pub|')
 			print('|line1\nline2|')
 			print('|abc\t123|')

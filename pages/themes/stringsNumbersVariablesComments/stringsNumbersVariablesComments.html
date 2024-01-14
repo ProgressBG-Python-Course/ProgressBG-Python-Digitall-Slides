@@ -117,7 +117,7 @@
 		<dl class="fa">
 			<dt>Both programs deal with same task: to find the sum and product of array</dt>
 		</dl>
-		<pre style="width: 50vw; height: 40vh; display: inline-block; vertical-align: top; margin-right: 1em;"><code rel="Python" class="python" style="height: 95%;">
+		<pre style="width: 50vw; height: 40vh; display: inline-block; vertical-align: top; margin-right: 1em;"><code rel="Python" class="python3" style="height: 95%;">
 			numbers = [1, 2, 3, 4]
 			product = 1
 
@@ -221,12 +221,7 @@
 	<section><h3>arithmetic operations</h3>
 		<dl class="fa">
 			<dt>Python supports the standard arithmetic operations:</dt>
-			<dd><a href="https://docs.python.org/3/library/stdtypes.html?highlight=arithmetic%20operation#numeric-types-int-float-complex">Numeric Types</a>@python docs</dd>
-		</dl>
-		<p class="note">The division operator "<code>/</code>" in python2 returns the integer part(i.e. works like Floor division), while in python3 it returns the float result</p>
-	</section>
-	<section><h3>Example: arithmetic operations</h3>
-		<pre><code rel="Python" class="python3">
+			<pre><code rel="Python" class="python3" style="min-height: 40vh;">
 				>>> 5-3
 				2
 				>>> 5*3
@@ -237,9 +232,14 @@
 				1
 				>>> 5%3
 				2
-		</code></pre>
+			</code></pre>
+			<dt>Reference: <a href="https://docs.python.org/3/library/stdtypes.html?highlight=arithmetic%20operation#numeric-types-int-float-complex">Numeric Types</a>@python docs</dt>
+		</dl>
 	</section>
-	<section><h3>Example: python3 vs python2 division</h3>
+	<section><h3>python3 vs python2 division</h3>
+		<dl class="fa">
+			<dt>The division operator "<code>/</code>" in python2 returns the integer part(i.e. works like Floor division), while in python3 it returns the float result</dt>
+		</dl>
 		<pre><code rel="Python2" class="python3">
 			>>> 5/3
 			1
@@ -251,7 +251,6 @@
 			>>> 5//3
 			1
 		</code></pre>
-		<p class="note">Python3 adds the "<code>//</code>" operator for Integer division</p>
 	</section>
 	<section><h3>Floating Point Arithmetic: Issues and Limitations</h3>
 		<dl class="fa">
@@ -259,7 +258,7 @@
 			<dt>Most decimal fractions cannot be represented exactly as binary fractions, which leads to peculiar results</dt>
 			<dt>Reference: <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic: Issues and Limitations @python.org</a></dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			print(0.1+0.2)
 
 			# OUTPUT:
@@ -284,7 +283,7 @@
 		</dl>
 	</section>
 	<section><h3>Example: math module methods</h3>
-		<pre><code rel="Python" class="python3">
+		<pre><code rel="Python" class="python3" style="min-height: 60vh;">
 			>>> import math
 			>>>
 			>>> math.pi
@@ -327,45 +326,38 @@
 	<section><h3>definition</h3>
 		<dl class="fa">
 			<dt>Strings are <b>immutable</b> sequences of Unicode code points <span style="font-size: 0.8em">(will be discussed further)</span>.</dt>
-			<dt>Single-line strings literal should be closed in single or double quotes</dt>
-			<dd><i>No difference between single or double quoted strings!</i></dd>
-			<dt>Multi-line strings literal should be closed in triple single or double quotes</dt>
+			<dt><b>Single-line strings</b> literal should be closed in single or double quotes</dt>
+			<dd class="note">No difference between single or double quoted strings!</dd>
+			<dt><b>Multi-line strings</b> literal should be closed in triple single or double quotes</dt>
+			<pre><code rel="Python" class="python3" style="min-height: 65vh;">
+				>>> "this is a single line string"
+				'this is a single line string'
+
+				>>> 'another single line string with UTF charactes like 🍷'
+				'another single line string with UTF charactes like 🍷'
+
+				>>> 'but can not be spread  in multiple lines
+			  File &quot;&lt;stdin&gt;&quot;, line 1
+				'but can not be spred in multiple lines
+													 ^
+				SyntaxError: EOL while scanning string literal
+
+				>>> """infact you can -
+				... if you use these triple quotes"""
+				'infact you can - \nif you use these triple quotes'
+
+				>>> '''or these triple quotes
+				... can separate multiline without errors'''
+				'or these triple quotes\ncan separate multiline without errors'
+			</code></pre>
 		</dl>
-	</section>
-	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python3">
-			>>> "this is a single line string"
-			'this is a single line string'
-
-			>>> 'another single line string with UTF charactes like 🍷'
-			'another single line string with UTF charactes like 🍷'
-
-			>>> 'but can not be spred in multiple lines
-		  File "<stdin>", line 1
-		    'but can not be spred in multiple lines
-		                                         ^
-			SyntaxError: EOL while scanning string literal
-		</code></pre>
-	</section>
-	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python3">
-			>>> """infact you can -
-			... if you use these triple quotes"""
-			'infact you can - \nif you use these triple quotes'
-
-			>>> '''or these triple quotes
-			... can separate multiline without errors'''
-			'or these triple quotes\ncan separate multiline without errors'
-
-
-		</code></pre>
 	</section>
 </section>
 
 <section data-min="10"><h1>Strings operations</h1></section>
 <section><h2>Strings operations</h2>
 	<section><h3>concatenation: <code>+</code></h3>
-		<p>The operation is defined only when <span class="note">both operands are string</span>, I.e. Python can not concatenate apples with oranges:</p>
+		<p>The operation is defined only when <span class="note">both operands are string</span>. <br>Python can not concatenate "apples with oranges":</p>
 		<pre><code rel="Python" class="python3">
 			#string concatenation with '+':
 			>>> "ala" + "bala"
@@ -411,11 +403,9 @@
 			'olobolo'
 			>>> "one,two,three".split(",")
 			['one', 'two', 'three']
-
-
 		</code></pre>
 		<p style="opacity: 0.7; font-size: 0.9em">What a method is will be discussed further!</p>
-		<p>For now, you can try to look at the docs: <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">String Methods @docs.python.org</a></p>
+		<p>Reference: <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">String Methods @docs.python.org</a></p>
 	</section>
 </section>
 
@@ -429,8 +419,8 @@
 			<dt>We can <b>get</b> the variable value, i.e. to <b>read</b> the content of the corresponding container</dt>
 		</dl>
 	</section>
-	<section><h3>A very simplified view of variables in RAM</h3>
-		<pre><code rel="Python" class="python">
+	<section><h3>A very simplified view of variables and RAM</h3>
+		<pre><code rel="Python" class="python3">
 			x = 99
 			y = 3.141516
 			first_name = "ada"
@@ -439,25 +429,15 @@
 		</code></pre>
 		<a href="images/python_variables_in_RAM.png"><img src="images/python_variables_in_RAM.png" style="height: 70vh;"></a>
 	</section>
-	<section><h3>Identifiers rules</h3>
+	<section><h3>Variables (Identifiers) rules</h3>
 		<dl class="fa" style="width: 100%">
 			<dt>Variables names should follow next rules:</dt>
 			<dd>Start with <span class="note">letter or underscore</span></dd>
 			<dd>Followed by zero or more <span class="note">letters, underscores and digits</span></dd>
 			<dt>Variable names <span class="note">are case-sensitive</span></dt>
-			<dt><a href="https://docs.python.org/3/reference/lexical_analysis.html#identifiers">Identifiers and keywords</a> @python docs</dt>
+			<!-- <dt><a href="https://docs.python.org/3/reference/lexical_analysis.html#identifiers">Identifiers and keywords</a> @python docs</dt> -->
 		</dl>
-	</section>
-	<section><h3>Naming Conventions</h3>
-		<dl class="fa">
-			<dt>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</dt>
-			<dt>Variable names follow the same convention as function names.</dt>
-			<dt>mixedCase is allowed only in contexts where that's already the prevailing style (e.g. threading.py), to retain backwards compatibility.</dt>
-			<dt><a href="https://www.python.org/dev/peps/pep-0008/#function-and-variable-names">PEP 8 (Function and Variable Names)</a></dt>
-		</dl>
-	</section>
-	<section><h3>example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			x = 99
 			print("x = ", x)
 
@@ -470,6 +450,14 @@
 
 		</code></pre>
 	</section>
+	<section><h3>Naming Conventions</h3>
+		<dl class="fa">
+			<dt>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</dt>
+			<dt>Variable names follow the same convention as function names.</dt>
+			<dt>mixedCase is allowed only in contexts where that's already the prevailing style (e.g. threading.py), to retain backwards compatibility.</dt>
+			<dt><a href="https://www.python.org/dev/peps/pep-0008/#function-and-variable-names">PEP 8 (Function and Variable Names)</a></dt>
+		</dl>
+	</section>
 	<section><h3>Name binding</h3>
 		<dl class="fa">
 			<dt>Name binding is the association between a name and an a value</dt>
@@ -477,7 +465,7 @@
 			<dt>We can bind a value to a name with the <code>assignment</code> operator (<code>=</code>)</dt>
 			<dt>We can check the unique identity of an object by the <code>id()</code> built-in function.</dt>
 			<dd>CPython uses the object's memory address for the unique id</dd>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python3">
 				a = 2
 				print(id(a))
 
@@ -494,7 +482,7 @@
 			<dt>Python reuses the immutable objects instead of creating copies</dt>
 			<dd>That's true only for small immutable objects (implementation dependant, so don't rely on that)</dd>
 
-			<pre><code rel="Python" class="python" style="min-height: 60vh;">
+			<pre><code rel="Python" class="python3" style="min-height: 60vh;">
 				# only one object will be created
 				a = 1
 				b = 1
@@ -514,7 +502,7 @@
 		</dl>
 	</section>
 	<section><h3>Name binding</h3>
-		<pre><code rel="Python" class="python" style="min-height: 60vh;">
+		<pre><code rel="Python" class="python3" style="min-height: 60vh;">
 			a = 5
 			b = 2+3
 			c = b
@@ -535,7 +523,7 @@
 	<section><h3>Name binding - aliasing</h3>
 		<dl class="fa">
 			<dt>When the right-hand side of the assignment is an existing variable, Python did not create a new object, but gives that object another name, an alias.</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python3">
 				a = 1_000_000
 				b = a
 				print(id(a))
@@ -551,7 +539,7 @@
 		<dl class="fa">
 			<dt>Garbage Collection is a process of reclaiming the unused runtime memory automatically.</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python3">
 			a = 5
 			print(id(a))
 			# 9413312
@@ -575,7 +563,8 @@
 			<dt>Comments are used to explain and/or summarize a part of our program in a more readable manner</dt>
 			<dt>For debugging purposes - when we need fast to ignore a block of code</dt>
 			<dt>For other meta information about the program (programme name, author, date, etc.)</dt>
-			<dt>A well commented program is more readable and maintainable</dt>
+			<dt>A well commented program is more readable and maintainable.</dt>
+			<dt>Reference: <a href="https://www.python.org/dev/peps/pep-0008/#comments">PEP8 - Comments</a></dt>
 		</dl>
 	</section>
 	<section><h3>How to comment our code?</h3>
@@ -591,9 +580,6 @@
 				print(3**2 + 4**2 == 5**2)
 			</code></pre>
 		</dl>
-	</section>
-	<section><h3>Reference</h3>
-		<a href="https://www.python.org/dev/peps/pep-0008/#comments">PEP8 - Comments</a>
 	</section>
 </section>
 
@@ -700,8 +686,8 @@
 <section><h2>HW Submition</h2>
 	<dl class="fa">
 		<dt>You can submit your files either by:</dt>
-		<dd>upload to your Github account</dd>
-		<dd>Or sending as email attachment</dd></dt>
+		<dd>upload to your Github account.</dd>
+		<dd>Or sending as email attachment to course mail.</dd>
 	</dl>
 </section>
 
