@@ -184,6 +184,15 @@ i.top{
 .reveal .slides > section.disclaimer a{
 	color: #97DCDB
 }
+
+/* ---------------------------- Custom Fragments ---------------------------- */
+.custom-fragment {
+	display: none !important;
+}
+.custom-fragment.visible {
+	display: block !important;
+}
+
 /*********************************************
  * LINKS
  *********************************************/

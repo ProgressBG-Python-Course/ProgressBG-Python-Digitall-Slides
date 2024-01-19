@@ -71,6 +71,12 @@ function applyBackgrounds() {
     }
 }
 
+function toggleCustomFragmentOnCurrentSlide() {
+    let currentSlide = Reveal.getCurrentSlide();
+    let customFragments = currentSlide.querySelectorAll('.custom-fragment');
+    customFragments.forEach(fragment=>fragment.classList.toggle('visible'));
+}
+
 PrettyPreCode();
 applyBackgrounds()
 

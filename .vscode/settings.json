@@ -26,6 +26,7 @@
         "python",
         "html"
     ],
+    "editor.indentSize": "tabSize",
     // "spellright.ignoreRegExpsByClass": {
     //     "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
     //     "cpp": [ "/#include\\s+\\\".+\\\"/g" ],

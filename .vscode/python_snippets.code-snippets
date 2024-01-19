@@ -29,6 +29,16 @@
 			"</code></pre>"
 		],
 		"description": ""
+	},
+	"custom-fragment": {
+		"scope": "html",
+		"prefix": "custom-fragment",
+		"body": [
+			"<dl class=\"fa custom-fragment\" style=\"width: 40vw; margin: 0 auto;\">"
+			"\t<dt>$1</dt>"
+			"</dl>"
+		],
+		"description": ""
 	}
 }
 

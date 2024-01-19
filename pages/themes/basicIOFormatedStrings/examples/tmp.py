@@ -1,3 +1,3 @@
-print('|Jhoh\'s pub|')
-print('|line1\nline2|')
-print('|abc\t123|')
+# ---------------------- comma as a thousands separator ---------------------- #
+budget = 1234567890
+print(f'budget={budget:,}')
