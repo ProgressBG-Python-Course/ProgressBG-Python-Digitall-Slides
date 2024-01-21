@@ -458,11 +458,33 @@
 			<dt><a href="https://www.python.org/dev/peps/pep-0008/#function-and-variable-names">PEP 8 (Function and Variable Names)</a></dt>
 		</dl>
 	</section>
+	<section><h3>Assignment Statement</h3>
+		<dl class="fa">
+			<dt>An assignment statement in Python assigns a value to a variable. The basic syntax is:</dt>
+			<pre><code rel="Python" class="python" style="min-height: 5vh;">
+				variable = expression
+			</code></pre>
+			<dt>First <code>expression</code> is evaluated, and then its result is assigned to <code>variable</code>.</dt>
+			<dt>Variations:</dt>
+			<pre><code rel="Python" class="python" style="min-height: 30vh;">
+				### Multiple Assignments
+				x, y = 10, 20 	# x=10 and y=20.
+
+				### Chain Assignment:
+				x = y = 10      # x = 10 and y = 10
+
+				### Shorthand Assignment with Operators:
+				x += 10  	# Equivalent to x = x + 10
+				x **= 10  	# Equivalent to x = x ** 10
+
+			</code></pre>
+		</dl>
+	</section>
 	<section><h3>Name binding</h3>
 		<dl class="fa">
 			<dt>Name binding is the association between a name and an a value</dt>
 			<dd>Note, that all values in Python are represented as objects</dd>
-			<dt>We can bind a value to a name with the <code>assignment</code> operator (<code>=</code>)</dt>
+			<dt>We can bind a value to a name with the <code>assignment</code> statement (<code>=</code>)</dt>
 			<dt>We can check the unique identity of an object by the <code>id()</code> built-in function.</dt>
 			<dd>CPython uses the object's memory address for the unique id</dd>
 			<pre><code rel="Python" class="python3">
@@ -491,7 +513,7 @@
 				print(id(b))
 				#9413184
 
-				# two different objects will be created
+				# two different objects may be created (implementation dependant)
 				c = 1_000_000
 				d = 1_000_000
 				print(id(c))
@@ -499,25 +521,6 @@
 				print(id(d))
 				# 140418111215440
 			</code></pre>
-		</dl>
-	</section>
-	<section><h3>Name binding</h3>
-		<pre><code rel="Python" class="python3" style="min-height: 60vh;">
-			a = 5
-			b = 2+3
-			c = b
-
-			print(id(a))
-			#9413312
-
-			print(id(b))
-			#9413312
-
-			print(id(c))
-			# 9413312
-		</code></pre>
-		<dl class="fa">
-			<dt>Note, that in memory there is exactly one object (id: 9413312, value:5) after execution of the above code.</dt>
 		</dl>
 	</section>
 	<section><h3>Name binding - aliasing</h3>
