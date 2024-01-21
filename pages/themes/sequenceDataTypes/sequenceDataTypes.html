@@ -86,12 +86,22 @@
 <section id="SequenceDataTypesOverview"><h1>Sequence Data Types - Overview</h1></section>
 <section><h2>Sequence Data Types - Overview</h2>
 	<section><h3>What is a Sequence?</h3>
-		<p>A sequence in Python is a container, storing <span class="note">ordered collection</span>  of objects.</p>
+		<dl class="fa">
+			<dt>Sequence data types are a fundamental concept, <b>encompassing several built-in types used to store collections of data</b>.</dt>
+			<dt>Understanding these types is key to performing a wide range of tasks in Python, from data manipulation to looping.</dt>
+			<dt>A sequence in Python is a container, storing <span class="note">ordered collection</span>  of objects.</dt>
+			<dt>The main sequence types are <b>list</b>, <b>tupple</b>, <b>range</b> and <b>string</b>.</dt>
+		</dl>
+
 		<a href="images/animalSequence.png"><img src="images/animalSequence.png"></a>
+
+
+
+
 	</section>
 	<section><h3>What is a Sequence?</h3>
 		<dl class="fa">
-			<dt>The position number of an item in a sequence is called <span class="note">index</span>.</dt>
+			<dt>Each item in a sequence is assigned a number - its position or <span class="note">index</span>.</dt>
 			<dt class="note">Indexes starts counting from 0.</dt>
 			<dt>All sequence data type in Python supports common sequence operations.</dt>
 			<dd><code>length, indexing, slicing, concatenation, <br> repetition, membership test, min, max, count, index</code>.</dd>
@@ -102,7 +112,7 @@
 		<a href="images/sequenceStructure.png"><img src="images/sequenceStructure.png"></a>
 	</section>
 	<section><h3>What is a Sequence? - examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			# list:
 			fruits = ["apple", "banana", "strawberry", "banana", "orange"]
 
@@ -118,11 +128,11 @@
 	</section>
 	<section>
 		<dl class="fa">
-			<dt>The Sequence Data Types in Python are:</dt>
+			<dt>The main Sequence Data Types in Python are:</dt>
 			<dd>Lists.</dd>
 			<dd>Tuple.</dd>
 			<dd>Range.</dd>
-			<dt><i>Strings are also considered as a sequence</i>.</dt>
+			<dd>Strings.</dd>
 		</dl>
 	</section>
 </section>
@@ -145,7 +155,7 @@
 			<dt>A List literal is denoted by a <span class="note">square brackets</span></dt>
 			<dt>Items in the list are separated by <span class="note">comma</span></dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create empty list:
 			empty_list = []
 
@@ -164,7 +174,7 @@
 		<pre><code rel="Syntax" class="shell" data-noescape>
 			item = list_name<b>[</b><i>index</i><b>]</b>
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create list:
 			fruits = ["apple", "banana", "strawberry", "banana", "orange"]
 
@@ -186,7 +196,7 @@
 		<pre><code rel="Syntax" class="shell" data-noescape>
 			list_name<b>[</b><i>index</i><b>] = <i>value</i></b>
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create list:
 			fruits = ["apple", "banana", "strawberry"]
 
@@ -207,7 +217,7 @@
 <section><h2>Tuples</h2>
 	<section><h3>What is a Tuple?</h3>
 		<dl class="fa">
-			<dt>A tuple is <span class="note">immutable</span> (i.e. not changeble) sequence of data.</dt>
+			<dt>A tuple is <span class="note">immutable</span> (i.e. not changeable) sequence of data.</dt>
 			<dd class="note">once created a tuple can not be changed! No grow or shrink can happens.</dd>
 			<dt>Useful for fixed data.</dt>
 			<dt>Tuples are faster than lists and consumes less memory, but they are not general-purpose.</dt>
@@ -219,17 +229,22 @@
 			<dt>Items in the tuple are separated by <span class="note">comma</span></dt>
 			<dt>A <span class="note">single item tuple</span> is created with trailing comma, like <code>(1,)</code></dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+
+		<pre><code rel="Python" class="python" style="min-height: 60vh;">
 			### create empty tuple:
-			empty = ()
-			print( empty )
-			# ()
+			t = ()
+			print(type(t))
+			#&lt;class &#39;tuple&#39;&gt;
 
 			### create tuple with one element - note the trailing comma!
 			#   if you write t = (99), it will be an integer, not tuple
 			t = (99,)
-			print(t)
-			# (99,)
+			print(type(t))
+			# &lt;class &#39;tuple&#39;&gt;
+
+			n = (99)
+			print(type(n))
+			&lt;class &#39;int&#39;&gt;
 
 			### create tuple of 3 elements:
 			point3d = (4, 0, 3)
@@ -241,7 +256,7 @@
 		<pre><code rel="Syntax" class="shell" data-noescape>
 			item = tuple_name<b>[</b><i>index</i><b>]</b>
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			# create a tuple
 			address = ('Bulgaria', 'Sofia', 'Nezabravka str', 14)
 
@@ -255,7 +270,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create tuple with 3 elements:
 			ada_birth_date = (10, "December", 1815)
 
@@ -272,7 +287,7 @@
 		<dl class="fa">
 			<dt class="note">Tuples are immutable and can not be changed!</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 20vh;">
 			### change a tuple item:
 			address[0] = "France"
 			# TypeError: 'tuple' object does not support item assignment
@@ -282,7 +297,7 @@
 		<dl class="fa">
 			<dt>Tuple is immutable, but this does not means the we can not reassign it's mutable value, like list</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			t = ([1,2,3],)
 
 			# change third element in the list inside a tuple:
@@ -303,6 +318,25 @@
 			<dt>Usage</dt>
 			<dd>Use list, when you want to add/remove/change items in the list</dd>
 			<dd>Use tuple, when you want to preserve your data from being changed. Or when you need to optimize your program.</dd>
+		</dl>
+	</section>
+</section>
+
+<section><h1>Conversion Between Sequence Types</h1></section>
+<section><h2>Conversion Between Sequence Types</h2>
+	<section>
+		<dl class="fa">
+			<dt>You can convert between different sequence types, using <code> list()</code>, <code> tuple()</code>, <code> list()</code></dt>
+			<pre><code rel="Python" class="python" style="min-height: 30vh;">
+				address = ('Bulgaria', 'Sofia', 'Nezabravka str', 14)
+				# convert value in address to list
+				address = list(address)
+
+				address[3] = 25
+				print(address)
+
+				# ['Bulgaria', 'Sofia', 'Nezabravka str', 25]
+			</code></pre>
 		</dl>
 	</section>
 </section>
@@ -333,7 +367,7 @@
 		</dl>
 	</section>
 	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			range(0,10)
 			# generates the sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -356,21 +390,21 @@
 	<section><h3>Print range sequence</h3>
 		<dl class="fa">
 			<dt>Note, that when you just print a range object it will not return the sequence of numbers, but just the formula:</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				r = range(0, 10, 2)
 				prin
 
 				# range(0, 10, 2)
 			</code></pre>
 			<dt>If you want to print the generated sequence, you can use the builtin <code>list()</code> or <code>tuple()</code> function:</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				r = range(0, 10, 2)
 				print(list(r))
 
 				# [0, 2, 4, 6, 8]
 			</code></pre>
 			<dt>But the most common way to use the range items is to loop over them:</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				### iterate from 0 up to 10, step = 1 (default)
 				for i in range(10):
 					print(i, end=" ")
@@ -379,7 +413,7 @@
 		</dl>
 	</section>
 	<section><h3>Range in for: example 1</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### iterate from 10 up to -1, step = -1
 			for i in range(10,-1, -1):
 			    print(i, end=" ")
@@ -387,7 +421,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Range in for: example 2</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### iterate from 2 up to 10, step = 2
 			for i in range(2, 10, 2):
 			    print(i, end=" ")
@@ -395,7 +429,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Range in for: example 3</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### iterate from -10 up to 0, step = 2
 			for i in range(-10, 0, 2):
 			    print(i, end=" ")
@@ -439,7 +473,7 @@
 	<section><h3>Concatenation <span class="note">+</span></h3>
 		<dl class="fa">
 			<dt>Concatenate two sequences and return the resulting sequence</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 					### Let's have two lists:
 					fruits = ["apple", "banana", "strawberry"]
 					numbers = [1,2,3]
@@ -454,7 +488,7 @@
 		</dl>
 	</section>
 	<section><h3>Concatenation - lists example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			num_list = [1,2,3]
 			alpha_list = ["a", "b", "c"]
 
@@ -465,7 +499,7 @@
 		<p>Note, that the result is a list!</p>
 	</section>
 	<section><h3>Concatenation - tuples example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			date1 = (31, "December", 2017)
 			date2 = (10, "Mart", 1999)
 
@@ -478,7 +512,7 @@
 		<dl class="fa">
 			<dt>Repeats a sequence a given number of times and return the resulting sequence</dt>
 			<dt>The multiplier must be an integer value!</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				### Let's have a list:
 				numbers = [1, 2, 3]
 
@@ -493,7 +527,7 @@
 
 	</section>
 	<section><h3>Repetition - example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			num_list = [1, 2, 3]
 			alpha_list = ["a", "b", "c"]
 
@@ -514,7 +548,7 @@
 		</dl>
 	</section>
 	<section><h3>Membership Testing - list example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### Let's have two list:
 			fruits = ["apple", "banana", "strawberry"]
 			numbers = [1, 2, 3]
@@ -535,7 +569,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Membership Testing - range example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			# Let's have a range:
 			r = range(0,10)
 			print(3 in r)
@@ -553,7 +587,7 @@
 		</dl>
 	</section>
 	<section><h3>Indexing from start to end - example</h3>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				### create list of numbers:
 				numbers = [1,2,3,4,5]
 
@@ -570,7 +604,7 @@
 		</dl>
 	</section>
 	<section><h3>Indexing from end to start - example</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create list of numbers:
 			numbers = [1,2,3,4,5]
 
@@ -583,7 +617,7 @@
 		<dl class="fa">
 			<dt>The pythonic way to get the last element of a sequence is by using the <code>-1</code> index, not by <code>len()-1</code></dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			fruits = ["apple", "banana", "strawberry"]
 
 			# the pythonic way to print last element
@@ -605,7 +639,7 @@
 			<dt>At least one column (<code>:</code>) is required!</dt>
 		</dl>
 
-		<pre><code rel="Syntax - explanation" class="python">
+		<pre><code rel="Syntax - explanation" class="python" style="min-height: 40vh;">
 			a[start:end] # get items with indexes from start through end-1
 			a[start:]    # get items with indexes from start through the rest of the array
 			a[:end]      # get items with indexes from the beginning through end-1
@@ -614,7 +648,7 @@
 		<p>Reference: <a href="https://docs.python.org/3/library/functions.html#slice">slice @python docs</a></p>
 	</section>
 	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			>>> str = "abcdef"
 
 			>>> str[2:3]
@@ -638,7 +672,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Examples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			>>> str = "abcdef"
 
 			>>> str[:]
@@ -666,7 +700,7 @@
 			for item in <em>sequence</em>:
 			    # do something with item
 		</code></pre>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### loop on list items:
 			for item in [1,2,3]:
 			    print(item)
@@ -688,7 +722,7 @@
 		<dl class="fa">
 			<dt>As we saw, Python doesn't have C-style for loop, but we can emulate it with:</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			user_name = "ivan"
 
 			for i in range(len(user_name)):
@@ -706,7 +740,7 @@
 		<dl class="fa">
 			<dt>To get the index and the item in a <code>for</code> loop, we can also use the <a href="https://docs.python.org/3/library/functions.html#enumerate">enumerate()</a> built-in function:</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			for i,l in enumerate(user_name):
 			  print("{} - {}".format(i, l))
 		</code></pre>
@@ -725,7 +759,7 @@
 		<dl class="fa">
 			<dt>With <code>list()</code> function we can create a list from any sequence:</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### list from tuple:
 			point3d = (4, 0, 3)
 			point3d_list = list(point3d)
@@ -746,7 +780,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Other List Operations</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			fruits = ["apple", "orange", "strawberry"]
 			### Delete a list item by index
 			del fruits[1]
@@ -824,7 +858,7 @@
 	<section><h3 class="advanced">Slicing columns from "lists of lists" ?</h3>
 		<dl class="fa">
 			<dt>Python did not support syntax to slice columns from "multi dim" looking list</dt>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				m = [
 					[1,2,3],
 					[4,5,6],
@@ -845,7 +879,7 @@
 			<pre><code rel="Terminal" class="bash">
 				pip install numpy
 			</code></pre>
-			<pre><code rel="Python" class="python">
+			<pre><code rel="Python" class="python" style="min-height: 40vh;">
 				import numpy
 
 				# lets create a python list
@@ -868,7 +902,7 @@
 		</dl>
 	</section>
 	<section><h3>List of tuples</h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### create list_of_tuples:
 			points = [
 			    (1,2),
@@ -901,7 +935,7 @@
 		<dl class="fa">
 			<dt>With <code>tuple()</code> function we can create a tuple from any sequence:</dt>
 		</dl>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			### tuple from list:
 			fruits = ["apple", "banana", "strawberry", "banana", "orange"]
 			fruits_tuple = tuple(fruits)
@@ -930,7 +964,7 @@
 		</dl>
 	</section>
 	<section><h3 class="advanced">Change mutable item inside tuple? <strong> - example</strong></h3>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			users = (
 			    ["Ivan", "Ivanov", 34],
 			    ["Maria", "Ivanova", 36],
@@ -1025,7 +1059,7 @@
 	</section>
 	<section><h3>Task 6 [task_6.py]</h3>
 		<p>Given are next list of distances from Sofia:</p>
-		<pre><code rel="Python" class="python">
+		<pre><code rel="Python" class="python" style="min-height: 40vh;">
 			distances_from_sofia = [
 			    ("Bansko", 97),
 			    ("Brussels", 1701),
@@ -1054,7 +1088,7 @@
 	</section>
 	<section><h3 class="advanced">Task 6 - advanced</h3>
 		<p>Using the <code>sorted()</code> function explained in <a href="https://docs.python.org/3/howto/sorting.html">Sorting HOW TO</a>, output the sorted lists of filtered distances in ascending order:</p>
-		<pre><code rel="Output" class="python">
+		<pre><code rel="Output" class="python" style="min-height: 40vh;">
 			Bansko - 97
 			Szeged - 469
 			Palermo - 987
