@@ -102,6 +102,7 @@ def solution4():
     H = height in meters
 
     Display to the user the BMI and basic category, using next table:
+
     | ------------------------------- | ----------- |
     | category                        | BMI         |
     | ------------------------------- | ----------- |

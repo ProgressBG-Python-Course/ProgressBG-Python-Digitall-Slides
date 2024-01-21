@@ -516,6 +516,77 @@
     </section>
 </section>
 
+<section id=""><h1>Conditional expressions (aka Ternary Operator)</h1></section>
+<section><h2>Conditional expressions (aka Ternary Operator)</h2>
+    <section>
+        <dl class="fa">
+            <dt>Conditional expressions, often known as "ternary operators" in many programming languages, are a shorthand way of writing conditional statements. </dt>
+            <dt>They provide a compact syntax for deciding which of two values to assign to a variable. </dt>
+            <dt>In Python, conditional expressions enhance readability and brevity.</dt>
+            <dt>The basic syntax of a conditional expression in Python is:</dt>
+            <pre><code rel="Syntax" class="python" style="min-height: 4vh;">
+                x if condition else y
+            </code></pre>
+            <dt>This expression evaluates <code>condition</code>, and:</dt>
+            <dd>If <code>condition</code> is <code>True</code>, the expression evaluates to <code>x</code>.</dd>
+            <dd>If <code>condition</code> is <code>False</code>, it evaluates to <code>y</code>.</dd>
+            <dt>Example:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 30vh;">
+                user_age = 5
+                print( 'adult' if user_age>=18 else "child" )  # 'adult'
+
+                # above code is equivalent to next if-else statement:
+                if user_age>=18:
+                    print('adult')
+                else:
+                    print('child')
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+
+<section id=""><h1>Statement vs Expression</h1></section>
+<section><h2>Statement vs Expression</h2>
+    <section>
+        <dl class="fa">
+            <dt class="note">Expression:</dt>
+            <dd>An expression in Python is any combination of literals (like numbers or string values), variables, operators, and calls to functions that <b>return a value</b>.</dd>
+            <dd>Expressions need to be evaluated. When Python evaluates an expression, it computes its value.</dd>
+            <dd>A simple example of an expression is 2 + 3. When evaluated, Python understands this and computes its value, 5.</dd>
+            <dt class="note">Statement:</dt>
+            <dd>A statement, on the other hand, is an instruction that Python can execute. Think of it as an action or command.</dd>
+            <dd>Statements do something but don't necessarily produce a value.</dd>
+            <dd>Examples include assignment statements like x = 5, print statements, if statements, for loops, etc.</dd>
+            <dt>Key Differences</dt>
+            <dd><b><span class="note">Expressions</span> always produce or return a value. <span class="note">Statements</span> do not produce value, they do something.</b></dd>
+            <dd>Expressions can be parts of statements. For example, in x = 5 + 3, the 5 + 3 is an expression, while x = 5 + 3 is a statement.</dd>
+            <dd>Statements are more about performing an action, while expressions are about producing a value.</dd>
+        </dl>
+    </section>
+</section>
+
+
+<section id=""><h1>Operator precedence</h1></section>
+<section><h2>Operator precedence</h2>
+    <section>
+        <dl class="fa">
+            <dt>Operator precedence determines the order in which operations are processed in an expression.</dt>
+            <dt>Incorrect assumptions about this order can lead to bugs and unexpected behaviors.</dt>
+            <dt>Reference: <a href="https://docs.python.org/3/reference/expressions.html#operator-precedence">Operator precedence table</a></dt>
+            <dt>Examples:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                print( 2 + 3 * 4 )    # Equals 14, not 20
+                print( (2 + 3) * 4 )  # Equals 20
+            </code></pre>
+            <dt>Best Practices:</dt>
+            <dd><b>Use Parentheses for Clarity</b>: Even when you know the precedence rules, using parentheses can make your expressions clearer and easier to understand for others.</dd>
+            <dd><b>Avoid Complicated Expressions</b>: If an expression is getting too complex, consider breaking it into smaller parts or storing intermediate results in variables.</dd>
+        </dl>
+    </section>
+</section>
+
+
 <section id="Exercises"><h1>Exercises</h1></section>
 <section id="hw">
     <!-- <section><h3>Task1: odd_or_even.py</h3>
