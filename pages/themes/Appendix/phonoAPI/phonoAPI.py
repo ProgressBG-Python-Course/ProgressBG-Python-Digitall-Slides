@@ -38,7 +38,7 @@ class FonApi:
         headers = {'content-type': 'application/json'}
         result = self.sendpostdata(url, postdata, headers)
         try:
-            return result.json()
+            return result.json() #type:ignore
         except AttributeError:
             return result
 
@@ -80,9 +80,9 @@ device = 'htc'
 f = FonApi(apikey)
 
 phones = f.getdevice(device=device)
-print("len(phones)=",len(phones))
+print("len(phones)=",len(phones)) #type:ignore
 
-print(phones[0])
+print(phones[0])    #type:ignore
 
 
 # try:

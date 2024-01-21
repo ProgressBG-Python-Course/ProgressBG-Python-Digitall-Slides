@@ -25,8 +25,7 @@ async def produce(queue, queue_capacity):
     print('producing {}/{}'.format(item, queue_capacity))
     item +=1
     # simulate i/o operation using sleep
-    await time.sleep(random.random())
-
+    await asyncio.sleep(random.random())
 
     # put the item in the queue and decrease queue_capacity
     queue_capacity -=1

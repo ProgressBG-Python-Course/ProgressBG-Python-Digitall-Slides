@@ -1,8 +1,8 @@
 import pandas as pd
 from IPython.display import display
-from IPython.display import Image
+# from IPython.display import Image
 
-
+#
 tableA_raw = {
   'tac': [1,2,3],
   'a': ["a1","a2","a3"],

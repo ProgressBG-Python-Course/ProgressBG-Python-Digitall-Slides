@@ -19,18 +19,20 @@ def scrape_data(page):
 	bs_parser = BeautifulSoup(page, 'html.parser')
 	products_html = bs_parser.find('ul', 'products')
 
-	for product in products_html.find_all("article"):	
-		try:
-			name = product.select("div h2")[0].string
-		except:
-			name = "NoName"
+	if products_html:
+		for product in products_html.find_all("article"): # type: ignore
+			try:
+				name = product.select("div h2")[0].string
+			except:
+				name = "NoName"
 
-		try:
-			price = product.select("div tspan")[0].string
-		except:
-			price = None
-			
-		products.append((name,int(price)))
+			try:
+				price = product.select("div tspan")[0].string
+				products.append((name,int(price)))
+			except:
+				price = None
+
+
 
 def print_scraped_data(products):
 	sorted_by_price = sorted(products, key=lambda p: p[1])
@@ -48,7 +50,7 @@ for i in range(10,11):
 	print("Scraping URL:", url)
 	page = get_html(url)
 	scrape_data(page)
-	
+
 print_scraped_data(products)
 
 
