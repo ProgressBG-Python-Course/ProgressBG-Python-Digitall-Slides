@@ -151,22 +151,29 @@
         </code></pre>
     </section>
     <section><h3>Example: sum all numbers in [1..100]</h3>
-        <pre><code rel="Python" class="python">
-            i = 1
-            sum = 0
-            while i <= 100:
-                sum += i
-                i += 1
-            print("sum = ", sum)
-        </code></pre>
-        <pre><code rel="Output" class="shell">
-            sum =  5050
-        </code></pre>
-        <p>Note, that this is just an example to illustrate the syntax. Same task is better to be implemented with <code>for</code> loop, or even better: with built-in function sum()</p>
+        <dl class="fa">
+            <dt>Note, that this is just an example to illustrate the syntax.</dt>
+            <pre><code rel="Python" class="python">
+                i = 1
+                total_sum = 0
+                while i <= 100:
+                    total_sum += i
+                    i += 1
+                print("total_sum = ", total_sum)
+                # total_sum =  5050
+            </code></pre>
+            <dt>Same task is better to be implemented with <code>for</code> loop, or even better: with built-in function sum()</dt>
+            <pre><code rel="Python" class="python" style="min-height: 20vh;">
+                total_sum = sum(range(1,101))
+                print("total_sum = ", total_sum)
+
+                # total_sum =  5050
+            </code></pre>
+        </dl>
     </section>
     <section><h3>Task: sum even numbers in [1..100]</h3>
         <dl class="fa">
-            <dt>Modify the previous example, but calculate the sum <span class="note">only of the even numbers</span> in the given interval [1..100]</dt>
+            <dt>Modify the previous example (whit <code>while</code> loop), but calculate the sum <span class="note">only of the even numbers</span> in the given interval [1..100]</dt>
         </dl>
         <pre><code rel="Output" class="shell">
             sum =  2550
@@ -222,9 +229,69 @@
                     print(j)
                 print("\n") #prints new line
         </code></pre>
-        <dl class="fa">
+        <!-- <dl class="fa">
             <dt class="note">More examples and real-world usage of the <code>for</code> statement will be shown in <a href="/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/sequenceDataTypes/sequenceDataTypes.html">Sequence data types</a> theme!</dt>
+        </dl> -->
+    </section>
+</section>
+
+<section id="LoopOnSequence"><h1>More example on "Loop on sequence"</h1></section>
+<section><h2>Loop on sequence</h2>
+    <section><h3>Syntax</h3>
+        <pre><code rel="Terminal" class="shell" data-noescape>
+            for item in <em>sequence</em>:
+                # do something with item
+        </code></pre>
+        <pre><code rel="Python" class="python" style="min-height: 40vh;">
+            ### loop on list items:
+            for item in [1,2,3]:
+                print(item)
+
+            ### loop on tuple items:
+            for item in (10, "December", 1985):
+                print(item)
+
+            ### loop on string items:
+            for item in "byron":
+                print(item)
+
+            ### loop on range items:
+            for item in range(1,3):
+                print(item)
+        </code></pre>
+    </section>
+    <section id="LoopOnIndexesOfSequenceCStyle"><h3>Loop on indexes of sequence: C-style</h3>
+        <dl class="fa">
+            <dt>As we saw, Python doesn't have C-style for loop, but we can emulate it with:</dt>
         </dl>
+        <pre><code rel="Python" class="python" style="min-height: 40vh;">
+            user_name = "ivan"
+
+            for i in range(len(user_name)):
+              print("{} - {}".format(i, user_name[i]))
+        </code></pre>
+        <pre><code rel="Output" class="bash" data-noescape>
+            0 - i
+            1 - v
+            2 - a
+            3 - n
+        </code></pre>
+        <p>Note, that this is not the Pythonic way of looping on sequence by index. </p>
+    </section>
+    <section id="LoopOnIndexesOfSequencePythonicWay"><h3>Loop on indexes of sequence: Pythonic way</h3>
+        <dl class="fa">
+            <dt>To get the index and the item in a <code>for</code> loop, we can also use the <a href="https://docs.python.org/3/library/functions.html#enumerate">enumerate()</a> built-in function:</dt>
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 40vh;">
+            for i,l in enumerate(user_name):
+              print("{} - {}".format(i, l))
+        </code></pre>
+        <pre><code rel="Output" class="bash" data-noescape>
+            0 - i
+            1 - v
+            2 - a
+            3 - n
+        </code></pre>
     </section>
 </section>
 
