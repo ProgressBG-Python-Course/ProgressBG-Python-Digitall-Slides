@@ -1,58 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>loopsAndComprehensions</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
+    <meta charset="utf-8">
+    <title>loopsAndComprehensions</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<!-- CUSTOM -->
-	<style type="text/css">
-		.reveal section iframe{
-			text-align: center;
-			margin: 0 auto;
-			height: 70vh;
-		}
+    <!-- CUSTOM -->
+    <style type="text/css">
+        .reveal section iframe{
+            text-align: center;
+            margin: 0 auto;
+            height: 70vh;
+        }
 
-	</style>
-	<base target="_blank">
+    </style>
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -60,526 +60,526 @@
 -->
 <section><h1>Loops in Python. Comprehensions.</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 <section><h1>What are <span class="note">loops (cycles)?</span></h1></section>
 <section><h2>What are <span class="note">loops (cycles)?</span></h2>
-	<section>
-		<dl class="fa">
-			<dt>Loops are control statements which allows a block of code to be executed <span class="note">multiple</span> times.</dt>
-			<dt>This repetition of a code can be fixed number of times (<span class="note">for loop</span>) or while some <span class="note">condition</span> is fulfilled (<span class="note">while loop</span>).</dt>
-			<dt>Each execution of the code, during the loop, is called an <span class="note">iteration</span>!</dt>
-		</dl>
-	</section>
+    <section>
+        <dl class="fa">
+            <dt>Loops are control statements which allows a block of code to be executed <span class="note">multiple</span> times.</dt>
+            <dt>This repetition of a code can be fixed number of times (<span class="note">for loop</span>) or while some <span class="note">condition</span> is fulfilled (<span class="note">while loop</span>).</dt>
+            <dt>Each execution of the code, during the loop, is called an <span class="note">iteration</span>!</dt>
+        </dl>
+    </section>
 </section>
 
 <section id="whileLoop"><h1><code>while</code> loop</h1></section>
 <section><h2><code>while</code> loop</h2>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			while <i>condition</i> <b>:</b>
-				<i>block</i>
-		</code></pre>
-		<dl class="fa">
-			<dt>The block will be executed <b>while</b> the <b>condition is True</b>!</dt>
-			<dt class="note">Inside the block we have to change the variable used in condition to prevent an endless loop. Or we can use <code>break</code> statement (discussed further)</dt>
-		</dl>
-	</section>
-	<section id="whileLoopFlow"><h3>Flow</h3>
-		<a href="images/WhileFlow.png"><img src="images/WhileFlow.png"></a>
-	</section>
-	<section><h3>Simple example</h3>
-		<pre><code rel="Python" class="python">
-			i = 1
-			while i<=5 :
-				print(i)
-				i += 1
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			1
-			2
-			3
-			4
-			5
-		</code></pre>
-		<p class="note">This is just a simple example. For fixed numbers of times loops, it is better to user <code>for</code> with <code>range</code> loop, which will be discussed next</p>
-	</section>
-	<section><h3>Example: endless loop (find the problem)</h3>
-		<p class="note">If you run next code, your Python will run an endless loop. Use <kbd>CTRL+C</kbd> or <kbd>CTRL+Z</kbd> to stop it</p>
-		<pre><code rel="JS" class="js">
-			# print the numbers from 10 to 1:
-			i = 10
-			while i>=1 :
-				print(i)
-				i = 1
-		</code></pre>
-	</section>
-	<section><h3>Example - proper use case of while</h3>
-		<p class="note"><code>While</code> loop is suitable, when we do not know in advance the number of iterations needed</p>
-		<pre><code rel="Python" class="python">
-			# ask user to enter a name (string), until it contains at least 3 symbols
-			# the len function on string returns the number of symbols in a string
-			user_name = input("Enter a name, please: ")
-			user_name_length = len(user_name)
+    <section><h3>Syntax</h3>
+        <pre><code rel="Syntax" class="python" data-noescape>
+            while <i>condition</i> <b>:</b>
+                <i>block</i>
+        </code></pre>
+        <dl class="fa">
+            <dt>The block will be executed <b>while</b> the <b>condition is True</b>!</dt>
+            <dt class="note">Inside the block we have to change the variable used in condition to prevent an endless loop. Or we can use <code>break</code> statement (discussed further)</dt>
+        </dl>
+    </section>
+    <section id="whileLoopFlow"><h3>Flow</h3>
+        <a href="images/WhileFlow.png"><img src="images/WhileFlow.png"></a>
+    </section>
+    <section><h3>Simple example</h3>
+        <pre><code rel="Python" class="python">
+            i = 1
+            while i<=5 :
+                print(i)
+                i += 1
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            1
+            2
+            3
+            4
+            5
+        </code></pre>
+        <p class="note">This is just a simple example. For fixed numbers of times loops, it is better to user <code>for</code> with <code>range</code> loop, which will be discussed next</p>
+    </section>
+    <section><h3>Example: endless loop (find the problem)</h3>
+        <p class="note">If you run next code, your Python will run an endless loop. Use <kbd>CTRL+C</kbd> or <kbd>CTRL+Z</kbd> to stop it</p>
+        <pre><code rel="JS" class="js">
+            # print the numbers from 10 to 1:
+            i = 10
+            while i>=1 :
+                print(i)
+                i = 1
+        </code></pre>
+    </section>
+    <section><h3>Example - proper use case of while</h3>
+        <p class="note"><code>While</code> loop is suitable, when we do not know in advance the number of iterations needed</p>
+        <pre><code rel="Python" class="python">
+            # ask user to enter a name (string), until it contains at least 3 symbols
+            # the len function on string returns the number of symbols in a string
+            user_name = input("Enter a name, please: ")
+            user_name_length = len(user_name)
 
-			while user_name_length < 3:
-				user_name = input("Enter a name (at least 3 symbols): ")
-				user_name_length = len(user_name)
+            while user_name_length < 3:
+                user_name = input("Enter a name (at least 3 symbols): ")
+                user_name_length = len(user_name)
 
-			print("Thank you, {}!".format(user_name))
-		</code></pre>
-	</section>
-	<section><h3>Example: sum all numbers in [1..100]</h3>
-		<pre><code rel="Python" class="python">
-			i = 1
-			sum = 0
-			while i <= 100:
-				sum += i
-				i += 1
-			print("sum = ", sum)
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			sum =  5050
-		</code></pre>
-		<p>Same task is better to be implemented with <code>for</code> loop!</p>
-	</section>
-	<section><h3>Task: sum even numbers in [1..100]</h3>
-		<dl class="fa">
-			<dt>Modify the previous example, but calculate the sum <span class="note">only of the even numbers</span> in the given interval [1..100]</dt>
-		</dl>
-		<pre><code rel="Output" class="shell">
-			sum =  2550
-		</code></pre>
-	</section>
+            print("Thank you, {}!".format(user_name))
+        </code></pre>
+    </section>
+    <section><h3>Example: sum all numbers in [1..100]</h3>
+        <pre><code rel="Python" class="python">
+            i = 1
+            sum = 0
+            while i <= 100:
+                sum += i
+                i += 1
+            print("sum = ", sum)
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            sum =  5050
+        </code></pre>
+        <p>Note, that this is just an example to illustrate the syntax. Same task is better to be implemented with <code>for</code> loop, or even better: with built-in function sum()</p>
+    </section>
+    <section><h3>Task: sum even numbers in [1..100]</h3>
+        <dl class="fa">
+            <dt>Modify the previous example, but calculate the sum <span class="note">only of the even numbers</span> in the given interval [1..100]</dt>
+        </dl>
+        <pre><code rel="Output" class="shell">
+            sum =  2550
+        </code></pre>
+    </section>
 </section>
 
 <section id="forLoop"><h1><code>for</code> loop</h1></section>
 <section><h2><code>for</code> loop</h2>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			for <i>item</i> in <i>sequence</i> <b>:</b>
-				#do something with item
-		</code></pre>
-		<dl class="fa">
-			<dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> loops in other popular languages (C#, Java, PHP, JavaScript)</dt>
-			<dt class="note">In Python, <code>for</code> statement iterates over the items of any sequence.</dt>
-			<dd>This is common to <code>foreach</code> loop concept in above-mentioned languages </dd>
-		</dl>
-	</section>
-	<section><h3>Flow</h3>
-		<a href="images/ForFlow.png"><img src="images/ForFlow.png"></a>
-	</section>
-	<section><h3>Simple example 1</h3>
-		<p>Iterate over symbols in string:</p>
-		<pre><code rel="Python" class="python">
-			for s in "ada":
-				print(s.capitalize())
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			A
-			D
-			A
-		</code></pre>
-	</section>
-	<section><h3>Simple example 2</h3>
-		<p>Iterate over list of numbers:</p>
-		<pre><code rel="Python" class="python">
-			for num in [1,2,3,4]:
-				print(num)
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			1
-			2
-			3
-			4
-		</code></pre>
-	</section>
-	<section><h3 class="advanced">Nested for loops</h3>
-		<pre><code rel="Python" class="python">
-			for i in [1,2,3]:
-				for j in "abv":
-					print(j)
-				print("\n") #prints new line
-		</code></pre>
-		<dl class="fa">
-			<dt class="note">More examples and real-world usage of the <code>for</code> statement will be shown in <a href="/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/sequenceDataTypes/sequenceDataTypes.html">Sequence data types</a> theme!</dt>
-		</dl>
-	</section>
+    <section><h3>Syntax</h3>
+        <pre><code rel="Syntax" class="python" data-noescape>
+            for <i>item</i> in <i>sequence</i> <b>:</b>
+                #do something with item
+        </code></pre>
+        <dl class="fa">
+            <dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> loops in other popular languages (C#, Java, PHP, JavaScript)</dt>
+            <dt class="note">In Python, <code>for</code> statement iterates over the items of any sequence.</dt>
+            <dd>This is common to <code>foreach</code> loop concept in above-mentioned languages </dd>
+        </dl>
+    </section>
+    <section><h3>Flow</h3>
+        <a href="images/ForFlow.png"><img src="images/ForFlow.png"></a>
+    </section>
+    <section><h3>Simple example 1</h3>
+        <p>Iterate over symbols in string:</p>
+        <pre><code rel="Python" class="python">
+            for s in "ada":
+                print(s.capitalize())
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            A
+            D
+            A
+        </code></pre>
+    </section>
+    <section><h3>Simple example 2</h3>
+        <p>Iterate over list of numbers:</p>
+        <pre><code rel="Python" class="python">
+            for num in [1,2,3,4]:
+                print(num)
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            1
+            2
+            3
+            4
+        </code></pre>
+    </section>
+    <section><h3 class="advanced">Nested for loops</h3>
+        <pre><code rel="Python" class="python">
+            for i in [1,2,3]:
+                for j in "abv":
+                    print(j)
+                print("\n") #prints new line
+        </code></pre>
+        <dl class="fa">
+            <dt class="note">More examples and real-world usage of the <code>for</code> statement will be shown in <a href="/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/sequenceDataTypes/sequenceDataTypes.html">Sequence data types</a> theme!</dt>
+        </dl>
+    </section>
 </section>
 
 <section id="breakStatement"><h1><code>break</code> statement</h1></section>
 <section><h2><code>break</code> statement</h2>
-	<section><h3>Syntax</h3>
-		<dl class="fa">
-			<dt>The break statement in Python (like in other C-based languages) breaks out of the innermost enclosing <code>for</code> or <code>while</code> loop.</dt>
-			<dt>The most common use for <code>break</code> is when some external condition is triggered to exit immediately from a loop.</dt>
-			<dt>The <code>break</code> statement can be used in both <code>while</code> and <code>for</code> loops.</dt>
-			<pre><code rel="Syntax in while loop" class="python" data-noescape>
-				while <i>condition</i><b>:</b>
-					<i>block 1</i>
-					if <i>break_cond</i><b>:</b>
-						break  # loop is terminated, block 2 is skipped
-					<i>block 2</i>
-			</code></pre>
-			<pre><code rel="Syntax in for loop" class="python" data-noescape>
-				for <i>item</i> in <i>sequence</i> <b>:</b>
-					<i>block 1</i>
-					if <i>break_cond</i><b>:</b>
-						break  # loop is terminated, block 2 is skipped
-					<i>block 2</i>
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3>Flow</h3>
-		<a href="images/WhileBreakFlow.png"><img src="images/WhileBreakFlow.png"></a>
-	</section>
-	<section><h3>Example - Output letters in a string, until 'i' letter is reached</h3>
-		<pre><code rel="Python" class="python">
-			str = "alibaba"
-			for s in str:
-			    if s == "i": break
-			    print(s)
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			a
-			l
-		</code></pre>
-	</section>
-	<section><h3><code>do-while</code> emulations</h3>
-		<dl class="fa">
-			<dt><span class="note">Python did not have <code>do-while</code> loop, as in other languages</span> (reason: <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>)</dt>
-			<dt>But <code>do-while</code> structure is useful when we need the body of the <code>while</code> loop to be executed at least ones.</dt>
-			<dd>General structure of a do-while loop:</dd>
-			<pre><code rel="Python" class="python">
-				do {
+    <section><h3>Syntax</h3>
+        <dl class="fa">
+            <dt>The break statement in Python (like in other C-based languages) breaks out of the innermost enclosing <code>for</code> or <code>while</code> loop.</dt>
+            <dt>The most common use for <code>break</code> is when some external condition is triggered to exit immediately from a loop.</dt>
+            <dt>The <code>break</code> statement can be used in both <code>while</code> and <code>for</code> loops.</dt>
+            <pre><code rel="Syntax in while loop" class="python" data-noescape>
+                while <i>condition</i><b>:</b>
+                    <i>block 1</i>
+                    if <i>break_cond</i><b>:</b>
+                        break  # loop is terminated, block 2 is skipped
+                    <i>block 2</i>
+            </code></pre>
+            <pre><code rel="Syntax in for loop" class="python" data-noescape>
+                for <i>item</i> in <i>sequence</i> <b>:</b>
+                    <i>block 1</i>
+                    if <i>break_cond</i><b>:</b>
+                        break  # loop is terminated, block 2 is skipped
+                    <i>block 2</i>
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Flow</h3>
+        <a href="images/WhileBreakFlow.png"><img src="images/WhileBreakFlow.png"></a>
+    </section>
+    <section><h3>Example - Output letters in a string, until 'i' letter is reached</h3>
+        <pre><code rel="Python" class="python">
+            str = "alibaba"
+            for s in str:
+                if s == "i": break
+                print(s)
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            a
+            l
+        </code></pre>
+    </section>
+    <section><h3><code>do-while</code> emulations</h3>
+        <dl class="fa">
+            <dt><span class="note">Python did not have <code>do-while</code> loop, as in other languages</span> (reason: <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>)</dt>
+            <dt>But <code>do-while</code> structure is useful when we need the body of the <code>while</code> loop to be executed at least ones.</dt>
+            <dd>General structure of a do-while loop:</dd>
+            <pre><code rel="Python" class="python">
+                do {
 
-					loop block
+                    loop block
 
-				} while (condition);
-			</code></pre>
-			<dt>But it can be easily emulated if needed</dt>
-			<pre><code rel="Python - pseudo code" class="python">
-				while True:
-					loop block
+                } while (condition);
+            </code></pre>
+            <dt>But it can be easily emulated if needed</dt>
+            <pre><code rel="Python - pseudo code" class="python">
+                while True:
+                    loop block
 
-					if (condition): break
-			</code></pre>
-		</dl>
-	</section>
-	<section id="DoWhileEmulationWithBreak"><h3>Example - <code>do-while</code> emulation with <code>break</code></h3>
-		<pre><code rel="Python" class="python">
-			# ask user to enter a name (string), until it contains at least 3 symbols
-			while True:
-				user_name = input("Enter a name (at least 3 symbols): ")
-				user_name_length = len(user_name)
+                    if (condition): break
+            </code></pre>
+        </dl>
+    </section>
+    <section id="DoWhileEmulationWithBreak"><h3>Example - <code>do-while</code> emulation with <code>break</code></h3>
+        <pre><code rel="Python" class="python">
+            # ask user to enter a name (string), until it contains at least 3 symbols
+            while True:
+                user_name = input("Enter a name (at least 3 symbols): ")
+                user_name_length = len(user_name)
 
-				if user_name_length > 3: break
+                if user_name_length > 3: break
 
-			print("Thank you, {}!".format(user_name))
-		</code></pre>
-	</section>
-	<section><h3>switch-case statement emulation</h3>
-		<dl class="fa">
-			<dt>Python does not have (yet) "switch-case" statement</dt>
-			<pre><code rel="C-like syntax" class="c">
-				switch(expression) {
-					case constant-expression  :
-							statement(s);
-							break; //optional
-					case constant-expression  :
-							statement(s);
-							break; //optional
+            print("Thank you, {}!".format(user_name))
+        </code></pre>
+    </section>
+    <section><h3>switch-case statement emulation</h3>
+        <dl class="fa">
+            <dt>Python does not have (yet) "switch-case" statement</dt>
+            <pre><code rel="C-like syntax" class="c">
+                switch(expression) {
+                    case constant-expression  :
+                            statement(s);
+                            break; //optional
+                    case constant-expression  :
+                            statement(s);
+                            break; //optional
 
-					// multiple number of case statement is allowed
-					default : //Optional
-							statement(s);
-				}
-			</code></pre>
-			<dt>But you can emulate it with multiple <code>if-elif-break</code> blocks</dt>
-			<pre><code rel="JS" class="js">
-				# print program menu:
-				print("Select an action:")
-				print("1. Action 1")
-				print("2. Action 3")
-				print("3. Action 3")
+                    // multiple number of case statement is allowed
+                    default : //Optional
+                            statement(s);
+                }
+            </code></pre>
+            <dt>But you can emulate it with multiple <code>if-elif-break</code> blocks</dt>
+            <pre><code rel="JS" class="js">
+                # print program menu:
+                print("Select an action:")
+                print("1. Action 1")
+                print("2. Action 3")
+                print("3. Action 3")
 
-				while True:
-					user_choice = int(input("Enter a number [0-4]: "))
+                while True:
+                    user_choice = int(input("Enter a number [0-4]: "))
 
-					if user_choice == 1:
-						print("Actin 1 fired!")
-						break
-					elif user_choice == 2:
-						print("Actin 2 fired!")
-						break
-					elif user_choice == 3:
-						print("Actin 3 fired!")
-						break
-					else:
-						pass
-			</code></pre>
-			<dt>Another way is to use Python dictionaries which values are functions (will be discussed further)</dt>
-		</dl>
-	</section>
+                    if user_choice == 1:
+                        print("Actin 1 fired!")
+                        break
+                    elif user_choice == 2:
+                        print("Actin 2 fired!")
+                        break
+                    elif user_choice == 3:
+                        print("Actin 3 fired!")
+                        break
+                    else:
+                        pass
+            </code></pre>
+            <dt>Another way is to use Python dictionaries which values are functions (will be discussed further)</dt>
+        </dl>
+    </section>
 </section>
 
 <section id="continueStatement"><h1><code>continue</code> statement</h1></section>
 <section><h2><code>continue</code> statement</h2>
-	<section>
-		<dl class="fa">
-			<dt>Returns the control to the beginning of the loop.</dt>
-			<dd>code <b>after</b> continue will be skipped.</dd>
-			<dt>Usually, continue statement is dependent on some condition.</dt>
-			<a href="images/WhileContinueFlow.png"><img src="images/WhileContinueFlow.png"></a>
-		</dl>
-	</section>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax in while loop" class="python" data-noescape>
-			while <i>condition</i><b>:</b>
-				<i>block 1</i>
+    <section>
+        <dl class="fa">
+            <dt>Returns the control to the beginning of the loop.</dt>
+            <dd>code <b>after</b> continue will be skipped.</dd>
+            <dt>Usually, continue statement is dependent on some condition.</dt>
+            <a href="images/WhileContinueFlow.png"><img src="images/WhileContinueFlow.png"></a>
+        </dl>
+    </section>
+    <section><h3>Syntax</h3>
+        <pre><code rel="Syntax in while loop" class="python" data-noescape>
+            while <i>condition</i><b>:</b>
+                <i>block 1</i>
 
-				if <i>continue_cond</i><b>:</b>
-					continue  # go to while condition
+                if <i>continue_cond</i><b>:</b>
+                    continue  # go to while condition
 
-				<i>block 2</i>
-		</code></pre>
-		<pre><code rel="Syntax in for loop" class="python" data-noescape>
-			for <i>item</i> in <i>sequence</i> <b>:</b>
-					<i>block 1</i>
+                <i>block 2</i>
+        </code></pre>
+        <pre><code rel="Syntax in for loop" class="python" data-noescape>
+            for <i>item</i> in <i>sequence</i> <b>:</b>
+                    <i>block 1</i>
 
-					if <i>continue_cond</i><b>:</b>
-						continue  # continue loop with next item
+                    if <i>continue_cond</i><b>:</b>
+                        continue  # continue loop with next item
 
-					<i>block 2</i>
-		</code></pre>
-	</section>
-	<section><h3>Example -  print all numbers in [1..5], but skip 3</h3>
-		<pre><code rel="Python" class="python">
-			for i in [1,2,3,4,5]:
-			  if i == 3:
-			     continue
-			  print(i)
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			1
-			2
-			4
-			5
-		</code></pre>
-	</section>
-	<section><h3>Example - print symbols in a string, excluding vowels: </h3>
-		<pre><code rel="Python" class="python">
-			str = "alabala"
-			for s in str:
-			  if s in ["a", "e", "i", "o", "u", "y"]:
-			      continue
-			  print(s)
-		</code></pre>
-		<pre><code rel="Output" class="shell">
-			l
-			b
-			l
-		</code></pre>
-	</section>
+                    <i>block 2</i>
+        </code></pre>
+    </section>
+    <section><h3>Example -  print all numbers in [1..5], but skip 3</h3>
+        <pre><code rel="Python" class="python">
+            for i in [1,2,3,4,5]:
+              if i == 3:
+                 continue
+              print(i)
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            1
+            2
+            4
+            5
+        </code></pre>
+    </section>
+    <section><h3>Example - print symbols in a string, excluding vowels: </h3>
+        <pre><code rel="Python" class="python">
+            str = "alabala"
+            for s in str:
+              if s in ["a", "e", "i", "o", "u", "y"]:
+                  continue
+              print(s)
+        </code></pre>
+        <pre><code rel="Output" class="shell">
+            l
+            b
+            l
+        </code></pre>
+    </section>
 </section>
 
 <section data-min="5" id="comprehensions"><h1>Comprehensions</h1></section>
 <section><h2>List Comprehensions</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>A typical programming task is to create a list from the values of existing list (or other iterable data structure)</dt>
-			<dt>For example, let's have to create a new list which will contain only the even numbers from another list.</dt>
-			<dd>We can use for loop: </dd>
-			<pre><code rel="Python" class="python">
-				l = [1,2,3,4,5]
-				evens = []
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>A typical programming task is to create a list from the values of existing list (or other iterable data structure)</dt>
+            <dt>For example, let's have to create a new list which will contain only the even numbers from another list.</dt>
+            <dd>We can use for loop: </dd>
+            <pre><code rel="Python" class="python">
+                l = [1,2,3,4,5]
+                evens = []
 
-				for el in l:
-					if el%2==0:
-						evens.append(el)
+                for el in l:
+                    if el%2==0:
+                        evens.append(el)
 
-				print(evens)
-			</code></pre>
-			<dd>but Python offers a shorter syntax, called <code class="note">list comprehension</code></dd>
-			<pre><code rel="Python" class="python">
-				l = [1,2,3,4,5]
+                print(evens)
+            </code></pre>
+            <dd>but Python offers a shorter syntax, called <code class="note">list comprehension</code></dd>
+            <pre><code rel="Python" class="python">
+                l = [1,2,3,4,5]
 
-				evens = [el for el in l if el%2==0]
+                evens = [el for el in l if el%2==0]
 
-				print(evens)
-			</code></pre>
-			<dt>List comprehensions provide a concise way to create lists</dt>
-		</dl>
-	</section>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			newlist = <b>[</b><i>expression</i> <b>for</b> <i>item</i> <b>in</b> <i>iterable</i> <b>if</b> <i>condition</i><b>]</b>
-		</code></pre>
-		<dl class="fa">
-			<dt><i>expression</i> is evaluated for each element in <i>iterable</i> in the context of the <b>for</b> and <b>if</b> clauses which follow it.</dt>
-			<dt>The value of <i>expression</i> will be added to the list beeing generated. I.e. <i>expression</i> acts like a map.</dt>
-			<dt><b>if</b> clause is optional, and if present it plays the role of filter.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			l = [1,2,3,4,5]
+                print(evens)
+            </code></pre>
+            <dt>List comprehensions provide a concise way to create lists</dt>
+        </dl>
+    </section>
+    <section><h3>Syntax</h3>
+        <pre><code rel="Syntax" class="python" data-noescape>
+            newlist = <b>[</b><i>expression</i> <b>for</b> <i>item</i> <b>in</b> <i>iterable</i> <b>if</b> <i>condition</i><b>]</b>
+        </code></pre>
+        <dl class="fa">
+            <dt><i>expression</i> is evaluated for each element in <i>iterable</i> in the context of the <b>for</b> and <b>if</b> clauses which follow it.</dt>
+            <dt>The value of <i>expression</i> will be added to the list beeing generated. I.e. <i>expression</i> acts like a map.</dt>
+            <dt><b>if</b> clause is optional, and if present it plays the role of filter.</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            l = [1,2,3,4,5]
 
-			evens = [el for el in l if el%2==0]	# => [2, 4]
+            evens = [el for el in l if el%2==0]	# => [2, 4]
 
-			dummy = [1 for el in l if el%2==0]	# => [1, 1]
+            dummy = [1 for el in l if el%2==0]	# => [1, 1]
 
-			# without if clause:
-			powered = [el**2 for el in l]		# => [1, 4, 9, 16, 25]
-		</code></pre>
-	</section>
-	<section><h3>Examples</h3>
-		<dl class="fa">
-			<dt>Consider next task: generate a new list from a given list l, where each even number is replaced with 1 and odd number - with 0.</dt>
-			<dt>Hint: we would not need the if clause, because we do not want to filter the list, but instead - map a value for each list item. So, we must write an <i>expression</i> which return 1 if item is even, and 0 - if item is odd.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			l = [1,2,3,4,5]
+            # without if clause:
+            powered = [el**2 for el in l]		# => [1, 4, 9, 16, 25]
+        </code></pre>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa">
+            <dt>Consider next task: generate a new list from a given list l, where each even number is replaced with 1 and odd number - with 0.</dt>
+            <dt>Hint: we would not need the if clause, because we do not want to filter the list, but instead - map a value for each list item. So, we must write an <i>expression</i> which return 1 if item is even, and 0 - if item is odd.</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            l = [1,2,3,4,5]
 
-			new = [0 if el%2 else 1 for el in l]
+            new = [0 if el%2 else 1 for el in l]
 
-			print(new)
+            print(new)
 
-		</code></pre>
-	</section>
+        </code></pre>
+    </section>
 </section>
 <section><h2>Dictionary Comprehensions</h2>
-	<section>
-		<dl class="fa">
-			<dt>Similarly to List Comprehension, Python defines Dictionary Comprehensions - a concise syntax to create dictionary.</dt>
-		</dl>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			new_dict = <b>{</b><i>key:value</i> <b>for clause</b> <b>optional if clause</b> <b>}</b>
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			eng_bul = {
-				'apple':'ябълка',
-				'orange':'портокал',
-				'banana':'банан'
-			}
+    <section>
+        <dl class="fa">
+            <dt>Similarly to List Comprehension, Python defines Dictionary Comprehensions - a concise syntax to create dictionary.</dt>
+        </dl>
+        <pre><code rel="Syntax" class="python" data-noescape>
+            new_dict = <b>{</b><i>key:value</i> <b>for clause</b> <b>optional if clause</b> <b>}</b>
+        </code></pre>
+        <pre><code rel="Python" class="python">
+            eng_bul = {
+                'apple':'ябълка',
+                'orange':'портокал',
+                'banana':'банан'
+            }
 
-			bul_eng = {v:k for k,v in eng_bul.items()}
-			print(bul_eng)
+            bul_eng = {v:k for k,v in eng_bul.items()}
+            print(bul_eng)
 
-			# {'ябълка': 'apple', 'портокал': 'orange', 'банан': 'banana'}
-		</code></pre>
-	</section>
-	<section><h3>Examples</h3>
-		<dl class="fa">
-			<dt>Task: create new dictionary from <code>scores</code>, containing only the items which has values > 4.0</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			scores = {
-				'ivan':4.5,
-				'maria':5.0,
-				'asen':3.5
-			}
+            # {'ябълка': 'apple', 'портокал': 'orange', 'банан': 'banana'}
+        </code></pre>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa">
+            <dt>Task: create new dictionary from <code>scores</code>, containing only the items which has values > 4.0</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            scores = {
+                'ivan':4.5,
+                'maria':5.0,
+                'asen':3.5
+            }
 
-			best = {k:v for k,v in scores.items() if v>4}
+            best = {k:v for k,v in scores.items() if v>4}
 
-			print(best)
-		</code></pre>
-	</section>
+            print(best)
+        </code></pre>
+    </section>
 </section>
 
 
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>HW</h2>
-	<section><h3>"Guess the number" - full version</h3>
-		<dl class="fa">
-			<dt>Write the full version of the "Guess the number" game, implementing the same rules as given in <a href="http://127.0.0.1:1111/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/logicalExpressionsAndConditionalStatements/logicalExpressionsAndConditionalStatements.html#/hw_guess_the_number">Guess the number game - the beginning</a>, but giving the user the chance to try more than once.</dt>
-			<dt>The user now will have 5 tries to guess.</dt>
-			<dt>If he/she could not manage to guess the number for 5 tries, the game stops, with a message:<br>"You lost! My number was X"</dt>
-			<dd>where X is the machine number</dd>
-		</dl>
-	</section>
-	<section><h3>"Guess the number" - solutions</h3>
-		<dl class="fa">
-			<dt>a solution with while loop</dt>
-			<dd><a href="Task_and_HW/guess_the_number_while_loop.py">guess_the_number_while_loop.py</a></dd>
-			<dt>a solution with for loop</dt>
-			<dd><a href="Task_and_HW/guess_the_number_for_loop.py">guess_the_number_for_loop.py</a></dd>
-		</dl>
-	</section>
+    <section><h3>"Guess the number" - full version</h3>
+        <dl class="fa">
+            <dt>Write the full version of the "Guess the number" game, implementing the same rules as given in <a href="http://127.0.0.1:1111/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/logicalExpressionsAndConditionalStatements/logicalExpressionsAndConditionalStatements.html#/hw_guess_the_number">Guess the number game - the beginning</a>, but giving the user the chance to try more than once.</dt>
+            <dt>The user now will have 5 tries to guess.</dt>
+            <dt>If he/she could not manage to guess the number for 5 tries, the game stops, with a message:<br>"You lost! My number was X"</dt>
+            <dd>where X is the machine number</dd>
+        </dl>
+    </section>
+    <section><h3>"Guess the number" - solutions</h3>
+        <dl class="fa">
+            <dt>a solution with while loop</dt>
+            <dd><a href="Task_and_HW/guess_the_number_while_loop.py">guess_the_number_while_loop.py</a></dd>
+            <dt>a solution with for loop</dt>
+            <dd><a href="Task_and_HW/guess_the_number_for_loop.py">guess_the_number_for_loop.py</a></dd>
+        </dl>
+    </section>
 </section>
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>
