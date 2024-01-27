@@ -207,6 +207,25 @@
         <a href="images/ForFlow.png"><img src="images/ForFlow.png"></a>
     </section>
     <section><h3>Examples</h3>
+        <pre><code rel="Python" class="python" style="min-height: 50vh;">
+            ### loop on list items:
+            for item in [1,2,3]:
+                print(item, end=",")     # 1,2,3,
+
+            ### loop on tuple items:
+            for item in (10, "December", 1985):
+                print(item, end=",")     # 10,December,1985
+
+            ### loop on string items:
+            for item in "byron":
+                print(item, end=",")     # b,y,r,o,n,
+
+            ### loop on range items:
+            for item in range(1,3):
+                print(item, end=",")     # 1,2,
+        </code></pre>
+    </section>
+    <section><h3>More Examples</h3>
         <dl class="fa" style="min-width: 70vw;">
             <dt>Iterate over range of numbers:</dt>
             <pre><code rel="Python" class="python">
@@ -308,66 +327,6 @@
     </section>
 </section>
 
-<section id="LoopOnSequence"><h1>More example on "Loop on sequence"</h1></section>
-<section><h2>Loop on sequence</h2>
-    <section><h3>Syntax</h3>
-        <pre><code rel="Terminal" class="shell" data-noescape>
-            for item in <em>sequence</em>:
-                # do something with item
-        </code></pre>
-        <pre><code rel="Python" class="python" style="min-height: 50vh;">
-            ### loop on list items:
-            for item in [1,2,3]:
-                print(item)
-
-            ### loop on tuple items:
-            for item in (10, "December", 1985):
-                print(item)
-
-            ### loop on string items:
-            for item in "byron":
-                print(item)
-
-            ### loop on range items:
-            for item in range(1,3):
-                print(item)
-        </code></pre>
-    </section>
-    <section id="LoopOnIndexesOfSequenceCStyle"><h3>Loop on indexes of sequence: C-style</h3>
-        <dl class="fa">
-            <dt>As we saw, Python doesn't have C-style for loop, but we can emulate it with:</dt>
-        </dl>
-        <pre><code rel="Python" class="python" style="min-height: 20vh;">
-            user_name = "ivan"
-
-            for i in range(len(user_name)):
-              print("{} - {}".format(i, user_name[i]))
-        </code></pre>
-        <pre><code rel="Output" class="bash" data-noescape>
-            0 - i
-            1 - v
-            2 - a
-            3 - n
-        </code></pre>
-        <p>Note, that this is not the Pythonic way of looping on sequence by index. </p>
-    </section>
-    <section id="LoopOnIndexesOfSequencePythonicWay"><h3>Loop on indexes of sequence: Pythonic way</h3>
-        <dl class="fa">
-            <dt>To get the index and the item in a <code>for</code> loop, we can also use the <a href="https://docs.python.org/3/library/functions.html#enumerate">enumerate()</a> built-in function:</dt>
-        </dl>
-        <pre><code rel="Python" class="python" style="min-height: 20vh;">
-            for i,l in enumerate(user_name):
-              print("{} - {}".format(i, l))
-        </code></pre>
-        <pre><code rel="Output" class="bash" data-noescape>
-            0 - i
-            1 - v
-            2 - a
-            3 - n
-        </code></pre>
-    </section>
-</section>
-
 <section id="breakStatement"><h1><code>break</code> statement</h1></section>
 <section><h2><code>break</code> statement</h2>
     <section><h3>Syntax</h3>
@@ -394,92 +353,171 @@
     <section><h3>Flow</h3>
         <a href="images/WhileBreakFlow.png"><img src="images/WhileBreakFlow.png"></a>
     </section>
-    <section><h3>Example - Output letters in a string, until 'i' letter is reached</h3>
-        <pre><code rel="Python" class="python">
-            str = "alibaba"
-            for s in str:
-                if s == "i": break
-                print(s)
-        </code></pre>
-        <pre><code rel="Output" class="shell">
-            a
-            l
+    <section><h3>Examples:</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Output letters in a string, until 'i' letter is reached:</dt>
+            <pre><code rel="Python" class="python">
+                str = "alibaba"
+                for s in str:
+                    if s == "i":
+                        break
+                    print(s)
+
+                # a
+                # l
+            </code></pre>
+            <dt>Using break to find an element in a list</dt>
+            <pre><code rel="Python" class="python" style="min-height: 30vh;">
+                elements = ["apple", "banana", "cherry"]
+                target = "banana"
+
+                for el in elements:
+                    if el == target:
+                        print(f"Found {target}")
+                        break
+
+                # Found banana
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Example: Using break in nested loops</h3>
+        <pre><code rel="Python" class="python" style="min-height: 70vh;">
+            matrix = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ]
+
+            search_value = 4
+
+            for row in matrix:
+                print(f'Processing row: {row}')
+                for element in row:
+                    print(element, end=',')
+                    if element == search_value:
+                        break  # Breaks out of the inner loop
+                print() # print new line
+
+            # Processing row: [1, 2, 3]
+            # 1,2,3,
+            # Processing row: [4, 5, 6]
+            # 4,
+            # Processing row: [7, 8, 9]
+            # 7,8,9,
         </code></pre>
     </section>
-    <section><h3><code>do-while</code> emulations</h3>
+    <section><h3><code>do-while</code> emulation with <code>break</code></h3>
         <dl class="fa">
-            <dt><span class="note">Python did not have <code>do-while</code> loop, as in other languages</span> (reason: <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>)</dt>
+            <dt><span class="note">Python did not have <code>do-while</code> loop, as in other languages</span> (reason: "There should be one - and preferably only one - obvious way to do it.", <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>)</dt>
             <dt>But <code>do-while</code> structure is useful when we need the body of the <code>while</code> loop to be executed at least ones.</dt>
-            <dd>General structure of a do-while loop:</dd>
+            <dd>General structure of a "do-while" loop, which did not exists in Python:</dd>
             <pre><code rel="Python" class="python">
                 do {
-
-                    loop block
-
+                    # will be executed at least one
+                    block
                 } while (condition);
             </code></pre>
             <dt>But it can be easily emulated if needed</dt>
             <pre><code rel="Python - pseudo code" class="python">
                 while True:
-                    loop block
+                    block
 
                     if (condition): break
             </code></pre>
         </dl>
     </section>
     <section id="DoWhileEmulationWithBreak"><h3>Example - <code>do-while</code> emulation with <code>break</code></h3>
-        <pre><code rel="Python" class="python">
-            # ask user to enter a name (string), until it contains at least 3 symbols
-            while True:
-                user_name = input("Enter a name (at least 3 symbols): ")
-                user_name_length = len(user_name)
+        <dl class="fa" style="min-width:80vw">
+            <dt>Ask user to enter a name, until it contains at least 3 symbols</dt>
+            <pre><code rel="Python" class="python">
+                while True:
+                    user_name = input("Enter a name (at least 3 symbols): ")
+                    user_name_length = len(user_name)
 
-                if user_name_length > 3: break
+                    if user_name_length > 3: break
 
-            print("Thank you, {}!".format(user_name))
-        </code></pre>
-    </section>
-    <section><h3>switch-case statement emulation</h3>
-        <dl class="fa">
-            <dt>Python does not have (yet) "switch-case" statement</dt>
-            <pre><code rel="C-like syntax" class="c">
-                switch(expression) {
-                    case constant-expression  :
-                            statement(s);
-                            break; //optional
-                    case constant-expression  :
-                            statement(s);
-                            break; //optional
+                print(f"Thank you, {user_name}!")
 
-                    // multiple number of case statement is allowed
-                    default : //Optional
-                            statement(s);
-                }
+                # Enter a name (at least 3 symbols): iv
+                # Enter a name (at least 3 symbols): a
+                # Enter a name (at least 3 symbols): ivan
+                # Thank you, ivan!
             </code></pre>
-            <dt>But you can emulate it with multiple <code>if-elif-break</code> blocks</dt>
-            <pre><code rel="JS" class="js">
+        </dl>
+    </section>
+    <section><h3 class="advanced">"switch-case" statement emulation for Python&lt;3.10</h3>
+        <dl class="fa">
+            <dt>In oldest python versions you can emulate ""switch-case"" with multiple <code>if-elif-break</code> blocks</dt>
+            <dd>Another way is to use Python dictionaries which values are functions (will be discussed further)</dd>
+            <pre><code rel="Python" class="python" style="min-height: 99vh;">
                 # print program menu:
                 print("Select an action:")
                 print("1. Action 1")
                 print("2. Action 3")
                 print("3. Action 3")
+                print()
 
                 while True:
                     user_choice = int(input("Enter a number [0-4]: "))
 
                     if user_choice == 1:
-                        print("Actin 1 fired!")
+                        print("Action 1 fired!")
                         break
                     elif user_choice == 2:
-                        print("Actin 2 fired!")
+                        print("Action 2 fired!")
                         break
                     elif user_choice == 3:
-                        print("Actin 3 fired!")
+                        print("Action 3 fired!")
                         break
                     else:
-                        pass
+                        print('Wrong input!')
+
+                # Select an action:
+                # 1. Action 1
+                # 2. Action 3
+                # 3. Action 3
+
+                # Enter a number [0-4]: 7
+                # Wrong input!
+                # Enter a number [0-4]: 2
+                # Action 2 fired!
             </code></pre>
-            <dt>Another way is to use Python dictionaries which values are functions (will be discussed further)</dt>
+        </dl>
+    </section>
+    <section><h3>match statement</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Python 3.10 introduces <a href="https://docs.python.org/3/tutorial/controlflow.html#match-statements">match statement</a> which is similar to "switch-case" in other languages</dt>
+            <pre><code rel="Python" class="python" style="min-height: 90vh;">
+                # print program menu:
+                print("Select an action:")
+                print("1. Action 1")
+                print("2. Action 3")
+                print("3. Action 3")
+                print()
+
+                while True:
+                    user_choice = int(input("Enter a number [0-4]: "))
+
+                    match user_choice:
+                        case 1:
+                            print("Action 1 fired!")
+                        case 2:
+                            print("Action 2 fired!")
+                        case 3:
+                            print("Action 3 fired!")
+                        case _
+                            print('Wrong input!')
+
+                # Select an action:
+                # 1. Action 1
+                # 2. Action 3
+                # 3. Action 3
+
+                # Enter a number [0-4]: 7
+                # Wrong input!
+                # Enter a number [0-4]: 2
+                # Action 2 fired!
+            </code></pre>
         </dl>
     </section>
 </section>
@@ -506,148 +544,178 @@
         </code></pre>
         <pre><code rel="Syntax in for loop" class="python" data-noescape>
             for <i>item</i> in <i>sequence</i> <b>:</b>
-                    <i>block 1</i>
+                <i>block 1</i>
 
-                    if <i>continue_cond</i><b>:</b>
-                        continue  # continue loop with next item
+                if <i>continue_cond</i><b>:</b>
+                    continue  # continue loop with next item
 
-                    <i>block 2</i>
+                <i>block 2</i>
         </code></pre>
     </section>
-    <section><h3>Example -  print all numbers in [1..5], but skip 3</h3>
-        <pre><code rel="Python" class="python">
-            for i in [1,2,3,4,5]:
-              if i == 3:
-                 continue
-              print(i)
-        </code></pre>
-        <pre><code rel="Output" class="shell">
-            1
-            2
-            4
-            5
-        </code></pre>
-    </section>
-    <section><h3>Example - print symbols in a string, excluding vowels: </h3>
-        <pre><code rel="Python" class="python">
-            str = "alabala"
-            for s in str:
-              if s in ["a", "e", "i", "o", "u", "y"]:
-                  continue
-              print(s)
-        </code></pre>
-        <pre><code rel="Output" class="shell">
-            l
-            b
-            l
-        </code></pre>
+    <section><h3>Examples:</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>print all numbers in [1..5], but skip 3:</dt>
+            <pre><code rel="Python" class="python">
+                for i in range(1,6):
+                if i == 3:
+                    continue
+                print(i, end=',')  # 1,2,4,5,
+            </code></pre>
+            <dt>print letters in a word, excluding vowels:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 30vh;">
+                word = 'abcdefghi'
+                vowels = ['a', 'e', 'i', 'o', 'u']
+
+                for l in word:
+                    if l in vowels:
+                        continue
+                    print(l, end=",")
+
+                # b,c,d,f,g,h,
+            </code></pre>
+        </dl>
     </section>
 </section>
 
 <section data-min="5" id="comprehensions"><h1>Comprehensions</h1></section>
 <section><h2>List Comprehensions</h2>
-    <section><h3>Overview</h3>
+    <section><h3>Why</h3>
         <dl class="fa">
-            <dt>A typical programming task is to create a list from the values of existing list (or other iterable data structure)</dt>
-            <dt>For example, let's have to create a new list which will contain only the even numbers from another list.</dt>
-            <dd>We can use for loop: </dd>
+            <dt>A common programming task involves generating a new list based on the values of an existing list (or another iterable), i.e. mapping the elements of one list into another.</dt>
+            <dt>Let's say you want to create a list of squares of the numbers numbers in a list</dt>
+            <dd>We can use for loop (<span class="note">not Pythonic</span>): </dd>
             <pre><code rel="Python" class="python">
-                l = [1,2,3,4,5]
-                evens = []
+                numbers = [1,3,2,5]
+                squares = []
+                for num in numbers:
+                    squares.append(num ** 2)
 
-                for el in l:
-                    if el%2==0:
-                        evens.append(el)
+                print(squares)
 
-                print(evens)
+                # [1, 9, 4, 25]
             </code></pre>
-            <dd>but Python offers a shorter syntax, called <code class="note">list comprehension</code></dd>
+            <dd>but list comprehension offers more shorter way:</dd>
             <pre><code rel="Python" class="python">
-                l = [1,2,3,4,5]
+                numbers = [1,3,2,5]
+                squares = [num**2 for num in numbers]
 
-                evens = [el for el in l if el%2==0]
+                print(squares)
 
-                print(evens)
+                # [1, 9, 4, 25]
             </code></pre>
-            <dt>List comprehensions provide a concise way to create lists</dt>
         </dl>
     </section>
     <section><h3>Syntax</h3>
-        <pre><code rel="Syntax" class="python" data-noescape>
-            newlist = <b>[</b><i>expression</i> <b>for</b> <i>item</i> <b>in</b> <i>iterable</i> <b>if</b> <i>condition</i><b>]</b>
-        </code></pre>
-        <dl class="fa">
-            <dt><i>expression</i> is evaluated for each element in <i>iterable</i> in the context of the <b>for</b> and <b>if</b> clauses which follow it.</dt>
-            <dt>The value of <i>expression</i> will be added to the list beeing generated. I.e. <i>expression</i> acts like a map.</dt>
-            <dt><b>if</b> clause is optional, and if present it plays the role of filter.</dt>
+        <dl class="fa" style="min-width:80vw">
+            <dt>List comprehensions in Python provide a concise way to create lists.</dt>
+            <pre><code rel="Syntax" class="python" style="min-height: 10vh;">
+                new_list = [expression for item in iterable if condition]
+            </code></pre>
+            <dt>where:</dt>
+            <dd><i>expression</i> is the item to be returned and added to the new_list. I.e. it acts like a mapping expression.
+            </dd>
+            <dd><i>item</i> is the variable representing the members of the iterable.</dd>
+            <dd><i>iterable</i> is the object you are iterating over.</dd>
+            <dd><b>if condition</b> clause is optional, and if present it plays the role of filter.</dd>
+            <dt>Examples:</dt>
+            <pre><code rel="Python" class="python">
+                l = [1,2,3,4,5]
+
+                # Multiplying Each Element by 3
+                tripled = [x * 3 for x in l]        # [3, 6, 9, 12, 15]
+
+                # Filtering Even Numbers:
+                evens = [el for el in l if el%2==0]	# [2, 4]
+
+                # map letters to its uppercase
+                letters = ['a', 'b', 'c']
+                upper_letters = [l.upper() for l in letters]
+                print(upper_letters)
+            </code></pre>
         </dl>
-        <pre><code rel="Python" class="python">
-            l = [1,2,3,4,5]
-
-            evens = [el for el in l if el%2==0]	# => [2, 4]
-
-            dummy = [1 for el in l if el%2==0]	# => [1, 1]
-
-            # without if clause:
-            powered = [el**2 for el in l]		# => [1, 4, 9, 16, 25]
-        </code></pre>
     </section>
     <section><h3>Examples</h3>
         <dl class="fa">
-            <dt>Consider next task: generate a new list from a given list l, where each even number is replaced with 1 and odd number - with 0.</dt>
-            <dt>Hint: we would not need the if clause, because we do not want to filter the list, but instead - map a value for each list item. So, we must write an <i>expression</i> which return 1 if item is even, and 0 - if item is odd.</dt>
+            <dt>Consider next task: generate a new list from a given list l, where each even number is replaced with string 'even' and each odd number - with 'odd'.</dt>
+            <dd>Hint: we would not need the if clause, because we do not want to filter the list, but instead - map a value for each list item. So, we must write an <i>expression</i> which return 1 if item is even, and 0 - if item is odd.</dd>
+            <pre><code rel="Python" class="python">
+                numbers = [1,3,2,5]
+                mapped = ['even' if num%2==0 else 'odd' for num in numbers]
+                print(mapped)
+
+                ['odd', 'odd', 'even', 'odd']
+            </code></pre>
         </dl>
-        <pre><code rel="Python" class="python">
-            l = [1,2,3,4,5]
 
-            new = [0 if el%2 else 1 for el in l]
-
-            print(new)
-
-        </code></pre>
     </section>
 </section>
 <section><h2>Dictionary Comprehensions</h2>
     <section>
         <dl class="fa">
-            <dt>Similarly to List Comprehension, Python defines Dictionary Comprehensions - a concise syntax to create dictionary.</dt>
+            <dt>Dictionary comprehensions in Python are similar to list comprehensions but are used to create dictionaries.</dt>
+            <dt>A dictionary comprehension consists of an expression pair (key: value) followed by a for statement inside curly braces {}.</dt>
+            <pre><code rel="Syntax" class="python" style="min-height: 10vh;">
+                new_dict = {key: value for item in iterable if condition}
+            </code></pre>
+            <dt>where:</dt>
+            <dd><i>key</i> is the expression that defines the key in each key-value pair.</dd>
+            <dd><i>value</i> is the expression that defines the value in each key-value pair.</dd>
+            <dd><i>item</i>,  <i>iterable</i> and <i>condition</i> are the same like in list comprehensions.</dd>
+            <dt>Example: </dt>
+            <pre><code rel="Python" class="python">
+                eng_bul = {
+                    'apple':'ябълка',
+                    'orange':'портокал',
+                    'banana':'банан'
+                }
+
+                # swapping keys and values
+                bul_eng = {v:k for k,v in eng_bul.items()}
+                print(bul_eng)
+
+                # {'ябълка': 'apple', 'портокал': 'orange', 'банан': 'banana'}
+            </code></pre>
         </dl>
-        <pre><code rel="Syntax" class="python" data-noescape>
-            new_dict = <b>{</b><i>key:value</i> <b>for clause</b> <b>optional if clause</b> <b>}</b>
-        </code></pre>
-        <pre><code rel="Python" class="python">
-            eng_bul = {
-                'apple':'ябълка',
-                'orange':'портокал',
-                'banana':'банан'
-            }
-
-            bul_eng = {v:k for k,v in eng_bul.items()}
-            print(bul_eng)
-
-            # {'ябълка': 'apple', 'портокал': 'orange', 'банан': 'banana'}
-        </code></pre>
     </section>
     <section><h3>Examples</h3>
         <dl class="fa">
-            <dt>Task: create new dictionary from <code>scores</code>, containing only the items which has values > 4.0</dt>
+            <dt>Create new dictionary from <code>student_scores</code>, containing only the items which has values > 4.0</dt>
+            <pre><code rel="Python" class="python">
+                student_scores = {
+                    'ivan':4.5,
+                    'maria':5.0,
+                    'asen':3.5
+                }
+
+                best_students = {k:v for k,v in student_scores.items() if v>4}
+
+                print(best_students)
+
+                # {'ivan': 4.5, 'maria': 5.0}
+            </code></pre>
+            <dt>Creating a dictionary of even numbers and their squares:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 20vh;">
+                even_squares = {x: x**2 for x in range(10) if x % 2 == 0}
+                print(even_squares)
+
+                # {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+            </code></pre>
+            <dt>Creating a Dictionary from Two Lists</dt>
+            <pre><code rel="Python" class="python" style="min-height: 25vh;">
+                keys = ['a', 'b', 'c']
+                values = [1, 2, 3]
+                dictionary = {keys[i]: values[i] for i in range(len(keys))}
+                print(dictionary)
+
+                # {'a': 1, 'b': 2, 'c': 3}
+            </code></pre>
         </dl>
-        <pre><code rel="Python" class="python">
-            scores = {
-                'ivan':4.5,
-                'maria':5.0,
-                'asen':3.5
-            }
 
-            best = {k:v for k,v in scores.items() if v>4}
-
-            print(best)
-        </code></pre>
     </section>
 </section>
 
 
-<!-- <section id="hw"><h1>Exercises</h1></section>
+<section id="hw"><h1>Exercises</h1></section>
 <section><h2>HW</h2>
     <section><h3>"Guess the number" - full version</h3>
         <dl class="fa">
@@ -665,7 +733,7 @@
             <dd><a href="Task_and_HW/guess_the_number_for_loop.py">guess_the_number_for_loop.py</a></dd>
         </dl>
     </section>
-</section> -->
+</section>
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
      <p>These slides are based on</p>

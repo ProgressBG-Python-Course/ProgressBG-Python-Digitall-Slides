@@ -1,7 +1,9 @@
-colors = ["red", "green", "blue"]
-for index in range(len(colors)):
-    print(f"{index}: {colors[index]}")
+student_scores = {
+    'ivan':4.5,
+    'maria':5.0,
+    'asen':3.5
+}
 
-# 0: red
-# 1: green
-# 2: blue
+best_students = {k:v for k,v in student_scores.items() if v>4}
+
+print(best_students)
