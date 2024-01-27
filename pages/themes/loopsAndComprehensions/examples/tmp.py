@@ -1,4 +1,7 @@
-total_sum = sum(range(1,101))
-print("total_sum = ", total_sum)
+colors = ["red", "green", "blue"]
+for index in range(len(colors)):
+    print(f"{index}: {colors[index]}")
 
-# total_sum =  5050
+# 0: red
+# 1: green
+# 2: blue
