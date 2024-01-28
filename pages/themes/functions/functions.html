@@ -643,7 +643,52 @@
             </code></pre>
         </dl>
     </section>
-    <section><h3>Lambdas in sorted</h3></section>
+    <section><h3>Lambdas in sorting</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Lambdas are frequently used in sorting in Python, particularly when you need to sort complex data structures like lists of tuples, dictionaries, or objects.</dt>
+            <dt>The <code>sorted()</code> function and the <code>list.sort()</code> method both accept a <code>key</code> parameter, where you can pass a lambda function to control the sorting criteria.</dt>
+            <dt>Example: sorting a list of tuples based on the second value</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                data = [(1, 'Z'), (2, 'Y'), (3, 'X')]
+
+                sorted_data = sorted(data, key=lambda x: x[1])
+
+                print(sorted_data)
+                # [(3, 'X'), (2, 'Y'), (1, 'Z')]
+            </code></pre>
+            <dt>Reference: <a href="https://docs.python.org/3/howto/sorting.html">Sorting HOW TO @python.org</a></dt>
+        </dl>
+    </section>
+    <section><h3>Lambdas in sorting - examples</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Sorting a list of dictionaries by a specific key:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                users = [
+                    {'name': 'Alice', 'age': 30},
+                    {'name': 'Bob', 'age': 25},
+                    {'name': 'Charlie', 'age': 35}
+                ]
+                sorted_users = sorted(users, key=lambda user: user['age'])
+                print(sorted_users)
+
+                # [{'name': 'Bob', 'age': 25}, {'name': 'Alice', 'age': 30}, {'name': 'Charlie', 'age': 35}]
+
+            </code></pre>
+            <dt>Sort data in dictionary as a list of sorted tupples</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                products = {
+                    'apple': 3,
+                    'coffee': 2.5,
+                    'beer': 4.20
+                }
+
+                sorted_products = sorted(products.items(), key=lambda item:item[1])
+                print(sorted_products)
+
+                # [('coffee', 2.5), ('apple', 3), ('beer', 4.2)]
+            </code></pre>
+        </dl>
+    </section>
 </section>
 
 <section id="ScopeAndNamespaces"><h1>Scope and Namespaces</h1></section>

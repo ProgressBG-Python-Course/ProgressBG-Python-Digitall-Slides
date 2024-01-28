@@ -4,4 +4,5 @@ products = {
     'beer': 4.20
 }
 
-print( products.sort() )
+sorted_products = sorted(products.items(), key=lambda item:item[1])
+print(sorted_products)
