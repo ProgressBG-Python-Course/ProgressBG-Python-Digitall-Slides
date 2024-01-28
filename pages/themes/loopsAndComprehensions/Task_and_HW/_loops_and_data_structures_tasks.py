@@ -4,6 +4,9 @@
 """
 
 ### Your code here
+def solution1(n):
+    for i in range(1, n+1):
+        print( '*' * i )
 
 ### EXPECTED OUTPUT:
 # Enter stars number: 4
@@ -21,6 +24,20 @@
 """
 
 ### Your code
+
+def solution2():
+    words = []
+    word = input("Enter a word (or '0' to stop): ")
+
+    while word != '0':
+        words.append(word)
+        word = input("Enter a word (or '0' to stop): ")
+
+    vowels = 'aeiou'
+    words_started_with_vowels = [word for word in words if word[0].lower() in vowels]
+
+    print("Words that start with a vowel:", words_started_with_vowels)
+
 
 ### EXPECTED OUTPUT:
 # Enter a word (or '0' to stop): atom
@@ -40,12 +57,22 @@
 words = ["hello", "world", "python", "is", "fun", "and", "useful"]
 
 ### Your code here
+def solution3(strings):
+    length_dict = {}
+    for s in strings:
+        length = len(s)
+        if length not in length_dict:
+            length_dict[length] = []
+        length_dict[length].append(s)
+    print(length_dict)
+# solution3(words)
 
 ### EXPECTED OUTPUT:
 # {5: ['hello', 'world'], 6: ['python'], 2: ['is'], 3: ['fun', 'and'], 7: ['useful']}
 
 
-# ---------------------------------- Task 3 ---------------------------------- #
+
+# ---------------------------------- Task 4 ---------------------------------- #
 """ DESCRIPTION:
     In a supermarket inventory system, there are two sets of product categories:
     1. Categories that need refrigeration.
@@ -59,11 +86,24 @@ words = ["hello", "world", "python", "is", "fun", "and", "useful"]
     Note: The category names are assumed to be in lowercase.
 """
 
-### Given
+### Hardcoded sets
 refrigerated = {'dairy', 'meats', 'frozen foods', 'seafood', 'deli'}
 sale = {'cereals', 'dairy', 'snacks', 'frozen foods', 'beverages'}
 
-### Your code here
+def solution4():
+    # a. Categories both refrigerated and on sale
+    refrigerated_and_sale = refrigerated.intersection(sale)
+    print("Categories both refrigerated and on sale:", refrigerated_and_sale)
+
+    # b. Categories on sale but not refrigerated
+    sale_not_refrigerated = sale.difference(refrigerated)
+    print("Sale categories not needing refrigeration:", sale_not_refrigerated)
+
+    # c. Suggesting new sale categories from refrigerated items not yet on sale
+    new_sale_suggestions = refrigerated.difference(sale)
+    print("Suggested new sale categories from refrigerated items:", new_sale_suggestions)
+
+solution4()
 
 ### EXPECTED OUTPUT:
 # Categories both refrigerated and on sale: {'dairy', 'frozen foods'}
