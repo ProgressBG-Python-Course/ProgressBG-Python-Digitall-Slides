@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <!-- css & themes include -->
     <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css" id="theme">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement( 'link' );
@@ -717,22 +717,73 @@
 
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>HW</h2>
-    <section><h3>"Guess the number" - full version</h3>
+    <section><h3>Tasks on Loops and Data Strucures</h3>
         <dl class="fa">
-            <dt>Write a simple pthe full version of the "Guess the number" game, implementing the same rules as given in <a href="http://127.0.0.1:1111/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/logicalExpressionsAndConditionalStatements/logicalExpressionsAndConditionalStatements.html#/hw_guess_the_number">Guess the number game - the beginning</a>, but giving the user the chance to try more than once.</dt>
-            <dt>The user now will have 5 tries to guess.</dt>
-            <dt>If he/she could not manage to guess the number for 5 tries, the game stops, with a message:<br>"You lost! My number was X"</dt>
-            <dd>where X is the machine number</dd>
+            <dt>The tasks are given in next <a href="https://gist.githubusercontent.com/ProgressBG-Python-Course/5370c85d60b9817c75428afa984fb8ee/raw/dc4090c17a39e690aa2dca272ef01223574d14cf/tasks.py">gist file</a></dt>
+            <dt>You can copy it and work directly on it. Just put your code under "### Your code here".</dt>
+            <script src="https://gist.github.com/ProgressBG-Python-Course/5370c85d60b9817c75428afa984fb8ee.js"></script>
         </dl>
     </section>
-    <section><h3>"Guess the number" - solutions</h3>
+    <section><h3>"Guess the number" game</h3>
+        <dl class="fa">
+            <dt><b>Task</b>: Create a Python program for a "Guess the Number" game. The game will generate a random number within a specified range and prompt the user to guess the number. The program provides feedback based on the user's guess - whether it's too high, too low, or correct. The game continues until the user guesses the number correctly.</dt>
+            <dt><b>Requirements</b>:</dt>
+            <dd>Random Number Generation: The program should generate a random number within a given range (e.g., 1 to 10). You can use the <code>random.randint(1, 10)</code> method, after including in your code <code>import random</code></dd>
+            <dd>User Input: Prompt the user to enter their guess. Ensure, the user guess is in the range, and if not, display "Your guess is out of bounds."</dd>
+            <dd>Feedback to User: After each guess, the program should provide feedback:
+                <ul>
+                    <li>If the guess is too high, display "Too hight!"</li>
+                    <li>If the guess is too low, display "Too low!"</li>
+                    <li>If the guess is correct, display "Congratulations! You guessed it right."</li>
+                </ul>
+            </dd>
+            <dd>Repeat Guesses: The game should continue, allowing the user to guess again if the guess is incorrect.</dd>
+            <dd>Terminate the Game: Once the correct number is guessed, the game should end with message "Bravo, you guessed my number"</dd>
+            <dd>Optional - Guess Counter: Keep track of the number of guesses the user makes and display this count when the correct number is guessed.</dd>
+            <dt><b>Bonus Challenge</b>:</dt>
+            <dd>Add a feature to limit the number of guesses a user can make. If the user doesn't guess the number within the limit, end the game with a message indicating that the user has lost.</dd>
+            <dd>Implement a difficulty level for the game (e.g., easy, medium, hard), where each level has a different range of numbers or a different number of allowed guesses.</dd>
+        </dl>
+    </section>
+    <section><h3>"Guess the number" - demo output</h3>
+        <pre><code rel="Terminal" class="ascii" style="min-height: 80vh;">
+            Welcome to Guess the Number!
+
+            ********************* Levels *********************
+            * 1. EASY, range: (1, 10), max moves: 7          *
+            * 2. MEDIUM, range: (1, 10), max moves: 5        *
+            * 3. HARD, range: (1, 100), max moves: 10        *
+            **************************************************
+
+            >>> Select level: 5
+                ( Enter a number between 1 and 3 )
+
+            >>> Select level: 2
+
+            *** Let's play MEDIUM. Good Luck! ***
+
+            >>> Guess the number (between 1 and 10): 5
+            Too high! Moves left: 4
+
+            >>> Guess the number (between 1 and 10): 1
+            Too low! Moves left: 3
+
+            >>> Guess the number (between 1 and 10): 2
+
+            *** Congratulations! You guessed it right in 3 moves!. ***
+
+
+
+        </code></pre>
+    </section>
+    <!-- <section><h3>"Guess the number" - solutions</h3>
         <dl class="fa">
             <dt>a solution with while loop</dt>
             <dd><a href="Task_and_HW/guess_the_number_while_loop.py">guess_the_number_while_loop.py</a></dd>
             <dt>a solution with for loop</dt>
             <dd><a href="Task_and_HW/guess_the_number_for_loop.py">guess_the_number_for_loop.py</a></dd>
         </dl>
-    </section>
+    </section> -->
 </section>
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">

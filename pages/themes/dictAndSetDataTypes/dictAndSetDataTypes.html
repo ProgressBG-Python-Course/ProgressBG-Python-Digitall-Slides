@@ -699,17 +699,6 @@
             </code></pre>
         </dl>
     </section>
-    <section id="hints_best_students_scores"><h3>Hints</h3>
-        <dl class="fa">
-            <dt>In order to check if a value (i.e. "student score") is greater than 4.00 you can use next code</dt>
-            <pre><code rel="Python" class="python" style="min-height: 40vh;">
-                score = 4.55
-                if score>4.00:
-                    # do something if True
-                    # i.e. add student's name and score into best_students_scores
-            </code></pre>
-        </dl>
-    </section>
 </section>
 <section><h2>task_min_max_student_score.py</h2>
     <section id="task_min_max_student_score"><h3>the task</h3>
@@ -726,8 +715,7 @@
     </section>
     <section id="hints_min_max_student_score"><h3>hints</h3>
         <dl class="fa">
-            <dt>To find a min/max value from values, you can implement your own algorithm using only <code>if</code> statement.</dt>
-            <dt>Or to use Python's built-in functions <a href="https://docs.python.org/3/library/functions.html#min">min()</a> and <a href="https://docs.python.org/3/library/functions.html#max">max()</a></dt>
+            <dt>To find a min/max value from values, you can use Python's built-in functions <a href="https://docs.python.org/3/library/functions.html#min">min()</a> and <a href="https://docs.python.org/3/library/functions.html#max">max()</a></dt>
             <dd>You can use them on any sequence, like this:</dd>
             <pre><code rel="Python" class="python" style="min-height: 40vh;">
                 numbers = [2,3,1,5]
@@ -742,71 +730,54 @@
                 # 1
                 # 5
             </code></pre>
-            <dt>or on separate items, like this:</dt>
-            <pre><code rel="Python" class="python" style="min-height: 40vh;">
-
-                x = 2
-                y = 5
-
-                min_number = min(x,y)
-                max_number = max(x,y)
-
-                print(min_number)
-                print(max_number)
-            </code></pre>
         </dl>
     </section>
 </section>
 <section><h2>task_simple_word_index.py</h2>
     <section id="task_simple_word_index"><h3>the task</h3>
         <dl class="fa">
-            <dt>Make a program which will counts the words frequency (the count) of a given text</dt>
+            <dt>Make a program which will counts how many times a word appears in  given text</dt>
         </dl>
         <pre><code rel="Sample data" class="bash" data-noescape>
-            apple and banana one apple one banana
-            a red apple and a green apple
+            text = """apple and banana one apple one banana
+                      a red apple and a green apple"""
         </code></pre>
         <pre><code rel="Output" class="bash" data-noescape>
-            a - 2
-            green - 1
+            # not nessesarly in the same order
+            apple  - 4
+            and    - 2
             banana - 2
-            and - 2
-            one - 2
-            red - 1
-            apple - 4
+            one    - 2
+            a      - 2
+            red    - 1
+            green  - 1
         </code></pre>
     </section>
     <section id="hint_simple_word_index"><h3>Hints</h3>
         <dl class="fa">
-            <dt>For simplicity we will get the "words" as a space separated sequences in string.</dt>
-            <dt>To get that list of words we can use the <a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split()</code></a> method, as shown:</dt>
-        </dl>
-        <pre><code rel="Python" class="python" style="min-height: 40vh;">
-            text = "some words delimited by spaces"
-            words_list = text.split()
+            <dt><i>Hint 1</i>: for simplicity we will get the "words" as a space separated sequences in string. To get that list of words we can use the <a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split()</code></a> method, as shown:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 20vh;">
+                text = "some words delimited by spaces"
+                words_list = text.split()
 
-            print(words_list)
-        </code></pre>
-        <pre><code rel="Output" class="bash" data-noescape>
-            ['some', 'words', 'delimited', 'by', 'spaces']
-        </code></pre>
-    </section>
-    <section><h3 class="advanced">A more sophisticated output</h3>
-        <dl class="fa">
-            <dt>Display the words count as a table. Note that the first column width is equal to the length of the longest word</dt>
+                print(words_list)
+
+                # ['some', 'words', 'delimited', 'by', 'spaces']
+            </code></pre>
+            <dt><i>Hint 2</i>: you can use the <code>list.count(x)</code> method which return the number of times x appears in the list.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 20vh;">
+                l = [1,1,1,2,2,2,2,3,3]
+
+                print(l.count(1)) # 3
+                print(l.count(2)) # 4
+                print(l.count(3)) # 2
+            </code></pre>
         </dl>
-        <pre><code rel="Expected Output" class="bash" data-noescape>
-            |apple |  4  |
-            |banana|  2  |
-            |one   |  2  |
-            |a     |  2  |
-            |and   |  2  |
-            |green |  1  |
-            |red   |  1  |
-        </code></pre>
+
     </section>
+
 </section>
-<section><h2>task_users_bills.py</h2>
+<!-- <section><h2>task_users_bills.py</h2>
     <section id="task_users_bills"><h3>the data</h3>
         <dl class="fa">
             <dt>A simplified data for telecom users are stored as two relational tables:</dt>
@@ -834,7 +805,7 @@
             </code></pre>
         </dl>
     </section>
-</section>
+</section> -->
 <!--
 <section><h2>Submission</h2>
     <dl class="fa">

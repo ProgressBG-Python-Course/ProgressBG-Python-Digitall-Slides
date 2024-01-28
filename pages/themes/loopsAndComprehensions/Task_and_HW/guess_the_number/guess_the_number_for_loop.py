@@ -13,19 +13,18 @@ print("I'm thinking about a number, between [{}, {}]. Can you guess it in {} tri
     format(start_number, end_number, max_tries))
 # flag to trace weather the user has guessed
 guessed = False
-# start counting from 1
-try_count = 1
 
 # for debugging:
-print("machine_number = ", machine_number)
+# print("machine_number = ", machine_number)
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # game play logic
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-while try_count <= max_tries:
+for try_count in range( max_tries ):
     # get user number - loop until a number in the given interval is entered:
     while True:
-        user_number = int(input("\nTry {}. Enter a number: ".format(try_count)))
+        user_number = int(input("\nTry {}. Enter a number: ".format(try_count+1)))
         if ( start_number <= user_number <= end_number):
             break
         else:
@@ -40,15 +39,13 @@ while try_count <= max_tries:
     else:
         print("your guess is greater than my number.")
 
-    # increment try counter
-    try_count += 1
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # check if user have guessed or max tries have been reached and print result:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 print("~" * 60)
 if guessed:
-    print("You win !!! {} was my number! And you've guessed it in {} tries!".format(machine_number, try_count))
+    print(f"You win !!! {machine_number} was my number! And you've guessed it in {try_count+1} tries!") # type:ignore
 else:
     print("You lose! My number was {}".format(machine_number))
 print("~" * 60)
