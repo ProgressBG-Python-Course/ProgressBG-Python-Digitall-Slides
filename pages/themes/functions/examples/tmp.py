@@ -1,6 +1,7 @@
-def add(x,y):
-	return x+y
-	# next line will never be executed:
-	print("After return")
+products = {
+    'apple': 3,
+    'coffee': 2.5,
+    'beer': 4.20
+}
 
-print(add(2,4))
+print( products.sort() )

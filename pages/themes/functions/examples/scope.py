@@ -13,7 +13,7 @@ if 0:
 if 0:
   l = [1,2]
 
-  def foo(lst):
+  def foo(lst):  # type:ignore
     lst.append(3)
 
   def bar(lst):
