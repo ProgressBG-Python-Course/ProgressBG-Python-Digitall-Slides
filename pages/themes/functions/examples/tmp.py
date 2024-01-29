@@ -1,8 +1,12 @@
-x = 10  # A global variable
+def get_user_data():
+    return {
+                "name" : "ada",
+                "height": "189",
+                "weight": "55"
+            }
 
-def foo():
-    x = 20  # A local variable
-    print("Local Scope:", locals())
-    print("Global Scope:", globals())
+def calc_BMI(name,height, weight):
+    print(name,height, weight)
 
-foo()
+user_data = get_user_data()
+bmi = calc_BMI(**user_data )
