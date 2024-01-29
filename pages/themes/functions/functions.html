@@ -129,23 +129,30 @@
             <dt><em>'''docstring'''</em>: optional. A string for function documentation.</dt>
             <dt><b>statements</b>: block of statements, also called <span class="note">function body</span>. Must have at least 1 statement.</dt>
             <dt><em>return expression</em>: optional. Specify what <span class="note">the return value of the function</span> should be.</dt>
+            <dt>Example: simplest definition</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                def calculate_sum():
+                    pass
+            </code></pre>
+            <dt>Example: full definition</dt>
+            <pre><code rel="Python" class="python" style="min-height: 45vh;">
+                def calculate_sum(number1, number2):
+                    '''
+                    Takes two numbers as parameters and returns their sum.
+
+                    Parameters:
+                    number1 (int/float): The first number.
+                    number2 (int/float): The second number.
+
+                    Returns:
+                    int/float: The sum of number1 and number2.
+                    '''
+                    total_sum = number1 + number2
+                    return  total_sum
+
+            </code></pre>
         </dl>
-        <pre><code rel="Python" class="python" style="min-height: 45vh;">
-            def calculate_sum(number1, number2):
-                '''
-                Takes two numbers as parameters and returns their sum.
 
-                Parameters:
-                number1 (int/float): The first number.
-                number2 (int/float): The second number.
-
-                Returns:
-                int/float: The sum of number1 and number2.
-                '''
-                total_sum = number1 + number2
-                return  total_sum
-
-        </code></pre>
     </section>
     <section><h3>The pass statement</h3>
         <dl class="fa" style="min-width:80vw">
@@ -733,6 +740,29 @@
             print("x = {} outside foo()".format(x))
             # x = 10 outside foo()
         </code></pre>
+    </section>
+    <section><h3 class="advanced">View the Scope</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>In Python, you can use the built-in functions <code>locals()</code> and <code>globals()</code> to print the local and global scope, respectively.</dt>
+            <dd><code>locals()</code> returns a dictionary containing the variables defined in the local scope.</dd>
+            <dd><code>globals()</code> returns a dictionary containing the variables defined in the global scope.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 50vh;">
+                x = 10  # A global variable
+
+                def foo():
+                    x = 20  # A local variable
+                    print(&quot;Local Scope:&quot;, locals())
+                    print(&quot;Global Scope:&quot;, globals())
+
+                foo()
+
+                # Local Scope: {&#39;x&#39;: 20}
+
+                # Global Scope: {&#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None, &#39;__package__&#39;: None, &#39;__loader__&#39;: &lt;_frozen_importlib_external.SourceFileLoader object at 0x7f7bcb1d05c0&gt;, &#39;__spec__&#39;: None, &#39;__annotations__&#39;: {}, &#39;__builtins__&#39;: &lt;module &#39;builtins&#39; (built-in)&gt;, &#39;__file__&#39;: &#39;/examples/tmp.py&#39;, &#39;__cached__&#39;: None, &#39;x&#39;: 10, &#39;foo&#39;: &lt;function my_function at 0x7f7bcb40a2a0&gt;}
+
+
+            </code></pre>
+        </dl>
     </section>
     <section><h3>Names Resolution</h3>
         <dl class="fa" style="min-width:80vw">

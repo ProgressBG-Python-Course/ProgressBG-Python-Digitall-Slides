@@ -32,7 +32,7 @@
 
 # ---------------------------------- Task 3 ---------------------------------- #
 """ DESCRIPTION:
-    Write a function that takes a list of strings and returns a dictionary,
+    Write a script that takes a list of strings and returns a dictionary,
     where each key is a string length and each value is a list of strings of that length.
 """
 

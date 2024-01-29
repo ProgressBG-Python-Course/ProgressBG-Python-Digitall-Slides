@@ -1,8 +1,8 @@
-products = {
-    'apple': 3,
-    'coffee': 2.5,
-    'beer': 4.20
-}
+x = 10  # A global variable
 
-sorted_products = sorted(products.items(), key=lambda item:item[1])
-print(sorted_products)
+def foo():
+    x = 20  # A local variable
+    print("Local Scope:", locals())
+    print("Global Scope:", globals())
+
+foo()
