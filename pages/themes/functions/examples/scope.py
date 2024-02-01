@@ -1,37 +1,18 @@
-if 0:
-  x = 10
+def outer():
+    x=2
 
-  def f1():
-    # creates new local variable x
-    x = 99
-    print("x = {} inside f1()".format(x))
+    def inner():
+        nonlocal x
+        x = 3 # we change the x in outer
+        print(f'x = {x} in inner')
 
-  f1()
-  print("x = {} outside f1()".format(x))
+    inner()
+    print(f'x = {x} in outer')
 
-# passing list to function
-if 0:
-  l = [1,2]
+x = 1
+outer()
+print(f'x = {x} in global')
 
-  def foo(lst):  # type:ignore
-    lst.append(3)
-
-  def bar(lst):
-    lst = [4,5]
-
-  foo(l)
-  print(l)
-  bar(l)
-  print(l)
-
-if 1:
-  x = 5
-
-  def foo(y):
-    y = 1
-
-  foo(x)
-  print(x)
-
-  a = 5
-  b = a
+#x = 3 in inner
+#x = 2 in outer
+#x = 1 in global

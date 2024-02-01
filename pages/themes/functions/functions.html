@@ -158,7 +158,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>Sometimes you need to define a function which body will be written later, but <span class="note">Python did not allows empty blocks</span>!</dt>
             <dt>In such cases, you can use the <code>pass</code> statement for function body:</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def do_task1():
                     pass
 
@@ -173,7 +173,7 @@
 
     </section>
     <section><h3>simplest example</h3>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def greet():
                 """Just prints hello"""
 
@@ -198,7 +198,7 @@
                 <b>function_name(</b><em>opt_arg_list</em><b>)</b>
             </code></pre>
             <dt><i>opt_arg_list</i> is optional, but <span class="note">braces are required</span></dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 ### define greet() function
                 def greet():
                     """Just prints hello"""
@@ -214,7 +214,7 @@
     <section>
         <dl class="fa" style="min-width:80vw">
             <dt class="note">A function must be defined before you call it, or a <b>NameError</b> will be raised!</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 # execute the greet() function:
                 greet()
 
@@ -225,7 +225,7 @@
                 # NameError: name 'greet' is not defined
             </code></pre>
             <dt>function call - the right way:</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 # define greet() function:
                 def greet():
                   print("Hello!")
@@ -245,7 +245,7 @@
     <section>
         <dl class="fa" style="min-width:80vw">
             <dt>A function is not very useful if it operates on same values</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def add():
                     print(2+3)
 
@@ -258,7 +258,7 @@
                 # 5
             </code></pre>
             <dt>It will be better if we could do:</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 # call add with different arguments:
                 add(20, 22)
                 add(123, 321)
@@ -289,7 +289,7 @@
             <dd>and so on...</dd>
             <a href="images/passing_arguments_2.png"><img src="images/passing_arguments_2.png"></a>
             <dt><b>The number of arguments passed must be equal to the number of parameters</em>, or a TypeError is raised</b></dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def sub(x,y):
                     """ subtracts y from x and prints the result """
                     print(x - y)
@@ -306,7 +306,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>A default value to the "trailing" parameters can be defined, and that value will be used if no argument for that parameter is passed.</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def greet(name="Nobody"):
                 """ greets a user """
                 print("Hello", name)
@@ -322,7 +322,7 @@
     <section><h3>Default Parameters Values</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>Default parameters <b>must follow</b> the non-default parameters, or SyntaxError is raised.</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(msg="Hi", name):
                     print(f"{msg} {name}!")
 
@@ -330,7 +330,7 @@
                 # SyntaxError: non-default argument follows default argument
             </code></pre>
             <dt>Here is the correct definition: </dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(name, msg="Hi"):
                     print(f"{msg} {name}!")
 
@@ -342,14 +342,14 @@
     <section><h3>Keyword (named) Arguments</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>If you explicitly state the parameter name in the argument list, that parameter will get its value, no matter of where it is positioned.</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(msg, name):
                     print(f"{msg} {name}!")
 
                 greet(name="Maria",  msg="Hi")
             </code></pre>
             <dt class="note">Keyword arguments must follows the positional arguments!</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(msg, name):
                     print(f"{msg} {name}!")
 
@@ -357,14 +357,14 @@
                 # SyntaxError: positional argument follows keyword argument
             </code></pre>
             <dt>This is the correct syntax:</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(msg, name):
                     print(f"{msg} {name}!")
 
                 greet(name="Maria", "Hi")
             </code></pre>
             <dt>Or this (all arguments are keyword):</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(msg, name):
                     print(f"{msg} {name}!")
 
@@ -375,7 +375,7 @@
     <section id="args"><h3>Variable Number of Positional Arguments (*args)</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>You can define a function to take <span class="note">variable number of arguments</span> with <span class="note">*</span> (star) operator in front a parameter name. Commonly written as <code>*args</code></dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def foo(*args):
                   print(args)
 
@@ -394,7 +394,7 @@
     <section><h3>Variable Number of Positional Arguments (*args)</h3>
         <dl class="fa" style="min-width:80vw">
             <dt class="note"><code>*args</code> must follow the positional parameters in definition (if any), or TypeError is raised:</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def greet(*args, first_name):
                     print(f"Hello, {first_name}!")
                     for other_name in args:
@@ -426,7 +426,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>Define the <code>calculate_sum()</code> function, which will print the sum of variable number of numerical arguments</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             # calculate_sum() definition
 
             # test your code:
@@ -443,7 +443,7 @@
     <section id="kwargs"><h3>Variable Number of Keyword Arguments (**kwargs)</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>You can use <code class="note">**</code> (double stars) in front of parameter name which will collects a variable number of <span class="note">keyword arguments</span> into a <span class="note">dictionary</span>.</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def foo(**kwargs):
                   print(kwargs)
 
@@ -451,7 +451,7 @@
 
                 # {'a': 1, 'b': 2}
             </code></pre>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" style="min-height: 10vh;">
                 def foo(**kwargs):
                   print(kwargs)
 
@@ -503,7 +503,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>You can unpack a list/tuple passed as argument into listed positional parameters with the <code>*</code> operator</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def my_func(p1,p2,p3):
                 print(p1, p2, p3)
 
@@ -517,7 +517,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>You can use <code class="note">**</code> (double stars) to unpack dictionary into named arguments.</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def menu_print(fruit, price):
                 print("{:.&lt;20s}{:.2f}".format(fruit,price))
 
@@ -555,7 +555,7 @@
     </section>
     <section><h3><code class="note">return </code> statement</h3>
         <p>The return statement exit the function! Any code after <code>return</code> will never be executed:</p>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def add(x,y):
                 return x+y
                 # next line will never be executed:
@@ -605,8 +605,8 @@
         <dl class="fa" style="min-width:80vw">
             <dt>Lambda expressions in Python are a <b>way to create small, anonymous functions</b> (functions without a name)</dt>
             <dt>These functions are often used for short-duration tasks where defining a full function would be unnecessarily verbose.</dt>
-            <dt>A lambda function can take any number of arguments but can only have one expression as its body</dt>
-            <pre><code rel="Syntax" class="python" style="min-height: 10vh;">
+            <dt>A lambda function can have <b>any number of parameters</b> but can only have <b>one expression in its body</b>.</dt>
+            <pre><code rel="Syntax" class="python" style="min-height: 10vh;" data-noescape>
                 lambda <i>parameters</i>: <i>expression</i>
             </code></pre>
             <dd><i>parameters</i> are the input parameters to the function. Can be any number, including zero, as in standard function definition.</dd>
@@ -658,7 +658,7 @@
             <pre><code rel="Python" class="python" style="min-height: 10vh;">
                 data = [(1, 'Z'), (2, 'Y'), (3, 'X')]
 
-                sorted_data = sorted(data, key=lambda x: x[1])
+                sorted_data = sorted(data, key=lambda t: t[1])
 
                 print(sorted_data)
                 # [(3, 'X'), (2, 'Y'), (1, 'Z')]
@@ -700,20 +700,23 @@
 
 <section id="ScopeAndNamespaces"><h1>Scope and Namespaces</h1></section>
 <section><h2>Scope and Namespaces</h2>
-    <section><h3>What?</h3>
+    <section>
         <dl class="fa" style="min-width:80vw">
             <dt>A <span class="note">namespace</span> stores the mapping from names to objects. Usually implemented internally by a dictionary.</dt>
+            <dd>Namespaces is a s a runtime concept - they are defined during the execution of a program.</dd>
+            <dd>For example, the global namespace is created when a module (Python file) is loaded, and a function's local namespace is created when the function is called, and destroyed when the function returns or completes execution.</dd>
             <dt>A <span class="note">scope</span> is a lexical (textual) region of the program, where a namespace is directly accessible (i.e. without a prefix).</dt>
+            <dd>Scopes are determined at compile time (statically), which means Python determines the scope of names before the program runs based on the structure of the code</dd>
             <dt>You can think of the scope as part of your program where a variable can be accessed (used, visible).</dt>
         </dl>
         <a href="images/scope.png"><img src="images/scope.png"></a>
     </section>
     <section><h3>Local Scope</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Names created <span class="note">inside a function</span> are <span class="note">local</span> to the function and are visible only inside that function</dt>
-            <dt>Function parameters are also defined in local function namespace. I.e. they are local to that function.</dt>
+            <dt>Names created <span class="note">inside a function</span>, as well as the function's parameters, are <span class="note">local</span> to the function and are visible only inside that function</dt>
+            <dt>A function's local namespace is created when the function is called, and destroyed when the function returns or completes execution</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             def f1():
               y = 2
               print(f"y = {y} inside f1")
@@ -729,7 +732,7 @@
         <dl class="fa" style="min-width:80vw">
             <dt>A name defined outside any functions is <span class="note">global</span> to the file/module, and can be accessed after its definition from any place in that file/module.</dt>
         </dl>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" style="min-height: 10vh;">
             x = 10
 
             def foo():
@@ -743,9 +746,9 @@
     </section>
     <section><h3 class="advanced">View the Scope</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>In Python, you can use the built-in functions <code>locals()</code> and <code>globals()</code> to print the local and global scope, respectively.</dt>
-            <dd><code>locals()</code> returns a dictionary containing the variables defined in the local scope.</dd>
-            <dd><code>globals()</code> returns a dictionary containing the variables defined in the global scope.</dd>
+            <dt>In Python, you can use the built-in functions <code>locals()</code> and <code>globals()</code> to print the local and global namespace, respectively.</dt>
+            <dd><code>locals()</code> returns the namespace, containing the variables defined in the local scope.</dd>
+            <dd><code>globals()</code> returns the namespace containing the variables defined in the global scope.</dd>
             <pre><code rel="Python" class="python" style="min-height: 50vh;">
                 x = 10  # A global variable
 
@@ -766,13 +769,13 @@
     </section>
     <section><h3>Names Resolution</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt style="font-size: .8em">When a name is assigned a value inside function body, that name is created in function local scope (if the global keyword is not used), even if the same name is already defined in global scope</dt>
-            <pre><code rel="Python" class="python">
+            <dt style="font-size: .8em">When a name is assigned a value inside function body, that name is created in function local namespace, even if the same name is already defined in global namespace</dt>
+            <pre><code rel="Python" style="min-height: 10vh;">
                 x = 1
 
                 def foo():
-                  x = 99
-                  print(f"x = {x} inside foo")
+                    x = 99
+                    print(f"x = {x} inside foo")
 
                 foo()
                 # x = 99 inside foo
@@ -784,16 +787,16 @@
         <p class="note">Variables with same name, defined in different scopes are considered as different variables!</p>
     </section>
     <section><h3>Names Resolution - nested functions</h3>
-        <pre><code rel="Python" class="python">
+        <pre><code rel="Python" class="python" style="min-height: 60vh;">
             def outer():
-              x=2
+                x=2
 
-              def inner():
-                x = 3
-                print(f'x = {x} in inner')
+                def inner():
+                    x = 3
+                    print(f'x = {x} in inner')
 
-              inner()
-              print(f'x = {x} in outer')
+                inner()
+                print(f'x = {x} in outer')
 
             x = 1
             outer()
@@ -804,47 +807,21 @@
             #x = 1 in global
         </code></pre>
     </section>
-    <section><h3 class="advanced">the <code>nonlocal</code> statement</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>We can declare a name with the <code>nonlocal</code> statement prefix</dt>
-            <dt>The nonlocal statement causes the listed names to refer to previously bound variables in the nearest enclosing scope excluding globals.</dt>
-            <pre><code rel="Python" class="python">
-                def outer():
-                  x=2
-
-                  def inner():
-                    nonlocal x
-                    x = 3
-                    print(f'x = {x} in inner')
-
-                  inner()
-                  print(f'x = {x} in outer')
-
-                x = 1
-                outer()
-                print(f'x = {x} in global')
-
-                #x = 3 in inner
-                #x = 3 in outer
-                #x = 1 in global
-            </code></pre>
-        </dl>
-    </section>
     <section><h3 class="advanced">the <code>global</code> statement</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>We can declare a name with the <code>global</code> statement prefix</dt>
             <dt>The <code>global</code> statement causes the listed names to be interpreted as global names.</dt>
-            <pre><code rel="Python" class="python">
+            <pre><code rel="Python" class="python" style="min-height: 60vh;">
                 def outer():
-                  x=2
+                    x=2
 
-                  def inner():
-                    global x
-                    x = 3
-                    print(f'x = {x} in inner')
+                    def inner():
+                        global x
+                        x = 3 # we change the global x
+                        print(f'x = {x} in inner')
 
-                  inner()
-                  print(f'x = {x} in outer')
+                    inner()
+                    print(f'x = {x} in outer')
 
                 x = 1
                 outer()
@@ -852,17 +829,44 @@
 
                 #x = 3 in inner
                 #x = 2 in outer
-                #x = 3 in global
+                #x = 1 in global
             </code></pre>
         </dl>
     </section>
+    <section><h3 class="advanced">the <code>nonlocal</code> statement</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>We can declare a name with the <code>nonlocal</code> statement prefix</dt>
+            <dt>The nonlocal statement causes the listed names to refer to previously bound variables in the nearest enclosing scope excluding globals.</dt>
+            <pre><code rel="Python" style="min-height: 60vh;">
+                def outer():
+                    x=2
+
+                    def inner():
+                        nonlocal x
+                        x = 3 # we change the x in outer
+                        print(f'x = {x} in inner')
+
+                    inner()
+                    print(f'x = {x} in outer')
+
+                x = 1
+                outer()
+                print(f'x = {x} in global')
+
+                #x = 3 in inner
+                #x = 2 in outer
+                #x = 1 in global
+            </code></pre>
+        </dl>
+    </section>
+
     <section><h3>Names Resolution - rules</h3>
         <p>Although scopes are determined statically, they are used dynamically. I.e. a name is resolved searching in: </p>
         <ol class="fa">
-            <li>The <b>local</b> (innermost) scope</li>
-            <li>The scopes of any <b>enclosing</b> functions, which are searched starting with the nearest enclosing scope, contains non-local, but also non-global names</li>
-            <li>The current module’s <b>global</b> names</li>
-            <li>The outermost scope is the namespace containing <b>built-in</b> names</li>
+            <li><i>The local (innermost) namespace</i>: This is the namespace of the current function or scope. If a name is defined locally, it is resolved here.</li>
+            <li><i>The namespaces of any enclosing functions</i>: These are searched starting with the nearest enclosing namespace. This layer contains non-local but also non-global names.</li>
+            <li><i>The current module’s global namespace</i>: This contains names defined at the top level of the module or declared global in a function.</li>
+            <li><i>The outermost namespace</i>: This is the namespace containing built-in names, providing access to Python’s built-in functions and objects.</li>
         </ol>
         <br><br>
         <a href="./images/LEGB_Namespaces_Rules.png"><img src="./images/LEGB_Namespaces_Rules.png" alt="LEGB_Namespaces_Rules.png"></a>
@@ -871,10 +875,8 @@
 
 <section><h1>References</h1></section>
 <section><h2>References</h2>
-    <section>
+    <section><h3>Suggested Reading:</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Defining Functions</a> @python.org/3/tutoria</dt>
-            <dt><a href="https://www.python-course.eu/python3_functions.php">Functions</a> @python-course.eu</dt>
             <dt><a href="https://realpython.com/python-namespaces-scope/">Namespaces and Scope in Python @realpython</a></dt>
         </dl>
     </section>
