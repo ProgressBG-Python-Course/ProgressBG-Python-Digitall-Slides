@@ -1,12 +1,14 @@
-def get_user_data():
-    return {
-                "name" : "ada",
-                "height": "189",
-                "weight": "55"
-            }
+def outer():
+    x=2
 
-def calc_BMI(name,height, weight):
-    print(name,height, weight)
+    def inner():
+        global x
+        x = 3 # we change the global x
+        print(f'x = {x} in inner')
 
-user_data = get_user_data()
-bmi = calc_BMI(**user_data )
+    inner()
+    print(f'x = {x} in outer')
+
+x = 1
+outer()
+print(f'x = {x} in global')
