@@ -1,58 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>exceptions</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
+    <meta charset="utf-8">
+    <title>exceptions</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<!-- CUSTOM -->
-	<style type="text/css">
-		.reveal section iframe{
-			text-align: center;
-			margin: 0 auto;
-			height: 70vh;
-		}
+    <!-- CUSTOM -->
+    <style type="text/css">
+        .reveal section iframe{
+            text-align: center;
+            margin: 0 auto;
+            height: 70vh;
+        }
 
-	</style>
-	<base target="_blank">
+    </style>
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -60,482 +60,352 @@
 -->
 <section><h1>Exceptions: raising and handling</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 <section><h1>What are Exceptions</h1></section>
 <section><h2>What are Exceptions</h2>
-	<section>
-		<dl class="fa">
-			<dt>Exceptions - not a syntax, but a <span class="note">run-time errors</span> (<span class="note">raised during the execution of a program</span>)</dt>
-			<dt>There are many types of standard exceptions defined in Python	:</dt>
-			<dd>ValueError, NameError, TypeError, IndexError, ZeroDivisionError,... </dd>
-			<dt>Standard Exceptions are hierarchically organized in Python:</dt>
-			<dd><a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" class="advanced">Exception hierarchy</a></dd>
-		</dl>
-	</section>
-	<section><h3>examples</h3>
-		<pre><code rel="Python" class="python">
-			# syntax error:
-			>>>print(x)
-			#NameError: name 'x' is not defined
+    <section>
+        <dl class="fa">
+            <dt>Exceptions - not a syntax, but a <span class="note">run-time errors</span> (<span class="note">raised during the execution of a program</span>)</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                # syntax error:
+                >>>print('hi'
+                # SyntaxError: '(' was never closed
 
-			# runtime error:
-			>>> user_number = int(input("Enter a number: "))
-			Enter a number: ada
-			# ValueError: invalid literal for int() with base 10: 'ada'
+                # runtime error (Exception):
+                >>> user_number = int(input("Enter a number: "))
+                Enter a number: ada
+                # ValueError: invalid literal for int() with base 10: 'ada'
 
-			# runtime error:
-			>>> colors = ["red", "green","blue"]
-			>>> print( colors[3] )
-			# IndexError: list index out of range
-		</code></pre>
-	</section>
+                # runtime error (Exception):
+                >>> colors = ["red", "green","blue"]
+                >>> print( colors[3] )
+                # IndexError: list index out of range
+            </code></pre>
+            <dt>Exceptions are triggered automatically on detecting errors in the program or manually through code.</dt>
+            <dt>Python categorizes exceptions into two main types: built-in exceptions and user-defined exception</dt>
+            <dt>There are many types of built-in exceptions defined in Python	:</dt>
+            <dd>ValueError, NameError, TypeError, IndexError, ZeroDivisionError,... </dd>
+            <dt>Built-in Exceptions are hierarchically organized in Python:</dt>
+            <dd><a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" class="advanced">Exception hierarchy</a></dd>
+        </dl>
+    </section>
 </section>
 
-<section><h1>Exceptions Handling</h1></section>
+<section id="ExceptionsHandling"><h1>Exceptions Handling</h1></section>
 <section><h2>Exceptions Handling</h2>
-	<section>
-		<dl class="fa">
-			<dt>When an exception is <span class="note">raised (thrown)</span> you may want to take some actions, not just stopping the program.</dt>
-			<dt>You can take specific actions for each specific Exception Type</dt>
-		</dl>
-	</section>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			try:
-				# code, which can raise an exception
-			except <em>ExceptionType</em> as e:
-				# do something if an <em>ExceptionType</em> was raised
-			else:
-				# do something only when no Exception was raised
-			finally:
-				# do something no matter if an Exception was raised or not.
-				# (useful for closing DB connections, etc.)
-		</code></pre>
-		<dl class="fa" style="font-size: .8em">
-			<dt><span class="note">except</span> is executed only when an exception from <em>ExceptionType</em> was raised in <code>try</code> code. <em>ExceptionType</em> is any of the built-in <a href="https://docs.python.org/3/library/exceptions.html">Exception Classes</a> or a User-defined Exception Class.You may have more than one <b>except</b> clauses for different Exception Types</dt>
-			<dt><span class="note">else</span> is executed <span class="note">only</span> when the code in <code>try</code> clause did not raise any exception.</dt>
-			<dt><span class="note">finally</span> is always executed!</dt>
-		</dl>
-	</section>
-	<section><h3>Example</h3>
-		<pre><code rel="Python" class="python">
-			try:
-				# code, which can raise an exception
-				user_number = int(input("Enter a number: "))
-			except ValueError as e:
-				# do something if an Exception was raised
-				print("You did not enter a number!")
-			else:
-				# do something only if there was no Exception
-				print("Your number is ", user_number)
-			finally:
-				# do something no matter if an Exception was raised or not
-				print("That was all!")
-		</code></pre>
-	</section>
-	<section><h3>Example</h3>
-		<pre><code rel="Python" class="python">
-			try:
-				a = 1/0
-			except ZeroDivisionError:
-				print("Division by zero not allowed.")
-			else:
-				print("In this universe, division by zero is allowed.")
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>When an exception is <span class="note">raised (thrown)</span> you may want to take some actions (logging the issue, attempting to recover, or providing user-friendly feedback), instead of abruptly terminating.</dt>
+            <dt>You can specify actions to be taken for specific types of exceptions. For instance, you could write one block of code to handle file-related errors and another to address mathematical errors, each with its own recovery strategy or error message.</dt>
+            <dt>The process of managing exceptions in Python involves several key elements, mainly the <code>try</code>, <code>except</code>, <code>else</code>, and <code>finally</code> blocks.</dt>
 
-			print('END')
-		</code></pre>
-	</section>
+        </dl>
+    </section>
+    <section><h3>Syntax</h3>
+        <pre><code rel="Syntax" class="python" data-noescape>
+            try:
+                # block of code, which may raise an exception
+            except <em>ExceptionType</em> as e:
+                # do something if an <em>ExceptionType</em> was raised
+            else:
+                # do something only when no Exception was raised
+            finally:
+                # do something no matter if an Exception was raised or not.
+                # (useful for closing DB connections, etc.)
+        </code></pre>
+        <dl class="fa" style="font-size: 1em">
+            <dt><span class="note">except</span> is executed only when an exception from <em>ExceptionType</em> was raised in <code>try</code> code. <em>ExceptionType</em> is any of the built-in <a href="https://docs.python.org/3/library/exceptions.html">Exception Classes</a> or a User-defined Exception Class. You may have more than one <b>except</b> clauses for different Exception Types</dt>
+            <dt><span class="note">else</span> (<i>optional</i>) is executed <span class="note">only</span> when the code in <code>try</code> clause did not raise any exception. It's useful for code that should run only if the try block was successful.</dt>
+            <dt><span class="note">finally</span> (<i>optional</i>) is always executed! It's typically used for cleaning up resources, such as closing files or network connections.</dt>
+        </dl>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Basic: handling ValueError</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                try:
+                    # code, which can raise an exception
+                    user_number = int(input("Enter a number: "))
+                except ValueError as e:
+                    # do something if ValueError was raised
+                    print("You did not enter a number!")
+                else:
+                    # do something only if there was no Exception
+                    print("Your number is ", user_number)
+                finally:
+                    # do something no matter if an Exception was raised or not
+                    print("Cleanup...")
+            </code></pre>
+            <dt>Handling multiple exceptions</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                try:
+                    # Division by zero error
+                    result = 10 / 0
+                except ZeroDivisionError:
+                    print("Divided by zero!")
+                except TypeError:
+                    print("Incorrect type used in operation.")
+                else:
+                    print("Operation successful.")
+                finally:
+                    print("Cleanup...")
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Handling any exception</h3>
+        <dl class="fa" style="width: 80vw;">
+            <dt>Syntax:</dt>
+            <pre><code rel="Syntax" class="shell" data-noescape>
+                try:
+                    # code, which can raise an exception
+                except Exception as e:
+                    # do something if any exception was raised
+            </code></pre>
+            <dt>Example:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 50vh;">
+                def get_user_number():
+                    user_number = int(input("Enter a number: "))
+                    # we forgot to return user_number, thus None is returned
+
+                try:
+                    x = get_user_number()
+                    res = 10/x
+                    print(f"Result is {res}")
+                except ValueError:
+                    print("You did not enter a number!")
+                except ZeroDivisionError:
+                    print("Enter a number different from zero (0)!")
+                except Exception as e:
+                    print(f"Oops! Something went wrong! ({e})")
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+<section id="ExceptionObject"><h1>Exception Object</h1></section>
+<section><h2>Exception Object</h2>
+    <section>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The exception object contains details about the error that occurred, including the error message and the type of exception.</dt>
+            <dt>By capturing and interacting with this object, developers can:</dt>
+            <dd>Access detailed information about the error, including custom data.</dd>
+            <dd>Differentiate between exception types using the object's class.</dd>
+            <dd>Log or display error information in a user-friendly manner.</dd>
+            <dd>Implement custom logic based on attributes of the exception.</dd>
+            <dt>example:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                try:
+                    res = 10/'a'
+                    print(f"Result is {res}")
+                except ZeroDivisionError as e:
+                    print(e)
+                except Exception as e:
+                    print(e)
+
+                # unsupported operand type(s) for /: 'int' and 'str'
+            </code></pre>
+        </dl>
+    </section>
 </section>
 
 
-<section><h1>Handling different Exception Types</h1></section>
-<section><h2>Handling different Exception Types</h2>
-	<section><h3>Handling specific Exception Type</h3>
-		<pre><code rel="Terminal" class="shell" data-noescape>
-			try:
-				# code, which can raise an exception
-			except <em>ExceptionType</em>:
-				# do something only if an <em>ExceptionType</em> was raised
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			try:
-				user_number = int(input("Enter a number: "))
-			except ValueError:
-				print("You did not enter a number!")
-		</code></pre>
-	</section>
-	<section><h3>Handling multiple Exception Type</h3>
-		<pre><code rel="Terminal" class="shell" data-noescape>
-			try:
-				# code, which can raise an exception
-			except <em>ExceptionType1</em>:
-				# do something only if an <em>ExceptionType1</em> was raised
-			except <em>ExceptionType2</em>:
-				# do something only if an <em>ExceptionType2</em> was raised
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			try:
-				user_number = int(input("Enter a number: "))
-				res = 10/user_number
-			except ValueError:
-				print("You did not enter a number!")
-			except ZeroDivisionError:
-				print("Enter a number different from zero (0)!")
-		</code></pre>
-	</section>
-	<section><h3>Handling any exception</h3>
-		<pre><code rel="Terminal" class="shell" data-noescape>
-			try:
-				# code, which can raise an exception
-			except:
-				# do something if any exception was raised
-		</code></pre>
-		<dl class="fa">
-			<dt class="note">if you use the expression-less except clause, it should be the last <code>except</code> clause</dt>
-		</dl>
-	</section>
-	<section><h3>Handling any exception - simple example</h3>
-		<pre><code rel="Python" class="python">
-			x = 5
-			y = 0
-			try:
-				res = x/y
-			except:
-				print("Oops! Something went wrong!")
-
-			# Oops! Something went wrong!
-		</code></pre>
-	</section>
-	<section><h3>Handling any exception -  example 1</h3>
-		<pre><code rel="Python" class="python">
-			def get_user_number():
-				user_number = int(input("Enter a number: "))
-				# we forgot to return user_number, thus None is returned
-
-			try:
-				x = get_user_number()
-				res = 10/x
-				print("Result is {}".format(res))
-			except ValueError:
-				print("You did not enter a number!")
-			except ZeroDivisionError:
-				print("Enter a number different from zero (0)!")
-			except:
-				print("Oops! Something went wrong!")
-		</code></pre>
-	</section>
-	<!-- <section><h3>Handling any exception -  example 2</h3>
-		<p>Everything looks perfect? Try to enter a <kbd>CTRL+D</kbd> : )</p>
-		<pre><code rel="Python" class="python">
-			def get_user_number():
-				user_number = int(input("Enter a number: "))
-				return user_number
-
-			try:
-				x = get_user_number()
-				res = 10/x
-				print("Result is {}".format(res))
-			except ValueError:
-				print("You did not enter a number!")
-			except ZeroDivisionError:
-				print("Enter a number different from zero (0)!")
-			except:
-				print("Oops! Something went wrong!")
-		</code></pre>
-	</section> -->
-</section>
-
-<section><h1>Raising Exceptions</h1></section>
+<section id="RaisingExceptions"><h1>Raising Exceptions</h1></section>
 <section><h2>Raising Exceptions</h2>
-	<section><h3>Why?</h3>
-		<dl class="fa">
-			<dt>Often, we want when exception occurs the program to stop, but we need to do something before that.</dt>
-			<dt>the <code>rasie</code> statement allows us, to handle the exception, and to raise it after.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			try:
-				user_number = int(input("Enter a number: "))
-			except ValueError:
-				print("~"*30)
-				print("You did not enter a number!")
-				print("~"*30)
-				raise
-		</code></pre>
-	</section>
-	<section><h3>The <code>raise</code> statement</h3>
-		<dl class="fa">
-			<dt>The <code>raise</code> statement allows the programmer to force a specified exception to occur.</dt>
-			<dt>You can pass to <code>raise</code> an <em>ExceptionType</em> to be raised</dt>
-			<code></code>
-			<dt>Or you can skip the  <em>ExceptionType</em> and write just <code>raise</code></dt>
-			<dd>In that case, the last error will be re-raised</dd>
-			<dt><a href="https://docs.python.org/3/reference/simple_stmts.html#raise" class="advanced">The <code>raise</code> statement @python3 docs</a></dt>
-		</dl>
-	</section>
-	<section><h3><code>raise</code> <em>ExceptionType</em> - example</h3>
-		<pre><code rel="Python" class="python">
-			user_name = input("Enter your name: ")
-			if user_name == "pesho":
-				raise KeyboardInterrupt
-		</code></pre>
-		<p>surely, you do not want to do that - it's just an example!</p>
-	</section>
-	<section><h3><code>raise</code> without arguments - example</h3>
-		<dl class="fa">
-			<dt>A common case for <code>raise</code> without argument is when you want the error to be thrown as normally, but to take some actions (logging, rollback, etc.) before that</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			try:
-			  db_insert()
-			except:
-			  rollback()
-			  raise
-			else:
-			  commit()
-		</code></pre>
-	</section>
-	<section><h3>raising custom exceptions</h3>
-		<dl class="fa">
-			<dt>A common use-case for <code>raise</code> statement is when we want to raise a custom exception (especially useful when writing APIs)</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			# define custom exception
-			class UserNameError(Exception):
-			  pass
+    <section><h3>The <code>raise</code> statement</h3>
+        <dl class="fa">
+            <dt>The <code><a href="https://docs.python.org/3/reference/simple_stmts.html#raise">raise</a></code> statement allows the programmer to force a specified exception to occur.</dt>
+            <dd>Raising exceptions can improve code robustness and provide informative feedback to users.</dd>
+            <dt>You can pass to <code>raise</code> an <em>ExceptionType</em> to be raised</dt>
+            <pre><code rel="Python" class="python" style="min-height: 60vh;">
+                def get_user_age():
+                    while True:
+                        try:
+                            age = int(input("Enter your age (between 1 and 99): "))
+                            if 0 < age < 100:
+                                return age
+                            else:
+                                raise ValueError("Age must be between 1 and 99")
+                        except ValueError as e:
+                            print(e)
+                            print("Please enter a valid integer for your age.")
 
-			# do the potential dangerous stuff in try:
-			try:
-			  user_name = input("Enter your name: ")
-			  if len(user_name)&lt;3:
-			    raise UserNameError
-			except UserNameError:
-			  print("User name must be at least 3 symbols long")
-			except:
-			    print('Oops! Something went wrong!')
-		</code></pre>
-	</section>
+
+                # Get the valid age
+                user_age = get_user_age()
+
+                # Continue with your program using the valid age
+                print(f"You are {user_age} years old.")
+            </code></pre>
+            <code></code>
+        </dl>
+    </section>
+    <section><h3><code>raise</code> without arguments</h3>
+        <dl class="fa">
+            <dt>You can skip the <em>ExceptionType</em> and write just <code>raise</code></dt>
+            <dd>In that case, the last error will be re-raised</dd>
+            <dt>A common case for <code>raise</code> without argument is when you want the error to be thrown as normally, but to take some actions (logging, rollback, etc.) before that</dt>
+
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 10vh;">
+            try:
+              db_insert()
+            except:
+              rollback()
+              raise
+            else:
+              commit()
+        </code></pre>
+    </section>
+    <section><h3>Define Custom Error Classes</h3>
+        <dl class="fa">
+            <dt>A common use-case for <code>raise</code> statement is when we want to raise a custom error type.</dt>
+            <dt>To define custom error type we can create a new class that inherits from the built-in Exception class or a subclass of it:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                class CustomError(Exception):
+                    pass
+            </code></pre>
+            <dt>Customize the constructor (Optional):</dt>
+            <dd>Define a __init__ method to initialize the exception object with custom attributes or messages:</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                class InvalidDataError(Exception):
+                    def __init__(self, message, data):
+                        super().__init__(message)  # Call the parent's constructor
+                        self.data = data  # Store additional information
+            </code></pre>
+            <dt>Provide a clear and informative docstring (Optional but recommended):</dt>
+            <dd>Explain the purpose of the exception class and when it's raised:
+            </dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                class InsufficientFundsError(Exception):
+                    """Raised when an account has insufficient funds for a transaction."""
+
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Raise Custom Exception: Example</h3>
+        <pre><code rel="Python" class="python" style="min-height: 60vh;">
+            # define custom exception
+            class UserNameError(Exception):
+                """Raised when a username is less than 3 characters long."""
+
+                def __init__(self, username):
+                    super().__init__(f"Username '{username}' is too short (must be at least 3 characters)")
+                    self.username = username  # Store additional information
+
+            try:
+                user_name = input('Enter your name: ')
+                if len(user_name)&lt;3:
+                    raise UserNameError(user_name)
+            except UserNameError as e:
+                print(e)
+            except Exception as e:
+                print(f'Oops! Something went wrong! ({e})')
+
+            # Enter your name: ab
+            # Username 'ab' is too short (must be at least 3 characters)
+
+        </code></pre>
+    </section>
 </section>
 
 
 <section><h1>Resources</h1></section>
 <section><h2>Resources</h2>
-	<section><h3>Blogs, wiki, docs</h3>
-		<dl class="fa">
-			<dt><a href="https://wiki.python.org/moin/HandlingExceptions">Handling Exceptions @wiki.python.org</a></dt>
-			<dt><a href="https://docs.python.org/3/tutorial/errors.html">Errors and Exceptions @ The Python Tutorial</a></dt>
-		</dl>
-	</section>
+    <section><h3>Blogs, wiki, docs</h3>
+        <dl class="fa">
+            <dt><a href="https://wiki.python.org/moin/HandlingExceptions">Handling Exceptions @wiki.python.org</a></dt>
+            <dt><a href="https://docs.python.org/3/tutorial/errors.html">Errors and Exceptions @ The Python Tutorial</a></dt>
+        </dl>
+    </section>
 </section>
 
 
-<section><h1>Exercises</h1></section>
-<section><h2>get_string_from_user.py</h2>
-	<section><h3>Task</h3>
-		<dl class="fa">
-			<dt>define the function <code>get_string_from_user()</code> which will get any user input and returns it as string.</dt>
-			<dt>The function <span class="note">must</span> handle any possible errors, like entering <kbd>CTRL+D</kbd> or <kbd>CTRL+C</kbd>, by printing:</dt>
-			<dd>"***Oops, something went wrong! Try again!"</dd>
-			<dt>If any error occurred - ask the user again, without terminating the program</dt>
-		</dl>
-	</section>
-	<section><h3>Function signature and docstring:</h3>
-		<pre><code rel="Python" class="python">
-			def get_string_from_user(msg):
-				"""
-					Summary:
-						Asks the user to enter a string and
-						- if any error occurs => print:
-							"***Oops, something went wrong! Try again!" and ask again
-
-						Returns the user input, as string, when no errors occurred.
-
-					Usage:
-						user_input = get_string_from_user("enter a user name: ")
-
-					Arguments:
-						msg {[string]} -- [the string to be displayed to the user,]
-
-					Returns:
-						[string] -- [the string entered from user]
-				"""
-		</code></pre>
-	</section>
-	<section><h3>Program Test</h3>
-		<pre><code rel="Python" class="python">
-			def get_string_from_user(msg):
-				# your definition here
-
-			user_name = get_string_from_user("Enter your name, please: ")
-			user_place = get_string_from_user("Where are you from?: ")
-			print("Hello {}! How is the weather in {} today?".format(user_name, user_place))
-		</code></pre>
-	</section>
-	<section><h3>Program Test - RunTime</h3>
-		<pre><code rel="Terminal" class="shell" data-noescape>
-			$ python3.6 get_string_from_user.py
-
-			Enter your name, please: ^C
-			***Oops, something went wrong! Try again!
-
-			Enter your name, please: iva
-			Where are you from?: Sofia, Bulgaria
-
-			Hello iva! How is the weather in Sofia, Bulgaria today?
-		</code></pre>
-	</section>
+<section id="hw">
+    <section><h1>Homework</h1></section>
+    <section id="task1"><h3>Homework</h3>
+        <dl class="fa">
+            <dt>The tasks are given in next <a href="https://gist.github.com/ProgressBG-Python-Course/b26a8993784ee71e95db92cc4c7a76fb">gist file</a></dt>
+            <dt>You can copy it and work directly on it. Just put your code under "### Your code here".</dt>
+        </dl>
+    </section>
 </section>
 
-<section><h2>get_float_from_user.py</h2>
-	<section><h3>Task</h3>
-		<dl class="fa">
-			<dt>define the function <code>get_float_from_user()</code> which will get from the user a valid python number data-type and will returns it as float.</dt>
-			<dt>The function <span class="note">must</span> handle ValueError, by outputing a message "***Enter a number, please!" and asking the user to enter again.</dt>
-			<dt>The function <span class="note">must</span> handle any other possible errors, like entering <kbd>CTRL+D</kbd> or <kbd>CTRL+C</kbd>, by printing "\n***Oops, something went wrong! Try again!\n" and asking the user again.</dt>
-		</dl>
-	</section>
-	<section><h3>Function signature and docstring:</h3>
-		<pre><code rel="Python" class="python">
-			def get_float_from_user(msg):
-				"""
-					Summary:
-						Asks the user to enter a number and
-						- if he/she entered no valid python's number value => print:
-							"***Enter an number, please!" and ask again.
-						- if any other error occurs => print:
-							"***Oops, something went wrong! Try again!" and ask again
-
-						Returns the user input, as float, when no errors occurred.
-
-					Usage:
-						user_number = get_float_from_user("the message to show to the user")
-
-					Arguments:
-						msg {[string]} - - [the message to show to the user]
-
-					Returns:
-						[float] - - [the number entered from user, converted to float]
-				"""
-		</code></pre>
-	</section>
-	<section><h3>Program Test</h3>
-		<pre><code rel="Python" class="python">
-			def get_float_from_user(msg):
-				# your definition here
-
-			user_height = get_float_from_user("I need to know your height in centimetres: ")
-			user_weight = get_float_from_user("And your weight in kilograms: ")
-			print("Your height is: {:5.2f}cm. and you weight {:.2f}kg.".format(user_height, user_weight))
-		</code></pre>
-	</section>
-	<section><h3>Program Test - RunTime</h3>
-		<pre><code rel="Terminal" class="shell" data-noescape>
-			$ python3.6 get_float_from_user.py
-
-			I need to know your height in centimetres: pesho
-			***Enter a number, please!
-
-			I need to know your height in centimetres: ^C
-			***Oops, something went wrong! Try again!
-
-			I need to know your height in centimetres: 195
-			And your weight in kilograms: 98.64
-
-			Your height is: 195.00cm. and you weight 98.64kg.
-		</code></pre>
-	</section>
-</section>
-
-<section><h2>BMI Improved</h2>
-	<section><h3>Task</h3>
-		<dl class="fa">
-			<dt>Use your niew functions: <code>get_string_from_user()</code> and <code>get_float_from_user()</code> to improve the user experience in the BMI calculation program, as given in <a href="/ProgressBG-Python-Digitall-Slides/pages/themes/beginners/functions/functions.html#/hw">Function - Exercises</a> theme.</dt>
-		</dl>
-	</section>
-</section>
-
-<section><h2>Submission</h2>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task_name.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:exceptions">progressbg.python.course@gmail.com</a></dt>
-	</dl>
-</section>
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>
