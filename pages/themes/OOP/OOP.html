@@ -466,7 +466,7 @@
         </dl>
     </section>
 </section>
-<section class="advanced"><h2>Static Methods</h2>
+<section><h2 class="advanced">Static Methods</h2>
     <section><h3>Overview</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>Static methods do not operate on the instance or the class. They are similar to regular functions but are included in the class because they have some logical connection with it.</dt>
@@ -484,6 +484,131 @@
                         return distance / fuel_used
             </code></pre>
         </dl>
+    </section>
+</section>
+
+<section><h1 id="OOP_Basics">OOP Basic Examples</h1></section>
+<section><h2>OOP Basic Examples</h2>
+    <section><h3>Employee Class</h3>
+        <pre><code rel="Python" class="python" style="min-height: 99vh;">
+            class Employee:
+                """Represents an employee with a name, ID, salary, and department."""
+
+                def __init__(self, name, emp_id, salary, department):
+                    """Initializes an Employee object with the given attributes."""
+                    self.name = name
+                    self.emp_id = emp_id
+                    self.salary = salary
+                    self.department = department
+
+                def calculate_salary(self, hours_worked=40):
+                    """Calculates the employee's salary, including overtime if applicable."""
+                    overtime = 0
+                    if hours_worked > 40:
+                        overtime = hours_worked - 40
+                        overtime_pay = overtime * (self.salary / 2080)  # Assuming 52 weeks per year, 40 hours per week
+                        self.salary += overtime_pay
+
+                def __str__(self):
+                    """Returns a formatted string containing the employee's details. Called automatically by print()"""
+                    return f"Name: {self.name}\nID: {self.emp_id}\nSalary: {self.salary:.2f}\nDepartment: {self.department}"
+
+            # Example usage:
+            employee1 = Employee("Ivan Ivanov", 12345, 50000, "Engineering")
+            employee1.calculate_salary(45)  # Calculate salary with overtime
+            print(employee1)
+
+            # Name: Ivan Ivanov
+            # ID: 12345
+            # Salary: 50120.19
+            # Department: Engineering
+        </code></pre>
+    </section>
+    <section><h3>Find employee with the highest salary</h3>
+        <pre><code rel="Python" class="python" style="min-height: 99vh;">
+            class Employee:
+                """Represents an employee with a name, ID, salary, and department."""
+
+                def __init__(self, name, emp_id, salary, department):
+                    """Initializes an Employee object with the given attributes."""
+                    self.name = name
+                    self.emp_id = emp_id
+                    self.salary = salary
+                    self.department = department
+
+            # Create 5 employee objects with different salaries
+            employees = [
+                Employee("Ivan Petrov", 1234567890, 50000, "Engineering"),
+                Employee("Maria Ivanova", 9876543210, 65000, "Marketing"),
+                Employee("Mihail Georgiev", 2345678901, 48000, "Sales"),
+                Employee("Alisa Stoyanova", 3456789012, 52000, "Human Resources"),
+                Employee("Bogomil Nikolov", 5678901234, 70000, "Finance"),
+            ]
+
+            # Find the employee with the highest salary
+            highest_earner = None
+            highest_salary = 0
+
+            for employee in employees:
+                if employee.salary > highest_salary:
+                    highest_earner = employee
+                    highest_salary = employee.salary
+
+            # Print the details of the employee with the highest salary
+            print(f"Employee with the highest salary:")
+            print(f"Name: {highest_earner.name}")
+            print(f"ID: {highest_earner.emp_id}")
+            print(f"Salary: ${highest_salary}")
+            print(f"Department: {highest_earner.department}")
+
+            # Employee with the highest salary:
+            # Name: Bogomil Nikolov
+            # ID: 5678901234
+            # Salary: $70000
+            # Department: Finance
+        </code></pre>
+    </section>
+    <section><h3>Car Class</h3>
+        <pre><code rel="Python" class="python" style="min-height: 99vh;">
+            class Car:
+                """Represents a car with specific attributes and functionalities."""
+
+                def __init__(self, manufacturer, model, year, color, mileage):
+                    """Initializes a Car object with the given attributes."""
+                    self.manufacturer = manufacturer
+                    self.model = model
+                    self.year = year
+                    self.color = color
+                    self.mileage = mileage
+
+                def accelerate(self, speed_increase):
+                    """Simulates accelerating the car by increasing its speed."""
+                    # Add safety checks and speed limits here
+                    print(f"Car is accelerating, speed increased by {speed_increase} mph.")
+
+                def brake(self, speed_decrease):
+                    """Simulates braking the car by decreasing its speed."""
+                    # Add safety checks and minimum speed requirement here
+                    print(f"Car is braking, speed decreased by {speed_decrease} mph.")
+
+                def __str__(self):
+                    """Returns a formatted string of the car's details. Called automatically by print()"""
+                    return f"Manufacturer: {self.manufacturer}\nModel: {self.model}\nYear: {self.year}\nColor: {self.color}\nMileage: {self.mileage}"
+
+            # Example usage:
+            my_car = Car("Toyota", "Camry", 2020, "Silver", 30000)
+            my_car.accelerate(20)
+            my_car.brake(10)
+            print(my_car)
+
+            # Car is accelerating, speed increased by 20 mph.
+            # Car is braking, speed decreased by 10 mph.
+            # Manufacturer: Toyota
+            # Model: Camry
+            # Year: 2020
+            # Color: Silver
+            # Mileage: 30000
+        </code></pre>
     </section>
 </section>
 
