@@ -46,7 +46,7 @@
     font-weight: bold;
 }
 .reveal .note{
-    font-style: italic;
+    /* font-style: italic; */
     color: #ef9a9a;
 }
 .reveal .keyconcept, .reveal .keyword{
