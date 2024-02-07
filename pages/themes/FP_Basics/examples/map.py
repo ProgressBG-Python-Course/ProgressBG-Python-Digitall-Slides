@@ -27,5 +27,5 @@
 l1 = [1,2,3]
 l2 = [1,2,3]
 
-l_sum = map(lambda *t: a+b, l1, l2)
+l_sum = map(lambda a,b: a+b, l1, l2)
 print( list(l_sum) )

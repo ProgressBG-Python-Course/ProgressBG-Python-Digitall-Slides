@@ -1,49 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>FP_Basics</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-	<!-- CUSTOM -->
-	<base target="_blank">
+    <meta charset="utf-8">
+    <title>FP_Basics</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -51,529 +51,532 @@
 -->
 <section><h1>Functional programming in Python</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 <section><h1>First-class functions in Python</h1></section>
 <section><h2>First-class functions in Python</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt class="note">Functions in Python are First-class function, i.e:</dt>
-			<dd>a function can be assigned to variable, or stored in other data structure (like list of functions)</dd>
-			<dd>a function can be passed as argument to another function</dd>
-			<dd>a function can be returned as value from another function</dd>
-			<dt class="note">Functions in Python are objects!</dt>
-		</dl>
-	</section>
-	<section><h3>Example - a function can be assigned to variable</h3>
-		<pre><code rel="Python" class="python">
-			def greet(name):
-				print("Hello, {}".format(name))
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt class="note">Functions in Python are First-class function, i.e:</dt>
+            <dd>a function can be assigned to variable, or stored in other data structure (like list of functions)</dd>
+            <dd>a function can be passed as argument to another function</dd>
+            <dd>a function can be returned as value from another function</dd>
+            <dt class="note">Functions in Python are objects!</dt>
+        </dl>
+    </section>
+    <section><h3>Example - a function can be assigned to variable</h3>
+        <pre><code rel="Python" class="python">
+            def greet(name):
+                print("Hello, {}".format(name))
 
-			#a function can be assigned to variable:
-			foo = greet
-			greet("Maria")
-			foo("Pesho")
+            #a function can be assigned to variable:
+            foo = greet
+            greet("Maria")
+            foo("Pesho")
 
-			#OUTPUT
-			# Hello, Maria
-			# Hello, Pesho
-		</code></pre>
-	</section>
-	<section><h3>Example - a function can be passed as argument to another function</h3>
-		<pre><code rel="Python" class="python">
-			def greet(name):
-				print("Hello, {}".format(name))
+            #OUTPUT
+            # Hello, Maria
+            # Hello, Pesho
+        </code></pre>
+    </section>
+    <section><h3>Example - a function can be passed as argument to another function</h3>
+        <pre><code rel="Python" class="python">
+            def greet(name):
+                print("Hello, {}".format(name))
 
-			# a function can be passed as argument to another function
-			def wrapper(f, n):
-				f(n)
+            # a function can be passed as argument to another function
+            def wrapper(f, n):
+                f(n)
 
-			wrapper(greet, "Alex")
+            wrapper(greet, "Alex")
 
-			#OUTPUT
-			# Hello, Alex
-		</code></pre>
-	</section>
-	<section><h3>Example - a function can be returned as value from another function</h3>
-		<pre><code rel="Python" class="python">
-			#a function can be returned as value from another function
-			def greet_wrapper(name):
-				def wrapper():
-					print("Hello, {}".format(name))
+            #OUTPUT
+            # Hello, Alex
+        </code></pre>
+    </section>
+    <section><h3>Example - a function can be returned as value from another function</h3>
+        <pre><code rel="Python" class="python">
+            #a function can be returned as value from another function
+            def greet_wrapper(name):
+                def wrapper():
+                    print("Hello, {}".format(name))
 
-				return wrapper
+                return wrapper
 
-			greet = greet_wrapper("Viktor")
-			greet()
-		</code></pre>
-	</section>
+            greet = greet_wrapper("Viktor")
+            greet()
+        </code></pre>
+    </section>
 </section>
 
 <section><h1>Decorators.</h1></section>
 <section><h2>Decorators</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>A decorator is a software design pattern.</dt>
-			<dt>Decorators dynamically alter the functionality of a function, method, or class without having to directly use subclasses or change the source code of the function being decorated</dt>
-			<dt>Simply said, decorators allows us to insert logic before and after a function is called.</dt>
-		</dl>
-	</section>
-	<section><h3>How Decorator Pattern works in Python?</h3>
-		<dl class="fa">
-			<dt><code>decorated = decorator(undecorated)</code></dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			def stars_decorator(f):
-				def wrapper():
-					print("*" * 50)
-					f()
-					print("*" * 50)
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>A decorator is a software design pattern.</dt>
+            <dt>Decorators dynamically alter the functionality of a function, method, or class without having to directly use subclasses or change the source code of the function being decorated</dt>
+            <dt>Simply said, decorators allows us to insert logic before and after a function is called.</dt>
+        </dl>
+    </section>
+    <section><h3>How Decorator Pattern works in Python?</h3>
+        <dl class="fa">
+            <dt><code>decorated = decorator(undecorated)</code></dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            def stars_decorator(f):
+                def wrapper():
+                    print("*" * 50)
+                    f()
+                    print("*" * 50)
 
-				return wrapper
+                return wrapper
 
-			def greet():
-				print("Howdy World!")
+            def greet():
+                print("Howdy World!")
 
-			# let's decorate greet:
-			greet = stars_decorator(greet)
+            # let's decorate greet:
+            greet = stars_decorator(greet)
 
-			# and use it:
-			greet()
-		</code></pre>
-	</section>
-	<section><h3>the @ syntactic sugar</h3>
-		<dl class="fa" style="font-size: .8em">
-			<dt>Python provides a simple syntax (<code>@decorator_name</code>) for calling higher-order functions.</dt>
-			<dt>A function decorator, with @ syntax, can be regarded as a "syntactic sugar" for a function that takes a function and returns a function</dt>
-			<pre><code rel="Syntax" class="shell" data-noescape>
-				#define the decorator:
-				def decorator():
-					pass
+            # and use it:
+            greet()
+        </code></pre>
+    </section>
+    <section><h3>the @ syntactic sugar</h3>
+        <dl class="fa" style="font-size: .8em">
+            <dt>Python provides a simple syntax (<code>@decorator_name</code>) for calling higher-order functions.</dt>
+            <dt>A function decorator, with @ syntax, can be regarded as a "syntactic sugar" for a function that takes a function and returns a function</dt>
+            <pre><code rel="Syntax" class="shell" data-noescape>
+                #define the decorator:
+                def decorator():
+                    pass
 
-				# define a function to be decorated:
-				@decorator
-				def decorated():
-					pass
+                # define a function to be decorated:
+                @decorator
+                def decorated():
+                    pass
 
-				# just call the decorated function:
-				decorated()
-			</code></pre>
-			<dt>Example:</dt>
-			<pre><code rel="Python" class="python">
-				#define the decorator:
-				def stars_decorator(f):
-					def wrapper():
-						print("*" * 50)
-						f()
-						print("*" * 50)
+                # just call the decorated function:
+                decorated()
+            </code></pre>
+            <dt>Example:</dt>
+            <pre><code rel="Python" class="python">
+                #define the decorator:
+                def stars_decorator(f):
+                    def wrapper():
+                        print("*" * 50)
+                        f()
+                        print("*" * 50)
 
-					return wrapper
+                    return wrapper
 
-				# let's decorate greet:
-				@stars_decorator
-				def greet():
-					print("Howdy World!")
+                # let's decorate greet:
+                @stars_decorator
+                def greet():
+                    print("Howdy World!")
 
-				# and use it:
-				greet()
-			</code></pre>
+                # and use it:
+                greet()
+            </code></pre>
 
-	</section>
+    </section>
 
-	<section><h3 class="advanced">Decorator Pattern in Python - example with arguments</h3>
-		<p>What about if we want the decorated function to take some arguments?</p>
-		<pre><code rel="Python" class="python">
-			def stars_decorator(f):
-				def wrapper(n):
-					print("*" * 50)
-					f(n)
-					print("*" * 50)
+    <section><h3 class="advanced">Decorator Pattern in Python - example with arguments</h3>
+        <p>What about if we want the decorated function to take some arguments?</p>
+        <pre><code rel="Python" class="python">
+            def stars_decorator(f):
+                def wrapper(n):
+                    print("*" * 50)
+                    f(n)
+                    print("*" * 50)
 
-				return wrapper
+                return wrapper
 
-			def greet(name):
-				print("Howdy {}!".format(name))
+            def greet(name):
+                print("Howdy {}!".format(name))
 
-			# let's decorate greet:
-			greet = stars_decorator(greet)
+            # let's decorate greet:
+            greet = stars_decorator(greet)
 
-			# and use it:
-			greet("Pesho")
-		</code></pre>
-	</section>
-	<section><h3 class="advanced">Example with return value</h3>
-		<dl class="fa">
-			<dt>The function to be decorated has to return value - but as it's executed inside wrapper, we need to explicitly return the value from wrapper. That is because, the wrapper will be our decorated function, after the decoration process.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			def log_decorator(f):
+            # and use it:
+            greet("Pesho")
+        </code></pre>
+    </section>
+    <section><h3 class="advanced">Example with return value</h3>
+        <dl class="fa">
+            <dt>The function to be decorated has to return value - but as it's executed inside wrapper, we need to explicitly return the value from wrapper. That is because, the wrapper will be our decorated function, after the decoration process.</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            def log_decorator(f):
 
-			  def wrapper(a,b):
-				print("LOG: The function was executed!")
-				return f(a,b)
+              def wrapper(a,b):
+                print("LOG: The function was executed!")
+                return f(a,b)
 
-			  return wrapper
+              return wrapper
 
-			@log_decorator
-			def sum(x,y):
-			  return (x+y)
+            @log_decorator
+            def sum(x,y):
+              return (x+y)
 
 
-			print( sum(2,3) )
-		</code></pre>
-	</section>
-	<section><h3>Readings</h3>
-		<dl class="fa">
-			<dt><a href="https://jeffknupp.com/blog/2013/11/29/improve-your-python-decorators-explained/">Improve Your Python: Decorators Explained</a> by Jeff Knupp</dt>
-		</dl>
-	</section>
+            print( sum(2,3) )
+        </code></pre>
+    </section>
+    <section><h3>Readings</h3>
+        <dl class="fa">
+            <dt><a href="https://jeffknupp.com/blog/2013/11/29/improve-your-python-decorators-explained/">Improve Your Python: Decorators Explained</a> by Jeff Knupp</dt>
+        </dl>
+    </section>
 </section>
 
 <section><h1>Lambda expressions</h1></section>
 <section><h2>Lambda expressions</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>Lambda expressions in Python are used to create short (one-line), anonymous functions.</dt>
-			<dt>Lambda expressions creates a function	that does	not	use	<code>def</code>	and <code>return</code>.</dt>
-			<dt>The "body" of lambda function can contain only single expression.</dt>
-			<dt>Lambda functions are generally	used	with	reduce(	),	filter(	),	and	maps() - as discussed further, or as arguments to other functions - typical for Functional Programming paradigm.</dt>
-		</dl>
-	</section>
-	<section><h3>Syntax</h3>
-		<dl class="fa">
-			<dt>Lamda functions are defined by:</dt>
-			<pre><code rel="Python" class="python">
-				lambda parameter_list: expression
-			</code></pre>
-			<dt>which is equivalent to</dt>
-			<pre><code rel="Python" class="python">
-				def some_func(parameter_list):
-					return expression
-			</code></pre>
-			<dt>Note, that in next example, the lambda function is assigned to a variable just to demonstrate the lambda syntax in simplest context. This is not Pythonic - lambdas are usually used as anonymous functions.</dt>
-			<pre><code rel="Python" class="python">
-				l = lambda x,y:x+y
-				print( l(2,3) )
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>Lambda expressions in Python are used to create short (one-line), anonymous functions.</dt>
+            <dt>Lambda expressions creates a function	that does	not	use	<code>def</code>	and <code>return</code>.</dt>
+            <dt>The "body" of lambda function can contain only single expression.</dt>
+            <dt>Lambda functions are generally	used	with	reduce(	),	filter(	),	and	maps() - as discussed further, or as arguments to other functions - typical for Functional Programming paradigm.</dt>
+        </dl>
+    </section>
+    <section><h3>Syntax</h3>
+        <dl class="fa">
+            <dt>Lamda functions are defined by:</dt>
+            <pre><code rel="Python" class="python">
+                lambda parameter_list: expression
+            </code></pre>
+            <dt>which is equivalent to</dt>
+            <pre><code rel="Python" class="python">
+                def some_func(parameter_list):
+                    return expression
+            </code></pre>
+            <dt>Note, that in next example, the lambda function is assigned to a variable just to demonstrate the lambda syntax in simplest context. This is not Pythonic - lambdas are usually used as anonymous functions.</dt>
+            <pre><code rel="Python" class="python">
+                l = lambda x,y:x+y
+                print( l(2,3) )
 
-				maxnum = lambda x,y: x if x>y else y
-				print( maxnum(30,40) )
-			</code></pre>
-			<dt>Next example demonstrate a more Pythonic use of lambda function:</dt>
-			<pre><code rel="Python" class="python">
-				calc = {
-					'add': lambda x,y:x+y,
-					'del': lambda x,y:y!=0 and x/y,
-				}
+                maxnum = lambda x,y: x if x>y else y
+                print( maxnum(30,40) )
+            </code></pre>
+            <dt>Next example demonstrate a more Pythonic use of lambda function:</dt>
+            <pre><code rel="Python" class="python">
+                calc = {
+                    'add': lambda x,y:x+y,
+                    'del': lambda x,y:y!=0 and x/y,
+                }
 
-				print( calc['add'](2,3) )
-				print( calc['del'](2,3) )
-			</code></pre>
-		</dl>
-	</section>
+                print( calc['add'](2,3) )
+                print( calc['del'](2,3) )
+            </code></pre>
+        </dl>
+    </section>
 
 </section>
 
 <section><h1>The <code>filter()</code> Function</h1></section>
 <section><h2>The <code>filter()</code> Function</h2>
-	<section>
-		<a href="./images/filter.png"><img src="./images/filter.png" alt="./images/filter.png"></a>
-	</section>
-	<section>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/library/functions.html#filter"><code>filter()</code></a> is a built-in function that allows to process an iterable and extract those items that satisfy a given condition</dt>
-		</dl>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			filter(<em>function</em>, <em>iterable</em>)
-		</code></pre>
-		<dl class="fa">
-			<dt><em>function</em> - a function definition.</dt>
-			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator.</dt>
-			<dt><em>Function</em> should return a Boolean value. It is called for each item in the sequence and if it returns False, the item will be filtered</dt>
-			<dt>Example: List of even numbers - without lambda</dt>
-			<pre><code rel="Python" class="python">
-				def is_even(x):
-					return True if x!=0 and x%2==0 else False
+    <section>
+        <a href="./images/filter.png"><img src="./images/filter.png" alt="./images/filter.png"></a>
+    </section>
+    <section>
+        <dl class="fa">
+            <dt><a href="https://docs.python.org/3/library/functions.html#filter"><code>filter()</code></a> is a built-in function that allows to process an iterable and extract those items that satisfy a given condition</dt>
+        </dl>
+        <pre><code rel="Syntax" class="shell" data-noescape>
+            filter(<em>function</em>, <em>iterable</em>)
+        </code></pre>
+        <dl class="fa">
+            <dt><em>function</em> - a function definition. Should return a Boolean value</dt>
+            <dt><em>iterable</em> - a sequence (list, tupple, range or string) or any iterable object.</dt>
+            <dt>The filter() function returns an iterator that lazily evaluates each item in the iterable it processes. When you pass a function and an iterable to filter(), it applies the function to each item of the iterable and yields only those items for which the function returns True.</dt>
+            <dt>Example: List of even numbers - without lambda</dt>
+            <pre><code rel="Python" class="python">
+                def is_even(x):
+                    return True if x!=0 and x%2==0 else False
 
-				even_numbers = filter(is_even, range(10))
+                even_numbers = filter(is_even, range(10))
 
-				print( list(even_numbers) )
+                print( list(even_numbers) )
 
-				# [2, 4, 6, 8]
-			</code></pre>
-			<dt>Example: List of even numbers - with lambda</dt>
-			<pre><code rel="Python" class="python">
-				even_numbers = filter(lambda x: x%2==0 if x!=0 else False, range(10))
+                # [2, 4, 6, 8]
+            </code></pre>
+            <dt>Example: List of even numbers - with lambda</dt>
+            <pre><code rel="Python" class="python">
+                even_numbers = filter(lambda x: x%2==0 if x!=0 else False, range(10))
 
-				print( list(even_numbers) )
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3>More examples</h3>
-		<dl class="fa">
-			<dt>Example: filter empty strings</dt>
-			<pre><code rel="Python" class="python">
-				names = ["Ivan", "", "Alex", "", "Maria", "Angel", ""]
-				not_empty_names = filter(lambda s: s, names)
+                print( list(even_numbers) )
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>More examples</h3>
+        <dl class="fa">
+            <dt>Example: filter empty strings</dt>
+            <pre><code rel="Python" class="python">
+                names = ["Ivan", "", "Alex", "", "Maria", "Angel", ""]
+                not_empty_names = filter(lambda s: s, names)
 
-				print( list(not_empty_names) )
-			</code></pre>
-			<dt>Example: Names, starting with 'A'</dt>
-			<pre><code rel="Python" class="python">
-				names = ["Ivan", "Alex", "Maria", "Angel", ""]
-				filtered_names = filter(lambda s: s and s[0]=="A", names)
+                print( list(not_empty_names) )
+            </code></pre>
+            <dt>Example: Names, starting with 'A'</dt>
+            <pre><code rel="Python" class="python">
+                names = ["Ivan", "Alex", "Maria", "Angel", ""]
+                filtered_names = filter(lambda s: s and s[0]=="A", names)
 
-				print( list(filtered_names) )
-			</code></pre>
-			<dt>Note that we can use list comprehenstions insead of filter</dt>
-			<pre><code rel="Python" class="python">
-				names = ["Ivan", "", "Alex", "", "Maria", "Angel", ""]
-				not_empty_names = [ name for name in names if name]
+                print( list(filtered_names) )
+            </code></pre>
+            <dt>Note that we can use list comprehenstions insead of filter</dt>
+            <pre><code rel="Python" class="python">
+                names = ["Ivan", "", "Alex", "", "Maria", "Angel", ""]
+                not_empty_names = [ name for name in names if name]
 
-				print( list(not_empty_names) )
-			</code></pre>
-		</dl>
-	</section>
+                print( list(not_empty_names) )
+            </code></pre>
+        </dl>
+    </section>
 </section>
 
 <section><h1>The <code>map()</code> Function</h1></section>
 <section><h2>The <code>map()</code> Function</h2>
-	<section>
-		<a href="./images/map_function.png"><img src="./images/map_function.png" alt="./images/map_function.png"></a>
-	</section>
-	<section><h3>Syntax</h3>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/library/functions.html#map"><code>map()</code></a> return an iterator that applies function to every item of iterable, yielding the results</dt>
-			<pre><code rel="Syntax" class="shell" data-noescape>
-				map(<em>function</em>, <em>iterable</em>, ...)
-			</code></pre>
-			<dt><em>function</em> - a function definition.</dt>
-			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator. <span>Note, that you can pass multiple <em>iterables</em></span>!</dt>
-			<dt>map() applies the function to all the elements of the <em>iterable</em>. And returns a new <em>iterable</em> with the elements changed by the <em>function</em>.</dt>
-			<hr>
-			<dt>Example: map list of numbers to list of squared numbers</dt>
-			<pre><code rel="Python" class="python">
-				numbers = [1,2,3,4,5]
+    <section>
+        <a href="./images/map_function.png"><img src="./images/map_function.png" alt="./images/map_function.png"></a>
+    </section>
+    <section><h3>Syntax</h3>
+        <dl class="fa">
+            <dt><a href="https://docs.python.org/3/library/functions.html#map"><code>map()</code></a> The map() function in Python is a tool for transforming elements within an iterable.</dt>
+            <pre><code rel="Syntax" class="shell" data-noescape>
+                map(<em>function</em>, <em>iterable</em>, ...)
+            </code></pre>
+            <dt><em>function</em> - a function definition.</dt>
+            <dt><em>iterable</em> - a sequence (list, tupple, range or string) or any iterable object. <span>Note, that you can pass multiple <em>iterables</em></span>!</dt>
+            <dt>map() applies the <em>function</em> to each element of the <em>iterable</em> and returns a new iterator containing the transformed elements.</dt>
+            <hr>
+            <dt>Example: map list of numbers to list of squared numbers</dt>
+            <pre><code rel="Python" class="python">
+                numbers = [1,2,3,4,5]
 
-				sqr_numbers = map(lambda x:x**2, numbers)
+                sqr_numbers = map(lambda x:x**2, numbers)
 
-				print( list(sqr_numbers) )
+                print( list(sqr_numbers) )
 
-				#[1, 4, 9, 16, 25]
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3>Examples</h3>
-		<dl class="fa">
-			<dt>Example: Generate all uppercase cyrillic letters by their UTF codes</dt>
-			<pre><code rel="Python" class="python">
-				letters = map(chr, range(1040, 1072))
-				print( list(letters) )
+                #[1, 4, 9, 16, 25]
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa">
+            <dt>Example: Generate all uppercase cyrillic letters by their UTF codes</dt>
+            <pre><code rel="Python" class="python">
+                letters = map(chr, range(1040, 1072))
+                print( list(letters) )
 
-				#['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
-			</code></pre>
-			<dt>Above example can be done with list comprehenstions, as well:</dt>
-			<pre><code rel="Python" class="python">
-				letters = [chr(code) for code in range(1040, 1072)]
-				print( list(letter
+                #['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
+            </code></pre>
+            <dt>Above example can be done with list comprehenstions, as well:</dt>
+            <pre><code rel="Python" class="python">
+                letters = [chr(code) for code in range(1040, 1072)]
+                print( list(letter
 
-				#['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
-			</code></pre>
-			<dt>Example: feed map() with multiple iterables. Note that this example can not be done easilly with list comprehensions </dt>
-			<pre><code rel="Python" class="python">
-				l1 = [1,2,3]
-				l2 = [1,2,3]
+                #['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
+            </code></pre>
+            <dt>Example: feed map() with multiple iterables. Note that this example can not be done easilly with list comprehensions </dt>
+            <pre><code rel="Python" class="python">
+                l1 = [1,2,3]
+                l2 = [1,2,3]
 
-				l_sum = map(lambda a,b: a+b, l1, l2)
-				print( list(l_sum) )
+                l_sum = map(lambda a,b: a+b, l1, l2)
+                print( list(l_sum) )
 
-				# [2, 4, 6]
-			</code></pre>
-		</dl>
-	</section>
+                # [2, 4, 6]
+            </code></pre>
+        </dl>
+    </section>
 </section>
 
 <section><h1>The <code>reduce()</code> Function</h1></section>
 <section><h2>The <code>reduce()</code> Function</h2>
-	<section>
-		<a href="./images/reduce.png"><img src="./images/reduce.png" alt="./images/reduce.png" style="height:60vh"></a>
-	</section>
-	<section>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/library/functools.html#functools.reduce"><code>reduce()</code></a> allows us to apply a function to an iterable and reduce it to a single cumulative value</dt>
-			<pre><code rel="Syntax" class="shell" data-noescape>
-				from functools import reduce
+    <section>
+        <a href="./images/reduce.png"><img src="./images/reduce.png" alt="./images/reduce.png" style="height:60vh"></a>
+    </section>
+    <section>
+        <dl class="fa">
+            <dt><a href="https://docs.python.org/3/library/functools.html#functools.reduce"><code>reduce()</code></a> allows us to apply a function to an iterable and reduce it to a single cumulative value</dt>
+            <pre><code rel="Syntax" class="shell" data-noescape>
+                from functools import reduce
 
-				reduce(<em>function</em>, <em>iterable</em>[, <em>initializer</em>])
-			</code></pre>
-			<dt class="note">In Python3, reduce() is not built-in, but we must import it from <code>functools</code> module!</dt>
-			<dt><em>function</em> - a function definition.The first argument passed to <em>function</em> is the accumulated value and the second argument is the update value from the sequence</dt>
-			<dd><code>reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])</code> calculates ((((1+2)+3)+4)+5)</dd>
-			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator (will be discussed in further topics).</dt>
-			<dt>If the optional initializer is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty</dt>
-			<dd><code>reduce(lambda x, y: x+y, [1, 2, 3, 4, 5], 100)</code> calculates (((((100+1)+2)+3)+4)+5)</dd>
-		</dl>
-	</section>
-	<section><h3>Examples</h3>
-		<dl class="fa">
-			<dt>Example: sum the numbers from 0 to 10, including</dt>
-			<pre style="width: 80vw;"><code rel="Python" class="python">
-				from functools import reduce
+                reduce(<em>function</em>, <em>iterable</em>[, <em>initializer</em>])
+            </code></pre>
+            <dt class="note">In Python3, reduce() is not built-in, but we must import it from <code>functools</code> module!</dt>
+            <dt><em>function</em> - a function definition.The first argument passed to <em>function</em> is the accumulated value and the second argument is the update value from the sequence</dt>
+            <dd><code>reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])</code> calculates ((((1+2)+3)+4)+5)</dd>
+            <dt><em>iterable</em> - a sequence (list, tupple, range or string) or any iterable object.</dt>
+            <dt>If the optional initializer is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty</dt>
+            <dd><code>reduce(lambda x, y: x+y, [1, 2, 3, 4, 5], 100)</code> calculates (((((100+1)+2)+3)+4)+5)</dd>
+        </dl>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa">
+            <dt>Example: sum the numbers from 0 to 10, including</dt>
+            <pre style="width: 80vw;"><code rel="Python" class="python">
+                from functools import reduce
 
-				res = reduce(lambda a,b: a+b, range(11))
+                res = reduce(lambda a,b: a+b, range(11))
 
-				print(res)
+                print(res)
 
-				#55
-			</code></pre>
-			<dt>Example: sum the prices of all products</dt>
-			<pre style="width: 80vw;"><code rel="Python" class="python">
-				products = [
-					{'name':'apples', 'price': 2},
-					{'name':'oranges', 'price': 5},
-					{'name':'bananas', 'price': 3},
-				]
+                #55
+            </code></pre>
+            <dt>Example: sum the prices of all products</dt>
+            <pre style="width: 80vw;"><code rel="Python" class="python">
+                products = [
+                    {'name':'apples', 'price': 2},
+                    {'name':'oranges', 'price': 5},
+                    {'name':'bananas', 'price': 3},
+                ]
 
-				#note that here we must provide initializer
-				total_price = reduce( lambda curr_price, product:curr_price+product['price'], products, 0)
+                #note that here we must provide initializer
+                total_price = reduce( lambda price, product:price+product['price'], products, 0)
 
-				print(total_price)
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3 class="advanced">Example: map - reduce</h3>
-		<dl class="fa">
-			<dt>Often in practice filter, map and reduce are used in combination</dt>
-			<dt>Consider next example, which returns the sum of variable number of lists items positionally</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			l1 = [1,2,3]
-			l2 = [1,2,3]
-			l3 = [1,2,3]
+                print(total_price)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3 class="advanced">Example: map - reduce</h3>
+        <dl class="fa">
+            <dt>Often in practice filter, map and reduce are used in combination</dt>
+            <dt>Consider next example, which returns the sum of variable number of lists items positionally</dt>
+            <pre><code rel="Python" class="python">
+                l1 = [1,2,3]
+                l2 = [1,2,3]
+                l3 = [1,2,3]
 
-			l = map(lambda *t: reduce(lambda a,b: a+b, t) , l1, l2,l3)
-			print( list(l) )
+                l = map(lambda *t: reduce(lambda a,b: a+b, t) , l1, l2,l3)
+                print( list(l) )
 
-			# [3, 6, 9]
-		</code></pre>
-	</section>
+                # [3, 6, 9]
+            </code></pre>
+            <dt>*t parameter in lambda collects in a tuple (t) all arguments. For example, on the first iteration, *t would collect the first element of each list into the tuple t=(1, 1, 1).</dt>
+            <dt>The reduce function applies its lambda to the tuple t,   summing all its elements.</dt>
+        </dl>
+
+    </section>
 </section>
 
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1: get_names_with_posistive_balance</h2>
-	<section><h3>The Task</h3>
-		<dl class="fa">
-			<dt>Create a list of all user names, which have positive balance</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			users = [
-				{'name':'Maria', 'balance': 2000},
-				{'name':'Petar', 'balance': -189},
-				{'name':'Ivan', 'balance': 3200},
-				{'name':'Asen', 'balance': -2890},
-			]
+    <section><h3>The Task</h3>
+        <dl class="fa">
+            <dt>Create a list of all user names, which have positive balance</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            users = [
+                {'name':'Maria', 'balance': 2000},
+                {'name':'Petar', 'balance': -189},
+                {'name':'Ivan', 'balance': 3200},
+                {'name':'Asen', 'balance': -2890},
+            ]
 
-			# YOUR CODE here
+            # YOUR CODE here
 
-			# EXPECTED OUTPUT:
-			['Maria', 'Ivan']
-		</code></pre>
-	</section>
+            # EXPECTED OUTPUT:
+            ['Maria', 'Ivan']
+        </code></pre>
+    </section>
 </section>
 <section><h2>Task2: map_filter_words_in_quotes</h2>
-	<dl class="fa">
-		<dt>Next list of Douglas Adams quotes is given:</dt>
-		<pre><code rel="Python" class="python">
-			quotes = [
-				'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
-				'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
-			]
-		</code></pre>
-		<dt>Write a program which will output in the console only the words that starts with letter 't' and are longer than 3 symbols</dt>
-		<pre><code rel="Expected Ourput" class="python">
-			TRAVELS
-			THAN
-			THAT
-			TRYING
-		</code></pre>
-	</dl>
+    <dl class="fa">
+        <dt>Next list of Douglas Adams quotes is given:</dt>
+        <pre><code rel="Python" class="python">
+            quotes = [
+                'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
+                'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
+            ]
+        </code></pre>
+        <dt>Write a program which will output in the console only the words that starts with letter 't' and are longer than 3 symbols</dt>
+        <pre><code rel="Expected Ourput" class="python">
+            TRAVELS
+            THAN
+            THAT
+            TRYING
+        </code></pre>
+    </dl>
 </section>
 
 
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>

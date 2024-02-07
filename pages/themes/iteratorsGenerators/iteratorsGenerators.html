@@ -195,7 +195,7 @@
 </section>
 
 
-<section><h1><span class="advanced"></span>Generators</h1></section>
+<section><h1><span></span>Generators</h1></section>
 <section><h2 class="advanced">Generators</h2>
     <section><h3>Overview</h3>
         <dl class="fa">
@@ -208,7 +208,6 @@
             <dd><i>Iterators</i>: Generators are iterators, meaning they can be used in for loops.</dd>
             <dd><i>Memory Efficiency</i>: Avoids storing entire sequences in memory, ideal for big data.</dd>
             <dd><i>Stateful</i>: Remember their state between yield expressions, unlike regular functions.</dd>
-
         </dl>
     </section>
     <section><h3>"lazy evaluation"</h3>
@@ -260,8 +259,8 @@
     </section>
 </section>
 
-<section data-min="5"><h1>Examples</h1></section>
-<section><h2>Examples</h2>
+<section data-min="5"><h1>Generators Examples</h1></section>
+<section><h2>Generators Examples</h2>
     <section><h3>Custom Generator vs Custom Iterator</h3>
         <pre><code rel="Python" class="python" style="min-height: 97vh;">
             def foo_generator():
@@ -341,6 +340,111 @@
         <!-- <a href="https://repl.it/@IvaPopova/naiverandomnamesiterator">naive_random_names_iterator @repl.it</a> -->
     </section>
 </section>
+
+<section data-min="5"><h1 class="advanced">Generator comprehensions</h1></section>
+<section><h2 class="advanced">Generator comprehensions</h2>
+    <section>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Generator comprehensions in Python are a concise way to create generators.</dt>
+            <dt>Basic syntax:</dt>
+            <pre><code rel="Syntax" class="python" style="min-height: 5vh;">
+                (variable for variable in iterable if condition)
+            </code></pre>
+            <dt>Example: generator that yields squares of numbers from 1 to 10</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                squares = (num**2 for num in range(1,11))
+                print(squares)
+                print(list(squares))
+
+                # &lt;generator object &lt;genexpr&gt; at 0x7f87ade4dd80&gt;
+                # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+            </code></pre>
+            <dt>Example: generator that yields squares of even numbers from 1 to 10</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                squares = (num**2 for num in range(1,11) if num%2==0)
+                print(list(squares))
+
+                # [4, 16, 36, 64, 100]
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Use Cases</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt><b>Handling Large Data Sets</b>: Generators are memory-efficient because they yield items one at a time, only generating a value when requested. This makes them particularly useful for processing large data sets where loading the entire data set into memory (e.g., as a list) would be impractical or impossible due to memory constraints.</dt>
+            <dt><b>Data Streaming and Pipelines</b>: Generators can be used to create data pipelines, where you have a series of operations that process data. Each step can be a generator that takes data from the previous step, processes it, and yields the result. This lazy evaluation means that data is processed in a streaming fashion, which can be efficient for tasks like reading and processing files line by line, or processing data coming in from a network.</dt>
+            <dt><b>Improving Performance in Loops</b>: In scenarios where a loop is used to process elements one at a time, using a generator can improve performance by reducing the initial overhead of generating and storing all elements. This is particularly noticeable with operations that may not require all the elements of a sequence or when the operation can terminate early.</dt>
+            <dt><b>Composition and Chaining</b>: Generators can be easily composed or chained together, allowing for the construction of complex data processing chains that are evaluated lazily. This is useful in functional programming patterns within Python, where you might filter, map, and reduce data in a series of steps.</dt>
+        </dl>
+    </section>
+</section>
+
+<section data-min="10"><h1>Generator comprehensions examples:</h1></section>
+<section><h2 class="advanced">Generator comprehensions examples:</h2>
+    <section><h3>Process large log file</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Consider a scenario where you need to process a log file that is several gigabytes in size. Loading the entire file into memory as a list of lines would be inefficient and might even exceed your system's memory capacity. Instead, you can use a generator to process one line at a time.</dt>
+            <dt>You can use next generator expression that efficiently iterates over each line in a file named ./syslog, yielding only those lines that contain the substring 'error'</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                error_lines = (line for line in open('./syslog') if 'error' in line)
+                for line in error_lines:
+                    print(line)
+
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Data Streaming and Pipelines</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Data streaming and pipelines refer to the process of sequentially passing data through a series of steps (or stages), where each step processes the data in some way and passes it on to the next step. This approach is particularly useful for processing large datasets or streams of data in a memory-efficient manner. Python's generator functions and expressions are ideal for constructing such pipelines due to their lazy evaluation, which allows them to process one item at a time.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 50vh;">
+                filename = 'example.txt'
+
+                # Pipeline Construction
+                # Step 1: Read Lines
+                lines = (line for line in open(filename))
+
+                # Step 2: Normalize Text
+                normalized_lines = (line.lower().strip() for line in lines)
+
+                # Step 3: Filter Out Comments
+                non_comment_lines = (line for line in normalized_lines if not line.startswith('#'))
+
+                # Execute the pipeline
+                for line in non_comment_lines:
+                    print(line)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Composition and Chaining</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Imagine we have a list of sales records where each record is a dictionary containing the sales amount and the region. Our goal is to:</dt>
+            <dd>Filter records to include only sales from a specific region (e.g., "Europe").</dd>
+            <dd>Convert each record into just the sales amount (mapping).</dd>
+            <dd>Calculate the total sales amount for the filtered records.</dd>
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 60vh;">
+            sales_data = [
+                {'amount': 1000, 'region': 'Europe'},
+                {'amount': 1500, 'region': 'North America'},
+                {'amount': 800, 'region': 'Europe'},
+                {'amount': 1200, 'region': 'Asia'},
+                {'amount': 3000, 'region': 'Europe'},
+                {'amount': 700, 'region': 'North America'},
+            ]
+            # Variant 1: with generators
+            europe_sales_amounts = (
+                # map
+                sale['amount'] for sale in (
+                    # filter:
+                    sale for sale in sales_data if sale['region']=='Europe'
+                )
+            )
+            total_sales_amount = sum(europe_sales_amounts)
+
+            print(total_sales_amount)
+        </code></pre>
+    </section>
+</section>
+
 
 
 <section id="hw"><h1>Homework</h1></section>
