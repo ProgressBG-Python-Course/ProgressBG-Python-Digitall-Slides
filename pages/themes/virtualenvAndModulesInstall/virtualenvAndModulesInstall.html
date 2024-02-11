@@ -1,58 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>virtualenvAndModulesInstall</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
+    <meta charset="utf-8">
+    <title>virtualenvAndModulesInstall</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<!-- CUSTOM -->
-	<style type="text/css">
-		.reveal section iframe{
-			text-align: center;
-			margin: 0 auto;
-			height: 70vh;
-		}
+    <!-- CUSTOM -->
+    <style type="text/css">
+        .reveal section iframe{
+            text-align: center;
+            margin: 0 auto;
+            height: 70vh;
+        }
 
-	</style>
-	<base target="_blank">
+    </style>
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -60,219 +60,307 @@
 -->
 <section><h1>Installing Python Packages - the safe way</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 
 <section><h1>PIP - the Python Package Manager</h1></section>
 <section><h2>PIP - the Python Package Manager</h2>
-	<section><h3></h3>
-		<dl class="fa">
-			<dt>Python has a strong community which releases lot's of modules(packages), which you can use for free and focus on "get job done", instead of reinventing the wheel.</dt>
-			<dt>pip is the tool for installing Python packages from <a href="https://pypi.python.org/pypi">PyPI (Python Package Index)</a></dt>
-			<dt class="note">Note, that if you do not use a Virtual Environment, a package installed by using pip will be installed in your system's python distribution.</dt>
-		</dl>
-	</section>
-	<section style="font-size: 1em"><h3>pip basic commands</h3>
-		<dl class="fa">
-			<dt>get help on pip:</dt>
-			<dd class="code">pip help</dd>
-			<dt>install a package from PyPI:</dt>
-			<dd class="code">pip install package_name</dd>
-			<dt>uninstall a package</dt>
-			<dd class="code">pip uninstall package_name</dd>
-			<dt>list installed packages:</dt>
-			<dd class="code">pip list</dd>
-			<dt>upgrade a package:</dt>
-			<dd class="code">pip install --upgrade SomePackage</dd>
-			<dt>show information about installed packages.:</dt>
-			<dd class="code">pip show package_name</dd>
-			<dt>output installed packages in requirements format</dt>
-			<dd>pip freeze</dd>
-		</dl>
-		<p>Reference: <a href="https://pip.pypa.io/en/stable/cli/">pip commands</a></p>
-	</section>
-	<section><h3>More readings</h3>
-		<dl class="fa">
-			<dt><a href="https://pip.pypa.io/en/stable/">pip - The PyPA recommended tool for installing Python packages.</a></dt>
-			<dt><a href="https://pypi.python.org/pypi">PyPI - the Python Package Index</a></dt>
-		</dl>
-	</section>
+    <section><h3></h3>
+        <dl class="fa">
+            <dt>Python has a strong community which releases lot's of modules(packages), which you can use for free and focus on "get job done", instead of reinventing the wheel.</dt>
+            <dt>pip is the tool for installing Python packages from <a href="https://pypi.python.org/pypi">PyPI (Python Package Index)</a></dt>
+            <dt class="note">Note, that if you do not use a Virtual Environment, a package installed by using pip will be installed in your system's python distribution.</dt>
+        </dl>
+    </section>
+    <section style="font-size: 1em"><h3>pip basic commands</h3>
+        <dl class="fa">
+            <dt>get help on pip:</dt>
+            <dd class="code">pip help</dd>
+            <dt>install a package from PyPI:</dt>
+            <dd class="code">pip install package_name</dd>
+            <dt>uninstall a package</dt>
+            <dd class="code">pip uninstall package_name</dd>
+            <dt>list installed packages:</dt>
+            <dd class="code">pip list</dd>
+            <dt>upgrade a package:</dt>
+            <dd class="code">pip install --upgrade SomePackage</dd>
+            <dt>show information about installed packages.:</dt>
+            <dd class="code">pip show package_name</dd>
+            <dt>output installed packages in requirements format</dt>
+            <dd>pip freeze</dd>
+        </dl>
+        <p>Reference: <a href="https://pip.pypa.io/en/stable/cli/">pip commands</a></p>
+    </section>
+    <section><h3>More readings</h3>
+        <dl class="fa">
+            <dt><a href="https://pip.pypa.io/en/stable/">pip - The PyPA recommended tool for installing Python packages.</a></dt>
+            <dt><a href="https://pypi.python.org/pypi">PyPI - the Python Package Index</a></dt>
+        </dl>
+    </section>
 </section>
 
 
 <section><h1>Python Virtual Environments</h1></section>
 <section><h2>Python Virtual Environments</h2>
-	<section><h3>Virtual environment - Why?</h3>
-		<dl class="fa">
-			<dt>Python apps usually depends on many modules(packages), which depends on other packages, and very often - from a specific version of a package.</dt>
-			<dt>Many system tools also depends on specific versions of installed Python packages.</dt>
-			<dt class="note">You don't want to pollute your system's Python environment or to deal with <a href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025">dependency hell</a>!</dt>
-			<a href="./images/dependancy_hell.jpeg"><img src="./images/dependancy_hell.jpeg" alt="dependancy_hell.jpeg" style="height: 50vh;"></a>
-		</dl>
-	</section>
-	<section><h3>Virtual environment - What?</h3>
-		<dl class="fa">
-			<dt>A virtual environment is an isolated Python environment that allows packages to be installed for use by a particular application, rather than being installed system wide</dt>
-			<dt>A virtual environment is a directory tree which contains Python interpreter, libraries and scripts installed into it,  and other files which indicate that it is a virtual environment.</dt>
+    <section><h3>Virtual environment - Why?</h3>
+        <dl class="fa">
+            <dt>Python apps usually depends on many modules(packages), which depends on other packages, and very often - from a specific version of a package.</dt>
+            <dt>Many system tools also depends on specific versions of installed Python packages.</dt>
+            <dt class="note">You don't want to pollute your system's Python environment or to deal with <a href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025">dependency hell</a>!</dt>
+            <a href="./images/dependancy_hell.jpeg"><img src="./images/dependancy_hell.jpeg" alt="dependancy_hell.jpeg" style="height: 50vh;"></a>
+        </dl>
+    </section>
+    <section><h3>Virtual environment - What?</h3>
+        <dl class="fa">
+            <dt>A virtual environment is an isolated Python environment that allows packages to be installed for use by a particular application, rather than being installed system wide</dt>
+            <dt>A virtual environment is a directory tree which contains Python interpreter, libraries and scripts installed into it,  and other files which indicate that it is a virtual environment.</dt>
 
-			<dt>There are many tools for working with virtual environments in Python (<a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://python-poetry.org/docs/master/managing-environments/">poetry</a>, <a href="https://docs.conda.io/en/latest/">conda</a>, etc.)</dt>
-			<dt>Starting with Python 3.4, <a href="https://docs.python.org/3/library/venv.html#module-venv"><code>venv</code></a> module is the preferred way to create and manage virtual environments.</dt>
-			<dt>venv module is included in the Python standard library and requires no additional installation.</dt>
-		</dl>
-	</section>
-	<section id="createVenv"><h3>Create Virtual Environment</h3>
-		<pre><code rel="Create Virtual Environment - Terminal" class="bash">
-			# make sure you are in project folder, where you want to use virtual environment
+            <dt>There are many tools for working with virtual environments in Python (<a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://python-poetry.org/docs/master/managing-environments/">poetry</a>, <a href="https://docs.conda.io/en/latest/">conda</a>, etc.)</dt>
+            <dt>Starting with Python 3.4, <a href="https://docs.python.org/3/library/venv.html#module-venv"><code>venv</code></a> module is the preferred way to create and manage virtual environments.</dt>
+            <dt>venv module is included in the Python standard library and requires no additional installation.</dt>
+        </dl>
+    </section>
+    <section id="createVenv"><h3>Create Virtual Environment</h3>
+        <pre><code rel="Create Virtual Environment - Terminal" class="bash">
+            # make sure you are in project folder, where you want to use virtual environment
 
-			# create virtual environment with name ".venv"
-			python3 -m venv .venv
+            # create virtual environment with name ".venv"
+            python3 -m venv .venv
 
-			# a folder '.venv' is created in the project folder
-		</code></pre>
-		<dl class="fa">
-			<dt><code>.venv</code> is a common name for a virtual environment as it keeps the directory typically hidden in your shell.</dt>
-			<dt>Note, that you need to create a virtiual environment per project only once. But each time you work in your project you must activate it.</dt>
-		</dl>
-	</section>
-	<section id="activateVenv">
-		<dl class="fa">
-			<dt>In order to install and use python packages in your virtiual env, you <span class="note">must activate it</span>: </dt>
-			<pre><code rel="Activate Virtual Environment - Terminal" class="bash">
-				# On Windows PowerShell run:
-				.venv\Scripts\Activate.ps1
+            # a folder '.venv' is created in the project folder
+        </code></pre>
+        <dl class="fa">
+            <dt><code>.venv</code> is a common name for a virtual environment as it keeps the directory typically hidden in your shell.</dt>
+            <dt>Note, that you need to create a virtiual environment per project only once. But each time you work in your project you must activate it.</dt>
+        </dl>
+    </section>
+    <section id="activateVenv">
+        <dl class="fa">
+            <dt>In order to install and use python packages in your virtiual env, you <span class="note">must activate it</span>: </dt>
+            <pre><code rel="Activate Virtual Environment - Terminal" class="bash">
+                # On Windows PowerShell run:
+                .venv\Scripts\Activate.ps1
 
-				# On Windows CommandPrompt run:
-				.venv\Scripts\activate.bat
+                # On Windows CommandPrompt run:
+                .venv\Scripts\activate.bat
 
-				# On Windows GitBash run:
-				source .venv\Scripts\activate
+                # On Windows GitBash run:
+                source .venv\Scripts\activate
 
-				# On Linux, MacOS, run:
-				source .venv/bin/activate
-			</code></pre>
-			<dd>If on PowerShell you receive an error <span style="color:darkred">File ... cannot be loaded because running scripts is disabled on this system</span> you must first set the PowerShell execution policies (<a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2">Set-ExecutionPolicy @microsoft.com</a>):</dd>
-			<pre><code rel="Terminal" class="bash">
-				Set-ExecutionPolicy Unrestricted -Scope Process
-				# now try again to activate:
-				.venv\Scripts\Activate.ps1
-			</code></pre>
-			<dt>You can confirm you’re in the virtual environment by checking the location of your Python interpreter:</dt>
-			<pre><code rel="Terminal" class="bash">
-				# On Windows, run:
-				where python
+                # On Linux, MacOS, run:
+                source .venv/bin/activate
+            </code></pre>
+            <dd>If on PowerShell you receive an error <span style="color:darkred">File ... cannot be loaded because running scripts is disabled on this system</span> you must first set the PowerShell execution policies (<a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2">Set-ExecutionPolicy @microsoft.com</a>):</dd>
+            <pre><code rel="Terminal" class="bash">
+                Set-ExecutionPolicy Unrestricted -Scope Process
+                # now try again to activate:
+                .venv\Scripts\Activate.ps1
+            </code></pre>
+            <dt>You can confirm you’re in the virtual environment by checking the location of your Python interpreter:</dt>
+            <pre><code rel="Terminal" class="bash">
+                # On Windows, run:
+                where python
 
-				# On Unix or MacOS, run:
-				which python
+                # On Unix or MacOS, run:
+                which python
 
-				# It should be in the .venv directory
-			</code></pre>
-			<dt>If you want to switch projects or otherwise leave your virtual environment, simply run</dt>
-			<pre><code rel="Deactivate Virtual Environment - Terminal" class="bash">
-				deactivate
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3>References</h3>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/tutorial/venv.html">Virtual Environments and Packages</a> @python3 tutorial</dt>
-		</dl>
-	</section>
+                # It should be in the .venv directory
+            </code></pre>
+            <dt>If you want to switch projects or otherwise leave your virtual environment, simply run</dt>
+            <pre><code rel="Deactivate Virtual Environment - Terminal" class="bash">
+                deactivate
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>References</h3>
+        <dl class="fa">
+            <dt><a href="https://docs.python.org/3/tutorial/venv.html">Virtual Environments and Packages</a> @python3 tutorial</dt>
+        </dl>
+    </section>
 </section>
 
 
-<section data-min="50"><h1>Installing packages using pip and virtual environments</h1></section>
-<section><h2>Installing packages using pip and virtual environments</h2>
-	<section><h3>Live Demo</h3>
-		<dl class="fa">
-			<dt>Live Demo on <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">Installing packages using pip and virtual environments</a></dt>
-		</dl>
-	</section>
+<section data-min="50"><h1>Installing packages in a virtual environments</h1></section>
+<section><h2>Installing packages in a virtual environments</h2>
+    <section><h3>Install Project Dependencies</h3>
+        <dl class="fa">
+            <pre><code rel="Terminal" class="bash" style="min-height: 60vh;">
+                # Create virt.env - just once per project
+                python -m venv .venv
+
+                # Activate it - every time you will work on the project:
+                # On Windows CommandPrompt run:
+                .venv\Scripts\activate.bat
+
+                # On Linux, MacOS, run:
+                source .venv/bin/activate
+
+                # Install module
+                pip install module_name
+            </code></pre>
+            <dt>Once we are in a virtual environment, whenever we use pip install to install any library, if we don’t specify the desired version of the library, pip will automatically install the latest version that is compatible with the python version inside the virtual environment</dt>
+            <dt>Reference:  <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">Installing packages using pip and virtual environments</a></dt>
+        </dl>
+    </section>
 </section>
+
+
+<section data-min="50"><h1>Freezing the dependency versions</h1></section>
+<section><h2>Freezing the dependency versions</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>"Freezing the dependency versions" in the context of Python development refers to the practice of creating a snapshot of all the packages and their exact versions that your project depends on.</dt>
+            <dt>This is crucial for ensuring consistency, reproducibility, and stability across different environments (development, testing, production) and when sharing the project with others.</dt>
+            <dt>It helps to avoid the "it works on my machine" problem by ensuring that everyone working on the project uses the same versions of dependencies.</dt>
+        </dl>
+    </section>
+    <section><h3>the <code>pip freeze</code></h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Before freezing dependencies, ensure that your virtual environment is activated. This ensures that the dependency list is specific to your project and not your global Python installation.</dt>
+            <dt>Once your virtual environment is activated, use <code>pip freeze</code> to list all installed packages and their exact versions. Then, redirect the output to a requirements.txt file:</dt>
+            <pre><code rel="Terminal" class="bash">
+                pip freeze > requirements.txt
+            </code></pre>
+            <dt>This requirements.txt file now contains a snapshot of all packages (with versions) installed in your virtual environment.</dt>
+        </dl>
+    </section>
+    <section><h3>Using the 'requirements.txt' file</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>When you or someone else needs to set up the project environment, you can use the requirements.txt file to install all the dependencies at their frozen versions. Run:</dt>
+            <pre><code rel="Terminal" class="bash">
+                pip install -r requirements.txt
+            </code></pre>
+            <dt>This command installs the exact versions of the packages listed in requirements.txt, ensuring that the environment is consistent with the original setup.</dt>
+        </dl>
+    </section>
+</section>
+
+
+<section class="main-sesction-title" id="virtEnvMultiplePythonVersions"><h1>Creating Virtual Environments with Different Python Versions on Windows</h1></section>
+<section class="sub-sections"><h2>Creating Virtual Environments with Different Python Versions on Windows</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>Creating virtual environments with different Python versions on a Windows system is an essential skill for managing dependencies and ensuring compatibility across multiple projects. </dt>
+            <dt>This process requires having multiple versions of Python installed and knowing how to specify the version when creating a new virtual environment.</dt>
+        </dl>
+    </section>
+    <section><h3>Install Multiple Versions of Python</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dl class="fa" style="min-width:80vw">
+                <dt><b>Download Python</b>: go to the official Python website (python.org) and download the installer for the versions you need. Make sure to download the Windows installer for each version.</dt>
+                <dt><b>Install Python</b>: run each installer. During installation:</dt>
+                <dd>Check the box that says "Add Python X.X to PATH" for each version you install. This makes it easier to access Python from the Command Prompt.</dd>
+                <dd>Ensure each version is installed in a separate directory. The installer usually suggests a default directory like C:\Users\YourName\AppData\Local\Programs\Python\PythonXX where XX corresponds to the Python version.</dd>
+                <dt>To verify the installation and check available Python versions, open Command Prompt:</dt>
+                <pre><code rel="Terminal" class="bash">
+                    # lists all installed Python versions
+                    py -0
+                </code></pre>
+            </dl>
+        </dl>
+    </section>
+    <section><h3>Create Virtual Environments with Specific Python Versions</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dl class="fa" style="min-width:80vw">
+                <dt><b>Using the py Launcher</b>: you can specify which Python version to use for your virtual environment with the py launcher. Navigate to your project directory and run:</dt>
+                <pre><code rel="Terminal" class="bash">
+                    py -X.X -m venv myenv
+                </code></pre>
+                <dd>Replace X.X with the Python version you want to use, and myenv with the name of your virtual environment.</dd>
+                <dt><b>Activate the Virtual Environment</b>: after creating the virtual environment, you need to activate it. Run:</dt>
+                <pre><code rel="Terminal" class="bash">
+                    myenv\Scripts\activate
+                </code></pre>
+            </dl>
+        </dl>
+    </section>
+</section>
+
 
 
 <!-- <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Exercises</h2>
-	<section id="task1"><h3>simple_plot with matplotlib</h3>
-		<dl>Look again at the "<a href="#example_simple_plot_with_matplotlib">Example: simple_plot with matplotlib</a>" and repeat the steps on your machine, such that the program "simple_plot.py"  will run without errors</dl>
-	</section>
+    <section id="task1"><h3>simple_plot with matplotlib</h3>
+        <dl>Look again at the "<a href="#example_simple_plot_with_matplotlib">Example: simple_plot with matplotlib</a>" and repeat the steps on your machine, such that the program "simple_plot.py"  will run without errors</dl>
+    </section>
 </section> -->
 
 
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>

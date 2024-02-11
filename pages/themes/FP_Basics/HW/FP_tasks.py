@@ -67,7 +67,7 @@ quotes = [
 ### YOUR CODE HERE
 
 ### EXPECTED OUTPUT:
-# [['travels', 'than'], ['that', 'trying']]
+# [21, 21]
 
 
 

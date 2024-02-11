@@ -27,6 +27,9 @@
         "html"
     ],
     "editor.indentSize": "tabSize",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "scm.diffDecorationsIgnoreTrimWhitespace": "true",
+    "diffEditor.hideUnchangedRegions.enabled": false,
     // "spellright.ignoreRegExpsByClass": {
     //     "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
     //     "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
