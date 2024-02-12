@@ -142,17 +142,22 @@
         </dl>
     </section>
     <section id="createVenv"><h3>Create Virtual Environment</h3>
-        <pre><code rel="Create Virtual Environment - Terminal" class="bash">
-            # make sure you are in project folder, where you want to use virtual environment
+        <dl class="fa" style="min-width:80vw">
+            <dt>Open Terminal and make sure that current working directory is the one where you want the virtual environment to be created</dt>
+            <pre><code rel="Create Virtual Environment - Terminal" class="bash">
+                ### make sure you are in project folder, where you want to use virtual environment
+                # Command Prompt:
+                cd
 
-            # create virtual environment with name ".venv"
-            python3 -m venv .venv
+                # Linux/MacOS:
+                pwd
 
-            # a folder '.venv' is created in the project folder
-        </code></pre>
-        <dl class="fa">
+                ### create virtual environment with name ".venv"
+                python -m venv .venv
+            </code></pre>
+            <dt>a folder '.venv' is created in the project folder</dt>
             <dt><code>.venv</code> is a common name for a virtual environment as it keeps the directory typically hidden in your shell.</dt>
-            <dt>Note, that you need to create a virtiual environment per project only once. But each time you work in your project you must activate it.</dt>
+            <dt>Note, that you need to create a virtual environment per project only once. But each time you work in your project you must activate it.</dt>
         </dl>
     </section>
     <section id="activateVenv">
