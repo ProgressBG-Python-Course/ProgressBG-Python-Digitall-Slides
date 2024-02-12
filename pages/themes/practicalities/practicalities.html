@@ -396,7 +396,7 @@
                 self.assertEqual(floor_div(4,3), 1)
         </code></pre>
         <pre><code rel="Terminal" class="shell" data-noescape>
-            $ python3 -m unittest floor_div_test.py
+            $ python -m unittest floor_div_test.py
             F
             ======================================================================
             FAIL: test_floor_div_with_positive_integers (floor_div_test.PositiveTest)
@@ -420,8 +420,8 @@
                 # install for a virtual env:
                 pipenv install pytest
 
-                # install for the system python3:
-                pip3 install --user pytest
+                # install for the system python:
+                pip install --user pytest
             </code></pre>
             <dt>Official site: <a href="https://docs.pytest.org/en/latest/">pytest: helps you write better programs</a></dt>
         </dl>
