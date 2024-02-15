@@ -23,8 +23,7 @@
         "markdown",
         "latex",
         "plaintext",
-        "python",
-        "html"
+        "python"
     ],
     "editor.indentSize": "tabSize",
     "diffEditor.ignoreTrimWhitespace": true,

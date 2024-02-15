@@ -1,4 +1,4 @@
-import os
+def greet(name: str) -> str:
+    return f"Hello, {name}"
 
-print(help(os))
-
+greet(23) # Type error highlighted by Pylance

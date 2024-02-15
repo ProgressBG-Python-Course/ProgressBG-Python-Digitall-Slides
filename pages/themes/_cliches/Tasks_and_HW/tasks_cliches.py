@@ -3,9 +3,11 @@
 
 """
 
-### Your code here
+### YOUR CODE HERE:
 def solution1():
     pass
+
+### TEST:
 
 ### EXPECTED OUTPUT:
 
@@ -15,9 +17,11 @@ def solution1():
 
 """
 
-### Your code here
+### YOUR CODE HERE:
 def solution2():
     pass
+
+### TEST:
 
 ### EXPECTED OUTPUT:
 
@@ -27,8 +31,10 @@ def solution2():
 
 """
 
-### Your code here
+### YOUR CODE HERE:
 def solution3():
     pass
+
+### TEST:
 
 ### EXPECTED OUTPUT:
