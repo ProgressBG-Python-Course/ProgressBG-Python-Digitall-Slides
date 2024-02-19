@@ -135,10 +135,10 @@
         <dl class="fa" style="min-width:80vw">
             <dt>Python standard library provides the <code>json</code> module (<a href="https://docs.python.org/3/library/json.html">json - JSON encoder and decoder</a>), which provides functions for:</dt>
             <dt>Parsing (Deserializing) JSON into Python objects</dt>
-            <dd><a href="https://docs.python.org/3/library/json.html#json.load">json.load()</a>: reads JSON data from a file-like object and returns a Python object</dd>
+            <dd><a href="https://docs.python.org/3/library/json.html#json.load">json.load()</a>: parse JSON data from a file-like object and returns a Python object</dd>
             <dd><a href="https://docs.python.org/3/library/json.html#json.loads">json.loads()</a>: parses a JSON string and returns a Python object</dd>
             <dt>Writing (Serializing) Python objects to JSON</dt>
-            <dd><a href="https://docs.python.org/3/library/json.html#json.dump">json.dump()</a>: writes Python objects to a file-like object in JSON format</dd>
+            <dd><a href="https://docs.python.org/3/library/json.html#json.dump">json.dump()</a>: serializes Python objects to a file-like object in JSON format</dd>
             <dd><a href="https://docs.python.org/3/library/json.html#json.dumps">json.dumps()</a>: serializes Python objects to a JSON formatted string</dd>
         </dl>
     </section>
@@ -214,60 +214,44 @@
             </code></pre>
         </dl>
     </section>
-    <section><h3>Convert Python objects into JSON string</h3>
+    <section><h3>Writing (Serializing) Python objects to JSON string</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt><code><a href="https://docs.python.org/3/library/json.html#json.dump">json.dump()</a></code></dt>
-            <dd>Serialize an object as a JSON formatted stream to a .write()-supporting file-like object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dd>
             <dt><code><a href="https://docs.python.org/3/library/json.html#json.dumps">json.dumps()</a></code></dt>
-            <dd>Same as <code>dump()</code>, but serialize to string</dd>
+            <dd>serializes Python objects to a JSON formatted string</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import json
+
+                mylist = [1,2,3]
+
+                matrix = [
+                        [1,2,3],
+                        [4,5,6],
+                        [7,8,9],
+                ]
+
+                print('List :', json.dumps(mylist))
+                print('Matrix :', json.dumps(matrix))
+            </code></pre>
         </dl>
     </section>
-    <section><h3><code>json.dumps()</code> - list example</h3>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            import json
+    <section><h3>Writing (Serializing) Python objects to JSON file</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt><code><a href="https://docs.python.org/3/library/json.html#json.dump">json.dump()</a></code></dt>
+            <dd>Serialize an object as a JSON formatted file-like object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dd>
+            <dt>Example: write Python dictionary in file, indented </dt>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import json
 
-            mylist = [1,2,3]
+                prices = {
+                    "apples":2.50,
+                    "bananas":1.80,
+                    "strawberry": 3.20
+                }
 
-            matrix = [
-                    [1,2,3],
-                    [4,5,6],
-                    [7,8,9],
-            ]
-
-            print('List :', json.dumps(mylist))
-            print('Matrix :', json.dumps(matrix))
-        </code></pre>
-    </section>
-    <section><h3><code>json.dumps()</code> - indented list example</h3>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            import json
-
-            mylist = [1,2,3]
-
-            matrix = [
-                    [1,2,3],
-                    [4,5,6],
-                    [7,8,9],
-            ]
-
-            print('List :', json.dumps(mylist,indent=2))
-            print('Matrix :', json.dumps(matrix,indent=2))
-        </code></pre>
-    </section>
-    <section><h3><code>json.dump()</code> - indented dict example</h3>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            import json
-
-            prices = {
-                "apples":2.50,
-                "bananas":1.80,
-                "strawberry": 3.20
-            }
-
-            with open('json_dump.out', 'w+') as fh:
-                fh.write(json.dumps(prices, indent=2))
-
-        </code></pre>
+                with open('json_dump.out', 'w+') as fh:
+                    fh.write(json.dumps(prices, indent=2))
+            </code></pre>
+        </dl>
     </section>
 </section>
 

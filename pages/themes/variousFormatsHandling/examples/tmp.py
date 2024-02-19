@@ -1,24 +1,19 @@
 import json
-from operator import itemgetter
 
-json_str = """
-    [
-            {
-                    "name": "apple",
-                    "price": 1.80
-            },
-            {
-                    "name": "orange",
-                    "price": 2.10
-            },
-            {
-                    "name": "bananas",
-                    "price": 1.60
-            }
-    ]
-"""
+mylist = [1,2,3]
 
-#read json from string
-data = json.loads(json_str)
+matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
 
-print(type(data))
+prices = {
+    "apples":2.50,
+    "bananas":1.80,
+    "strawberry": 3.20
+}
+
+print('List :', json.dumps(mylist))
+print('Matrix :', json.dumps(matrix))
+print('Prices :', json.dumps(prices,indent=4))
