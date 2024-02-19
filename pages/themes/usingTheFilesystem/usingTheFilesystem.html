@@ -1,49 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>usingTheFilesystem</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-	<!-- CUSTOM -->
-	<base target="_blank">
+    <meta charset="utf-8">
+    <title>usingTheFilesystem</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -51,418 +51,581 @@
 -->
 <section><h1>Using the file-system</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
-<section id="directoryManipulations"><h1>Directory Manipulations</h1></section>
-<section><h2>Directory Manipulations</h2>
-	<section><h3>Get and set the current working directory </h3>
-		<dl class="fa">
-			<dt>CWD stands for <b>C</b>urrent <b>W</b>orking <b>D</b>irectory). All filesystem operations will be relative to that folder, unless you specify an absolute (full) path.</dt>
-			<dt>Get CWD: <code>os.getcwd()</code></dt>
-			<dd>Return a string representing the CWD</dd>
-			<pre><code rel="Python" class="python">
-				>>> os.getcwd()
-				'/data/python_demos/music/The Cure'
-			</code></pre>
-			<dt>Set CWD: <code>os.chdir(path)</code></dt>
-			<dd>Change the current working directory to the specified path.</dd>
-			<pre><code rel="Python" class="python">
-				>>> os.chdir("Seventeen Seconds")
-				>>> os.getcwd()
-				'/data/python_demos/music/The Cure/Seventeen Seconds'
-			</code></pre>
-		</dl>
-	</section>
 
-	<section><h3>List entries in a directory</h3>
-		<dl class="fa">
-			<dt><code>os.listdir(path='dirname')</code></dt>
-			<dd>Return a list containing the names of the entries in the directory given by path</dd>
-			<dd>listdir() returns both files and folders, with no indication of which is which.</dd>
-			<dd class="advanced">Consider using os.scandir() when you need an iterator, instead of list</dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			>>> os.listdir()
-			['Seventeen Seconds', 'Disintegration']
-		</code></pre>
-	</section>
+<section class="main-sesction-title" id="PrerequisitesPathsAndCurrentWorkingDirectory"><h1>Prerequisites: Paths and Current Working Directory</h1></section>
+<section class="sub-sections"><h2>Prerequisites: Paths and Current Working Directory</h2>
+    <section id="CurrentWorkingDirectory"><h3>Current Working Directory</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>What is the Current Working Directory (CWD)?</dt>
+            <dd>The current working directory (CWD) is the directory from which the Python interpreter is running the script.</dd>
+            <dt>Getting the Current Working Directory</dt>
+            <dd>You can retrieve the current working directory using the `os` module's <a href="https://docs.python.org/3/library/os.html#os.getcwd">getcwd()</a> function.</dd>
+            <!-- Optional code block for programming code -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import os
+                cwd = os.getcwd()
+                print("Current Working Directory:", cwd)
+            </code></pre>
 
-	<section><h3>Make directory</h3>
-		<dl class="fa">
-			<dt><code>os.mkdir(path)</code></dt>
-			<dd>Create a directory with given path name</dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			>>> os.listdir()
-			['Seventeen Seconds', 'Disintegration']
+            <dt>Changing the Current Working Directory</dt>
+            <dd>To change the current working directory, you can use the `os` module's <a href="https://docs.python.org/3/library/os.html#os.chdir">chdir()</a> function.</dd>
+            <!-- Optional code block for programming code -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import os
+                os.chdir("new_directory")
+                print("New Current Working Directory:", os.getcwd())
+            </code></pre>
+        </dl>
+    </section>
+    <section id="AbsoluteRelativePaths"><h3>Absolute and Relative Paths</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>What are Paths?</dt>
+            <dd>In computing, a path is the route through which a file or directory is accessed.</dd>
+            <dd>On Windows, it uses backslashes (\) to separate directory levels in the path.</dd>
+            <dd>On Linux and macOS, it uses forward slashes (/) to separate directory levels in the path.</dd>
 
-			>>> os.mkdir("lyrics")
+            <dt><b>Absolute Path</b>: specifies the complete path starting from the root directory.</dt>
+            <dd>On Windows, it typically starts with a drive letter followed by a colon.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                absolute_path = r"C:\Users\Username\Documents\example.txt"
+            </code></pre>
+            <dd>On Linux and macOS, it typically starts with a forward slash (/) representing the root directory.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                absolute_path = "/home/username/Documents/example.txt"
+            </code></pre>
+            <dt><b>Relative Path</b>: specifies the path relative to the current working directory</dt>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                relative_path = "folder\example.txt"
+            </code></pre>
+        </dl>
+    </section>
+</section>
 
-			>>> os.listdir()
-			['lyrics', 'Seventeen Seconds', 'Disintegration']
-		</code></pre>
-	</section>
-	<section><h3>Make directory tree</h3>
-		<dl class="fa">
-			<dt><code>os.makedirs(path)</code></dt>
-			<dd>Like mkdir(), but makes all intermediate-level directories needed to contain the leaf directory.</dd>
-			<dd>Recursive directory creation.</dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			>>> os.listdir("The Cure")
-			['lyrics', 'Seventeen Seconds', 'Disintegration']
+<section class="main-sesction-title" id="OsPathModule"><h1>os.path Module</h1></section>
+<section class="sub-sections"><h2>os.path Module</h2>
+    <section id="Introduction"><h3>Introduction</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The `os.path` module in Python provides functions for common path manipulations, making it easier to work with file and directory paths in a platform-independent manner. This allows your code to work seamlessly across different operating systems.</dt>
+            <dt>Some of the commonly used functions in the <a href="https://docs.python.org/3/library/os.path.html">os.path</a> module include:</dt>
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.join">os.path.join()</a>: Concatenates one or more path components intelligently, taking into account the platform-specific path separator.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                joined_path = os.path.join("folder", "file.txt")
+                print("Joined Path:", joined_path)
+                # Output: Joined Path: folder/file.txt
+            </code></pre>
 
-			>>> os.makedirs("The Cure/test/subtest")
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.abspath">os.path.abspath()</a>: Returns the absolute path of a given path.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                abs_path = os.path.abspath("file.txt")
+                print("Absolute Path:", abs_path)
+                # Output: Absolute Path: /full/path/to/file.txt
+            </code></pre>
+        </dl>
+    </section>
+    <section id="CommonFunctions"><h3>Common Functions</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.basename">os.path.basename()</a>: Returns the base name of a path (i.e., the filename without the directory).</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                file_name = os.path.basename("/path/to/file.txt")
+                print("File Name:", file_name)
+                # Output: File Name: file.txt
+            </code></pre>
 
-			>>> os.listdir("The Cure")
-			['test', 'lyrics', 'Seventeen Seconds', 'Disintegration']
-			>>> os.listdir("The Cure/test/")
-			['subtest']
-		</code></pre>
-	</section>
-	<section><h3>Rename file or directory</h3>
-		<dl class="fa">
-			<dt><code>os.rename(src, dst)</code></dt>
-			<dd>Rename the source file or directory to given destination</dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			os.listdir("The Cure")
-			['test', 'lyrics', 'Seventeen Seconds', 'Disintegration']
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.dirname">os.path.dirname()</a>: Returns the directory name of a path.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                dir_name = os.path.dirname("/path/to/file.txt")
+                print("Directory Name:", dir_name)
+                # Output: Directory Name: /path/to
+            </code></pre>
 
-			>>> os.rename("The Cure/test", "The Cure/TEST")
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.exists">os.path.exists()</a>: Checks whether a path exists.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                path = "/path/to/file.txt"
+                exists = os.path.exists(path)
+                print("Path Exists:", exists)
+                # Output: Path Exists: True (or False if the path doesn't exist)
+            </code></pre>
+        </dl>
+    </section>
+    <section id="CommonFunctions2"><h3>Common Functions</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.isfile">os.path.isfile()</a>: Checks whether a path is a regular file.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                file_path = "/path/to/file.txt"
+                is_file = os.path.isfile(file_path)
+                print("Is a File:", is_file)
+                # Output: Is a File: True (or False if the path is not a file)
+            </code></pre>
 
-			>>> os.listdir("The Cure")
-			['TEST', 'lyrics', 'Seventeen Seconds', 'Disintegration']
-		</code></pre>
-	</section>
-	<section><h3>Remove directory</h3>
-		<dl class="fa">
-			<dt><code>os.rmdir(path)</code></dt>
-			<dd>Remove (delete) the directory path.</dd>
-			<dd class="note">Only works when the directory is empty, otherwise, OSError is raised.</dd>
-			<dd class="note">This is safer than os.removedirs(), which will delete even non-empty directories.</dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			>>> os.listdir("The Cure/TEST/")
-			['subtest']
+            <dd><a href="https://docs.python.org/3/library/os.path.html#os.path.isdir">os.path.isdir()</a>: Checks whether a path is a directory.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                dir_path = "/path/to/directory"
+                is_dir = os.path.isdir(dir_path)
+                print("Is a Directory:", is_dir)
+                # Output: Is a Directory: True (or False if the path is not a directory)
+            </code></pre>
+        </dl>
+    </section>
+</section>
 
-			>>> os.rmdir("The Cure/TEST/subtest/")
+<section class="main-sesction-title" id="DirectoryManipulationswithPython"><h1>Directory Manipulations with Python</h1></section>
+<section class="sub-sections"><h2>Directory Manipulations with Python</h2>
+    <section id="Introduction"><h3>Introduction</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Understanding how to manipulate directories is crucial for various tasks in programming, such as organizing files, managing projects, and handling file I/O operations.</dt>
+            <dt>All filesystem operations will be relative to <a href="https://docs.python.org/3/library/os.html#os.getcwd">CWD</a>, unless you specify an absolute (full) path.</dt>
+        </dl>
+    </section>
+    <section id="ListingDirectories"><h3>Listing Directories</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Listing Contents of a Directory</dt>
+            <dd>To list the contents of a directory, you can use the <a href="https://docs.python.org/3/library/os.html#os.listdir">os</a> module's <a href="https://docs.python.org/3/library/os.html#os.listdir">listdir()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                contents = os.listdir("directory_path")
+                print(contents)
+                # Output: ['file1.txt', 'file2.txt', 'folder1', 'folder2']
+            </code></pre>
+            <dt>Filtering Directory Contents</dt>
+            <dd>You can filter the directory contents based on specific criteria using list comprehensions or the <a href="https://docs.python.org/3/library/functions.html#filter">filter()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                files = [f for f in os.listdir("directory_path") if os.path.isfile(f)]
+                print(files)
+                # Output: ['file1.txt', 'file2.txt']
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>List the entire directory content</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>To list the entire directory content, including subfolders, you can use the the <a href="https://docs.python.org/3/library/os.html#os.walk">os.walk</a> function:</dt>
+            <dt>Next example demonstrate how to list the entire content of CWD:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 80vh;">
+                def list_dir_contents(dir_path):
+                  """
+                  This function recursively iterates through the directory tree, yielding root, dirs, and files at each level.
+                  It then prints the full path of each directory and file
 
-			>>> os.listdir("The Cure/TEST/")
-			[]
-		</code></pre>
-	</section>
+                  Args:
+                      dir_path: The path to the directory to list.
+
+                  Returns:
+                      None
+                  """
+                  for root, dirs, files in os.walk(dir_path):
+                    for directory in dirs:
+                      full_dir_path = os.path.join(root, directory)
+                      print(f"Directory: {full_dir_path}\n")
+                    for filename in files:
+                      full_file_path = os.path.join(root, filename)
+                      print(f"File: {full_file_path}\n")
+
+
+                dir_path = os.getcwd()
+                list_dir_contents(dir_path)
+            </code></pre>
+        </dl>
+    </section>
+
+    <section id="CreatingDirectories"><h3>Creating Directories</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Creating a Directory</dt>
+            <dd>To create a directory in Python, you can use the <a href="https://docs.python.org/3/library/os.html#os.mkdir">os</a> module's <a href="https://docs.python.org/3/library/os.html#os.mkdir">mkdir()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import os
+                os.makedir("parent_directory")
+            </code></pre>
+            <dt>Creating Nested Directories</dt>
+            <dd>You can create nested directories by specifying the full path when calling the <a href="https://docs.python.org/3/library/os.html#os.makedirs">mkdir()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import os
+                os.makedirs("parent_directory/child_directory")
+            </code></pre>
+            <dt>If a directory alredy exists, these functions will throw File exists error</dt>
+        </dl>
+    </section>
+    <section id="DeletingDirectories"><h3>Deleting Directories</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Deleting a Directory</dt>
+            <dd>To delete a directory in Python, you can use the <a href="https://docs.python.org/3/library/os.html#os.rmdir">os</a> module's <a href="https://docs.python.org/3/library/os.html#os.rmdir">rmdir()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import os
+                os.rmdir("directory_path")
+            </code></pre>
+            <dd>Note that, <code>os.rmdir()</code> removes only empty directory. Otherwise, <code>OSError</code> is raised.</dd>
+            <dd>This is safer than <code>os.removedirs()</code>, which will delete even non-empty directories.</dd>
+
+            <dt>Deleting a Directory Tree</dt>
+            <dd>To delete a directory and all its contents recursively, you can use the <a href="https://docs.python.org/3/library/shutil.html#shutil.rmtree">shutil</a> module's <a href="https://docs.python.org/3/library/shutil.html#shutil.rmtree">rmtree()</a> function.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import shutil
+                shutil.rmtree("directory_path")
+            </code></pre>
+        </dl>
+    </section>
 </section>
 
 <section id="filesManipulations"><h1>Files Manipulations</h1></section>
 <section><h2>Files Manipulations</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>For basic files operations, like reading, writing and appending to files we can use the built-in <code>file</code> object and its methods.</dt>
-			<dt>To get a corresponding file object we must use the <a href="https://docs.python.org/3/library/functions.html#open">open()</a> built-in function.</dt>
-		</dl>
-	</section>
-	<section><h3>open file</h3>
-		<dl class="fa">
-			<dt><code>fh = open(file_path, mode="<em>mode</em>")</code></dt>
-			<dt>Open file by the given pathname and return a corresponding file object</dt>
-			<dt><em>mode</em></dt>
-			<dd>'r' - open for reading (default)</dd>
-			<dd>'w' - open for writing, truncating the file first</dd>
-			<dd>'a' - open for writing, appending to the end of the file if it exists</dd>
-			<dt class="note">After the work with the file is done, you have to call fh.close() in order to release the fh</dt>
-		</dl>
-	</section>
+    <section><h3><code>open()</code> function</h3>
+        <dl class="fa">
+            <dt>For basic files operations, like reading, writing and appending to files we can use the built-in <code>file</code> object and its methods.</dt>
+            <dt>To get a corresponding file object we must use the <a href="https://docs.python.org/3/library/functions.html#open">open()</a> built-in function.</dt>
+            <dt>Syntax:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;" data-noescape>
+                fh = open(<em>file_path</em>, mode="<em>mode</em>", encoding="<em>encoding</em>")
+            </code></pre>
+            <dt>Open file by the given <em>file_path</em> and return a corresponding file object</dt>
+            <dt><em>mode</em>: </dt>
+            <dd>'r' - open for reading (default)</dd>
+            <dd>'w' - open for writing, truncating the file first</dd>
+            <dd>'a' - open for writing, appending to the end of the file if it exists</dd>
+            <dd>'b' - open in binary mode.</dd>
+            <dd>'+' - open for updating (reading and writing).</dd>
+            <dt><em>encoding</em>: specifies the encoding of the file. It's optional and defaults to the system's default encoding if not provided.</dt>
+            <dt class="note">After the work with the file is done, you have to call fh.close() in order to release the fh</dt>
+        </dl>
+    </section>
+    <section><h3>open file - workflow</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt><i>Variant 1</i>: manually open and close the file</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                fh = open(file_path, mode="mode", encoding=encoding)
+                try:
+                    # Code to read from or write to the file
+                finally:
+                    fh.close()
+            </code></pre>
+            <dd>try-except is used to ensure that even if an exception occurs during the file operations, the file will still be closed properly.</dd>
+            <dt><i>Variant 2 <b>(prefered)</b></i>: by <code>with</code> statement, which creates context manager: </dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                with open(file_path, mode="r", encoding=encoding) as fh:
+                    # Code to read from the file
+                    pass
+            </code></pre>
+            <dd>after the code block within the <code>with</code> statement is executed, Python automatically calls the close() method on the file handle, ensuring that the file is properly closed regardless of whether an exception occurred or not. This automatic cleanup is one of the key benefits of using with.</dd>
+        </dl>
+    </section>
+    <section><h3>Read from file</h3>
+        <dl class="fa">
+            <dt><code>fh.read(<i>size</i>)</code></dt>
+            <dd>Reads file content and stores it in variable </dd>
+            <dd>When size is omitted or negative, <span class="note">the entire contents of the file will be read and returned</span> (python will not take care if the file is twice as large as your machine’s memory)</dd>
+            <dd>If <i>size</i> is given at most <i>size</i> characters (in text mode) or size bytes (in binary mode) are read and returned.</dd>
+            <pre><code rel="Python" class="python">
+                with open('test_file.txt','r') as fh:
+                    # read whole file content:
+                    contents =fh.read()
 
-	<section><h3>Read from file</h3>
-		<dl class="fa">
-			<dt><code>fh.read(<i>size</i>)</code></dt>
-			<dd>Reads file content and stores it in variable </dd>
-			<dd>When size is omitted or negative, <span class="note">the entire contents of the file will be read and returned</span> (python will not take care if the file is twice as large as your machine’s memory)</dd>
-			<dd>If <i>size</i> is given at most <i>size</i> characters (in text mode) or size bytes (in binary mode) are read and returned.</dd>
-			<pre><code rel="Python" class="python">
-				fh = open('test.txt','r')
+                print(contents)
+            </code></pre>
+            <dt><code>fh.readline()</code></dt>
+            <dd>Reads and returns a single line from the file (including the ending new line character)</dd>
+            <dd>fh.readline() returns an empty string, when the end of the file has been reached</dd>
+            <dt><code>fh.readlines()</code></dt>
+            <dd>Reads all the lines of a file in a list. You can do the same with <code>list(fh)</code></dd>
+            <pre><code rel="python" class="python">
+                with open('test_file.txt', 'r') as fh:
+                    # Read one line at a time using readline():
+                    line = fh.readline()
+                    while line:
+                        print(line.strip())  # Strip to remove newline character
+                        line = fh.readline()
 
-				# read whole file content:
-				contents =fh.read()
-			</code></pre>
-			<dt><code>fh.readline()</code></dt>
-			<dd>Reads and returns a single line from the file (including the ending new line character)</dd>
-			<dd>f.readline() returns an empty string, when the end of the file has been reached</dd>
-			<dt><code>f.readlines()</code></dt>
-			<dd>Reads all the lines of a file in a list. You can do the same with <code>list(f)</code></dd>
-		</dl>
-	</section>
-	<section><h3>Read lines in a loop</h3>
-		<dl class="fa">
-			<dt>With fh.readlines():</dt>
-			<pre><code rel="Python" class="python">
-				fh = open('test_file.txt', 'r')
+                # Alternatively, read all lines into a list using readlines():
+                with open('test_file.txt', 'r') as fh:
+                    lines = fh.readlines()
+                    for line in lines:
+                        print(line.strip())  # Strip to remove newline character
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>memory-efficient read</h3>
+        <dl class="fa">
+            <dt>To read large files safely line by line without consuming excessive memory, you can iterate over the file object itself. This approach ensures that only one line is loaded into memory at a time, which is memory-efficient:</dt>
+            <pre><code rel="Python" class="python">
+                with open('large_file.txt', 'r') as file:
+                for line in file:
+                    # Process each line here
+                    print(line.strip())  # Example: Print the line (stripped of newline characters)
 
-				for l in fh.readlines():
-					print(l, end='')
+            </code></pre>
+        </dl>
+    </section>
+    <section id="writing-to-files"><h3>Writing to Files</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>There are different modes for opening files for writing:</dt>
+            <dd>'w': Write mode. Opens the file for writing. If the file exists, it truncates it (<span class="note">removes its contents</span>) before writing. If the file does not exist, it creates a new file.</dd>
+            <dd>'a': Append mode. Opens the file for writing, but appends new data to the end of the existing file. If the file does not exist, it creates a new file.</dd>
+            <dt><b>Writing Data</b>: Once the file is opened, you can use methods like write() or writelines() to write data to the file.</dt>
+            <dd><code>write()</code>: Writes a string to the file.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                with open("test_file.txt", mode="w", encoding="utf-8") as fh:
+                    fh.write("Hello, world!\n")
+                    fh.write("This is a new line.")
 
-				fh.close()
-			</code></pre>
-			<dt>Iterate over the file object itself. This is memory efficient, fast, and leads to simple code:</dt>
-			<pre><code rel="Python" class="python">
-				fh = open('test_file.txt', 'r')
+                #output:
+                #Hello, world!
+                #This is a new line.
+            </code></pre>
+            <dd><code>writelines()</code>: Writes a list of strings to the file, without adding any line separators.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                data = ['Hello, world!', 'This is a new line.']
+                lines = [f"{line}\n" for line in data]
 
-				for l in fh:
-					print(l, end='')
+                with open("test_file.txt", mode="w", encoding="utf-8") as fh:
+                    fh.writelines(lines)
+            </code></pre>
+            <dt>Note that, you must provide new line separator.</dt>
+        </dl>
+    </section>
+    <section><h3>Error Handling</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>When writing to files, it's crucial to handle exceptions that may occur, such as PermissionError or FileNotFoundError.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                try:
+                    with open("test_file.txt", mode="w", encoding="utf-8") as fh:
+                        fh.write("Hello, world!")
+                except FileNotFoundError:
+                    print("File not found.")
+                except PermissionError:
+                    print("Permission denied.")
+            </code></pre>
+        </dl>
+    </section>
 
-				fh.close()
-			</code></pre>
-		</dl>
-	</section>
+    <section><h3>Remove a file </h3>
+      <dl class="fa">
+        <dt><code>os.remove(file_path)</code></dt>
+        <dd>Removes a file with the given file_path. Throws error if file did not exists </dd>
+        <pre><code rel="Python" class="python">
+            import os
 
-	<section><h3>Write to a file</h3>
-	  <dl class="fa">
-		<dt><code>fh.write(str)</code></dt>
-		<dd>Writes a string to the file. There is no return value</dd>
-		<dt><code>fh.writelines(sequence)</code></dt>
-		<dd>Writes a sequence of strings to the file. The sequence can be any iterable object producing strings, typically a list of strings.</dd>
-	  </dl>
-	</section>
+            # Specify the file path
+            file_path = "test_file.txt"
 
-	<section><h3>Remove a file </h3>
-	  <dl class="fa">
-		<dt><code>os.remove(file_path)</code></dt>
-		<dd>Removes a file with the given file_path </dd>
-		<pre><code rel="Python" class="python">
-			os.remove('test_file.txt')
-		</code></pre>
-	  </dl>
-	</section>
-
-	<section><h3>the <code>with</code> statement</h3>
-		<dl class="fa">
-			<dt>It is good practice to use the <code>with</code> keyword when dealing with file objects</dt>
-			<dt>The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point</dt>
-			<dt>Using with is also much shorter than writing equivalent try-finally blocks</dt>
-			<pre><code rel="Syntax" class="python" data-noescape>
-				with expression as identifier :
-					statement...
-			</code></pre>
-			<pre><code rel="Example" class="python">
-				with open("test.txt") as fh:
-					data = fh.read()
-					# do something with data
-			</code></pre>
-			<dt>Reference: <a href="https://docs.python.org/3/reference/compound_stmts.html#with">The with statement</a> @python.org</dt>
-		</dl>
-	</section>
-
-	<section><h3>Resources</h3>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">Reading and Writing Files</a></dt>
-			<dt><a href="https://www.tutorialspoint.com/python/file_methods.htm">Python File Methods</a></dt>
-		</dl>
-	</section>
+            # Check if the file exists before attempting to remove it
+            if os.path.exists(file_path):
+                # Remove the file
+                os.remove(file_path)
+                print(f"{file_path} has been successfully removed.")
+            else:
+                print(f"{file_path} does not exist.")
+        </code></pre>
+      </dl>
+    </section>
+    <section><h3>Resources</h3>
+        <dl class="fa">
+            <dt><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">Reading and Writing Files</a></dt>
+        </dl>
+    </section>
 </section>
 
-<!-- <section id="checkIfFileFolderExists"><h1>Check if file/folder exists</h1></section>
-<section><h2>Check if file/folder exists</h2>
-	<dl class="fa">
-		<dt>exists() method is used to check whether specific file or directory exists or not. It is also used to check if a path refers to any open file descriptor or not. It returns boolean value true if file exists and returns false otherwise. It is used with os module and os.path sub module as os.path.exists(path).</dt>
-	</dl>
-</section> -->
 
 <!--
 <section data-min="20"><h1>stat system call</h1></section>
 <section><h2 class="advanced">stat system call</h2>
   <section><h3>Syntax</h3>
-  	<pre><code rel="Python" class="python">
-  		os.stat(path, *, dir_fd=None, follow_symlinks=True)
-  	</code></pre>
-  	<dl class="fa">
-  		<dt>Get the status of a file or a file descriptor. Perform the equivalent of a stat() system call on the given path.</dt>
-  		<dt><b>path</b> may be specified as either a string or bytes – directly or indirectly through the PathLike interface – or as an open file descriptor.</dt>
-  		<dt>Return a <a href="https://docs.python.org/3/library/os.html#os.stat_result">stat_result object</a>.</dt>
-  		<dt>More on <a href="https://docs.python.org/3/library/os.html#os.stat">os.stat</a> @python docs</dt>
-  	</dl>
+      <pre><code rel="Python" class="python">
+          os.stat(path, *, dir_fd=None, follow_symlinks=True)
+      </code></pre>
+      <dl class="fa">
+          <dt>Get the status of a file or a file descriptor. Perform the equivalent of a stat() system call on the given path.</dt>
+          <dt><b>path</b> may be specified as either a string or bytes – directly or indirectly through the PathLike interface – or as an open file descriptor.</dt>
+          <dt>Return a <a href="https://docs.python.org/3/library/os.html#os.stat_result">stat_result object</a>.</dt>
+          <dt>More on <a href="https://docs.python.org/3/library/os.html#os.stat">os.stat</a> @python docs</dt>
+      </dl>
   </section>
   <section style="font-size: .8em"><h3>Properties && Methods</h3>
-  	<dl class="fa">
-  		<dt><span class="note">st_mode</span> − protection bits.</dt>
-  		<dt><span class="note">st_ino</span> − inode number.</dt>
-  		<dt><span class="note">st_dev</span> − device.</dt>
-  		<dt><span class="note">st_nlink</span> − number of hard links.</dt>
-  		<dt><span class="note">st_uid</span> − user id of owner.</dt>
-  		<dt><span class="note">st_gid</span> − group id of owner.</dt>
-  		<dt><span class="note">st_size</span> − size of file, in bytes.</dt>
-  		<dt><span class="note">st_atime</span> − time of most recent access.</dt>
-  		<dt><span class="note">st_mtime</span> − time of most recent content modification.</dt>
-  		<dt><span class="note">st_ctime</span> − time of most recent metadata change.</dt>
-  	</dl>
+      <dl class="fa">
+          <dt><span class="note">st_mode</span> − protection bits.</dt>
+          <dt><span class="note">st_ino</span> − inode number.</dt>
+          <dt><span class="note">st_dev</span> − device.</dt>
+          <dt><span class="note">st_nlink</span> − number of hard links.</dt>
+          <dt><span class="note">st_uid</span> − user id of owner.</dt>
+          <dt><span class="note">st_gid</span> − group id of owner.</dt>
+          <dt><span class="note">st_size</span> − size of file, in bytes.</dt>
+          <dt><span class="note">st_atime</span> − time of most recent access.</dt>
+          <dt><span class="note">st_mtime</span> − time of most recent content modification.</dt>
+          <dt><span class="note">st_ctime</span> − time of most recent metadata change.</dt>
+      </dl>
   </section>
 </section> -->
 
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Prerequisites</h2>
-	<dl class="fa">
-		<dt>The tasks bellow needs some test data.</dt>
-		<dt>You can download the <a href="Task_and_HW.zip">Task_and_HW.zip</a> in order to get the data and the pre-given folder structure.</dt>
-	</dl>
+    <dl class="fa">
+        <dt>The tasks bellow needs some test data.</dt>
+        <dt>You can download the <a href="Task_and_HW.zip">Task_and_HW.zip</a> in order to get the data and the pre-given folder structure.</dt>
+    </dl>
 </section>
 <section><h2>Task1: Simple Backup</h2>
-	<section><h3>The Task</h3>
-		<p>Create a simple backup function to archive the content in one folder (src) into other folder (dest), while setting a timestamp into dest filenames, as explained in the function docstring below</p>
-		<pre><code rel="Python" class="python">
-			def backup(src, dest):
-			  """Backup files in src folder into dest folder.
-				Do not remove the files in source folder.
-				To each file attach suffix with curent timestamp in the form
-				'2018-04-12_18-30-45'
+    <section><h3>The Task</h3>
+        <p>Create a simple backup function to archive the content in one folder (src) into other folder (dest), while setting a timestamp into dest filenames, as explained in the function docstring below</p>
+        <pre><code rel="Python" class="python">
+            def backup(src, dest):
+              """Backup files in src folder into dest folder.
+                Do not remove the files in source folder.
+                To each file attach suffix with curent timestamp in the form
+                '2018-04-12_18-30-45'
 
-			  Args:
-				  src (string): Source folder
-				  dest (string): Destination folder
+              Args:
+                  src (string): Source folder
+                  dest (string): Destination folder
 
-			  Example:
-				/src/track5.mp3 => /dest/track5.mp3_2018-04-12_18-30-45
-			  """
-		</code></pre>
-	</section>
-	<section><h3>Hints</h3>
-		<dl class="fa">
-			<dt>To get the current timestamp, you can use next function:</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			def get_timestamp():
-			  #get the current local date-time
-			  now = datetime.datetime.today()
+              Example:
+                /src/track5.mp3 => /dest/track5.mp3_2018-04-12_18-30-45
+              """
+        </code></pre>
+    </section>
+    <section><h3>Hints</h3>
+        <dl class="fa">
+            <dt>To get the current timestamp, you can use next function:</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            def get_timestamp():
+              #get the current local date-time
+              now = datetime.datetime.today()
 
-			  # get the timestamp as a string with given format
-			  timestamp = datetime.datetime.strftime(now, '%Y-%m-%d_%H_%M_%S')
+              # get the timestamp as a string with given format
+              timestamp = datetime.datetime.strftime(now, '%Y-%m-%d_%H_%M_%S')
 
-			  return timestamp
-		</code></pre>
-	</section>
-	<!-- <section><h3>Solution</h3>
-		<p>Note, that the solution, presented here is for exercise purpose. You do not want to use it in production code! Later, we will discuss the safer technique.</p>
-		<p><a href="https://pastebin.com/MAPV3P0M">Get the code!</a></p>
-	</section> -->
+              return timestamp
+        </code></pre>
+    </section>
+    <!-- <section><h3>Solution</h3>
+        <p>Note, that the solution, presented here is for exercise purpose. You do not want to use it in production code! Later, we will discuss the safer technique.</p>
+        <p><a href="https://pastebin.com/MAPV3P0M">Get the code!</a></p>
+    </section> -->
 </section>
 <section><h2>Task2: Simple Cataloger</h2>
-	<section><h3>The Task</h3>
-		<p>Distribute files in one folder (src) into a corresponding sub-folders,
-	according to their file-type, as explained in the function docstring bellow</p>
-		<pre><code rel="Python" class="python">
-			def cataloger(src):
-			"""Distribute files in the src folder into a corresponding sub-folders,
-			according to their file-type.
+    <section><h3>The Task</h3>
+        <p>Distribute files in one folder (src) into a corresponding sub-folders,
+    according to their file-type, as explained in the function docstring bellow</p>
+        <pre><code rel="Python" class="python">
+            def cataloger(src):
+            """Distribute files in the src folder into a corresponding sub-folders,
+            according to their file-type.
 
-			Each catalogue, is a subfolder made by a filename extension
+            Each catalogue, is a subfolder made by a filename extension
 
-			Examples:
-			 /data/notes1.txt => /data/txt/notes1.txt
-			 /data/notes2.txt => /data/txt/notes2.txt
-			 /data/picture1.png => /data/png/picture1.png
-			 /data/track1.mp3 => /data/mp3/track1.mp3
+            Examples:
+             /data/notes1.txt => /data/txt/notes1.txt
+             /data/notes2.txt => /data/txt/notes2.txt
+             /data/picture1.png => /data/png/picture1.png
+             /data/track1.mp3 => /data/mp3/track1.mp3
 
-			Args:
-				src (string): source folder
-			"""
-		</code></pre>
-	</section>
-	<section><h3>Hints</h3>
-		<dl class="fa">
-			<dt>To extract the file extension, you can use the <code>os.path.splitext()</code> method from the <a href="https://docs.python.org/3/library/os.path.html">os.path</a> module</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			import os.path
+            Args:
+                src (string): source folder
+            """
+        </code></pre>
+    </section>
+    <section><h3>Hints</h3>
+        <dl class="fa">
+            <dt>To extract the file extension, you can use the <code>os.path.splitext()</code> method from the <a href="https://docs.python.org/3/library/os.path.html">os.path</a> module</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            import os.path
 
-			filename = "/data/new/test.txt"
-			extension = os.path.splitext(filename)[1][1:]
+            filename = "/data/new/test.txt"
+            extension = os.path.splitext(filename)[1][1:]
 
-			print(extension)
-		</code></pre>
-	</section>
+            print(extension)
+        </code></pre>
+    </section>
 </section>
 
 <!-- <section><h3>Submission</h3>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=___MainSectionTitle___">progressbg.python.course@gmail.com</a></dt>
-	</dl>
+    <dl class="fa">
+        <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+        <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=___MainSectionTitle___">progressbg.python.course@gmail.com</a></dt>
+    </dl>
 </section> -->
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>

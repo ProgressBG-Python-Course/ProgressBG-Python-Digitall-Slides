@@ -34,3 +34,10 @@ import os
 # with open('test_file.txt', 'r') as fh:
 # 	for l in fh:
 # 		print(l, end='')
+
+
+data = ['Hello, world!', 'This is a new line.']
+lines = [f"{line}\n" for line in data]
+
+with open("test_file.txt", mode="w", encoding="utf-8") as fh:
+    fh.writelines(lines)
