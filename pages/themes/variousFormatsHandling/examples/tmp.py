@@ -1,19 +1,21 @@
-import json
+# import csv
 
-mylist = [1,2,3]
+# # Open the file
+# with open('sample_data.csv',newline='') as f:
+#     # Create a CSV reader:
+#     csv_reader = csv.reader(f)
 
-matrix = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9],
-]
+#     # skip header row:
+#     headers = next(csv_reader)
 
-prices = {
-    "apples":2.50,
-    "bananas":1.80,
-    "strawberry": 3.20
-}
+#     # print CSV data, sorted by "Price"
+#     for row in sorted(csv_reader, key=lambda a:a[1]):
+#         print(row)
 
-print('List :', json.dumps(mylist))
-print('Matrix :', json.dumps(matrix))
-print('Prices :', json.dumps(prices,indent=4))
+import csv
+
+with open('sample_data.csv', newline='') as f:
+    reader = csv.DictReader(f, delimiter=',')
+
+    for r in reader:
+        print(r)

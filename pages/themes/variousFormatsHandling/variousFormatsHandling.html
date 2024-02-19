@@ -255,8 +255,101 @@
     </section>
 </section>
 
-<section><h1>Parsing CSV</h1></section>
-<section><h2>Parsing CSV</h2>
+<section class="main-section-title" id="handling-csv-data-in-python"><h1>Handling CSV Data in Python</h1></section>
+<section class="sub-sections"><h2>Reading and Writing CSV Files</h2>
+    <section id="reading-and-writing-csv-files"><h3>Reading and Writing CSV Files</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Using the <a href="https://docs.python.org/3/library/csv.html">csv</a> Module</dt>
+            <dd>The <a href="https://docs.python.org/3/library/csv.html">csv</a> module in Python provides functionality to read and write CSV files.</dd>
+            <dd>We can use the <code>csv.reader</code> object to iterate over rows in a CSV file, and the <code>csv.writer</code> object to write data to a CSV file.</dd>
+            <dt>Example:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 55vh;">
+                import csv
+
+                # Reading CSV file
+                with open('data.csv', 'r') as file:
+                    csv_reader = csv.reader(file)
+                    for row in csv_reader:
+                        print(row)
+
+                # Writing CSV file
+                data = [
+                    ['Name', 'Age', 'City'],
+                    ['John', 30, 'New York'],
+                    ['Alice', 25, 'San Francisco']
+                ]
+                with open('output.csv', 'w', newline='') as file:
+                    csv_writer = csv.writer(file)
+                    csv_writer.writerows(data)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Parsing CSV: Example</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Let's have next data in "sample_data.csv" file:</dt>
+            <pre><code rel="sample_data.csv" class="python">
+                Symbol,Price,Date,Time,Change,Volume
+                "AA",39.48,"6/11/2007","9:36am",-0.18,181800
+                "AIG",71.38,"6/11/2007","9:36am",-0.15,195500
+                "AXP",62.58,"6/11/2007","9:36am",-0.46,935000
+                "BA",98.31,"6/11/2007","9:36am",+0.12,104800
+                "C",53.08,"6/11/2007","9:36am",-0.25,360900
+                "CAT",78.29,"6/11/2007","9:36am",-0.23,225400
+            </code></pre>
+            <dt>we can parse them with:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                import csv
+
+                # Open the file
+                with open('sample_data.csv',newline='') as f:
+                    # Create a CSV reader:
+                    csv_reader = csv.reader(f)
+
+                    # skip header row:
+                    headers = next(csv_reader)
+
+                    # print CSV data, sorted by "Price"
+                    for row in sorted(csv_reader, key=lambda a:a[1]):
+                        print(row)
+            </code></pre>
+        </dl>
+    </section>
+
+</section>
+<section class="sub-sections"><h2>Reading and Writing CSV Files with Dictionaries</h2>
+    <section id="reading-and-writing-csv-files-with-dictionaries"><h3>Reading and Writing CSV Files with Dictionaries</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Using the <a href="https://docs.python.org/3/library/csv.html#csv.DictReader">csv.DictReader</a> and <a href="https://docs.python.org/3/library/csv.html#csv.DictWriter">csv.DictWriter</a> Objects</dt>
+            <dd>The <a href="https://docs.python.org/3/library/csv.html#csv.DictReader">csv.DictReader</a> and <a href="https://docs.python.org/3/library/csv.html#csv.DictWriter">csv.DictWriter</a> objects provide a way to read and write CSV files using dictionaries.</dd>
+            <dd>This allows accessing columns by their header names, making it more convenient for data manipulation.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 60vh;">
+                import csv
+
+                # Reading CSV file with dictionaries
+                with open('data.csv', 'r') as file:
+                    csv_reader = csv.DictReader(file)
+                    for row in csv_reader:
+                        print(row)
+
+                # Writing CSV file with dictionaries
+                fieldnames = ['Name', 'Age', 'City']
+                data = [
+                    {'Name': 'John', 'Age': 30, 'City': 'New York'},
+                    {'Name': 'Alice', 'Age': 25, 'City': 'San Francisco'}
+                ]
+                with open('output_dict.csv', 'w', newline='') as file:
+                    csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerows(data)
+            </code></pre>
+        </dl>
+    </section>
+
+</section>
+
+
+<!-- <section><h1>Handling CSV Data in Python</h1></section>
+<section><h2>Handling CSV Data in Python</h2>
     <section><h3>Overview</h3>
         <dl class="fa" style="min-width:80vw">
             <dt><abbr>CSV</abbr><dfn id="CSV"><span>Comma</span><span>Separated</span><span>Values</span></dfn></dt>
@@ -269,17 +362,13 @@
         <dl class="fa" style="min-width:80vw">
             <dt><code><a href="https://docs.python.org/3/library/csv.html#csv.reader">csv.reader()</a></code></dt>
             <dd>Return a reader object which will iterate over lines in the given csvfile</dd>
+            <dt>All csv readers/writers objects can be given a Dialect and/or Formatting Parameters to tune the CSV parsing</dt>
+            <dd><a href="https://docs.python.org/3/library/csv.html#csv-fmt-params">Dialects and Formatting Parameters</a></dd>
             <dt>Algorithm:</dt>
             <dd>Open the file</dd>
             <dd>Create a CSV reader</dd>
             <dd>For every line (row) in the file, do something</dd>
-            <dt>If csvfile is a file object, it should be opened with newline=''</dt>
-        </dl>
-    </section>
-    <section><h3>Dialects and Formatting Parameters</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>All csv readers/writers objects can be given a Dialect and/or Formatting Parameters to tune the CSV parsing</dt>
-            <dt><a href="https://docs.python.org/3/library/csv.html#csv-fmt-params"></a></dt>
+
         </dl>
     </section>
     <section><h3>Parsing CSV - example 1 - sample_data.csv</h3>
@@ -396,7 +485,9 @@
                     print(r)
         </code></pre>
     </section>
-</section>
+</section> -->
+
+
 <!--
 <section><h1>Parsing XML</h1></section>
 <section><h2>Parsing XML</h2>
