@@ -466,6 +466,9 @@ section.copyright>.license{
 	color: rgba(250, 23,23, 0.3);
 	font-size: .8em;
 }
+.reveal section h1.advanced{
+	font-size: 2em;
+}
 
 /*custom tooltip:*/
 [data-tooltip]{
