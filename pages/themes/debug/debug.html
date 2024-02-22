@@ -322,6 +322,7 @@
             <dt>When you start VS Code Debugger for the first time, or if you don't yet have any configurations defined, you'll see a button to Run and Debug and a link to create a configuration (launch.json) file:</dt>
             <dt>A configuration drives VS Code's behavior during a debugging session. Configurations are defined in a launch.json file that's stored in a .vscode folder in your workspace.</dt>
             <dt>If you're only interested in debugging a Python script, the simplest way is to select the down-arrow next to the run button on the editor and select Python Debugger: Debug Python File.</dt>
+            <dt>Reference: <a href="https://code.visualstudio.com/docs/python/debugging#_initialize-configurations">Initialize configurations</a></dt>
         </dl>
     </section>
     <section><h3>Debug actions</h3>
@@ -385,44 +386,95 @@
 </section>
 
 
-<section class="sub-sections"><h2>Debugging Best Practices</h2>
-    <section id="writing_unit_tests"><h3>Writing Unit Tests</h3>
+
+<section class="main-section-title" id="unittest_debugging"><h1>Debugging Best Practices</h1></section>
+<section class="sub-sections"><h2>Writing Unit Tests</h2>
+    <section id="unittest_intro"><h3>What is Unit Testing?</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Unit Testing</dt>
-            <dd>Developing comprehensive unit tests helps identify and prevent bugs early in the development process.</dd>
+            <dt>Definition</dt>
+            <dd>Unit testing is a software testing technique where individual units or components of a software application are tested in isolation to ensure their correctness.</dd>
+
+            <dt>Benefits</dt>
+            <dd>Unit tests help detect and prevent bugs early in the development process, improve code quality, and facilitate code refactoring and maintenance.</dd>
+
+            <dt>unittest Module</dt>
+            <dd>In Python, the unittest module provides a framework for writing and running unit tests.</dd>
+        </dl>
+    </section>
+    <section id="writing_unittests"><h3>Writing Unit Tests in Pyhton</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>TestCase Class</dt>
+            <dd>Test cases are defined by subclassing unittest.TestCase.</dd>
+
+            <dt>Test Methods</dt>
+            <dd>Each test case can have one or more test methods that verify specific behaviors or functionalities of the code being tested.</dd>
+
+            <dt>Assertions</dt>
+            <dd>Assertions are used to verify expected outcomes and compare actual results with expected values.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import unittest
+
+                def add(x, y):
+                    return x + y
+
+                class TestAddFunction(unittest.TestCase):
+                    def test_add_positive_numbers(self):
+                        self.assertEqual(add(2, 3), 5)
+
+                    def test_add_negative_numbers(self):
+                        self.assertEqual(add(-2, -3), -5)
+
+                    def test_add_mixed_numbers(self):
+                        self.assertEqual(add(2, -3), -1)
+
+                if __name__ == &#39;__main__&#39;:
+                    # If the script is run directly (not imported as a module), the unit tests are executed with:
+                    unittest.main()
+
+                # ...
+                # ----------------------------------------------------------------------
+                # Ran 3 tests in 0.000s
+
+                # OK
+            </code></pre>
+        </dl>
+    </section>
+    <section id="running_unittests"><h3>Running Unit Tests</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Command Line</dt>
+            <dd>Unit tests can be executed from the command line using the `unittest` module's test discovery mechanism.</dd>
 
             <dt>Example</dt>
-            <dd>Writing unit tests for the factorial function:</dd>
+            <dd>Suppose we have a Python module named `test_example.py` containing unit test classes and methods:</dd>
 
             <!-- -------------- Optional code block for programming code --------------- -->
             <pre><code rel="Python" class="python" style="min-height: 1vh;">
                 import unittest
 
-                def factorial(n):
-                    if n == 0:
-                        return 1
-                    else:
-                        return n * factorial(n-1)
-
-                class TestFactorial(unittest.TestCase):
-                    def test_factorial(self):
-                        self.assertEqual(factorial(5), 120)
+                class TestExample(unittest.TestCase):
+                    def test_something(self):
+                        self.assertEqual(1 + 1, 2)
 
                 if __name__ == '__main__':
                     unittest.main()
             </code></pre>
+
+            <dt>Command Line</dt>
+            <dd>To run the unit tests from the command line:</dd>
+            <dd>`python -m unittest test_example.py`</dd>
+
+            <dt>IDE Integration</dt>
+            <dd>Most IDEs, such as Visual Studio Code, provide built-in support for running and debugging unit tests.</dd>
         </dl>
     </section>
-
-    <section id="using_version_control"><h3>Using Version Control</h3>
+</section>
+<section class="sub-sections"><h2>Using Version Control (git)</h2>
+    <section><h3>Overview</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Version Control Benefits</dt>
-            <dd>Version control systems like Git enable tracking changes, facilitating collaboration and error recovery.</dd>
+            <dt>Version control systems like Git enable tracking changes, facilitating collaboration and error recovery.</dt>
+            <dt>Branching in Git is a powerful feature that allows developers to create separate lines of development within a repository. One common use case of branching for debugging purposes is when you encounter a bug in your codebase that needs to be fixed without disrupting the main development workflow</dt>
+            <dt>Example - Create a Git Repository and Debug Branch:</dt>
 
-            <dt>Example</dt>
-            <dd>Using Git to manage code changes and revert to previous states:</dd>
-
-            <!-- -------------- Optional code block for programming code --------------- -->
             <pre><code rel="Terminal" class="bash" data-noescape>
                 # Initialize Git repository
                 git init
@@ -430,20 +482,28 @@
                 # Add files to staging area
                 git add .
 
-                # Commit changes
-                git commit -m "Initial commit"
+                # Commit changes into default branch (main)
+                git commit -m &quot;Initial commit&quot;
 
-                # Track changes and collaborate with team
-                git branch -b develop
-                git push origin develop
-
-                # Revert to previous commit if needed
-                git log --oneline  # Identify commit hash
-                git checkout <commit-hash>
+                # Create a new branch named "debug-authentication" specifically for debugging the authentication issue.
+                git branch -b debug-authentication
+            </code></pre>
+            <dt>Once the bug has been successfully debugged and fixed in the debug-authentication branch, you have two options:</dt>
+            <dd>If the changes are effective and have been thoroughly tested, you can merge the debug-authentication branch into the main development branch (master or develop).</dd>
+            <pre><code rel="Terminal" class="bash">
+                git checkout main
+                git merge debug-authentication
+            </code></pre>
+            <dd>If the changes are not effective or if you decide to take a different approach, you can discard the debug-authentication branch without affecting the main codebase.</dd>
+            <pre><code rel="Terminal" class="bash">
+                git checkout main
+                git branch -D debug-authentication
             </code></pre>
         </dl>
     </section>
 </section>
+
+
 
 
 <!-- <section><h1>Resources</h1></section>
