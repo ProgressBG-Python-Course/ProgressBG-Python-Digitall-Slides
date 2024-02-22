@@ -485,8 +485,8 @@
                 # Commit changes into default branch (main)
                 git commit -m &quot;Initial commit&quot;
 
-                # Create a new branch named "debug-authentication" specifically for debugging the authentication issue.
-                git branch -b debug-authentication
+                # Create and switch to a new branch named "debug-authentication" specifically for debugging the authentication issue.
+                git checkout -b debug-authentication
             </code></pre>
             <dt>Once the bug has been successfully debugged and fixed in the debug-authentication branch, you have two options:</dt>
             <dd>If the changes are effective and have been thoroughly tested, you can merge the debug-authentication branch into the main development branch (master or develop).</dd>
