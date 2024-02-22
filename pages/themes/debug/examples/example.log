@@ -1,0 +1,21 @@
+DEBUG:root:i: 1, result: 1
+DEBUG:root:i: 2, result: 2
+DEBUG:root:i: 3, result: 6
+DEBUG:root:i: 4, result: 24
+DEBUG:root:i: 5, result: 120
+2024-02-22 11:50:12,955 - INFO - Starting factorial calculation...
+2024-02-22 11:50:12,955 - DEBUG - i: 1, result: 1
+2024-02-22 11:50:12,955 - DEBUG - i: 2, result: 2
+2024-02-22 11:50:12,955 - DEBUG - i: 3, result: 6
+2024-02-22 11:50:12,955 - DEBUG - i: 4, result: 24
+2024-02-22 11:50:12,956 - DEBUG - i: 5, result: 120
+2024-02-22 11:50:12,956 - INFO - Factorial of 5 is: 120
+2024-02-22 11:51:59,342 - INFO - Starting factorial calculation...
+2024-02-22 11:51:59,344 - INFO - Factorial of 5 is: 120
+INFO:root:Starting factorial calculation...
+DEBUG:root:i: 1, result: 1
+DEBUG:root:i: 2, result: 2
+DEBUG:root:i: 3, result: 6
+DEBUG:root:i: 4, result: 24
+DEBUG:root:i: 5, result: 120
+INFO:root:Factorial of 5 is: 120

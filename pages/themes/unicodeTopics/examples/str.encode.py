@@ -1,7 +1,7 @@
 string = "123абв"
 
-str_in_utf = string.encode()
+bytes_string = string.encode()
 
-print("Byte object:", str_in_utf)
-print("Type: ",type(str_in_utf) )
-print("Length:",len(str_in_utf) )
+print("Byte object:", bytes_string)
+print("Type: ",type(bytes_string) )
+print("Length:",len(bytes_string) )

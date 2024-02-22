@@ -1,454 +1,591 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>unicodeTopics</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-	<!-- CUSTOM -->
-	<base target="_blank">
+    <meta charset="utf-8">
+    <title>unicodeTopics</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
+    <style>
+        .slides [data-background-image] h1{
+            font-size:3em;
+            color:#F1F1C8;
+            letter-spacing: .1em;
+            text-shadow:
+                1px 1px #362525,
+                -1px -1px #362525,
+                2px 2px #221a1a,
+                -2px -2px #221a1a,
+                3px 3px #1e1a1a,
+                -3px -3px #1e1a1a,
+                4px 4px #070707,
+                -4px -4px #070707,
+                5px 5px #221a1a,
+                -5px 5px #221a1a,
+                6px 6px #362525,
+                -6px -6px #362525
+        }
+    </style>
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#unicodeTopics" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#unicodeTopics" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
 ########################################################
 -->
 <section data-background-image="images/babel_tower_by_Kircher.jpg" data-background-size="100% 100%">
-	<a href="https://en.wikipedia.org/wiki/Tower_of_Babel#/media/File:Turris_Babel_by_Athanasius_Kircher.jpg">
-	<h1 style="font-size:3em;color:#F1F1C8; letter-spacing: .1em; text-shadow: 1px 1px #362525, 2px 2px #362525">Unicode in Python</h1></a></section>
+    <a href="https://en.wikipedia.org/wiki/Tower_of_Babel#/media/File:Turris_Babel_by_Athanasius_Kircher.jpg">
+    <h1>Unicode in Python</h1></a></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
+<section class="main-section-title"><h1>What encoding means?</h1></section>
+<section class="sub-sections"><h2>What encoding means?</h2>
+    <section>
+        <dl class="fa" style="min-width:80vw">
+            <dt>To store anything in a computer, you must first encode it, i.e. convert it to bytes. For example:</dt>
+            <dd>If you want to store music, you must first encode it using MP3, WAV, etc.</dd>
+            <dd>If you want to store a picture, you must first encode it using PNG, JPEG, etc.</dd>
+            <dd>If you want to store text, you must first encode it using ASCII, UTF-8, etc.</dd>
+        </dl>
+    </section>
+</section>
 
 <section><h1>Unicode Overview</h1></section>
 <section><h2>Unicode Overview</h2>
-	<section ><h3>The problem</h3>
-		<dl class="fa">
-			<dt>In the beginning (1963), there was only <a href="https://www.asciitable.com/">ASCII</a>. After that, a bunch of character encodings was used:</dt>
-			<dd><a href="https://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a></dd>
-			<dd><a href="https://en.wikipedia.org/wiki/KOI8-R">KOI8-R</a></dd>
-			<dd><a href="https://en.wikipedia.org/wiki/Windows-1251">Windows-1251</a></dd>
-			<dd><a href="https://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">many, many others...</a></dd>
-			<dt>And the mess begins...</dt>
-			<dd>in KOI8-R, the code '209' == 'я'</dd>
-			<dd>in Windows-1251, the code '209' == 'С'</dd>
-			<dd>in Windows-1252, the code '209' == 'Ñ'</dd>
-		</dl>
-	</section>
-	<section><h3>Unicode - The Solution</h3>
-		<dl class="fa">
-			<dt>Unicode encompasses virtually all characters used widely in computers today. As of version 11.0, Unicode contains a repertoire of over 137,000 characters covering 146 modern and historic scripts, as well as multiple symbol sets. Even <a href="https://en.wikipedia.org/wiki/Emoji#Unicode_blocks">Emoji</a>!</dt>
-			<dt><a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">List of Unicode characters</a> @wikipedia</dt>
-		</dl>
-	</section>
-	<section>
-		<div style="position: relative;">
-			<div style="font-size: 11em;letter-spacing:0em; color: #E2C7C7; position: absolute; top:-0.2em; left:0; right: 0;"><span>☕</span></div>
-			<div style="font-size: 3em;letter-spacing:3em; color: #C7C7E2; position:absolute; top:2em;left: 0; right: 0;">
-				<span>a</span><span>ă</span><span>я</span>
+    <section ><h3>The problem</h3>
+        <dl class="fa">
+            <dt>In the beginning (1963), there was only <a href="https://www.asciitable.com/">ASCII</a>. After that, a bunch of character encodings was used:</dt>
+            <dd><a href="https://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a></dd>
+            <dd><a href="https://en.wikipedia.org/wiki/KOI8-R">KOI8-R</a></dd>
+            <dd><a href="https://en.wikipedia.org/wiki/Windows-1251">Windows-1251</a></dd>
+            <dd><a href="https://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">many, many others...</a></dd>
+            <dt>And the mess begins...</dt>
+            <dd>in KOI8-R, the code '209' == 'я'</dd>
+            <dd>in Windows-1251, the code '209' == 'С'</dd>
+            <dd>in Windows-1252, the code '209' == 'Ñ'</dd>
+        </dl>
+    </section>
+    <section><h3>Unicode - The Solution</h3>
+        <dl class="fa">
+            <dt>Unicode encompasses virtually all characters used widely in computers today.</dt>
+            <dt>As of Unicode version 15.1, there are 149,878 characters with code points, covering 161 modern and historical scripts, as well as multiple symbol sets.</dt>
+            <dt>Even <a href="https://en.wikipedia.org/wiki/Emoji#Unicode_blocks">Emoji</a>!</dt>
+            <dt>Reference: <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">List of Unicode characters</a> @wikipedia</dt>
+        </dl>
+        <div style="position: relative; top:-3em; left: 9em;">
+			<div style="font-size: 7em;letter-spacing:0em; color: #E2C7C7; position: absolute; top:-0.4em; left:0; right: 0;"><span>☕</span></div>
+			<div style="font-size: 3em;letter-spacing:3em; color: #C7C7E2; position:absolute; ">
+				<span style="position:absolute; top:1em;left: 3em; bottom: 0;">a</span>
+				<span style="position:absolute; top:2em;left: 7.7em; top: 4em;">ă</span>
+				<span style="position:absolute; top:1em;left: 12em; bottom: 0;">я</span>
 			</div>
-			<div style="font-size: 4em;letter-spacing:.9em; color: #C7E2C7; position: absolute; top:3em; left:.3em; right: 0;"><span>ছ</span>𝄞</div>
-	</div>
-	</section>
-	<section><h3>Encoding</h3>
-		<dl class="fa">
-			<dt>A Unicode string is a sequence of code points, which are numbers from 0 through 0x10FFFF (1,114,111 decimal)</dt>
-			<dt>This sequence needs to be represented as a set of bytes (1 byte can store values from 0 to (2**8)-1) in memory</dt>
-			<dt class="note">The rules for translating a Unicode string into a sequence of bytes are called an <b>encoding</b></dt>
-			<dt><a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> is a variable width character encoding capable of encoding all valid code points in Unicode using one to four 8-bit bytes</dt>
-			<dd>It's the most popular encoding, used in contemporary software systems.</dd>
-		</dl>
-	</section>
+			<div style="font-size: 4em;letter-spacing:1.7em; color: #C7E2C7; position: absolute; top:1.5em; left:1.3em; right: 0;"><span>ছ</span>𝄞</div>
+		</div>
+    </section>
+    <section><h3>Unicode Encoding</h3>
+        <dl class="fa">
+            <dt>A Unicode string is a sequence of code points, which are numbers from 0 through 0x10FFFF (1,114,111 decimal)</dt>
+            <dt>This sequence needs to be represented as a set of bytes (1 byte can store values from 0 to (2**8)-1) in memory).</dt>
+            <dt class="note">The rules for translating a Unicode string into a sequence of bytes are called an <b>encoding</b></dt>
+            <dt>There are various unicode encodings ( UTF-8, UTF-16, UTF-32 and other), but most widely used is <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> which is a variable width character encoding capable of encoding all valid code points in Unicode using one to four bytes</dt>
+        </dl>
+    </section>
 </section>
 
 <section><h1>Python’s Unicode Support</h1></section>
 <section><h2>Python’s Unicode Support</h2>
-	<section>
-		<p style="font-size: 2em" class="note">Python3 represents strings in Unicode</p>
-		<p style="font-size: 1.8em">The default encoding for Python3 source code is <span class="note">UTF-8</span></p>
-	</section>
-	<section>
-		<p>Python 3 also supports Unicode characters in identifiers</p>
-		<pre><code rel="Python" class="python">
-			низ = "This is a normal Python string :ছ 𝄞 ☕"
-			print(низ)
-			# This is a normal Python string :ছ 𝄞 ☕
-		</code></pre>
-	</section>
-	<section><h3><code>ord()</code> and <code>chr()</code> functions</h3>
-		<dl class="fa">
-			<dt><code><a href="https://docs.python.org/3/library/functions.html#ord">ord(char)</a></code> - return an integer representing the Unicode code point of <em>char</em> given.</dt>
-			<dt><code><a href="https://docs.python.org/3/library/functions.html#chr">chr(i)</a></code> - return the string representing a character whose Unicode code point is the integer i</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			print( ord('я') )
-			# 1103
-			print( chr(1103) )
-			# я
-		</code></pre>
-	</section>
-	<section><h3>Unicode symbols in Python strings</h3>
-		<dl class="fa">
-			<dt>You can use the unicode symbols directly in strings, or, you can enter them using escape sequences</dt>
-			<dt>Example - Various ways to represent symbol <a href="https://unicode-table.com/en/0462/">Cyrillic Capital Letter Yat</a></dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			# Unicode symbol in string:
-			print("Ѣ")
+    <section>
+        <dl class="fa" style="min-width:80vw">
+            <dt>From Python3, default string encoding is UTF-8.</dt>
+            <dt>UTF-8 is also the default encoding for Python3 source code.</dt>
+            <dt>Python 3 also supports some Unicode characters in identifiers</dt>
+            <pre><code rel="Python" class="python">
+                низ = "This is a normal Python string :ছ 𝄞 ☕"
+                print(низ)
+                # This is a normal Python string :ছ 𝄞 ☕
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3><code>ord()</code> and <code>chr()</code> functions</h3>
+        <dl class="fa">
+            <dt><code><a href="https://docs.python.org/3/library/functions.html#ord">ord(char)</a></code> - return an integer representing the Unicode code point of <em>char</em> given.</dt>
+            <dt><code><a href="https://docs.python.org/3/library/functions.html#chr">chr(i)</a></code> - return the string representing a character whose Unicode code point is the integer i</dt>
+        </dl>
+        <pre><code rel="Python" class="python">
+            print( ord('я') )
+            # 1103
+            print( chr(1103) )
+            # я
+        </code></pre>
+    </section>
+    <section><h3>Unicode symbols in Python strings</h3>
+        <dl class="fa">
+            <dt>You can use the unicode symbols directly in strings, or, you can enter them using escape sequences</dt>
+            <dt>Example - Various ways to represent symbol: <span style="font-size: 1.4em;">Ѣ</span></dt>
+            <!-- (<a href="https://unicode-table.com/en/0462/">Cyrillic Capital Letter Yat</a>) -->
+        </dl>
+        <pre><code rel="Python" class="python">
+            # Unicode symbol in string:
+            print("Ѣ")
 
-			# Using the character name:
-			print("\N{Cyrillic Capital Letter Yat}")
+            # Using the character name:
+            print("\N{Cyrillic Capital Letter Yat}")
 
-			# Using a 16-bit hex value code point:
-			print("\u0462")
+            # Using a 16-bit hex value code point:
+            print("\u0462")
 
-			# Using a 32-bit hex value code point:
-			print("\U00000462")
-		</code></pre>
-	</section>
+            # Using a 32-bit hex value code point:
+            print("\U00000462")
+        </code></pre>
+    </section>
 </section>
 
 <section><h1>Encode-Decode</h1></section>
 <section id="encode-decode-flow"><h2>Encode-Decode Flow</h2>
-	<section>
-		<!-- <dl class="fa">
-			<dt>In byte streams, we have <b>only bytes</b>, but we can interpret them, i.e. to decode, as characters using  some character table</dt>
-
-		</dl> -->
-		<a href="images/Python_encode_decode.png"><img src="images/Python_encode_decode.png"></a>
-	</section>
+    <section>
+        <a href="images/Python_encode_decode.png"><img src="images/Python_encode_decode.png"></a>
+        <dl class="fa">
+            <dt>In byte streams, we have <b>only bytes</b>, but we can interpret them, i.e. to decode, as characters using  some character table</dt>
+        </dl>
+    </section>
 </section>
 
 <section><h1>encode() - convert String to Bytes</h1></section>
 <section><h2>convert String to Bytes</h2>
-	<section><h3><code>str.encode()</code> - syntax</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			str.encode(encoding="utf-8", errors="strict")
-		</code></pre>
-		<dl class="fa">
-			<dt>Return an encoded version of the string as a bytes object</dt>
-			<dt>Default encoding is 'utf-8'</dt>
-			<dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
-			<dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
-			<dt>More on str.encode(): <a href="https://docs.python.org/3/library/stdtypes.html#str.encode">str.encode @python3 docs</a></dt>
-		</dl>
-	</section>
-	<section><h3><code>str.encode()</code> - example</h3>
-		<pre><code rel="Python" class="python">
-			string = &quot;123абв&quot;
+    <section><h3><code>str.encode()</code> - syntax</h3>
+        <pre><code rel="Syntax" class="shell" data-noescape>
+            str.encode(encoding="utf-8", errors="strict")
+        </code></pre>
+        <dl class="fa">
+            <dt>Return an encoded version of the string as a bytes object</dt>
+            <dt>Default encoding is 'utf-8'</dt>
+            <dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
+            <dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
+            <dt>More on str.encode(): <a href="https://docs.python.org/3/library/stdtypes.html#str.encode">str.encode @python3 docs</a></dt>
+        </dl>
+    </section>
+    <section><h3><code>str.encode()</code> - example</h3>
+        <pre><code rel="Python" class="python">
+            string = "123абв"
 
-			str_in_utf = string.encode()
+            bytes_string = string.encode()
 
-			print(&quot;Byte object:&quot;, str_in_utf)
-			print(&quot;Type: &quot;,type(str_in_utf) )
-			print(&quot;Length:&quot;,len(str_in_utf) )
+            print("Byte object:", bytes_string)
+            print("Type: ",type(bytes_string) )
+            print("Length:",len(bytes_string) )
 
-			#Byte object: b'123\xd0\xb0\xd0\xb1\xd0\xb2'
-			#Type:  &lt;class 'bytes'&gt;
-			#Length: 9
-		</code></pre>
-		<p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
-	</section>
-	<section><h3>The <code>bytes</code> Object and <code>bytestring</code></h3>
-		<dl class="fa">
-			<dt>The <code>bytes</code> object represents an immutable sequence of integers in the range 0 <= x < 256.</dt>
-			<dt>A bytestring is a raw stream of bytes which can be read/write directly into/from memory.</dt>
-			<dt><b><code>bytestring</code> vs <code>str</code> in Python3</b></dt>
-			<dd style="font-size: .8em">a <code class="note">bytestring</code> represents an immutable sequence of bytes, without implying any particular interpretation</dd>
-			<dd style="font-size: .8em"><code class="note">str</code> represents an immutable sequence of unicode codepoints,without implying any particular binary encoding</dd>
-			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
-		</dl>
-	</section>
+
+            #Byte object: b'123\xd0\xb0\xd0\xb1\xd0\xb2'
+            #Type:  &lt;class 'bytes'&gt;
+            #Length: 9
+        </code></pre>
+        <p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
+    </section>
+    <section><h3>UnicodeEncodeError - example</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>In next example we try to encode a string using ASCII. Convertion will raise UnicodeEncodeError for non-ASCII characters</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                text = 'Здравей, свят!'
+                try:
+                    ascii_encoded = text.encode('ascii')
+                    print("ASCII Encoded:", ascii_encoded)
+                except UnicodeEncodeError as e:
+                    print("Error:", e)
+
+                # Error: 'ascii' codec can't encode characters in position 0-6: ordinal not in range(128)
+            </code></pre>
+        </dl>
+    </section>
+
 </section>
 
 <section><h1>decode() - convert Bytes to String</h1></section>
 <section><h2>convert Bytes to String</h2>
-	<section><h3><code>bytes.decode()</code> - syntax</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			bytes.decode(encoding="utf-8", errors="strict")
-		</code></pre>
-		<dl class="fa">
-			<dt>Return a string decoded from the given bytes</dt>
-			<dt>Default encoding is 'utf-8'</dt>
-			<dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
-			<dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
-			<dt>More on bytes.decode(): <a href="https://docs.python.org/3/library/stdtypes.html#bytes.decode">bytes.decode @python3 docs</a></dt>
-			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
-		</dl>
-	</section>
-	<section><h3><code>bytes.decode()</code> - example</h3>
-		<pre><code rel="Python" class="python">
-			str_in_bytes =  b'123\xd0\xb0\xd0\xb1\xd0\xb2'
-			str_in_utf8 = str_in_bytes.decode()
+    <section><h3><code>bytes.decode()</code> - syntax</h3>
+        <pre><code rel="Syntax" class="shell" data-noescape>
+            bytes.decode(encoding="utf-8", errors="strict")
+        </code></pre>
+        <dl class="fa">
+            <dt>Return a string decoded from the given bytes</dt>
+            <dt>Default encoding is 'utf-8'</dt>
+            <dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
+            <dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
+            <dt>More on bytes.decode(): <a href="https://docs.python.org/3/library/stdtypes.html#bytes.decode">bytes.decode @python3 docs</a></dt>
+        </dl>
+    </section>
+    <section><h3><code>bytes.decode()</code> - example</h3>
+        <pre><code rel="Python" class="python">
+            byte_string =  b&#39;\xd0\xb0\xd0\xb1\xd0\xb2&#39;
+            string = byte_string.decode()
 
-			print("String object:", str_in_utf8)
-			print("Type: ",type(str_in_utf8) )
-			print("Length:",len(str_in_utf8) )
+            print(&quot;String object:&quot;, string)
+            print(&quot;Type: &quot;,type(string) )
+            print(&quot;String length:&quot;,len(string) )
+            print(&quot;Byte_string length:&quot;,len(byte_string) )
 
-			String object: 123абв
-			Type:  <class 'str'>
-			Length: 6
-		</code></pre>
-		<p class="note">Note, that the len() of string object returns the number of characters, not the number of bytes decoded!</p>
-	</section>
+            # String object: абв
+            # Type:  &lt;class &#39;str&#39;&gt;
+            # String length: 3
+            # Byte_string length: 6
+        </code></pre>
+        <!-- <p class="note">Note, that the len() of string object returns the number of characters, not the number of bytes decoded!</p> -->
+    </section>
 </section>
 
-<section><h1>Example use-cases</h1></section>
-<section><h2>Example use-cases</h2>
-	<section><h3>encode/write examples</h3>
-		<dl class="fa">
-			<dt>Next two examples achieve a same goal - to save a Python string into text file, encoded as 'cp1251'</dt>
-			<dt>Thought, the write() method is conciser and clearer, I'm showing the encode() method, as well, as it could be used in other use-cases.</dt>
-		</dl>
-	</section>
-	<section><h3>Write a Python string into file, encoded to cp1251 bytes - using <code>str.encode()</code></h3>
-		<pre><code rel="encode_to_cp1251.py" class="python">
-			string = "АБВ 123 ИЙК ЩЮЯ"
+<section class="main-section-title"><h1>The <code>bytes object</code></h1></section>
+<section class="sub-sections"><h2>The <code>bytes object</code></h2>
+    <section><h3>Bytes Object</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>A bytes object is a built-in data type in Python representing a sequence of bytes.</dt>
+            <dt>Bytes objects are created using the <code>bytes()</code> constructor or by using a bytes literal prefixed with <code>b</code> (bytes string).</dt>
+            <dt>Bytes objects are immutable (cannot be changed after creation).</dt>
+            <dt>They are typically used to store raw binary data, such as images, audio files, or network packets.</dt>
+            <dt>Example:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 60vh;">
+                # Define a byte string
+                byte_string = b'Hello'
+                print("Byte String:", byte_string)
 
-			# open a file handler for writing in binary mode"
-			with open("encode_to_cp1251.txt", "w+b") as fh:
-			  bytes_sequence = string.encode(encoding="cp1251")
-			  fh.write(bytes_sequence)
+                # Create a bytes object with the same bytes as in byte string above
+                byte_data = bytes([72, 101, 108, 108, 111])
+                print("Bytes Object:", byte_data)
 
-			# now re-open the file: encode_to_cp1251.txt with encoding cp1251(windows-1251)
-		</code></pre>
-		<p>Usually, for such task, you would like to use the open() in text mode with encoding option, as given in next slide</p>
-	</section>
-	<section><h3>Write a Python string into file, encoded to cp1251 bytes - using <code>open(filename, mode, encoding)</code></h3>
-		<pre><code rel="write_to_cp1251.py" class="python">
-			string = "АБВ 123 ИЙК ЩЮЯ"
+                # Check if both objects contain the same bytes
+                if byte_string == byte_data:
+                    print("The byte string and the bytes object contain the same sequence of bytes.")
+                else:
+                    print("The byte string and the bytes object do not contain the same sequence of bytes.")
 
-			# open a file for writing in text mode, with encoding="cp1251" "
-			with open("write_to_cp1251.txt", "w+", encoding="cp1251") as fh:
-			  fh.write(string)
 
-			# now re-open the file: write_to_cp1251.txt with encoding cp1251(windows-1251)
-		</code></pre>
-	</section>
-
-	<section><h3>decode/read examples</h3>
-		<dl class="fa">
-			<dt>Next two examples achieve a same goal - to read from text file, encoded as 'cp1251'</dt>
-			<dt>Thought, the read() method is conciser and clearer, I'm showing the decode() method, as well, as it could be used in other use-cases.</dt>
-		</dl>
-	</section>
-	<section><h3>Read a cp1251 encoded file into Python string - using <code>str.decode()</code></h3>
-		<pre><code rel="decode_from_windows-1251.py" class="python">
-			win1251file = "encode_to_cp1251.txt"
-
-			# open a file handler for reading in binary mode"
-			with open(win1251file, "r+b") as f:
-			    bytestring = f.read()
-
-			    decoded_string = bytestring.decode(encoding="cp1251")
-			    print(decoded_string)
-
-			    # АБВ 123 ИЙК ЩЮЯ
-		</code></pre>
-	</section>
-	<section><h3>Read a cp1251 encoded file into Python string - using <code>open(filename, mode, encoding)</code></h3>
-		<pre><code rel="read_from_windows-1251.py" class="python">
-			win1251file = "write_to_cp1251.txt"
-
-			# open a file handler for reading in text mode, with encoding="cp1251""
-			with open(win1251file, "r", encoding="cp1251") as f:
-			    print(f.read())
-		</code></pre>
-	</section>
-	<section><h3>base64.b64encode demo</h3>
-		<p><a href="https://docs.python.org/3/library/base64.html#base64.b64encode">base64.b64encode</a></p>
-		<pre><code rel="Python3" class="python">
-			import base64
-
-			passwd = 'abracadabra'
-
-			# base64 needs a byte string
-			# encoded = base64.b64encode(b'data to be encoded')
-
-			passwd_bytes = passwd.encode()
-			passwd_b64 = base64.b64encode(passwd_bytes)
-
-			print(f'passwd_b64: {passwd_b64}')
-			# passwd_b64: b'YWJyYWNhZGFicmE='
-		</code></pre>
-	</section>
+                # Byte String: b'Hello'
+                # Bytes Object: b'Hello'
+                # The byte string and the bytes object contain the same sequence of bytes.
+            </code></pre>
+            <dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
+        </dl>
+    </section>
 </section>
 
-<!-- <section><h1>___MainSectionTitle___</h1></section>
-<section><h2>___MainSectionTitle___</h2>
-	<section><h3>___MainSectionSubTitle___</h3></section>
+<section><h1>Encode/decode examples and use-cases</h1></section>
+<section><h2>Encode/decode examples and use-cases</h2>
+    <section><h3>encode/write examples</h3>
+        <dl class="fa">
+            <dt>Next two examples achieve a same goal - to save a Python string into text file, encoded as 'cp1251'</dt>
+            <dt>Usually, for such task, you would like to use the open() in text mode with encoding option</dt>
+            <pre><code rel="Python" class="python">
+                string = "Петър плет плете"
+
+                # open a file for writing in text mode, with encoding="cp1251" "
+                with open("write_to_cp1251.txt", "w", encoding="cp1251") as fh:
+                    fh.write(string)
+            </code></pre>
+            <dt>Using <code>encode()</code> method</dt>
+            <pre><code rel="Python" class="python">
+                string = "Петър плет плете"
+
+                # open a file handler for writing in binary mode"
+                with open("encode_to_cp1251.txt", "w+b") as fh:
+                    bytes_sequence = string.encode(encoding="cp1251")
+                    fh.write(bytes_sequence)
+            </code></pre>
+            <dt>Note, that if you open the txt files in VSCode (which by default uses UTF-8), you'll see "����� ���� �����".</dt>
+            <dd>But you can tell (CTRL+SHIFT+P) VSCode to "Change File Encoding"=>"Reopen with Encoding" and select from encoding list "Cyrillic Windows-1251</dd>
+        </dl>
+    </section>
+    <section><h3>decode/read examples</h3>
+        <dl class="fa">
+            <dt>Next two examples achieve a same goal - to read from text file, encoded as 'cp1251'</dt>
+            <dt>Usually, for such task, you would like to use the open() in text mode with encoding option</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                filename = "write_to_cp1251.txt"
+
+                # open a file handler for reading in text mode, with encoding="cp1251""
+                with open(filename, "r", encoding="cp1251") as f:
+                    print(f.read())
+
+                # Петър плет плете
+            </code></pre>
+            <dt>Using <code>decode()</code> method</dt>
+            <pre><code rel="Python" class="python" style="min-height: 10vh;">
+                filename = "write_to_cp1251.txt"
+
+                # open a file handler for reading in binary mode"
+                with open(filename, "r+b") as f:
+                    bytestring = f.read()
+
+                    decoded_string = bytestring.decode(encoding="cp1251")
+                    print(decoded_string)
+
+                # Петър плет плете
+            </code></pre>
+        </dl>
+    </section>
 </section>
- -->
+
+
+<section class="main-section-title"><h1 class="advanced">Base64</h1></section>
+<section class="sub-sections"><h2 class="advanced">Base64</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. </dt>
+            <dt>It is commonly used to encode binary data, such as images, audio files, or binary protocol messages, into a format that is suitable for transmission over text-based channels, such as email or HTTP.</dt>
+            <dt>Base64 encoding is not a form of encryption or compression; it is simply a way to represent binary data using printable ASCII characters. Base64-encoded data can be easily decoded back to its original binary form.</dt>
+            <dt class="advanced">In Base64 encoding, each group of three bytes of input data is mapped to four ASCII characters. The resulting Base64-encoded string may contain alphanumeric characters, plus two additional characters (usually + and /) for encoding, along with an optional padding character (=) at the end to ensure that the length of the encoded string is a multiple of four.</dt>
+        </dl>
+    </section>
+    <section><h3>base64: encode-decode in Python</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Python's <a href="https://docs.python.org/3/library/base64.html#module-base64">base64</a> module provides:</dt>
+            <dd>encoding bytes-like objects to ASCII bytes (<a href="https://docs.python.org/3/library/base64.html#base64.b64encode">base64.b64encode()</a> )</dd>
+            <dd>decoding bytes-like objects or strings containing ASCII to bytes (<a href="https://docs.python.org/3/library/base64.html#base64.b64decode">base64.b64decode()</a> )</dd>
+            <dt>Example</dt>
+            <pre><code rel="Python" class="python" style="min-height: 49vh;">
+                import base64
+
+                # base64 needs binary data:
+                data_bytes = b'abracadabra'
+
+                # encoding binary data to Base64
+                data_base64 = base64.b64encode(data_bytes)
+                print(f'data_base64: {data_base64}')
+
+                # decoding Base64-encoded data back to binary
+                decoded_data_bytes = base64.b64decode(data_base64)
+                print("Decoded:", decoded_data_bytes)
+
+                # data_base64: b'YWJyYWNhZGFicmE='
+                # Decoded: b'abracadabra'
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Popular use cases for encoding data in Base64</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt><b>Email Attachments</b>: Email systems typically transmit messages using plain text. When attaching binary files (such as images or documents) to an email, these files are Base64 encoded to ensure they can be safely transmitted as part of the email message.</dt>
+
+            <dt><b>HTTP Transfers</b>: While HTTP is primarily a text-based protocol, it supports the transmission of binary data using techniques like MIME encoding. Base64 encoding is often used to represent binary data within HTTP messages, such as when uploading files via HTML forms or when transferring binary data in API requests and responses.</dt>
+            <dt><b>Data URI Schemes</b>: Data URIs allow resources to be embedded directly into HTML or CSS documents. When embedding binary data (such as images or fonts) using data URIs, the data is typically Base64 encoded to ensure compatibility and portability across different browsers and platforms.</dt>
+            <dt><b>Authentication Credentials</b>: Base64 encoding is commonly used to encode authentication credentials (such as usernames and passwords) for HTTP Basic Authentication. While Base64 encoding does not provide encryption, it is used to represent the credentials as a text string that can be included in HTTP headers.</dt>
+            <dt><b>Serialization Formats</b>: Base64 encoding is often used in serialization formats (such as JSON or XML) to represent binary data as a string value. This allows binary data to be included in structured data formats without requiring special handling or escaping.</dt>
+        </dl>
+    </section>
+    <section><h3>Example: de-serialization of an image</h3>
+        <p>Scenario: we have received a json file, containing image encoded in base64 string and we need to save it as image</p>
+        <pre><code rel="Python" class="python" style="min-height: 96vh;">
+            import json
+            import base64
+
+            def save_image_bytes_from_json(data_json):
+
+                data = json.loads(data_json)
+                image_base64 = data['image']
+
+                # Decode Base64 data
+                image_bytes = base64.b64decode(image_base64)
+
+                # Save decoded image to a file
+                with open(data['filename'], "wb") as img_file:
+                    img_file.write(image_bytes)
+
+                print(f'{data["filename"]} saved!')
+
+            # JSON data containing image information
+            data_json = """
+            {
+                "filename": "example_image.jpg",
+                "type": "image/png",
+                "image": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAcElEQVR4nGI5y9PLAAOfJ3HB2VeWS8HZH7hmwNlMDCQC2mtgOb/hKJyzIy4Lzrbdpg5nV8Tcp6OTSNbAKMk+Dc7JUV0IZ7+PmwRn34zgpKOTSI8H2QUucE7q329wtv2hWDj7D6sCHZ1EsgZAAAAA//9eCxes6NHYOQAAAABJRU5ErkJggg==",
+                "size": 152347,
+                "url": "https://yulvil.github.io/gopherjs/02/"
+            }
+            """
+
+            save_image_bytes_from_json(data_json)
+
+        </code></pre>
+    </section>
+</section>
+
 <section><h1>Resources</h1></section>
 <section><h2>Resources</h2>
-	<section><h3>Texts</h3>
-		<dl class="fa">
-			<dt><a href="https://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> by Ned Batchelder</dt>
-			<dt><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></dt>
-			<dt><a href="https://docs.python.org/3.3/howto/unicode.html">Unicode HOWTO @python docs</a></dt>
-		</dl>
-	</section>
+    <section><h3>Texts</h3>
+        <dl class="fa">
+            <!-- <dt><a href="https://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> by Ned Batchelder</dt> -->
+            <dt><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></dt>
+            <dt><a href="https://docs.python.org/3.3/howto/unicode.html">Unicode HOWTO @python docs</a></dt>
+        </dl>
+    </section>
 </section>
 
 
 <section id="hw"><h1>Exercises</h1></section>
 <section id="guess_the_quotes"><h2>Task1: guess_the_quotes</h2>
-	<section><h3>The Task</h3>
-		<dl class="fa">
-			<dt>Given is next file: <a href="Task_and_HW/guess_the_quotes/quotes.txt">quotes.txt</a>, containing quotes in Cyrillic, from a famous writer. But, the file is encoded in <a href="https://en.wikipedia.org/wiki/KOI8-R">KOI8-R</a></dt>
-			<dt>Write a Python program, that will convert that file into Unicode, using the UTF8 encoding.</dt>
-			<dt>Now, you'll be able to open and read the text with your favourite editor</dt>
-		</dl>
-	</section>
+    <section><h3>The Task</h3>
+        <dl class="fa">
+            <dt>Given is next file: <a href="Task_and_HW/guess_the_quotes/quotes.txt">quotes.txt</a>, containing quotes in Cyrillic, from a famous writer. But, the file is encoded in <a href="https://en.wikipedia.org/wiki/KOI8-R">KOI8-R</a></dt>
+            <dt>Write a program: <code>koi8r_to_utf8.py</code>, which will receive an input file name as argument and will create an UTF encoded file with the same name, but with sufix "_utf8_" added (quotes_utf8_.txt).</dt>
+            <dt>Now, you'll be able to open and read the text with your favourite editor</dt>
+        </dl>
+    </section>
+    <section><h3>Program usage example</h3>
+        <pre><code rel="Terminal - Files before conversion" class="bash" data-noescape>
+            .
+            ├── koi8r_to_utf8.py
+            └── quotes.txt
+        </code></pre>
+        <pre><code rel="Terminal - run koi8r_to_utf8.py" class="bash" data-noescape>
+            $ python koi8r_to_utf8.py quotes.txt
+        </code></pre>
+        <pre><code rel="Terminal - Files after conversion" class="bash" data-noescape>
+            .
+            ├── koi8r_to_utf8.py
+            ├── quotes.txt
+            └── quotes_utf8_.txt
+        </code></pre>
+        <p>Make sure, that quotes_utf8_.txt is properly converted and readable!</p>
+    </section>
 </section>
+<!--
 <section id="cp1251_to_utf8"><h2>Task2: cp1251_to_utf8</h2>
-	<section><h3>The Task</h3>
-		<dl class="fa">
-			<dt>Imagine, you've downloaded a Bulgarian subtitles file, encoded in Windows-1251: <a href="Task_and_HW/cyr_subs_to_UTF/Silicon.Valley.sampleBGsubs.srt">Silicon.Valley.sampleBGsubs.srt</a></dt>
-			<dt>But you have to convert it in UTF8, as your player recognise only Unicode encoded subtitles</dt>
-			<dt> Write a program: <code>cp1251_to_utf8.py</code>, which will receive an input file name as argument and will create an UTF encoded file with the same name, but with sufix "_utf8_" added.</dt>
-		</dl>
-	</section>
-	<section><h3>Program usage example</h3>
-		<pre><code rel="Terminal - Files before conversion" class="bash" data-noescape>
-			.
-			├── cp1251_to_utf8.py
-			└── Silicon.Valley.sampleBGsubs.srt
-		</code></pre>
-		<pre><code rel="Terminal - run cp1251_to_utf8.py" class="bash" data-noescape>
-			$ python cp1251_to_utf8.py Silicon.Valley.sampleBGsubs.srt
-		</code></pre>
-		<pre><code rel="Terminal - Files after conversion" class="bash" data-noescape>
-			.
-			├── cp1251_to_utf8.py
-			├── Silicon.Valley.sampleBGsubs.srt
-			└── Silicon.Valley.sampleBGsubs_utf8_.srt
-		</code></pre>
-		<p>Make sure, that Silicon.Valley.sampleBGsubs_utf8_.srt is properly converted and readable!</p>
-	</section>
-</section>
-
-
-<section><h3>Submission</h3>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: unicodeTopics">progressbg.python.course@gmail.com</a></dt>
-	</dl>
-</section>
+    <section><h3>The Task</h3>
+        <dl class="fa">
+            <dt>Imagine, you've downloaded a Bulgarian subtitles file, encoded in Windows-1251: <a href="Task_and_HW/cyr_subs_to_UTF/Silicon.Valley.sampleBGsubs.srt">Silicon.Valley.sampleBGsubs.srt</a></dt>
+            <dd><a href="https://subsunacs.net/subtitles/Silicon_Valley_02x04-107212/"></a></dd>
+            <dt>But you have to convert it in UTF8, as your player recognise only Unicode encoded subtitles</dt>
+            <dt> Write a program: <code>cp1251_to_utf8.py</code>, which will receive an input file name as argument and will create an UTF encoded file with the same name, but with sufix "_utf8_" added.</dt>
+        </dl>
+    </section>
+    <section><h3>Program usage example</h3>
+        <pre><code rel="Terminal - Files before conversion" class="bash" data-noescape>
+            .
+            ├── cp1251_to_utf8.py
+            └── Silicon.Valley.sampleBGsubs.srt
+        </code></pre>
+        <pre><code rel="Terminal - run cp1251_to_utf8.py" class="bash" data-noescape>
+            $ python cp1251_to_utf8.py Silicon.Valley.sampleBGsubs.srt
+        </code></pre>
+        <pre><code rel="Terminal - Files after conversion" class="bash" data-noescape>
+            .
+            ├── cp1251_to_utf8.py
+            ├── Silicon.Valley.sampleBGsubs.srt
+            └── Silicon.Valley.sampleBGsubs_utf8_.srt
+        </code></pre>
+        <p>Make sure, that Silicon.Valley.sampleBGsubs_utf8_.srt is properly converted and readable!</p>
+    </section>
+</section> -->
 
 
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>
