@@ -3,10 +3,12 @@ import requests
 from typing import List
 
 def download_image(url:str)->None:
-	print(f'Downloading {url}')
+	# print(f'Downloading {url}')
 	response = requests.get(url)
 	if response.ok:
 		return response.content
+	else:
+		print(f'Can not download {url}')
 
 def write_to_file(filename:str, bytes:bytes):
 	with open(filename, 'wb') as fh:

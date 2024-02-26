@@ -24,7 +24,7 @@
 		"scope": "html",
 		"prefix": "codePython",
 		"body": [
-			"<pre><code rel=\"${1:Python}\" class=\"python\" style=\"min-height: 10vh;\">",
+			"<pre><code rel=\"${1:Python}\" class=\"python\" style=\"min-height: 1vh;\">",
 			"\t$0",
 			"</code></pre>"
 		],

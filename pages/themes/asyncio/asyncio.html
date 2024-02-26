@@ -1,49 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>asyncio</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-	<!-- CUSTOM -->
-	<base target="_blank">
+    <meta charset="utf-8">
+    <title>asyncio</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#___title___" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#___title___" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -51,367 +51,397 @@
 -->
 <section data-min-total="60"><h1>Async programming: asyncio</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 
-<section data-min="5"><h1>Asynchronous vs Synchronous vs Parallel Execution</h1></section>
-<section><h2>Asynchronous vs Synchronous vs Parallel Execution</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt class="note">Synchronous Execution</dt>
-			<dd>The code is executed sequentially. When a function is called, the next command waits until the function finished its work.</dd>
-			<dt class="note">Asynchronous Execution</dt>
-			<dd>A call to asynchronous function allows to continue to execute next command instead of waiting for a response.Once the called function returns a response, the program goes back to that function call and processes the response. </dd>
-			<dt class="note">Parallel Execution</dt>
-			<dd>Processing can be done simultaneously via multiple threads/processes, handled by the different CPU's threads/cores.</dd>
-		</dl>
-	</section>
+<section data-min="5"><h1>Asynchronous vs Synchronous Execution</h1></section>
+<section><h2>Asynchronous vs Synchronous Execution</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt><b>Synchronous Execution</b>:</dt>
+            <dd>The code is executed sequentially. When a function is called, the next command waits until the function finished its work.</dd>
+            <dd>This is a <span class="note">blocking</span> execution</dd>
+            <dt><b>Asynchronous Execution</b>:</dt>
+            <dd>A call to asynchronous function allows to continue to execute next command instead of waiting for a response. Once the called function returns a response, the program goes back to that function call and processes the response. </dd>
+            <dd>This is a <span class="note">non blocking</span> execution</dd>
+        </dl>
+    </section>
 </section>
 
 <section data-min="5"><h1>Coroutines</h1></section>
 <section><h2>Coroutines</h2>
-	<section><h3>Overview</h3>
-		<p>Asynchronous programming is achieved by using <span class="note">coroutines</span></p>
-		<a href="images/Coroutine.png"><img src="images/Coroutine.png"></a><br>
-		<a class="disclaimer" href="https:">image by wikipedia</a>
-	</section>
-	<section><h3>Subroutines vs Coroutines</h3>
-		<dl class="fa">
-			<dt><span class="note">Subroutine</span>: An instance of a subroutine have single entry point and only returns once. A subroutine <span class="note">does not hold state between invocations</span></dt>
-			<dt><span class="note">Coroutine (Asynchronous routine)</span>: can exit by calling other coroutines, which may later return to the point where they were invoked in the original coroutine. <span class="note">A coroutine instance holds state</span></dt>
-			<dt>I.e. a co-routine is able to “pause” while waiting on its ultimate result and let other co-routines run in the meantime.</dt>
-			<dt class="note">Synchronous and Asynchronous functions/callables are different types - you can't just mix and match them</dt>
-		</dl>
-	</section>
+    <section><h3>Overview</h3>
+        <p>Asynchronous programming  is achieved by using <span class="note">coroutines</span></p>
+        <a href="images/Coroutine.png"><img src="images/Coroutine.png"></a><br>
+        <a class="disclaimer" href="https:">image by wikipedia</a>
+    </section>
+    <section><h3>Subroutines vs Coroutines</h3>
+        <dl class="fa">
+            <dt><b>Subroutine</b>: An instance of a subroutine have single entry point and only returns once. A subroutine <span class="note">does not hold state between invocations</span></dt>
+            <dt><b>Coroutine</b> (Asynchronous routine): can exit by calling other coroutines, which may later return to the point where they were invoked in the original coroutine. <span class="note">A coroutine instance holds state</span></dt>
+            <dd>I.e. a co-routine is able to “pause” while waiting on its ultimate result and let other co-routines run in the meantime.</dd>
+            <dt class="note">Synchronous and Asynchronous functions/callables are different types - you can't just mix and match them</dt>
+        </dl>
+    </section>
 </section>
 
 <section data-min="30"><h1>Basics of Python asyncio library</h1></section>
 <section><h2>Basics of Python asyncio library</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>The <a href="https://docs.python.org/3/library/asyncio.html">asyncio</a> library (pep 3153) provides asynchronous i/o in python 3</dt>
-			<dt>A coroutine is defined by keyword <span class="note">async</span></dt>
-			<dt>The result of calling it is a coroutine object</dt>
-			<pre><code rel="Python" class="python">
-				async def couroutineA():
-					pass
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>The <a href="https://docs.python.org/3/library/asyncio.html">asyncio</a> library provides asynchronous I/O (Input/Output) in python 3</dt>
+            <dt>A coroutine is defined by keyword <span class="note">async</span></dt>
+            <dt>The result of calling it is a coroutine object</dt>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                async def couroutineA():
+                    pass
 
-				coroutineA_worker = coroutineA()
-				print(coroutineA_worker)
-			</code></pre>
-		</dl>
-	</section>
-	<section><h3>Using coroutines</h3>
-		<dl class="fa">
-			<dt>Inside a coroutine, we can use <code>var = await couroutineB()</code> to suspend the coroutineA and wait for the coroutineB to return.</dt>
-			<pre><code rel="Python" class="python">
-				async def couroutineA():
-					await coroutineB()
-			</code></pre>
-			<dt>A coroutine object may be created but isn't run until an event loop is running.</dt>
-			<dt>We can use <code>await</code> only on coroutines (i.e. functions defined with <code>async</code>).</dt>
-		</dl>
-	</section>
-	<section><h3>The <a href="https://docs.python.org/3/library/asyncio-eventloop.html">EventLoop</a></h3>
-		<a href="./images/Event-Loop.webp"><img src="./images/Event-Loop.webp" alt="Event-Loop.webp"></a>
-		<br>
-		<dl class="fa">
-			<dt>The event loop is the central execution device provided by asyncio. It provides multiple facilities, including</dt>
-			<dd>Registering, executing and cancelling delayed calls (timeouts).</dd>
-			<dd>Creating client and server transports for various kinds of communication.</dd>
-			<dd>Launching subprocesses and the associated transports for communication with an external program.</dd>
-			<dd>Delegating costly function calls to a pool of threads.</dd>
-		</dl>
-	</section>
-	<section><h3>Event-Loop Example</h3>
-		<pre><code rel="Python" class="python">
-			import asyncio
+                coroutineA_worker = couroutineA()
+                print(coroutineA_worker)
 
-			async def async_func(task_no):
-				print(f'{task_no} is started ...')
-				await asyncio.sleep(1)
-				print(f'{task_no} ends!')
+                # &lt;coroutine object couroutineA at 0x7fd91edf4b40&gt;
+                # sys:1: RuntimeWarning: coroutine &#39;couroutineA&#39; was never awaited
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Using coroutines</h3>
+        <dl class="fa">
+            <dt>Inside a coroutine, we can use <code>await couroutineB()</code> to suspend the coroutineA and wait for the coroutineB to return.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                async def couroutineA():
+                    await coroutineB()
+            </code></pre>
+            <dt>We can use <code>await</code> only on coroutines (i.e. functions defined with <code>async</code>).</dt>
+            <dt>A coroutine object may be created but isn't run until an event loop is running.</dt>
+        </dl>
+    </section>
+    <section id="WhatIsAnEventLoop"><h3>Event Loop</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>An event loop is a programming construct that waits for and dispatches events or messages in a program.</dt>
+            <dd>It manages the execution of tasks or callbacks in an asynchronous program.</dd>
+            <dt>Event Processing:</dt>
+            <dd>The event loop continuously checks for pending events or tasks.</dd>
+            <dt>Dispatching:</dt>
+            <dd>When an event or task is ready to be processed, the event loop dispatches it to the appropriate handler.</dd>
+            <dt>Execution:</dt>
+            <dd>The handler executes the task or callback associated with the event.</dd>
+            <dt>Completion:</dt>
+            <dd>Once the task is completed, the event loop moves on to the next event or task.</dd>
+        </dl>
+    </section>
+    <section id="BenefitsOfUsingAnEventLoop"><h3>Benefits of Using an Event Loop</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Asynchronous Execution:</dt>
+            <dd>Allows concurrent execution of multiple tasks without blocking.</dd>
+            <dt>Efficiency:</dt>
+            <dd>Maximizes CPU utilization by efficiently handling I/O-bound and CPU-bound tasks.</dd>
+            <dt>Simplicity:</dt>
+            <dd>Provides a structured approach to managing asynchronous programming.</dd>
+        </dl>
+    </section>
+    <section><h3>Example: asyncio in Python</h3>
+        <pre><code rel="Python" class="python" style="min-height: 80vh;">
+            import asyncio
 
-			async def main():
-				taskA = loop.create_task (async_func('taskA'))
-				taskB = loop.create_task(async_func('taskB'))
-				taskC = loop.create_task(async_func('taskC'))
-				await asyncio.wait([taskA,taskB,taskC])
+            async def async_func(task_no):
+                """ Asynchronous function to simulate a task, taking 1 second """
+                print(f'{task_no} is started ...')
+                await asyncio.sleep(1)
+                print(f'{task_no} ends!')
 
-			if __name__ == "__main__":
-				try:
-					loop = asyncio.get_event_loop()
-					loop.run_until_complete(main())
-				except :
-					pass
-		</code></pre>
-	</section>
-	<!-- <section><h3>simple example</h3></section> -->
+            async def main():
+                """  Main asynchronous function to run multiple tasks concurrently. """
+                taskA = asyncio.create_task(async_func('taskA'))
+                taskB = asyncio.create_task(async_func('taskB'))
+                taskC = asyncio.create_task(async_func('taskC'))
+                await asyncio.wait([taskA, taskB, taskC])
+
+            if __name__ == "__main__":
+                asyncio.run(main())
+
+
+            # taskA is started ...
+            # taskB is started ...
+            # taskC is started ...
+            # taskA ends!
+            # taskB ends!
+            # taskC ends!
+        </code></pre>
+    </section>
 </section>
 
 <section data-min="5"><h1>Async vs Sync example</h1></section>
 <section><h2>Async vs Sync example</h2>
-	<section><h3>Sync subroutines execution</h3>
-		<pre><code rel="sync_subroutines.py" class="python">
-			import time
+    <section><h3>Sync subroutines execution</h3>
+        <pre><code rel="Python" class="python" style="min-height: 90vh;">
+            import time
 
-			def subroutine_A():
-				print('subroutine_A starts!')
-				time.sleep(3)
-				print('subroutine_A completed!')
+            def sync_func(task_no):
+                """ Synchronous function to simulate a task, taking 1 second """
+                print(f'{task_no} is started ...')
+                time.sleep(1)
+                print(f'{task_no} ends!')
 
-			def subroutine_B():
-				print('subroutine_B starts!')
-				time.sleep(2)
-				print('subroutine_B completed!')
+            def main():
+                """  Main synchronous function to run multiple tasks. """
+                taskA = sync_func('taskA')
+                taskB = sync_func('taskB')
+                taskC = sync_func('taskC')
 
-			def main():
-				subroutine_A()
-				subroutine_B()
+            if __name__ == "__main__":
+                time_start = time.time()
+                main()
+                time_end = time.time()
 
+                print(f'Sync time: {time_end - time_start}')
 
-			time_start = time.time()
-			main()
-			time_end = time.time()
+            # taskA is started ...
+            # taskA ends!
+            # taskB is started ...
+            # taskB ends!
+            # taskC is started ...
+            # taskC ends!
+            # Sync time: 3.000988483428955
+        </code></pre>
+    </section>
+    <section><h3>Async coroutines execution</h3>
+        <pre><code rel="Python" class="python" style="min-height: 95vh;">
+            import asyncio
+            import time
 
-			print(f'Took {time_end - time_start}')
-		</code></pre>
-	</section>
-	<section><h3>Async coroutines execution</h3>
-		<pre><code rel="sync_subroutines.py" class="python">
-			import asyncio
-			import time
+            async def async_func(task_no):
+                """ Asynchronous function to simulate a task, taking 1 second """
+                print(f'{task_no} is started ...')
+                await asyncio.sleep(1)
+                print(f'{task_no} ends!')
 
-			async def coroutine_A():
-				print('coroutine_A starts!')
-				await asyncio.sleep(3)
-				print('coroutine_A completed!')
+            async def main():
+                """  Main asynchronous function to run multiple tasks concurrently. """
+                taskA = asyncio.create_task(async_func('taskA'))
+                taskB = asyncio.create_task(async_func('taskB'))
+                taskC = asyncio.create_task(async_func('taskC'))
+                await asyncio.wait([taskA, taskB, taskC])
 
-			async def coroutine_B():
-				print('coroutine_B starts!')
-				await asyncio.sleep(2)
-				print('coroutine_B completed!')
+            if __name__ == "__main__":
+                time_start = time.time()
+                asyncio.run(main())
+                time_end = time.time()
 
-			def main():
-				loop = asyncio.get_event_loop()
-				tasks = asyncio.gather(
-					coroutine_A(),
-					coroutine_B()
-				)
-				loop.run_until_complete(tasks)
-				loop.close()
+                print(f'Async time: {time_end - time_start}')
 
-			time_start = time.time()
-			main()
-			time_end = time.time()
-
-			print(f'Took {time_end - time_start}')
-		</code></pre>
-	</section>
+            # taskA is started ...
+            # taskB is started ...
+            # taskC is started ...
+            # taskA ends!
+            # taskB ends!
+            # taskC ends!
+            # Took 1.0023751258850098
+        </code></pre>
+    </section>
 </section>
 
-
+<!--
 <section data-min="15"><h1>An async consumer-producer example</h1></section>
 <section><h2>An async consumer-producer example</h2>
-	<section><h3>The pseudo code</h3>
-		<pre><code rel="Python" class="python">
-			var q := new queue
+    <section><h3>The pseudo code</h3>
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            var q := new queue
 
-			coroutine produce
-				loop
-					while q is not full
-							create some new items
-							add the items to q
-					yield to consume
+            coroutine produce
+                loop
+                    while q is not full
+                            create some new items
+                            add the items to q
+                    yield to consume
 
-			coroutine consume
-				loop
-					while q is not empty
-							remove some items from q
-							use the items
-					yield to produce
-		</code></pre>
-	</section>
-	<section><h3>The Python code</h3>
-		<pre><code rel="Python" class="python">
-			import asyncio
-			import random
+            coroutine consume
+                loop
+                    while q is not empty
+                            remove some items from q
+                            use the items
+                    yield to produce
+        </code></pre>
+    </section>
+    <section><h3>The Python code</h3>
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            import asyncio
+            import random
 
-			async def produce(queue, queue_capacity):
-				item = 1;
-				while queue_capacity:
-					# produce an item
-					print('producing {}/{}'.format(item, queue_capacity))
-					item +=1
+            async def produce(queue, queue_capacity):
+                item = 1;
+                while queue_capacity:
+                    # produce an item
+                    print('producing {}/{}'.format(item, queue_capacity))
+                    item +=1
 
-					# simulate i/o operation using sleep
-					await asyncio.sleep(random.random())
-
-
-					# put the item in the queue and decrease queue_capacity
-					queue_capacity -=1
-					await queue.put(item)
-
-				# indicate the producer is done
-				await queue.put(None)
+                    # simulate I/O operation using sleep
+                    await asyncio.sleep(random.random())
 
 
-			async def consume(queue):
-				while True:
-					# wait for an item from the producer
-					item = await queue.get()
-					if item is None:
-							# the producer emits None to indicate that it is done
-							break
+                    # put the item in the queue and decrease queue_capacity
+                    queue_capacity -=1
+                    await queue.put(item)
 
-					# process the item
-					print('consuming item {}...'.format(item))
+                # indicate the producer is done
+                await queue.put(None)
 
-					# simulate i/o operation using sleep
-					await asyncio.sleep(random.random())
 
-			queue_capacity = 10
-			loop = asyncio.get_event_loop()
-			queue = asyncio.Queue(loop=loop)
-			producer_worker = produce(queue, queue_capacity)
-			consumer_worker = consume(queue)
-			loop.run_until_complete(asyncio.gather(producer_worker, consumer_worker))
-			loop.close()
-		</code></pre>
-	</section>
-</section>
+            async def consume(queue):
+                while True:
+                    # wait for an item from the producer
+                    item = await queue.get()
+                    if item is None:
+                            # the producer emits None to indicate that it is done
+                            break
 
+                    # process the item
+                    print('consuming item {}...'.format(item))
+
+                    # simulate I/O operation using sleep
+                    await asyncio.sleep(random.random())
+
+            queue_capacity = 10
+            loop = asyncio.get_event_loop()
+            queue = asyncio.Queue(loop=loop)
+            producer_worker = produce(queue, queue_capacity)
+            consumer_worker = consume(queue)
+            loop.run_until_complete(asyncio.gather(producer_worker, consumer_worker))
+            loop.close()
+        </code></pre>
+    </section>
+</section> -->
+<!--
 <section data-min="10"><h1>Examples</h1></section>
 <section><h2>Examples</h2>
-	<section><h3>A pure async http request</h3>
-		<dl class="fa">
-			<dt>You can not use the standard <code>request</code> library, as it is synchronous.</dt>
-			<dd class="advanced">You can, if you executed in different thread, by BaseEventLoop.run_in_executor()</dd>
-			<dt>The module <a href="https://aiohttp.readthedocs.io/en/stable/">aiohttp</a> provides asynchronous functionality for such cases</dt>
-			<pre><code rel="Python" class="python" style="min-height: 50vh;">
-				import asyncio
-				import aiohttp
+    <section><h3>A pure async http request</h3>
+        <dl class="fa">
+            <dt>You can not use the standard <code>request</code> library, as it is synchronous.</dt>
+            <dd class="advanced">You can, if you executed in different thread, by BaseEventLoop.run_in_executor()</dd>
+            <dt>The module <a href="https://aiohttp.readthedocs.io/en/stable/">aiohttp</a> provides asynchronous functionality for such cases</dt>
+            <pre><code rel="Python" class="python" style="min-height: 50vh;">
+                import asyncio
+                import aiohttp
 
-				async def do_request():
-					async with aiohttp.request('GET', 'https://progressbg.net/') as response:
-						html = await response.read()
-						print(html.decode())
+                async def do_request():
+                    async with aiohttp.request('GET', 'https://progressbg.net/') as response:
+                        html = await response.read()
+                        print(html.decode())
 
 
-				# init event loop:
-				loop = asyncio.get_event_loop()
+                # init event loop:
+                loop = asyncio.get_event_loop()
 
-				# run tasks in event loop:
-				loop.run_until_complete(do_request())
-			</code></pre>
-		</dl>
-	</section>
-</section>
+                # run tasks in event loop:
+                loop.run_until_complete(do_request())
+            </code></pre>
+        </dl>
+    </section>
+</section> -->
 
 <section data-min="5"><h1>Resources</h1></section>
 <section><h2>Resources</h2>
-	<section><h3>Readings</h3>
-		<dl class="fa">
-			<dt><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a></dt>
-		</dl>
-	</section>
-	<section><h3>Video: Demystifying Python's Async and Await Keywords</h3>
-		<iframe width="1280" height="720" src="https://www.youtube.com/embed/F19R_M4Nay4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</section>
+    <section><h3>Readings</h3>
+        <dl class="fa">
+            <dt><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a></dt>
+        </dl>
+    </section>
+    <section><h3>Video: Demystifying Python's Async and Await Keywords</h3>
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/F19R_M4Nay4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 </section>
 
 <!--
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1</h2>
-	<section><h3>The Task</h3>
+    <section><h3>The Task</h3>
 
-	</section>
+    </section>
 </section>
 
 <section><h3>Submission</h3>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: ___title___">progressbg.python.course@gmail.com</a></dt>
-	</dl>
+    <dl class="fa">
+        <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+        <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: ___title___">progressbg.python.course@gmail.com</a></dt>
+    </dl>
 </section>
  -->
 
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>

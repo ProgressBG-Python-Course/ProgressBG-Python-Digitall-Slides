@@ -15,7 +15,6 @@
     },
 
     "spellright.language": [
-        "Bulgarian",
         "English (American)",
         "English (British)"
     ],
@@ -23,7 +22,9 @@
         "markdown",
         "latex",
         "plaintext",
-        "python"
+        "python",
+        "ini",
+        "html"
     ],
     "editor.indentSize": "tabSize",
     "diffEditor.ignoreTrimWhitespace": true,
