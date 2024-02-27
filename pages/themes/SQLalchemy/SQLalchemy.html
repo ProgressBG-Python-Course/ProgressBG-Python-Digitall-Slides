@@ -92,14 +92,14 @@
     </section>
     <section><h3>Analogy between Tables and Classes</h3>
         <pre><code rel="SQL" class="sql" data-noescape>
-            CREATE TABLE users (
+            CREATE TABLE user (
                 id serial primary key,
                 name character varying,
                 address character varying
             )
         </code></pre>
         <pre><code rel="Python" class="python">
-            class Users:
+            class User:
                 def __init__(self, name, address):
                     self.name = name
                     self.address = address
@@ -211,41 +211,130 @@
         </dl>
     </section>
 </section>
-<section><h3>Creating a table with Table </h3>
-    <dl class="fa" style="min-width:80vw">
-        <dt>You can define the table structure explicitly using the Table construct.</dt>
-        <pre><code rel="Python" class="python" style="min-height: 55vh;">
-            from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
 
-            # Create an engine
-            engine = create_engine('sqlite:///mydatabase.db')
+<section class="main-section-title"><h1>Create Tables</h1></section>
+<section class="sub-sections"><h2>Create Tables</h2>
+    <section><h3>Creating a table with Table </h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>You can define the table structure explicitly using the Table construct.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 55vh;">
+                from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
 
-            # Create a metadata object
-            metadata = MetaData()
+                # Create an engine
+                engine = create_engine('sqlite:///mydatabase.db')
 
-            # Define the table
-            users_table = Table('users', metadata,
-                Column('id', Integer, primary_key=True),
-                Column('name', String),
-                Column('age', Integer)
-            )
+                # Create a metadata object
+                metadata = MetaData()
 
-            # Create the table in the database associated with the provided engine
-            metadata.create_all(engine)
-        </code></pre>
-        <dt>This approach can be useful in situations where you prefer more control over the table definition.</dt>
-        <dt>However, using the declarative base (discussed in next slides) is often more convenient and is the recommended approach for most use cases.</dt>
-    </dl>
+                # Define the table
+                user_table = Table('user', metadata,
+                    Column('id', Integer, primary_key=True),
+                    Column('name', String),
+                    Column('age', Integer)
+                )
+
+                # Create the table in the database associated with the provided engine
+                metadata.create_all(engine)
+            </code></pre>
+            <dt>This approach can be useful in situations where you prefer more control over the table definition.</dt>
+            <dt>However, using the declarative base (discussed in next slides) is often more convenient and is the recommended approach for most use cases.</dt>
+        </dl>
+    </section>
+    <section id="DefiningDatabaseModels"><h3>Creating a Table with Declarative Base</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>SQLAlchemy uses a system known as Declarative, which allows us to create classes that include directives to describe the actual database table they will be mapped to.</dt>
+            <dt>Classes mapped using the Declarative system are defined in terms of a base class which maintains a catalog of classes and tables relative to that base - this is known as the declarative <code>Base</code> class.</dt>
+            <dd>In SQLAlchemy, database tables are represented as Python classes. Each table class inherits from the <code>Base</code> class and defines its columns as class attributes.</dd>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                from sqlalchemy import create_engine
+                from sqlalchemy.orm import declarative_base
+                from sqlalchemy import Column, Integer, String
+
+                # Create an engine
+                engine = create_engine('sqlite:///mydatabase.db')
+
+                # Declare a base using declarative_base
+                Base = declarative_base()
+
+                # Define the User class inheriting from Base
+                class User(Base):
+                    __tablename__ = 'user'
+                    id = Column(Integer, primary_key=True)
+                    name = Column(String)
+                    age = Column(Integer)
+
+                # Create the tables in the database
+                Base.metadata.create_all(engine)
+            </code></pre>
+            <dt>Note that the tables won't be created automatically just by defining the model. You'll need to create an engine, and call <code>Base.metadata.create_all(engine)</code></dt>
+        </dl>
+    </section>
+    <section><h3>Create Tables Relationships</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>SQLAlchemy supports defining relationships between tables using attributes like <code>relationship</code>.</dt>
+            <dt>This allows for easy navigation between related objects.</dt>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                from sqlalchemy import ForeignKey
+                from sqlalchemy.orm import relationship
+
+                class Address(Base):
+                    __tablename__ = 'address'
+                    id = Column(Integer, primary_key=True)
+                    email = Column(String)
+                    user_id = Column(Integer, ForeignKey('user.id'))
+                    user = relationship("User", back_populates="address")
+            </code></pre>
+            <dt>With the line <code>user = relationship("User", back_populates="address")</code> we state that instances of the Address class have a relationship with instances of the User class, and instances of the User class have an attribute named address that represents the reverse relationship back to instances of the Address class</dt>
+        </dl>
+    </section>
 </section>
-<section id="DefiningDatabaseModels"><h3>Creating a Table with Declarative Base</h3>
-    <dl class="fa" style="min-width:80vw">
-        <dt>SQLAlchemy uses a system known as Declarative, which allows us to create classes that include directives to describe the actual database table they will be mapped to.</dt>
-        <dt>Classes mapped using the Declarative system are defined in terms of a base class which maintains a catalog of classes and tables relative to that base - this is known as the declarative <code>Base</code> class.</dt>
-        <dd>In SQLAlchemy, database tables are represented as Python classes. Each table class inherits from the <code>Base</code> class and defines its columns as class attributes.</dd>
 
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+<section class="main-section-title"><h1>CRUD Operations</h1></section>
+<section class="sub-sections"><h2>CRUD Operations</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>CRUD stands for Create, Read, Update, and Delete. It is a set of fundamental operations used in database management and application development.</dt>
+            <dt><b>Create</b> operation involves adding new data to a system. It typically corresponds to inserting new records into a database.</dt>
+
+            <dt><b>Read</b> operation involves retrieving existing data from a system. It typically corresponds to querying records from a database.</dt>
+
+            <dt><b>Update</b> operation involves modifying existing data in a system. It typically corresponds to updating records in a database.</dt>
+
+            <dt><b>Delete</b> operation involves removing existing data from a system. It typically corresponds to deleting records from a database.</dt>
+        </dl>
+    </section>
+    <section id="InsertingData"><h3>Inserting Data</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Using the Session</dt>
+            <dd>To insert new records into the database, create new instances of your mapped classes and add them to the session.</dd>
+            <dt>Once added, commit the session to persist the changes to the database.</dt>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Create a new user instance
+                new_user = User(name='John', age=30)
+                # Add the new user to the session
+                session.add(new_user)
+                # Commit the session to persist the changes
+                session.commit()
+            </code></pre>
+
+            <dt>Using Insert Statements</dt>
+            <dd>If you prefer, you can also use raw SQL insert statements to add data to the database. However, using SQLAlchemy's ORM approach with sessions is generally recommended for better code organization and safety against SQL injection attacks.</dd>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Execute a raw SQL insert statement
+                engine.execute("INSERT INTO user (name, age) VALUES ('Alice', 25)")
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Example: add data stored as list of dictionaries</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>If you have data stored in a list of dictionaries and you want to add this data to your database using SQLAlchemy, you can iterate over the list and add each dictionary as a new record in the database.</dt>
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 98vh;">
             from sqlalchemy import create_engine
-            from sqlalchemy.orm import declarative_base
+            from sqlalchemy.orm import sessionmaker, declarative_base
             from sqlalchemy import Column, Integer, String
 
             # Create an engine
@@ -256,94 +345,99 @@
 
             # Define the User class inheriting from Base
             class User(Base):
-                __tablename__ = 'users'
+                __tablename__ = 'user'
                 id = Column(Integer, primary_key=True)
                 name = Column(String)
                 age = Column(Integer)
 
             # Create the tables in the database
             Base.metadata.create_all(engine)
-        </code></pre>
-        <dt>Note that the tables won't be created automatically just by defining the model. You'll need to create an engine, and call <code>Base.metadata.create_all(engine)</code></dt>
-    </dl>
-</section>
-<section><h3>Mapping Relationships</h3>
-    <dl class="fa" style="min-width:80vw">
-        <dt>SQLAlchemy supports defining relationships between tables using attributes like <code>relationship</code>.</dt>
-        <dt>This allows for easy navigation between related objects.</dt>
 
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            from sqlalchemy import ForeignKey
-            from sqlalchemy.orm import relationship
+            # Create a session
+            Session = sessionmaker(bind=engine)
+            session = Session()
 
-            class Address(Base):
-                __tablename__ = 'addresses'
-                id = Column(Integer, primary_key=True)
-                email = Column(String)
-                user_id = Column(Integer, ForeignKey('users.id'))
-                user = relationship("User", back_populates="addresses")
-        </code></pre>
-    </dl>
-</section>
+            data = [
+                {"name": "Ivan", "age": 30},
+                {"name": "Mariya", "age": 25},
+                {"name": "Petar", "age": 35}
+            ]
 
-<section id="QueryingData"><h3>Querying Data</h3>
+            # Iterate over the list of dictionaries and add each record to the session
+            for entry in data:
+                new_user = User(name=entry['name'], age=entry['age'])
+                session.add(new_user)
 
-    <dl class="fa" style="min-width:80vw">
-        <dt>Basic Queries</dt>
-        <dd>SQLAlchemy provides a powerful querying interface that allows developers to retrieve data from the database using Pythonic syntax.</dd>
-
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            # Query all users
-            users = session.query(User).all()
-
-            # Filter users by age
-            young_users = session.query(User).filter(User.age < 30).all()
-        </code></pre>
-
-        <dt>Joins</dt>
-        <dd>SQLAlchemy supports joining multiple tables together to retrieve related data in a single query.</dd>
-
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            # Join users with their addresses
-            user_addresses = session.query(User, Address).join(Address).all()
-        </code></pre>
-    </dl>
-</section>
-
-<section id="ModifyingData"><h3>Modifying Data</h3>
-
-    <dl class="fa" style="min-width:80vw">
-        <dt>Adding Records</dt>
-        <dd>To add new records to the database, create new instances of your mapped classes and add them to the session.</dd>
-
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            # Create a new user
-            new_user = User(name='John Doe', age=25)
-            session.add(new_user)
+            # Commit the session to persist the changes
             session.commit()
         </code></pre>
+    </section>
+    <section id="QueryingData"><h3>Querying Data</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Basic Queries</dt>
+            <dd>SQLAlchemy provides a powerful querying interface that allows developers to retrieve data from the database using Pythonic syntax.</dd>
 
-        <dt>Updating Records</dt>
-        <dd>To update existing records, simply modify the attributes of the corresponding objects and commit the changes.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Query all users
+                users = session.query(User).all()
 
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            # Update user's age
-            user = session.query(User).filter_by(name='John Doe').first()
-            user.age = 30
-            session.commit()
-        </code></pre>
+                # Filter users by age
+                young_users = session.query(User).filter(User.age < 30).all()
+            </code></pre>
 
-        <dt>Deleting Records</dt>
-        <dd>To delete records, query the object to be deleted and call the <code>delete()</code> method on it.</dd>
+            <dt>Joins</dt>
+            <dd>SQLAlchemy supports joining multiple tables together to retrieve related data in a single query.</dd>
 
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
-            # Delete a user
-            user = session.query(User).filter_by(name='John Doe').first()
-            session.delete(user)
-            session.commit()
-        </code></pre>
-    </dl>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Join users with their addresses
+                user_addresses = session.query(User, Address).join(Address).all()
+            </code></pre>
+        </dl>
+    </section>
+
+    <section id="ModifyingData"><h3>Modifying Data</h3>
+
+        <dl class="fa" style="min-width:80vw">
+            <dt>Adding Records</dt>
+            <dd>To add new records to the database, create new instances of your mapped classes and add them to the session.</dd>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Create a new user
+                new_user = User(name='John Doe', age=25)
+                session.add(new_user)
+                session.commit()
+            </code></pre>
+
+            <dt>Updating Records</dt>
+            <dd>To update existing records, simply modify the attributes of the corresponding objects and commit the changes.</dd>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Update user's age
+                user = session.query(User).filter_by(name='John Doe').first()
+                user.age = 30
+                session.commit()
+            </code></pre>
+
+            <dt>Deleting Records</dt>
+            <dd>To delete records, query the object to be deleted and call the <code>delete()</code> method on it.</dd>
+
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Delete a user
+                user = session.query(User).filter_by(name='John Doe').first()
+                session.delete(user)
+                session.commit()
+            </code></pre>
+        </dl>
+    </section>
 </section>
+
+
+
+
+
+
+
+
 
 <section id="Conclusion"><h3>Conclusion</h3>
 
