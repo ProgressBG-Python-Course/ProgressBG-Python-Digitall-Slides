@@ -232,23 +232,33 @@
 
         <a href="./images/GIL_in_Python_Diagram.png"><img src="./images/GIL_in_Python_Diagram.png" alt=""></a>
     </section>
+    <section><h3>Problem of shared state</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The problem of shared state with threads often arises when multiple threads access and modify shared data concurrently, leading to <b>race conditions</b>, data corruption, or inconsistent results. </dt>
+        </dl>
+        <a href="images/raceConditionOfCounterDemo.png"><img src="./images/raceConditionOfCounterDemo.png" alt=""></a>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Note that in Python 3.10, there was an undocumented change related to the Global Interpreter Lock (GIL) that aims to mitigate certain types of race conditions.</dt>
+            <dd>Even with that change, race condition prevention still generally requires explicit synchronization mechanisms like locks, queues, or other thread-safe data structures.</dd>
+        </dl>
+    </section>
     <section><h3>The problem of shared state - example</h3>
         <dl class="fa">
             <dt>Each thread increments the counter with 1. But at the end, counter value is not equal to the number of threads!</dt>
             <dt>It is even different on each execution!</dt>
         </dl>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+        <pre><code rel="Python" class="python" style="min-height: 89vh;">
             import threading
             import time
 
 
             def worker():
-              global counter
+                global counter
 
-              tmp = counter
-              print("Before:",counter)
-              counter = tmp + 1
-              print("After:",counter)
+                tmp = counter
+                print("Before:",counter)
+                counter = tmp + 1
+                print("After:",counter)
 
 
 
@@ -256,34 +266,42 @@
 
             # create some treads to count together:
             thread_pool = []
-            for i in range(10000):
-              tr = threading.Thread(target=worker)
-              tr.start()
-              thread_pool.append(tr)
+            for i in range(50):
+                tr = threading.Thread(target=worker)
+                tr.start()
+                thread_pool.append(tr)
 
             # wait for tread to finish:
             for tr in thread_pool:
-              tr.join()
+                tr.join()
 
             print("Workers counted:", counter)
+
+            # Before: 0
+            # After: 1
+            # Before: 0
+            # After: 1
+            # ...
+            # Before: 31
+            # After: 32
+            # Workers counted: 32
         </code></pre>
     </section>
     <section><h3>Solution: Lock the <em>critical sections</em></h3>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+        <pre><code rel="Python" class="python" style="min-height: 99vh;">
             import threading
             import time
 
 
             def worker():
-              global counter
+                global counter
 
-              # lock the critical section:
-              lock.acquire()
-              tmp = counter
-              print("Before:",counter)
-              counter = tmp + 1
-              print("After:",counter)
-              lock.release()
+                # lock the critical section:
+                lock.acquire()
+                print("Before:",counter)
+                counter += 1
+                print("After:",counter)
+                lock.release()
 
 
 
@@ -293,16 +311,27 @@
 
             # create some treads to count together:
             thread_pool = []
-            for i in range(10000):
-              tr = threading.Thread(target=worker)
-              tr.start()
-              thread_pool.append(tr)
+            for i in range(50):
+                tr = threading.Thread(target=worker)
+                tr.start()
+                thread_pool.append(tr)
 
             # wait for tread to finish:
             for tr in thread_pool:
-              tr.join()
+                tr.join()
 
             print("Workers counted:", counter)
+
+            # Before: 0
+            # After: 1
+            # Before: 1
+            # After: 2
+            # ...
+            # Before: 48
+            # After: 49
+            # Before: 49
+            # After: 50
+            # Workers counted: 50
         </code></pre>
     </section>
 </section>
@@ -353,56 +382,165 @@
               print("Worker did its job as separate Process!")
         </code></pre>
     </section>
-    <section><h3>Sharing state between processes (inter-process comunication) </h3>
-        <dl class="fa">
-            <dt>The multiprocessing module defines the Queue class for sharing data between processes (using <em>pipes</em> and <em>locks/semaphores</em>)</dt>
-            <dt>Also, it provides the <code>Value</code> and <code>Array</code> classes for Shared memory communication</dt>
-        </dl>
-        <pre><code rel="Terminal" class="shell" data-noescape>
-            class multiprocessing.Queue([maxsize])
-        </code></pre>
-    </section>
     <section><h3>No GIL effect on processes</h3>
         <dl class="fa">
             <dt>You can use the full power of multiprocessing if your system have multiple cores.</dt>
-            <dt>Get raw code of <a href="https://pastebin.com/Yzj7whm1">GIL_effect.py</a></dt>
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 90vh;">
+            import multiprocessing as mp
+            import time
+
+            def worker(r):
+                pid = mp.current_process().name
+
+                # do some hard and time consuming work:
+                global result
+                res = 0
+
+                for i in r:
+                    res += i
+
+                if "Process-" in pid:
+                    output.put(result)
+                else:
+                    result += res
+
+
+                print("Worker {} is working with {}".format(pid, r))
+
+
+            if __name__ == '__main__':
+                #################################################
+                # Sequential Processing:
+                #################################################
+                t = time.time()
+                result = 0
+
+                worker(range(50_000_000))
+                worker(range(50_000_000,100_000_000))
+
+                print("Sequential Processing result: ", result)
+                print("Sequential Processing took:",time.time() - t,"\n")
+
+                #################################################
+                # Multithreaded Processing:
+                #################################################
+                t = time.time()
+                # Define an output queue
+                output = mp.Queue()
+
+                p1 = mp.Process(target=worker, args=(range(50_000_000),))
+                p2 = mp.Process(target=worker, args=(range(50_000_000,100_000_000),))
+
+                p1.start();p2.start()
+                p1.join(); p2.join()
+
+                print("Multiprocess Processing result: ", output.get())
+                print("Multiprocess Processing took:",time.time() - t,"\n")
+
+            # Worker MainProcess is working with range(0, 50000000)
+            # Worker MainProcess is working with range(50000000, 100000000)
+            # Sequential Processing result:  4999999950000000
+            # Sequential Processing took: 7.217836141586304
+
+            # Worker Process-2 is working with range(50000000, 100000000)
+            # Worker Process-1 is working with range(0, 50000000)
+            # Multiprocess Processing result:  4999999950000000
+            # Multiprocess Processing took: 4.363953113555908
+        </code></pre>
+    </section>
+    <section><h3>Sharing state between processes (Inter-process communication) </h3>
+        <dl class="fa">
+            <dt>Processes in an operating system typically run independently and have their own memory space.</dt>
+            <dt>Inter-process communication (IPC) refers to the mechanisms and techniques used by processes to communicate and share data with each other.</dt>
+            <dt>There are several methods of IPC in modern operating systems:</dt>
+            <dd><strong>Shared Memory:</strong> Processes can map a shared region of memory into their address space, allowing them to read and write data directly.</dd>
+            <dd><strong>Pipes:</strong> One-way communication channels that allow the output of one process to be used as input to another process.</dd>
+            <dd><strong>Message Queues:</strong> Processes can send and receive messages through a message queue managed by the operating system.</dd>
+            <dd><strong>Signals:</strong> Processes can send signals to each other to notify about events or to request action.</dd>
+            <dd><strong>Socket Programming:</strong> Processes can communicate over network sockets, allowing IPC across different machines.</dd>
+            <dt>The multiprocessing module provides <code>Value</code>, <code>Array</code> and <code>Queue</code> classes for sharing data between processes.</dt>
         </dl>
     </section>
-    <section><h3>No need of Lock</h3>
-        <dl class="fa">
-            <dt>As processes <span class="note">do not</span> share state, there is no need for lock:</dt>
-        </dl>
+    <section><h3>Example: share state between processes</h3>
+        <pre><code rel="Python" class="python" style="min-height: 100vh;">
+            import multiprocessing
+
+
+            # Function to be executed by each process
+            def increment_shared_counter(counter, lock):
+                for _ in range(100000):
+                    with lock:
+                        counter.value += 1
+
+
+            def main():
+                # Create a shared memory variable (integer) to act as a counter
+                counter = multiprocessing.Value("i", 0)
+                # Create a Lock to synchronize access to the shared counter
+                lock = multiprocessing.Lock()
+
+                # Create two processes, each incrementing the shared counter
+                process1 = multiprocessing.Process(
+                    target=increment_shared_counter, args=(counter, lock)
+                )
+                process2 = multiprocessing.Process(
+                    target=increment_shared_counter, args=(counter, lock)
+                )
+
+                # Start both processes
+                process1.start()
+                process2.start()
+
+                # Wait for both processes to finish
+                process1.join()
+                process2.join()
+
+                # Print the final value of the shared counter
+                print("Final counter value:", counter.value)
+
+
+            if __name__ == "__main__":
+                main()
+
+            # Final counter value: 200000
+        </code></pre>
     </section>
     <section><h3>Data Parallelism</h3>
         <dl class="fa">
             <dt>The Pool object in multiprocessing module offers a convenient means of parallelizing the execution of a function across multiple input values, distributing the input data across processes (data parallelism)</dt>
+            <dt>The <code>map</code> method of the Pool class is one of the most commonly used features. It distributes an iterable of data to the worker processes, applies a specified function to each item in parallel, and returns the results as a list in the same order as the input iterable.</dt>
         </dl>
-        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+        <pre><code rel="Python" class="python" style="min-height: 80vh;">
             from multiprocessing import Pool
             import time
 
             def worker(n):
-              # for light work, the pool is not efficient, try with n**10
-              return n**1000
+                return n ** 1000
+
 
             if __name__ == '__main__':
-              t =time.time()
+                # Define the range of numbers
+                numbers_range = range(100000)
 
-              # create the Pool:
-              p = Pool(processes=5)
-              result = p.map(worker, range(100000))
-              p.close()
-              p.join()
+                # Multiprocessing Pool
+                start_time = time.time()
+                with Pool(5) as p:
+                    pool_result = p.map(worker, numbers_range)
+                    multiprocessing_execution_time = time.time() - start_time
 
-              print("Pool took: ", time.time() - t)
+                print("Multiprocessing Pool took:", multiprocessing_execution_time, "seconds")
 
-              # serial processing:
-              t = time.time()
-              result = []
-              for x in range(100000):
-                result.append(worker(x))
-              # print("Result: ", result)
-              print("Serial processing took: ", time.time() - t)
+                # Serial processing
+                start_time = time.time()
+                serial_result = [worker(n) for n in numbers_range]
+                serial_execution_time = time.time() - start_time
+
+                print("Serial processing took:", serial_execution_time, "seconds")
+
+            # Multiprocessing Pool took: 3.358834981918335 seconds
+            # Serial processing took: 5.694896459579468 seconds
+
         </code></pre>
     </section>
     <section><h3>Processes vs Threads - when to use which</h3>
@@ -446,11 +584,6 @@
     </section>
 </section>
 
-
-<!-- <section><h1>___MainSectionTitle___</h1></section>
-<section><h2>___MainSectionTitle___</h2>
-    <section><h3>___MainSectionSubTitle___</h3></section>
-</section> -->
 <!--
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1</h2>
