@@ -1,49 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>SQLalchemy</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-	<!-- CUSTOM -->
-	<base target="_blank">
+    <meta charset="utf-8">
+    <title>SQLalchemy</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#SQLalchemy" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div class="note">Keyboard shortcuts:</div>
-				<div><span>N/Спейс</span><span>Next Slide</span></div>
-				<div><span>P</span><span>Previous Slide</span></div>
-				<div><span>O</span><span>Slides Overview</span></div>
-				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
-				<div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
-				Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#SQLalchemy" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -51,449 +51,581 @@
 -->
 <section><h1>Databases: SQLalchemy</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2016-2024,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
-</section>
-
-<section data-min="10"><h1>Prerequisites - prepare the demo DB</h1></section>
-<section><h2>Prerequisites - prepare the demo DB</h2>
-	<section><h3>SimpleCompanyDB - the Model</h3>
-		<dl class="fa">
-			<dt>In next slides, in order to illustrate how to work with DB with Python I'll use a very simple shcema: SimpleCompanyDB</dt>
-			<a href="./examples/slides/SimpleCompanyDB/model/model.png"><img src="./examples/slides/SimpleCompanyDB/model/model.png" style="min-height: 50vh;"></a>
-			<dt>You can download the MySQL dump: <a href="examples/slides/SimpleCompanyDB/model/SimpleCompanyDB_dump.sql">SimpleCompanyDB_dump</a> and create the SimpleCompanyDB with:</dt>
-			<pre><code rel="Terminal" class="bash">
-				mysql -u test -p < SimpleCompanyDB_dump.sql
-			</code></pre>
-		</dl>
-
-	</section>
-	<section><h3>SimpleCompanyDB - the data</h3>
-		<dl class="fa">
-			<dt>DB engine used is <a href="https://dev.mysql.com/downloads/mysql/">MySQL Community Server 8.0</a></dt>
-			<dt>Next sample data are pre-populated into the database:</dt>
-		</dl>
-		<pre><code rel="SQL" class="sql" data-noescape style="font-size: .9em; min-height: 76vh;">
-			 root@localhost:SimpleCompanyDB> SELECT * from company;
-			+--------------+----------------+
-			|   company_id | company_name   |
-			|--------------+----------------|
-			|            1 | Google         |
-			|            2 | Facebook       |
-			|            3 | Microsoft      |
-			+--------------+----------------+
-			4 rows in set
-			Time: 0.002s
-			mariadb root@localhost:SimpleCompanyDB> SELECT * from employee;
-			+---------------+-----------------+
-			|   employee_id | employee_name   |
-			|---------------+-----------------|
-			|             1 | Ivan Petrov     |
-			|             2 | Maria Popova    |
-			|             3 | Georgi Ivanov   |
-			+---------------+-----------------+
-			3 rows in set
-			Time: 0.005s
-			mariadb root@localhost:SimpleCompanyDB> select * from company_employee order by employee_id;
-			+---------------+--------------+
-			|   employee_id |   company_id |
-			|---------------+--------------|
-			|             1 |            2 |
-			|             2 |            1 |
-			|             3 |            1 |
-			|             3 |            2 |
-			+---------------+--------------+
-			4 rows in set
-		</code></pre>
-	</section>
-</section>
-
-<section data-min="5"><h1>MySQL and Python</h1></section>
-<section><h2>MySQL and Python</h2>
-	<section><h3>Python DB-API</h3>
-		<dl class="fa">
-			<dt><a href="https://www.python.org/dev/peps/pep-0249/">Python Database API</a> is a set of standards recommended by a Special Interest Group for database module standardization</dt>
-			<dt>Standard Python distribution has in-built support for SQLite database connectivity by the sqlite3 module</dt>
-			<dt>Other RDBMS products (Oracle, PostgreSQL, MySQL,...) also have DB-API compliant drivers</dt>
-			<dd>A database driver is a software that allows an application (like Python program) to connect and interact with a database system</dd>
-		</dl>
-	</section>
-	<section><h3>MySQL Connector/Python</h3>
-		<dl class="fa">
-			<dt>Reference: <a href="https://dev.mysql.com/doc/connector-python/en/">MySQL Connector/Python Developer Guide</a></dt>
-			<dd>Note, that MySQL’s official documentation uses the term connector instead of driver.</dd>
-			<dt>Instalation:</dt>
-		</dl>
-		<pre><code rel="Terminal" class="bash">
-			# make sure you're in the venv
-			pip install mysql-connector-python
-		</code></pre>
-	</section>
-	<section><h3>MySQL Connector - Create connection</h3>
-		<pre><code rel="Python" class="python" style="min-height: 80vh;">
-			import mysql.connector
-			from mysql.connector import connection
-
-			def make_connection(user, password, db, host="localhost", port=3306):
-				try:
-					cnx = mysql.connector.connect(
-						user=user,
-						password=password,
-						db=db,
-						host=host,
-						port=port
-					)
-
-				except mysql.connector.Error as e:
-					print(e)
-
-				print('Connection Established')
-				return cnx
-
-
-			# Connect to server
-			cnx = make_connection (user="root", password="1234", db='customers')
-
-			# Get a cursor
-			cur = cnx.cursor()
-
-			# Execute a query
-			cur.execute("SELECT CURDATE()")
-
-			# Fetch one result
-			row = cur.fetchone()
-			print("Current date is: {0}".format(row[0]))
-
-			# fetch Multiple results
-			with cnx.cursor() as cursor:
-				cursor.execute(f'SHOW TABLES')
-
-				results = cursor.fetchall()
-				# print(results)
-				for r in results:
-					print(r)
-
-			# Close connection
-			cnx.close()
-		</code></pre>
-	</section>
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
 </section>
 
 
 <section><h1>What is an ORM?</h1></section>
 <section><h2>What is an ORM?</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM)</a> is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.</dt>
-			<dt>Brings an abstraction level in communication with different databases, by wrapping DB actions in an idiomatic APIs.</dt>
-			<dt>Provides automation and DRY</dt>
-			<dt>Allow expression of DB/SQL tasks using declarative patterns</dt>
-		</dl>
-	</section>
-	<section><h3>Analogy between Tables and Classes</h3>
-		<pre><code rel="SQL" class="sql" data-noescape>
-			CREATE TABLE users (
-				id serial primary key,
-				name character varying,
-				address character varying
-			)
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			class Users:
-				def __init__(self, name, address):
-					self.name = name
-					self.address = address
-		</code></pre>
-	</section>
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM)</a> is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.</dt>
+            <dt>An ORM maps Python classes to database tables, and instances of those classes to rows in those tables. It allows developers to work with database records as if they were Python objects, providing a high-level interface for database operations.</dt>
+            <dt>Benefits of Using ORM</dt>
+            <dd><b>Abstraction</b>: Developers can work with databases using familiar object-oriented concepts, without having to write raw SQL queries.</dd>
+            <dd><b>Portability</b>: ORM makes it easier to switch between different database backends without changing application code.</dd>
+            <dd><b>Productivity</b>: ORM handles many common database tasks automatically, reducing the amount of boilerplate code that developers need to write.</dd>
+            <dt>ORMs Used in Python:</dt>
+            <dd>SQLAlchemy - one of the most popular ORM libraries used in Python</dd>
+            <dd>Django ORM - part of the Django web framework and provides a high-level abstraction for working with databases in Django applications.</dd>
+        </dl>
+    </section>
+    <section><h3>Analogy between Tables and Classes</h3>
+        <pre><code rel="SQL" class="sql" data-noescape>
+            CREATE TABLE users (
+                id serial primary key,
+                name character varying,
+                address character varying
+            )
+        </code></pre>
+        <pre><code rel="Python" class="python">
+            class Users:
+                def __init__(self, name, address):
+                    self.name = name
+                    self.address = address
+        </code></pre>
+    </section>
 </section>
+
+<section class="main-section-title" id="IntroductionToSQLAlchemy"><h1>Introduction to SQLAlchemy</h1></section>
+<section class="sub-sections"><h2>Introduction to SQLAlchemy</h2>
+    <section><h3>What is SQLAlchemy?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>SQLAlchemy is a powerful SQL toolkit and Object-Relational Mapping (ORM) library for Python.</dt>
+            <dt>SQLAlchemy provides a Pythonic way to interact with databases, allowing developers to work with SQL databases using Python objects and syntax, making database operations more intuitive and efficient.</dt>
+
+            <dt>Key Features</dt>
+            <dd><b>ORM support</b>: Allows developers to interact with databases using Python objects, abstracting away the complexities of SQL.</dd>
+            <dd><b>Expression Language</b>: Provides a Pythonic way to construct SQL queries, making it easier to write and maintain code.</dd>
+            <dd><b>Connection Pooling</b>: Manages database connections efficiently, improving performance.</dd>
+            <dd><b>Transaction support</b>: Ensures data integrity by managing database transactions.</dd>
+            <dd><b>Schema Migration</b>: Provides tools for managing and migrating database schemas, making it easier to evolve your application over time.</dd>
+            <dd><b>Compatibility</b>: Supports multiple database backends</dd>
+        </dl>
+    </section>
+    <section><h3>Supported Database Backends</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>SQLAlchemy supports various database backends, including:</dt>
+            <dd>SQLite: A lightweight, file-based database engine that is suitable for small-scale applications and testing.</dd>
+            <dd>MySQL: A popular open-source relational database management system known for its reliability and performance.</dd>
+            <dd>PostgreSQL: An advanced open-source relational database management system known for its robustness and extensibility.</dd>
+            <dd>Oracle: A proprietary relational database management system widely used in enterprise environments.</dd>
+            <dd>Microsoft SQL Server: A relational database management system developed by Microsoft, commonly used in Windows-based environments.</dd>
+            <dd>DB2: A relational database management system developed by IBM, often used in large-scale enterprise applications.</dd>
+            <dd>And more...</dd>
+        </dl>
+    </section>
+    <section><h3>Installation</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Installing SQLAlchemy</dt>
+            <dd>You can install SQLAlchemy using pip:</dd>
+            <!-- --------------------- Optional code block for CLI --------------------- -->
+            <pre><code rel="Terminal" class="bash" data-noescape>
+                pip install sqlalchemy
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+
+<section class="main-section-title"><h1>Connecting to a Database</h1></section>
+<section class="sub-sections"><h2>Connecting to a Database</h2>
+    <section id="ConnectingToADatabase"><h3>Creating an Engine</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>To connect to a database, SQLAlchemy uses an Engine object, which represents a source of database connectivity and behavior.</dt>
+            <dt>You can create an Engine using the <code>create_engine</code> function.</dt>
+
+            <pre><code rel="Python" class="python" style="font-size: 1em;">
+                from sqlalchemy import create_engine
+
+                # Create an engine to connect to a SQLite database
+                engine = create_engine('sqlite:///mydatabase.db')
+
+                # create engine for MySQL dialect with MySQL Connector DBAPI:
+                engine = create_engine("mysql+mysqlconnector://test:test1234@localhost/test")
+
+                # create engine for PostgreSQL dialect with psycopg2 DBAPI:
+                pg_engine = create_engine('postgresql+psycopg2://usr:pass@localhost/sqlalchemy')
+            </code></pre>
+            <dt>An <em>Engine</em> allows SQLAlchemy to interact with a database. It is the starting point for any SQLAlchemy application</dt>
+            <dt>The typical usage of create_engine() is once per particular database URL, held globally for the lifetime of a single application process</dt>
+            <dt>Reference: <a href="https://docs.sqlalchemy.org/en/20/core/engines.html">Engine Configuration @http://docs.sqlalchemy.org</a></dt>
+        </dl>
+    </section>
+    <section><h3>Supported Databases/Dialects</h3>
+        <dl class="fa">
+            <dt>SQLAlchemy includes many Dialect implementations for various backends. Many other are available as external projects</dt>
+            <dt>List and more information about dialects can be found on: <a href="https://docs.sqlalchemy.org/en/20/dialects/index.html">Dialects</a></dt>
+        </dl>
+    </section>
+    <section><h3>Create Session</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Once connected, SQLAlchemy uses a Session object to manage interactions with the database.</dt>
+            <dt>Sessions keep track of objects loaded from the database and handle transactions.</dt>
+        </dl>
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            from sqlalchemy.orm import sessionmaker
+
+            # Create a session
+            Session = sessionmaker(bind=engine)
+            session = Session()
+        </code></pre>
+    </section>
+    <section><h3>Why using Session?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt><b>Transactional Integrity:</b></dt>
+            <dd>The `Session` provides a transactional boundary. It ensures that all changes made to objects in a session are persisted in the database atomically (either all changes are committed or none), maintaining the integrity of your data.</dd>
+
+            <dt><b>Unit of Work:</b></dt>
+            <dd>The `Session` tracks changes made to objects and automatically synchronizes these changes with the database upon committing a transaction. It effectively acts as a unit of work, allowing you to perform multiple operations on objects and commit them as a single transaction.</dd>
+
+            <dt><b>Identity Map:</b></dt>
+            <dd>Within a session, each object is unique. This means that if you load the same object multiple times within a session, you'll always get back the same Python object instance. This behavior helps in maintaining consistency and avoiding unnecessary duplicate objects.</dd>
+
+            <dt><b>Caching and Performance:</b></dt>
+            <dd>The `Session` implements a first-level cache to optimize performance. Once an object is loaded into a session, subsequent requests for the same object are retrieved from the cache, reducing the number of database queries and improving overall performance.</dd>
+
+            <dt><b>Context Management:</b></dt>
+            <dd>The `Session` can be used within a context manager (using the `with` statement) to ensure proper handling of resources. It automatically opens a connection to the database when entering the context and closes it when exiting, preventing resource leaks and managing connections efficiently.</dd>
+            <dt>More on Sessions: <a href="https://docs.sqlalchemy.org/en/20/orm/session_basics.html">Session Basics @docs.sqlalchemy.org</a></dt>
+        </dl>
+    </section>
+</section>
+<section><h3>Creating a table with Table </h3>
+    <dl class="fa" style="min-width:80vw">
+        <dt>You can define the table structure explicitly using the Table construct.</dt>
+        <pre><code rel="Python" class="python" style="min-height: 55vh;">
+            from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+
+            # Create an engine
+            engine = create_engine('sqlite:///mydatabase.db')
+
+            # Create a metadata object
+            metadata = MetaData()
+
+            # Define the table
+            users_table = Table('users', metadata,
+                Column('id', Integer, primary_key=True),
+                Column('name', String),
+                Column('age', Integer)
+            )
+
+            # Create the table in the database associated with the provided engine
+            metadata.create_all(engine)
+        </code></pre>
+        <dt>This approach can be useful in situations where you prefer more control over the table definition.</dt>
+        <dt>However, using the declarative base (discussed in next slides) is often more convenient and is the recommended approach for most use cases.</dt>
+    </dl>
+</section>
+<section id="DefiningDatabaseModels"><h3>Creating a Table with Declarative Base</h3>
+    <dl class="fa" style="min-width:80vw">
+        <dt>SQLAlchemy uses a system known as Declarative, which allows us to create classes that include directives to describe the actual database table they will be mapped to.</dt>
+        <dt>Classes mapped using the Declarative system are defined in terms of a base class which maintains a catalog of classes and tables relative to that base - this is known as the declarative <code>Base</code> class.</dt>
+        <dd>In SQLAlchemy, database tables are represented as Python classes. Each table class inherits from the <code>Base</code> class and defines its columns as class attributes.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            from sqlalchemy import create_engine
+            from sqlalchemy.orm import declarative_base
+            from sqlalchemy import Column, Integer, String
+
+            # Create an engine
+            engine = create_engine('sqlite:///mydatabase.db')
+
+            # Declare a base using declarative_base
+            Base = declarative_base()
+
+            # Define the User class inheriting from Base
+            class User(Base):
+                __tablename__ = 'users'
+                id = Column(Integer, primary_key=True)
+                name = Column(String)
+                age = Column(Integer)
+
+            # Create the tables in the database
+            Base.metadata.create_all(engine)
+        </code></pre>
+        <dt>Note that the tables won't be created automatically just by defining the model. You'll need to create an engine, and call <code>Base.metadata.create_all(engine)</code></dt>
+    </dl>
+</section>
+<section><h3>Mapping Relationships</h3>
+    <dl class="fa" style="min-width:80vw">
+        <dt>SQLAlchemy supports defining relationships between tables using attributes like <code>relationship</code>.</dt>
+        <dt>This allows for easy navigation between related objects.</dt>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            from sqlalchemy import ForeignKey
+            from sqlalchemy.orm import relationship
+
+            class Address(Base):
+                __tablename__ = 'addresses'
+                id = Column(Integer, primary_key=True)
+                email = Column(String)
+                user_id = Column(Integer, ForeignKey('users.id'))
+                user = relationship("User", back_populates="addresses")
+        </code></pre>
+    </dl>
+</section>
+
+<section id="QueryingData"><h3>Querying Data</h3>
+
+    <dl class="fa" style="min-width:80vw">
+        <dt>Basic Queries</dt>
+        <dd>SQLAlchemy provides a powerful querying interface that allows developers to retrieve data from the database using Pythonic syntax.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            # Query all users
+            users = session.query(User).all()
+
+            # Filter users by age
+            young_users = session.query(User).filter(User.age < 30).all()
+        </code></pre>
+
+        <dt>Joins</dt>
+        <dd>SQLAlchemy supports joining multiple tables together to retrieve related data in a single query.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            # Join users with their addresses
+            user_addresses = session.query(User, Address).join(Address).all()
+        </code></pre>
+    </dl>
+</section>
+
+<section id="ModifyingData"><h3>Modifying Data</h3>
+
+    <dl class="fa" style="min-width:80vw">
+        <dt>Adding Records</dt>
+        <dd>To add new records to the database, create new instances of your mapped classes and add them to the session.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            # Create a new user
+            new_user = User(name='John Doe', age=25)
+            session.add(new_user)
+            session.commit()
+        </code></pre>
+
+        <dt>Updating Records</dt>
+        <dd>To update existing records, simply modify the attributes of the corresponding objects and commit the changes.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            # Update user's age
+            user = session.query(User).filter_by(name='John Doe').first()
+            user.age = 30
+            session.commit()
+        </code></pre>
+
+        <dt>Deleting Records</dt>
+        <dd>To delete records, query the object to be deleted and call the <code>delete()</code> method on it.</dd>
+
+        <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            # Delete a user
+            user = session.query(User).filter_by(name='John Doe').first()
+            session.delete(user)
+            session.commit()
+        </code></pre>
+    </dl>
+</section>
+
+<section id="Conclusion"><h3>Conclusion</h3>
+
+    <dl class="fa" style="min-width:80vw">
+        <dt>Summary</dt>
+        <dd>SQLAlchemy is a powerful tool for interacting with databases in Python. It provides an intuitive ORM layer on top of SQL, allowing developers to work with databases using Pythonic syntax.</dd>
+
+        <dt>Further Learning</dt>
+        <dd>For further learning, explore the official SQLAlchemy documentation and try out more advanced features such as advanced querying, database transactions, and performance optimization techniques.</dd>
+        <dt>References</dt>
+        <dd>Here are some recommended resources for learning more about SQLAlchemy:
+            <ul>
+                <li><a href="https://www.sqlalchemy.org/">SQLAlchemy Official Documentation</a></li>
+                <li><a href="https://docs.sqlalchemy.org/en/14/orm/tutorial.html">SQLAlchemy ORM Tutorial</a></li>
+                <li><a href="https://realpython.com/python-sqlite-sqlalchemy/">Real Python - Using SQLite with SQLAlchemy</a></li>
+            </ul>
+        </dd>
+    </dl>
+</section>
+
+
+
 
 
 <section><h1>SQLAlchemy - the Python ORM</h1></section>
 <section><h2>SQLAlchemy - the Python ORM</h2>
 
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>SQLAlchemy is the Python SQL Toolkit and ORM</dt>
-			<dd>Official site <a href="https://www.sqlalchemy.org/">www.sqlalchemy.org</a></dd>
-		</dl><br>
-		<a href="images/SQLAlchemy_layers.png"><img src="images/SQLAlchemy_layers.png" style="width: 40vw;"></a>
-	</section>
-	<!-- <section><h3>Overview</h3>
-		<p>The SQLAlchemy flow:</p>
-		<a href="images/sqla_engine_arch.png"><img src="images/sqla_engine_arch.png"></a>
-	</section> -->
-	<section><h3>SQLAlchemy Engines</h3>
-		<dl class="fa" style="font-size: .8em">
-			<dt>An <em>Engine</em> allows SQLAlchemy to interact with a database. It is the starting point for any SQLAlchemy application</dt>
-			<dt>The typical usage of create_engine() is once per particular database URL, held globally for the lifetime of a single application process</dt>
-		</dl>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			engine = create_engine(
-				dialect+driver://username:password@host:port/database)
-		</code></pre>
-		<pre><code rel="Python" class="python" style="font-size: 1em;">
-			from sqlalchemy import create_engine
 
-			# create engine for MySQL dialect with MySQL Connector DBAPI:
-			engine = create_engine("mysql+mysqlconnector://test:test1234@localhost/test")
+    <section><h3>Create an engine to SimpleCompanyDB and get tables names:</h3>
+        <pre><code rel="base.py" class="python" style="min-height: 50vh;" data-noescape>
+            import sqlalchemy as sa
 
-			# create engine for PostgreSQL dialect with psycopg2 DBAPI:
-			pg_engine = create_engine('postgresql+psycopg2://usr:pass@localhost/sqlalchemy')
-		</code></pre>
-		<a href="http://docs.sqlalchemy.org/en/rel_1_1/core/engines.html">Engine Configuration @http://docs.sqlalchemy.org</a>
-	</section>
-	<section><h3>Supported Databases/Dialects</h3>
-		<dl class="fa">
-			<dt>SQLAlchemy includes many Dialect implementations for various backends. Many other are available as external projects</dt>
-			<dt>List and more information about dialects can be found on: <a href="http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html">Dialects</a></dt>
-		</dl>
-	</section>
-	<section><h3>Create an engine to SimpleCompanyDB and get tables names:</h3>
-		<pre><code rel="base.py" class="python" style="min-height: 50vh;" data-noescape>
-			import sqlalchemy as sa
+            # create engine with MySQL Connector DBAPI:
+            engine = sa.create_engine("mysql+mysqlconnector://test:test1234@localhost/SimpleCompanyDB")
 
-			# create engine with MySQL Connector DBAPI:
-			engine = sa.create_engine("mysql+mysqlconnector://test:test1234@localhost/SimpleCompanyDB")
+            # get table names:
+            tables = sa.inspect(engine).get_table_names()
+            print("Tables in SimpleCompanyDB: ", tables)
 
-			# get table names:
-			tables = sa.inspect(engine).get_table_names()
-			print("Tables in SimpleCompanyDB: ", tables)
+            #OUTPUT
+            # Tables in SimpleCompanyDB:  ['company', 'company_employee', 'employee']
+        </code></pre>
+    </section>
 
-			#OUTPUT
-			# Tables in SimpleCompanyDB:  ['company', 'company_employee', 'employee']
-		</code></pre>
-	</section>
-	<section><h3>The Declarative system </h3>
-		<dl class="fa">
-			<dt>SQLAlchemy uses a system known as Declarative, which allows us to create classes that include directives to describe the actual database table they will be mapped to.</dt>
-			<dt>Classes mapped using the Declarative system are defined in terms of a base class which maintains a catalog of classes and tables relative to that base - this is known as the declarative base class.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			from sqlalchemy.ext.declarative import declarative_base
-
-			Base = declarative_base()
-		</code></pre>
-	</section>
-	<section><h3>SQLAlchemy Data Types</h3>
-		<dl class="fa">
-			<dt>SQLAlchemy provides abstraction for various data types used in most RBMS.</dt>
-			<dd><a href="http://docs.sqlalchemy.org/en/latest/core/types.html">Column and Data Types</a></dd>
-		</dl>
-		<pre><code rel="Python" class="python">
-			class Address(Base):
-			    __tablename__ = 'address'
-			    # define columns for the table address.
-			    id = Column(Integer, primary_key=True)
-			    street_name = Column(String(250))
-			    street_number = Column(String(250))
-			    post_code = Column(String(250), nullable=False)
-			    person_id = Column(Integer, ForeignKey('person.id'))
-			    person = relationship(Person)
-		</code></pre>
-	</section>
-	<section><h3>SQLAlchemy Relationships</h3>
-		<dl class="fa">
-			<dt>SQLAlchemy supports four types of relationships: One To Many, Many To One, One To One, and Many To Many</dt>
-		</dl>
-		<p>Example of <em>One To Many</em> relationship:</p>
-		<pre><code rel="Python" class="python">
-			class Person(Base):
-			    __tablename__ = 'person'
-			    id = Column(Integer, primary_key=True)
-			    pets = relationship("Pet")
+    <section><h3>SQLAlchemy Data Types</h3>
+        <dl class="fa">
+            <dt>SQLAlchemy provides abstraction for various data types used in most RBMS.</dt>
+            <dd><a href="http://docs.sqlalchemy.org/en/latest/core/types.html">Column and Data Types</a></dd>
+        </dl>
+        <pre><code rel="Python" class="python">
+            class Address(Base):
+                __tablename__ = 'address'
+                # define columns for the table address.
+                id = Column(Integer, primary_key=True)
+                street_name = Column(String(250))
+                street_number = Column(String(250))
+                post_code = Column(String(250), nullable=False)
+                person_id = Column(Integer, ForeignKey('person.id'))
+                person = relationship(Person)
+        </code></pre>
+    </section>
+    <section><h3>SQLAlchemy Relationships</h3>
+        <dl class="fa">
+            <dt>SQLAlchemy supports four types of relationships: One To Many, Many To One, One To One, and Many To Many</dt>
+        </dl>
+        <p>Example of <em>One To Many</em> relationship:</p>
+        <pre><code rel="Python" class="python">
+            class Person(Base):
+                __tablename__ = 'person'
+                id = Column(Integer, primary_key=True)
+                pets = relationship("Pet")
 
 
-			class Pet(Base):
-			    __tablename__ = 'pet'
-			    id = Column(Integer, primary_key=True)
-			    person_id = Column(Integer, ForeignKey('person.id'))
-		</code></pre>
-	</section>
-	<section><h3>Example of <em>Many To Many</em> relationship</h3>
-		<pre><code rel="Python" class="python">
-			company_employee = Table('company_employee', Base.metadata,
-			    Column('employee_id', Integer, ForeignKey('employee.employee_id')),
-			    Column('company_id', Integer, ForeignKey('company.company_id'))
-			)
+            class Pet(Base):
+                __tablename__ = 'pet'
+                id = Column(Integer, primary_key=True)
+                person_id = Column(Integer, ForeignKey('person.id'))
+        </code></pre>
+    </section>
+    <section><h3>Example of <em>Many To Many</em> relationship</h3>
+        <pre><code rel="Python" class="python">
+            company_employee = Table('company_employee', Base.metadata,
+                Column('employee_id', Integer, ForeignKey('employee.employee_id')),
+                Column('company_id', Integer, ForeignKey('company.company_id'))
+            )
 
-			class Employee(Base):
-			    __tablename__ = 'employee'
-			    employee_id = Column(Integer, primary_key=True)
-			    companies = relationship("Company", secondary=company_employee)
+            class Employee(Base):
+                __tablename__ = 'employee'
+                employee_id = Column(Integer, primary_key=True)
+                companies = relationship("Company", secondary=company_employee)
 
-			class Company(Base):
-			    __tablename__ = 'company'
-			    id = Column(Integer, primary_key=True)
-		</code></pre>
-	</section>
-	<!-- <section><h3>SQLAlchemy ORM (Mappers)</h3>
-		<dl class="fa">
-			<dt>Mappers are responsible for moving data between objects and a database while keeping them independent of each other</dt>
-		</dl>
-	</section> -->
-	<section><h3>SQLAlchemy Sessions</h3>
-		<dl class="fa">
-			<dt>Sessions are used to guarantee the database consistency.</dt>
-			<dt>All modifications tracked by Sessions (Units of Works) will be applied to the underlying database together, or none of them will.</dt>
-			<dt>More on Sessions: <a href="http://docs.sqlalchemy.org/en/rel_1_1/orm/session_basics.html">Session Basics @docs.sqlalchemy.org</a></dt>
-		</dl>
-	</section>
+            class Company(Base):
+                __tablename__ = 'company'
+                id = Column(Integer, primary_key=True)
+        </code></pre>
+    </section>
+    <!-- <section><h3>SQLAlchemy ORM (Mappers)</h3>
+        <dl class="fa">
+            <dt>Mappers are responsible for moving data between objects and a database while keeping them independent of each other</dt>
+        </dl>
+    </section> -->
+
 </section>
 
 <section><h1>Reflecting Database Objects</h1></section>
 <section><h2>Reflecting Database Objects</h2>
-	<section><h3>Overview</h3>
-		<dl class="fa">
-			<dt>If a table already exists, SQLAlchemy can read its column definitions directly from the database.</dt>
-			<dt>This processes is called <span class="note">reflecting the table</span>.</dt>
-		</dl>
-	</section>
-	<section><h3>example</h3>
-		<pre><code rel="Python" class="bash">
-			from sqlalchemy import create_engine
-			from sqlalchemy import MetaData
-			from sqlalchemy import Table, sql
+    <section><h3>Overview</h3>
+        <dl class="fa">
+            <dt>If a table already exists, SQLAlchemy can read its column definitions directly from the database.</dt>
+            <dt>This processes is called <span class="note">reflecting the table</span>.</dt>
+        </dl>
+    </section>
+    <section><h3>example</h3>
+        <pre><code rel="Python" class="bash">
+            from sqlalchemy import create_engine
+            from sqlalchemy import MetaData
+            from sqlalchemy import Table, sql
 
 
-			# connect to Mysql/MariaDB:
-			engine = create_engine("mysql+pymysql://root:1234@localhost/SimpleCompanyDB")
+            # connect to Mysql/MariaDB:
+            engine = create_engine("mysql+pymysql://root:1234@localhost/SimpleCompanyDB")
 
 
-			# Create a MetaData instance
-			metadata = MetaData()
-			print(metadata.tables)
+            # Create a MetaData instance
+            metadata = MetaData()
+            print(metadata.tables)
 
-			# reflect db schema to MetaData
-			metadata.reflect(bind=engine)
-			print(metadata.tables)
-		</code></pre>
-	</section>
+            # reflect db schema to MetaData
+            metadata.reflect(bind=engine)
+            print(metadata.tables)
+        </code></pre>
+    </section>
 </section>
-
-<!-- <section><h1>Connect, Declare a Mapping,Create a Schema</h1></section>
-<section><h2>Connect, Declare a Mapping,Create a Schema</h2>
-	<section><h3>___MainSectionSubTitle___</h3></section>
-</section> -->
-
-
-<!-- <section><h1>Demo example with SQLAlchemy and SQLite3</h1></section>
-<section><h2>Demo example with SQLAlchemy and SQLite3</h2>
-	<section><h3>___MainSectionSubTitle___</h3></section>
-</section> -->
-
-<section data-min="20"><h1>Pandas and DB</h1></section>
-<section><h2>Pandas and DB</h2>
-  <section><h3>Read/Write DataFrame from SQL with SQLAlchemy</h3>
-    <dl class="fa">
-		<dt>Examples and notes are given in next Jupyter Notebook:</dt>
-		<dd>Download: <a href="./examples/slides/DF_and_SQL.ipynb">DF_and_SQL.ipynb</a></dd>
-		<dd>View: <a href="https://nbviewer.org/github/WWWCourses/ProgressBG-Python-Digitall-Slides/blob/main/pages/themes/SQLalchemy/examples/slides/DF_and_SQL.ipynb">DF_and_SQL.ipynb</a></dd>
-	</dl>
-  </section>
-</section>
-
 
 <section><h1>References</h1></section>
 <section><h2>References</h2>
-	<section><h3>Readings</h3>
-		<dl class="fa">
-			<dt><a href="https://www.python.org/dev/peps/pep-0249/">PEP 249 -- Python Database API Specification v2.0</a></dt>
-			<dt><a href="http://docs.sqlalchemy.org/en/latest/orm/tutorial.html">Object Relational Tutoria</a> <a href="http://docs.sqlalchemy.org/en/latest/">@docs.sqlalchemy.org</a></dt>
-			<dt><a href="http://docs.sqlalchemy.org/en/latest/core/reflection.html">Reflecting Database Objects</a></dt>
-			<dt><a href="https://www.pythonsheets.com/notes/python-sqlalchemy.html">Python SQLAlchemy Cheatsheet</a></dt>
-		</dl>
-	</section>
+    <section><h3>Readings</h3>
+        <dl class="fa">
+            <dt><a href="https://www.python.org/dev/peps/pep-0249/">PEP 249 -- Python Database API Specification v2.0</a></dt>
+            <dt><a href="http://docs.sqlalchemy.org/en/latest/orm/tutorial.html">Object Relational Tutoria</a> <a href="http://docs.sqlalchemy.org/en/latest/">@docs.sqlalchemy.org</a></dt>
+            <dt><a href="http://docs.sqlalchemy.org/en/latest/core/reflection.html">Reflecting Database Objects</a></dt>
+            <dt><a href="https://www.pythonsheets.com/notes/python-sqlalchemy.html">Python SQLAlchemy Cheatsheet</a></dt>
+        </dl>
+    </section>
 </section>
+
+
+
+
+
+
+
+<section class="main-section-title" id="CreatingTables"><h1>Creating Tables with SQLAlchemy</h1></section>
+<section class="sub-sections"><h2>Creating Tables with SQLAlchemy</h2>
+    <section><h3>Define Employee Table</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd>Define the `employee` table with SQLAlchemy:</dd>
+            <!-- -------------- Optional code block for programming code --------------- -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                from sqlalchemy import Table, Column, Integer, String, ForeignKey
+                from sqlalchemy.orm import relationship
+                from sqlalchemy.orm import declarative_base
+
+                Base = declarative_base()
+
+                class Employee(Base):
+                    __tablename__ = 'employee'
+                    employee_id = Column(Integer, primary_key=True, autoincrement=True)
+                    employee_name = Column(String(100), nullable=False)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Define Company Table</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd>Define the `company` table with SQLAlchemy:</dd>
+            <!-- -------------- Optional code block for programming code --------------- -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                class Company(Base):
+                    __tablename__ = 'company'
+                    company_id = Column(Integer, primary_key=True, autoincrement=True)
+                    company_name = Column(String(300), nullable=False)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Define Company_Employee Table</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd>Define the `company_employee` table with SQLAlchemy:</dd>
+            <!-- -------------- Optional code block for programming code --------------- -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                class CompanyEmployee(Base):
+                    __tablename__ = 'company_employee'
+                    employee_id = Column(Integer, ForeignKey('employee.employee_id'), primary_key=True)
+                    company_id = Column(Integer, ForeignKey('company.company_id'), primary_key=True)
+                    employee = relationship("Employee")
+                    company = relationship("Company")
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Create Tables</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dd>Once the table definitions are in place, you can create the tables in the database:</dd>
+            <!-- -------------- Optional code block for programming code --------------- -->
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Create tables
+                Base.metadata.create_all(engine)
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+
 
 <!-- <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1</h2>
-	<section><h3>The Task</h3>
+    <section><h3>The Task</h3>
 
-	</section>
+    </section>
 </section>
 
 <section><h3>Submission</h3>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: SQLalchemy">progressbg.python.course@gmail.com</a></dt>
-	</dl>
+    <dl class="fa">
+        <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+        <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: SQLalchemy">progressbg.python.course@gmail.com</a></dt>
+    </dl>
 </section> -->
 
 
 
 <section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1920,
-			height: 1280,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+maous click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
 </body>
 </html>
