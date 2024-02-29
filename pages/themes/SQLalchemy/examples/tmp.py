@@ -1,37 +1,18 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import create_engine, MetaData
 
-# Create an engine
-engine = create_engine('sqlite:///mydatabase.db')
+# Create an engine to connect to the database
+engine = create_engine('sqlite:///example.db')
 
-# Declare a base using declarative_base
-Base = declarative_base()
+# Reflect the database schema
+metadata = MetaData()
+metadata.reflect(bind=engine)
 
-# Define the User class inheriting from Base
-class User(Base):
-    __tablename__ = 'user'
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    age = Column(Integer)
+# Print all tables in db
+for table in metadata.tables.values():
+    print(table.name)
 
-# Create the tables in the database
-Base.metadata.create_all(engine)
+# Retrieve a table
+users_table = metadata.tables['users']
 
-# Create a session
-Session = sessionmaker(bind=engine)
-session = Session()
-
-data = [
-    {"name": "Ivan", "age": 30},
-    {"name": "Mariya", "age": 25},
-    {"name": "Petar", "age": 35}
-]
-
-# Iterate over the list of dictionaries and add each record to the session
-for entry in data:
-    new_user = User(name=entry['name'], age=entry['age'])
-    session.add(new_user)
-
-# Commit the session to persist the changes
-session.commit()
+# Get table columns
+print(users_table.columns)

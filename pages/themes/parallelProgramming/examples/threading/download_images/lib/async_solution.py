@@ -1,9 +1,9 @@
 import re
 import aiohttp
 import asyncio
-from typing import List
+from typing import List, Optional
 
-async def download_image(session: aiohttp.ClientSession, url: str) -> bytes:
+async def download_image(session: aiohttp.ClientSession, url: str) -> Optional[bytes]:
     # print(f'Downloading {url}')
     async with session.get(url) as response:
         if response.status == 200:
@@ -17,9 +17,12 @@ async def write_to_file(filename: str, img_bytes: bytes) -> None:
 
 def make_filename(url: str) -> str:
     rx = re.compile(r'\/([\w-]+)\.jpg$')
+
     match = rx.search(url)
     if match:
         return match.group(1) + '.jpg'
+    else:
+        return url
 
 async def download_one(session: aiohttp.ClientSession, url: str, output_dir: str) -> None:
     img_bytes = await download_image(session, url)
