@@ -79,7 +79,7 @@
 <section><h2>What is an ORM?</h2>
     <section><h3>Overview</h3>
         <dl class="fa">
-            <dt><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM)</a> is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.</dt>
+            <dt><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM)</a> is a technique that lets you query and manipulate data from a relational database using an object-oriented paradigm.</dt>
             <dt>An ORM maps Python classes to database tables, and instances of those classes to rows in those tables. It allows developers to work with database records as if they were Python objects, providing a high-level interface for database operations.</dt>
             <dt>Benefits of Using ORM</dt>
             <dd><b>Abstraction</b>: Developers can work with databases using familiar object-oriented concepts, without having to write raw SQL queries.</dd>
@@ -104,6 +104,13 @@
                     self.name = name
                     self.address = address
         </code></pre>
+    </section>
+    <section><h3>ORM for MongoDB?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>MongoDB is a NoSQL document-oriented database. While SQLAlchemy provides a rich set of features for working with relational databases, it does not natively support MongoDB.</dt>
+            <dt>In Python's ecosystem there are other libraries that provide similar functionality to SQLAlchemy but are specifically designed for MongoDB.</dt>
+            <dt>One popular choice is MongoEngine, which is an Object-Document Mapper (ODM) for MongoDB that provides similar features to SQLAlchemy but tailored for MongoDB's document structure.</dt>
+        </dl>
     </section>
 </section>
 
