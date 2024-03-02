@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>SQLalchemy</title>
+    <title>SQLAlchemy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -26,7 +26,7 @@
 <body>
     <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
         <div class="top_links">
-            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#SQLalchemy" target="_top"><i class="fa fa-home"></i></a>
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#SQLAlchemy" target="_top"><i class="fa fa-home"></i></a>
             <span class="help_link" href="#"><i class="fa fa-question"></i></span>
             <div class="help_text">
                 <div class="note">Keyboard shortcuts:</div>
@@ -49,7 +49,7 @@
 ##################### SLIDES START #####################
 ########################################################
 -->
-<section><h1>Databases: SQLalchemy</h1></section>
+<section><h1>Databases: SQLAlchemy - the Python SQL toolkit and ORM</h1></section>
 <section data-transition="zoom">
     <!-- linkedin badge -->
     <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
@@ -481,8 +481,6 @@
 </section>
 
 
-
-
 <section class="main-section-title"><h1>Tables Relationships in SQLAlchemy</h1></section>
 <section class="sub-sections"><h2>Tables Relationships in SQLAlchemy</h2>
     <section><h3>Overview</h3>
@@ -510,52 +508,127 @@
             <dt>A <b>many-to-many</b> relationship exists when each record in one table can be associated with one or more records in another table, and vice versa.</dt>
         </dl>
     </section>
-    <section><h3>Example Model Classes for One-to-Many Relationship</h3>
+    <section><h3>One-to-Many/Many-to-One Relationship</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Let's have two model classes representing users and their addresses.</dt>
-            <dt>The User class has a one-to-many relationship with the Address class. This means that each user can have multiple addresses associated with them.</dt>
-            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+            <dt>Let's define two model classes representing countries and users. We aim to establish a relationship where many users can be associated with one country (i.e., one country can have multiple users).</dt>
+            <dt>In next example: </dt>
+            <dd>The Country class has a one-to-many relationship with the User class.</dd>
+            <dd>The User class has a many-to-one relationship with the Country class.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 65vh;">
+                # Define Country class (Parent)
+                class Country(Base):
+                    __tablename__ = 'countries'
+
+                    id = Column(Integer, primary_key=True)
+                    name = Column(String)
+
+                    # Establishing one-to-many relationship with User class
+                    users = relationship("User", back_populates="country")
+
+                # Define User class (Child)
                 class User(Base):
                     __tablename__ = 'users'
+
                     id = Column(Integer, primary_key=True)
                     name = Column(String)
-                    addresses = relationship("Address", back_populates="user")
+                    country_id = Column(Integer, ForeignKey('countries.id'))  # Foreign key linking to Country id
 
-                class Address(Base):
-                    __tablename__ = 'addresses'
-                    id = Column(Integer, primary_key=True)
-                    email = Column(String)
-                    user_id = Column(Integer, ForeignKey('users.id'))
-                    user = relationship("User", back_populates="addresses")
+                    # Establishing many-to-one relationship with Country class
+                    country = relationship("Country", back_populates="users")
             </code></pre>
+            <dt>You can view the full code with usage example in next gist: <a href="https://gist.github.com/ProgressBG-Python-Course/c6d76f483129d9869a13f611c452bb96">https://gist.github.com/ProgressBG-Python-Course/c6d76f483129d9869a13f611c452bb96</a></dt>
         </dl>
     </section>
-    <section id="RelationshipsExample_ModelClasses"><h3>Example Model Classes for Many-to-Many Relationship</h3>
+    <section><h3>Bidirectional Relationship</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Let's have two model classes representing students and courses.</dt>
-            <dt>A student can enroll in multiple courses, and a course can have multiple students enrolled in it.</dt>
-            <dt>This constitutes a many-to-many relationship between students and courses.</dt>
-            <dt>To establish the many-to-many relationship, we use an association table named <code>student_course_association</code> which serves as an intermediary table that connects students and courses. It contains foreign key columns referencing the primary keys of the students and courses tables.</dt>
-            <dt>The <code>relationship()</code> function in the Student and Course model classes specifies the secondary parameter as the association table, indicating that the relationship is defined through this intermediary table.</dt>
+            <dt>A bidirectional relationship, in the context of databases and ORM frameworks like SQLAlchemy, refers to a relationship between two entities (classes or tables) where changes made on one side are automatically reflected on the other side. In other words, it allows navigation and manipulation of the relationship from both ends.</dt>
+            <dt>In the example provided earlier, the bidirectional relationship between the Country and User classes means:</dt>
+            <dd>From Country to User (One-to-Many): A Country instance has an attribute called users, which is a list of User instances associated with that country. This allows you to access all users belonging to a particular country.</dd>
             <pre><code rel="Python" class="python" style="min-height: 1vh;">
-                class Student(Base):
-                    __tablename__ = 'students'
+                # Query for all users in a country
+                country = session.query(Country).filter_by(name='Bulgaria').first()
+                print(f'Users in Bulgaria: ')
+                for user in country.users:
+                    print(user.name)
+            </code></pre>
+            <dd>From User to Country (Many-to-One): A User instance has an attribute called country, representing the country to which the user belongs. This allows you to access the country associated with a particular user.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                # Query for a user country:
+                user = session.query(User).filter_by(name="Maria").first()
+                print(f'{user.name} live in {user.country.name}')
+            </code></pre>
+            <dt>The bidirectional nature ensures that if you add a user to a country's list of users, the user's associated country attribute is automatically set, and vice versa. This simplifies the management of relationships and ensures consistency when working with related entities in your application.</dt>
+        </dl>
+    </section>
+    <section><h3>One-to-One Relationship</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>One-to-One Relationship is essentially a One-To-Many relationship from a foreign key perspective, but indicates that there will only be one row at any time that refers to a particular parent row.</dt>
+            <dt>Let's define two model classes representing users and their profiles. We aim to establish a relationship where <em>each user has exactly one profile, and each profile is associated with one user</em>.</dt>
+            <dt>In next example:</dt>
+            <dd>The User class has a one-to-one relationship with the Profile class.</dd>
+            <dd>The Profile class has a one-to-one relationship with the User class.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 60vh;">
+                # Define User class
+                class User(Base):
+                    __tablename__ = 'users'
+
                     id = Column(Integer, primary_key=True)
                     name = Column(String)
-                    courses = relationship("Course", secondary="student_course_association", back_populates="students")
 
-                class Course(Base):
-                    __tablename__ = 'courses'
+                    # One-to-one relationship with Profile
+                    profile = relationship("Profile", uselist=False, back_populates="user")
+
+                # Define Profile class
+                class Profile(Base):
+                    __tablename__ = 'profiles'
+
                     id = Column(Integer, primary_key=True)
-                    title = Column(String)
-                    students = relationship("Student", secondary="student_course_association", back_populates="courses")
+                    bio = Column(String)
+                    user_id = Column(Integer, ForeignKey('users.id'), unique=True)
 
-                # Association Table
-                student_course_association = Table('student_course_association', Base.metadata,
-                    Column('student_id', Integer, ForeignKey('students.id')),
-                    Column('course_id', Integer, ForeignKey('courses.id'))
-                )
+                    # One-to-one relationship with User
+                    user = relationship("User", back_populates="profile")
             </code></pre>
+            <dd>The <code>uselist=False</code> argument ensures that only one Profile instance is associated with each User.</dd>
+            <dt>You can view the full code with usage example in next gist: <a href="https://gist.github.com/ProgressBG-Python-Course/5384bb34e18aaea6ca01c7abe9822b17">https://gist.github.com/ProgressBG-Python-Course/5384bb34e18aaea6ca01c7abe9822b17</a></dt>
+        </dl>
+    </section>
+    <section><h3>Many-to-Many Relationship</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Let's define two model classes representing users and groups. We aim to establish a relationship where a user can participate in multiple groups, and conversely, a group can have multiple users associated with it (i.e., a many-to-many relationship).</dt>
+            <dt>To establish the many-to-many relationship, we use an association table named <code>user_group_association</code> which serves as an intermediary table that connects users and groups. It contains foreign key columns referencing the primary keys of the usres and groups tables.</dt>
+            <dt>In the next example:</dt>
+            <dd>The User class has a many-to-many relationship with the Group class.</dd>
+            <dd>The Group class has a many-to-many relationship with the User class.</dd>
+            <dd>The <code>relationship()</code> function in the Student and Course model classes specifies the secondary parameter as the association table, indicating that the relationship is defined through this intermediary table.</dd>
+            <pre><code rel="Python" class="python" style="min-height: 40vh;">
+                # Define association table for many-to-many relationship
+                user_group_association = Table('user_group_association', Base.metadata,
+                    Column('user_id', Integer, ForeignKey('users.id')),
+                    Column('group_id', Integer, ForeignKey('groups.id'))
+                )
+
+                # Define User class
+                class User(Base):
+                    __tablename__ = 'users'
+
+                    id = Column(Integer, primary_key=True)
+                    name = Column(String)
+
+                    # Define many-to-many relationship with Group
+                    groups = relationship("Group", secondary=user_group_association, back_populates="users")
+
+                # Define Group class
+                class Group(Base):
+                    __tablename__ = 'groups'
+
+                    id = Column(Integer, primary_key=True)
+                    name = Column(String)
+
+                    # Define many-to-many relationship with User
+                    users = relationship("User", secondary=user_group_association, back_populates="groups")
+            </code></pre>
+            <dt>You can view the full code with usage example in next gist: <a href="https://gist.github.com/ProgressBG-Python-Course/a43d2e80360f7286f3d2307e08fdeb6d">https://gist.github.com/ProgressBG-Python-Course/a43d2e80360f7286f3d2307e08fdeb6d</a></dt>
         </dl>
     </section>
 </section>
@@ -621,7 +694,7 @@
     <dl class="fa">
         <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
         <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: SQLalchemy">progressbg.python.course@gmail.com</a></dt>
+        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: SQLAlchemy">progressbg.python.course@gmail.com</a></dt>
     </dl>
 </section> -->
 
