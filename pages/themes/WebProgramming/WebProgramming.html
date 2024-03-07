@@ -342,7 +342,7 @@
                 It sets up a basic Django project structure with a configuration directory containing settings.py,
                 urls.py, asgi.py, and wsgi.py files. These files are essential for configuring the project,
                 defining URL routes, and deploying the project to a server</dd>
-            <dt><code>python manage.py startapp todos</code></dt>
+            <dt><code>python manage.py startapp todo_app</code></dt>
             <dd>This command creates a new Django app named 'todo_app' within your project.
                 It generates a directory with the same name (todo_app)
                 containing the app structure, including models.py, views.py, and others,
@@ -363,7 +363,7 @@
             DATABASES = {
                 'default': {
                     'ENGINE': 'django.db.backends.sqlite3',
-                    'NAME': BASE_DIR / 'todoapp.db3',
+                    'NAME': BASE_DIR / 'todoapp.db',
                 }
             }
         </code></pre>
@@ -474,9 +474,9 @@
                 from . import views
 
                 urlpatterns = [
-                    path('', views.home, name='home'),
-                    path('update/<int:pk>/', views.update_todo, name='update_todo'),
-                    path('delete/<int:pk>/', views.delete_todo, name='delete_todo'),
+                    path(&#39;&#39;, views.home, name=&#39;home&#39;),
+                    path(&#39;update/&lt;int:pk&gt;/&#39;, views.update_todo, name=&#39;update_todo&#39;),
+                    path(&#39;delete/&lt;int:pk&gt;/&#39;, views.delete_todo, name=&#39;delete_todo&#39;),
                 ]
 
             </code></pre>
