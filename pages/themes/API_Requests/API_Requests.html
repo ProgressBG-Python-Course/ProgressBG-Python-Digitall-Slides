@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>API_Requests</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
+</head>
+<body>
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#API_Requests" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Making HTTP requests with Python. Working with APIs.</h1></section>
+<section data-transition="zoom">
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
+</section>
+
+
+<section class="main-section-title" id="UnderstandingTheBasicsOfRestfulApis"><h1>Understanding the basics of RESTful APIs</h1></section>
+<section class="sub-sections"><h2>Understanding the basics of RESTful APIs</h2>
+    <section id="WhatIsARestfulApi"><h3>What is a RESTful API?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data.</dt>
+            <dt>The data can be used to GET, PUT, POST, and DELETE data types, which corresponds to the read, update, create, and delete operations of persistent storage, respectively.</dt>
+            <dt>RESTful APIs are stateless, meaning that calls can be made independently of one another, and each call contains all the data necessary to complete itself successfully.</dt>
+        </dl>
+    </section>
+    <section id="RestfulApiMethods"><h3>RESTful API Methods</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>RESTful APIs use specific HTTP methods to perform the CRUD operations:</dt>
+            <dd>1. GET: Retrieves resources from the server. It should have no side effects, meaning it should not change any resources.</dd>
+            <dd>2. POST: Sends data to the server for the creation of a resource.</dd>
+            <dd>3. PUT: Updates an existing resource or creates a new one if it does not exist.</dd>
+            <dd>4. DELETE: Removes resources from the server.</dd>
+            <dt>Examples of HTTP methods for CRUD operations:</dt>
+            <pre><code rel="Python" class="python" style="min-height: 70vh;">
+                # GET: Retrieve a list of resources or a single resource
+                GET /resources
+                GET /resources/{id}
+
+                # POST: Create a new resource
+                POST /resources
+                Body: {
+                    "name": "New Resource",
+                    "description": "Resource Description"
+                }
+
+                # PUT: Update an existing resource
+                PUT /resources/{id}
+                Body: {
+                    "name": "Updated Resource Name",
+                    "description": "Updated Resource Description"
+                }
+
+                # DELETE: Remove a resource
+                DELETE /resources/{id}
+            </code></pre>
+        </dl>
+    </section>
+    <section id="UnderstandingRestfulApiResponses"><h3>Understanding RESTful API Responses</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>RESTful APIs respond with standard HTTP status codes and data. The response typically contains a status line, headers, and the body, which contains the data (often in JSON or XML format).</dt>
+            <dd>1. 2XX codes indicate success, 4XX codes indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.), and 5XX codes indicate an error with the server.</dd>
+            <dd>2. The response body, when not empty, usually contains the requested resource, details about the operation performed, or an error message.</dd>
+            <dt>Examples:</dt>
+            <pre><code rel="JS" class="js" style="min-height: 50vh;">
+                # Successful GET request response example
+                {
+                    "status": 200,
+                    "data": {
+                        "id": 1,
+                        "name": "Example Resource"
+                    }
+                }
+
+                # Error response example
+                {
+                    "status": 404,
+                    "error": "Resource not found"
+                }
+            </code></pre>
+        </dl>
+    </section>
+</section>
+<section class="main-section-title" id="CommonConceptsInRestApiRequests"><h1>Common Concepts in REST API Requests</h1></section>
+<section class="sub-sections"><h2>Common Concepts in REST API Requests</h2>
+    <section id="Endpoint"><h3>Endpoint</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>An endpoint in REST API is the URL where a service can be accessed by a client application to perform some actions. Endpoints are defined by the URI and the method (GET, POST, PUT, DELETE) used to access the resource.</dt>
+            <dt>Example:</dt>
+            <table style="margin-top: .5em; margin-left: 1em;">
+				<tr><th>Method</th><th>Path (Route)</th><th>Action</th></tr>
+				<tr><td>GET</td><td>/todos</td><td>get all todos</td></tr>
+				<tr><td>GET</td>	<td>/todos/id</td>	<td>get Todo by id</td></tr>
+				<tr><td>POST</td>	<td>/todos</td>		<td>add new Todo</td></tr>
+				<tr><td>PUT</td>	<td>/todos/id</td>	<td>update Todo by id</td></tr>
+				<tr><td>DELETE</td>	<td>/todos/id</td>	<td>remove Todo by id</td></tr>
+			</table>
+        </dl>
+    </section>
+    <section id="Payload"><h3>Payload</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The payload in a REST API request or response is the actual data sent or received.</dt>
+            <dt>In requests, it's typically used with POST and PUT methods to send data to the server.</dt>
+            <dt>In responses, it contains the data returned by the server.</dt>
+            <dt>The payload is often formatted as JSON or XML.</dt>
+            <dd>For example, a POST request to create a new user might include a payload with the user's details in JSON format.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                {
+                    "name": "Ivan Ivanov",
+                    "email": "Ivanov@example.com"
+                }
+            </code></pre>
+        </dl>
+    </section>
+    <section id="Headers"><h3>Headers</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Headers in a REST API request or response provide additional information about the request or the response.</dt>
+            <dt>This can include metadata such as content type, authentication tokens, and caching policies.</dt>
+            <dd>For instance, the <code>Content-Type</code> header in a request tells the server what format the payload is in, such as <code>application/json</code> for JSON data.</dd>
+        </dl>
+    </section>
+    <section id="QueryParameters"><h3>Query Parameters</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Query parameters are appended to the endpoint URL to refine the scope or specify certain aspects of the request.</dt>
+            <dt>They are key-value pairs separated by an ampersand (&) and start with a question mark (?) after the URI.</dt>
+            <dd>For example, <code>GET /users?status=active&limit=10</code> could be used to retrieve only active users and limit the response to 10 users.</dd>
+        </dl>
+    </section>
+    <section id="StatusCode"><h3>Status Code</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Status codes are part of the response in a REST API and indicate the result of the request.</dt>
+            <dt>They help identify whether a request has been successfully processed, encountered an error, or resulted in some other state.</dt>
+            <dd>Common status codes include <code>200 OK</code> for a successful request, <code>404 Not Found</code> if the resource cannot be found, and <code>500 Internal Server Error</code> for a server error.</dd>
+        </dl>
+    </section>
+</section>
+
+<section class="main-section-title" id="RequestsLibraryInPython"><h1>Requests Library in Python</h1></section>
+<section class="sub-sections"><h2>Requests Library in Python</h2>
+    <section><h3>Prerequisites: JSONPlaceholder</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>To demonstrate how to make API request with Python we will need a free REST API Server.</dt>
+            <dt>JSONPlaceholder offers a free online REST API that you can use for testing and prototyping.</dt>
+            <dt>It simulates real server responses without the need for setting up a backend environment.</dt>
+            <dt>Official site: <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></dt>
+
+        </dl>
+    </section>
+    <section id="IntroductionToRequestsLibrary"><h3>Introduction to Requests Library</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The Requests library in Python is a simple, yet powerful HTTP library, designed to make HTTP requests simpler and more human-friendly.</dt>
+            <dt>Requests allows you to send HTTP requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your POST data. Keep-alive and HTTP connection pooling are 100% automatic, thanks to urllib3.</dt>
+            <dd>Reference: <a href="https://requests.readthedocs.io/en/latest/">Requests lib official site</a></dd>
+            <dt>Instalation:</dt>
+            <pre><code rel="Install" class="bash">
+                pip install requests
+            </code></pre>
+            <dt>Make sure you have latest version of requests installed</dt>
+            <pre><code rel="Terminal" class="bash">
+                $ pip show requests
+                    Name: requests
+                    Version: 2.27.1
+                    Summary: Python HTTP for Humans.
+                    Home-page: https://requests.readthedocs.io
+                    Author: Kenneth Reitz
+            </code></pre>
+            <dd>Else:</dd>
+            <pre><code rel="Upgrade" class="bash">
+                pip install --upgrade requests
+            </code></pre>
+        </dl>
+    </section>
+    <section id="MakingAGetRequest"><h3>Making a GET Request</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The <code>requests.get()</code> method is used to retrieve information from a specified resource.</dt>
+            <dd>Parameters:</dd>
+            <dd><strong>url</strong> (string): The URL of the desired resource.</dd>
+            <dd><strong>params</strong> (dictionary, optional): Dictionary or bytes to be sent in the query string for the request.</dd>
+            <dd><strong>**kwargs</strong> (optional): Additional arguments that request methods accept (like <code>headers</code>, <code>cookies</code>, <code>timeout</code>, etc.).</dd>
+            <dt>Example:</dt>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                response = requests.get('https://jsonplaceholder.typicode.com/posts')
+                print(response.json()[0])
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#requests.get">https://requests.readthedocs.io/en/latest/api/#requests.get</a></dt>
+        </dl>
+    </section>
+    <section id="SendingDataWithPostRequests"><h3>Sending Data with POST Requests</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The <code>requests.post()</code> method is used to send data to a server to create a new resource.</dt>
+            <dd>Parameters:</dd>
+            <dd><strong>url</strong> (string): The URL of the server to send the request to.</dd>
+            <dd><strong>data</strong> (dictionary, optional): The data to send in the body of the request. Can be a dictionary, list of tuples, bytes, or file-like object.</dd>
+            <dd><strong>json</strong> (dictionary, optional): A JSON-serializable object to send in the body of the request.</dd>
+            <dd><strong>**kwargs</strong> (optional): Additional arguments that request methods accept.</dd>
+            <dt>Example: </dt>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # Create a new post
+                post_data = {
+                    'title': 'foo',
+                    'body': 'bar',
+                    'userId': 1
+                }
+
+                # Send the POST Request:
+                response = requests.post('https://jsonplaceholder.typicode.com/posts', json=post_data)
+                new_post = response.json()
+
+                # Print the created post
+                print(new_post)
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#requests.post">https://requests.readthedocs.io/en/latest/api/#requests.post</a></dt>
+        </dl>
+    </section>
+    <section id="MakingAPutRequestExplanation"><h3>Update data with PUT Request</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The <code>requests.put()</code> method is used to send data to a server to update or replace a resource.</dt>
+            <dd>Parameters:</dd>
+            <dd><strong>url</strong> (string): The URL of the resource to update.</dd>
+            <dd><strong>data</strong> (dictionary, optional): The data to send in the body of the request.</dd>
+            <dd><strong>json</strong> (dictionary, optional): A JSON-serializable object to send in the body of the request.</dd>
+            <dd><strong>**kwargs</strong> (optional): Additional arguments that request methods accept.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                update_data = {'title': 'updated title', 'body': 'updated body', 'userId': 1}
+                response = requests.put('https://jsonplaceholder.typicode.com/posts/1', json=update_data)
+                print(response.json())
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#requests.put">https://requests.readthedocs.io/en/latest/api/#requests.put</a></dt>
+        </dl>
+    </section>
+    <section id="MakingADeleteRequestExplanation"><h3>Remove data with DELETE Request</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The <code>requests.delete()</code> method is used to send a request to delete a specified resource.</dt>
+            <dd>Parameters:</dd>
+            <dd><strong>url</strong> (string): The URL of the resource that you wish to delete.</dd>
+            <dd><strong>**kwargs</strong> (optional): Additional arguments that request methods accept, such as <code>headers</code>, <code>cookies</code>, and <code>timeout</code>. These parameters allow further customization of the HTTP request.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                # Sending a DELETE request
+                response = requests.delete('https://jsonplaceholder.typicode.com/posts/1')
+
+                # Checking if the deletion was successful
+                if response.status_code == 200:
+                    print("The post was successfully deleted.")
+                else:
+                    print(f"Failed to delete the post. Status code: {response.status_code}")
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#requests.delete">https://requests.readthedocs.io/en/latest/api/#requests.delete</a></dt>
+        </dl>
+    </section>
+    <section id="WorkingWithResponseObjects"><h3>Working with Response Objects</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>When you make a request using the Requests library, you receive a Response object. This object contains the server's response to your HTTP request.</dt>
+            <dt>The Response object includes several useful properties and methods: </dt>
+            <dd><code>.status_code</code> shows the HTTP status code, </dd>
+            <dd><code>.text</code> provides the response body as a string, </dd>
+            <dd><code>.json()</code> parses the response body as JSON, </dd>
+            <dd><code>.headers</code> offers the headers as a dictionary.</dd>
+
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                response = requests.get('https://api.example.com/resource')
+                print(response.status_code) # prints the status code
+                print(response.headers) # prints the headers
+                print(response.json()) # prints the json content
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">https://requests.readthedocs.io/en/latest/api/#requests.Response</a></dt>
+        </dl>
+    </section>
+    <section id="HandlingErrors"><h3>Handling Errors</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>It's important to handle errors that may occur during the request. The Requests library raises exceptions for certain types of errors.</dt>
+            <dd>For example, <code>requests.exceptions.HTTPError</code> is raised for HTTP errors, while <code>requests.exceptions.ConnectionError</code> is raised for connection problems.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                try:
+                    response = requests.get('https://api.example.com/resource')
+                    response.raise_for_status() # will raise an HTTPError if the status is 4xx or 5xx
+                except requests.exceptions.HTTPError as errh:
+                    print ("Http Error:",errh)
+                except requests.exceptions.ConnectionError as errc:
+                    print ("Error Connecting:",errc)
+                except requests.exceptions.Timeout as errt:
+                    print ("Timeout Error:",errt)
+                except requests.exceptions.RequestException as err:
+                    print ("OOps: Something Went Wrong!",err)
+            </code></pre>
+            <dt>Reference: <a href="https://requests.readthedocs.io/en/latest/api/#exceptions">https://requests.readthedocs.io/en/latest/api/#exceptions</a></dt>
+        </dl>
+    </section>
+    <section id="SendingQueryParams"><h3>Sending Query Parameters</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Query parameters are used in GET requests to filter, sort, or specify the nature of the request. They are appended to the URL following a question mark (?) and separated by ampersands (&).</dt>
+            <dd>The <code>requests.get()</code> method allows you to send these parameters as a dictionary via the <code>params</code> keyword argument.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                # Define the base URL
+                url = 'https://jsonplaceholder.typicode.com/posts'
+
+                # Define the query parameters
+                query_params = {
+                    'userId': 1,
+                    '_limit': 5
+                }
+
+                # Send a GET request with query parameters
+                response = requests.get(url, params=query_params)
+                posts = response.json()
+
+                # Print the retrieved posts
+                for post in posts:
+                    print(post)
+            </code></pre>
+            <dt>Reference: <a href="https://docs.python-requests.org/en/latest/user/quickstart/#passing-parameters-in-urls">https://docs.python-requests.org/en/latest/user/quickstart/#passing-parameters-in-urls</a></dt>
+        </dl>
+    </section>
+    <section id="SendingHeadersWithRequests"><h3>Sending Headers with Requests</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Custom headers can be sent with Requests by using the <code>headers</code> parameter in the form of a dictionary. This is essential for APIs that require standard or custom headers for requests.</dt>
+            <dt>Example:</dt>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                url = 'https://jsonplaceholder.typicode.com/posts/1'
+                headers = {
+                    'Custom-Header': 'value',
+                    'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+                }
+
+                response = requests.get(url, headers=headers)
+                print(response.json())
+            </code></pre>
+            <dt>Reference:  <a href="https://docs.python-requests.org/en/latest/user/quickstart/#custom-headers">Requests documentation</a>.</dt>
+        </dl>
+    </section>
+</section>
+
+
+<section class="main-section-title" id="AuthenticatingAndAccessingDataSourceAPIs"><h1>Authenticating and Accessing Data Source APIs</h1></section>
+<section class="sub-sections"><h2>Basic Authentication</h2>
+    <section id="UnderstandingBasicAuthentication"><h3>Basic Authentication</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Basic Authentication is a simple method where clients send requests with a username and password encoded in Base64.</dt>
+            <dd>It's straightforward but less secure, as credentials are easily encoded and decoded.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+                from requests.auth import HTTPBasicAuth
+
+                response = requests.get('https://api.example.com/data',
+                                        auth=HTTPBasicAuth('user', 'password'))
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections"><h2>Session-Based Authentication</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Session-Based Authentication is a traditional method for managing user sessions in web applications.</dt>
+            <dt>When a user logs in, the server creates a session for that user and stores it either in memory or in a database.</dt>
+            <dt>A session identifier (session ID) is then sent to the client, typically as a cookie, which the browser automatically sends back with every subsequent request to the server.</dt>
+            <a href="./images/session_auth_flow.webp"><img src="./images/session_auth_flow.webp" alt="session_auth_flow.webp"></a>
+            <dt>This method relies on the server to keep track of the session state, making it inherently stateful.</dt>
+            <dt>The server checks the received session ID against the stored sessions for each request to verify if the user is authenticated and authorized to access the requested resources.</dt>
+        </dl>
+    </section>
+    <section id="UtilizingSessionTokens"><h3>Session-Based Authentication using Requests</h3>
+        <dl class="fa" style="min-width:80vw">
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                # Login to create a session and receive a session token
+                session = requests.Session()
+                session.post('https://api.example.com/login', data={'user': 'username', 'password': 'password'})
+
+                # Use the session object for subsequent requests
+                response = session.get('https://api.example.com/data')
+            </code></pre>
+        </dl>
+    </section>
+</section>
+<section class="sub-sections"><h2>Token Authentication</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Token-Based Authentication is a method where the server generates a token for the client after successfully verifying the client's credentials (e.g., username and password).</dt>
+            <dt>This token, often a cryptographically signed piece of data, represents the user's identity and claims, which could include permissions, validity duration, and other metadata.</dt>
+            <dt>Unlike Session-Based Authentication, which stores session state on the server, Token-Based Authentication is stateless.</dt>
+            <dt>The server does not keep a record of tokens it has issued. Instead, the client stores the token and includes it in the HTTP header of every request to the server.</dt>
+            <dt>The server then validates this token to authenticate the user for each request.</dt>
+            <a href="./images/token_auth_flow.webp"><img src="./images/token_auth_flow.webp" alt="token_auth_flow.webp"></a>
+        </dl>
+    </section>
+    <section id="ImplementingTokenAuthentication"><h3>Token Authentication using Requests</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Usually the  <code>Authorization</code> HTTP Header is used to pass access token for authentication</dt>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import requests
+
+                headers = {'Authorization': 'Token YOUR_ACCESS_TOKEN'}
+                response = requests.get('https://api.example.com/data', headers=headers)
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections"><h2>Understanding JSON Web Tokens (JWT)</h2>
+    <section id="WhatIsJWT"><h3>What is JWT?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>JWT, or JSON Web Token, is a compact, URL-safe means of representing claims to be transferred between two parties.</dt>
+            <dd>The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.</dd>
+        </dl>
+    </section>
+    <section id="JWTStructure"><h3>JWT Structure</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>A JWT is composed of three parts: Header, Payload, and Signature, each separated by a dot (.).</dt>
+            <dd>The Header typically consists of the type of token (JWT) and the signing algorithm. The Payload contains the claims, which are statements about an entity and additional data. The Signature is used to secure the token against tampering.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                Header.Payload.Signature
+            </code></pre>
+        </dl>
+    </section>
+    <section id="HowJWTWorks"><h3>How JWT Works</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>In authentication, when the user successfully logs in using their credentials, a JWT is returned.</dt>
+            <dd>Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the Authorization header using the Bearer schema. The server then validates the token and, if valid, returns the requested resource.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                Authorization: Bearer <token>
+            </code></pre>
+        </dl>
+    </section>
+    <section id="SecurityConsiderations"><h3>Security Considerations</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>While JWTs are secure, they must be handled and stored securely to prevent common vulnerabilities.</dt>
+            <dd>Use HTTPS to prevent man-in-the-middle attacks, keep the payload concise to avoid header overflow attacks, and ensure the signature is verified every time a token is received to prevent tampering.</dd>
+        </dl>
+    </section>
+    <section id="ImplementingJWTInPython"><h3>Implementing JWT in Python</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Python provides libraries such as PyJWT to work with JWTs. Below is an example of encoding and decoding a JWT.</dt>
+            <dd>This example requires the PyJWT library, which can be installed via pip. Ensure you handle exceptions for robustness.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                import jwt
+                encoded_jwt = jwt.encode({'some': 'payload'}, 'secret', algorithm='HS256')
+                print(encoded_jwt)
+
+                decoded_jwt = jwt.decode(encoded_jwt, 'secret', algorithms=['HS256'])
+                print(decoded_jwt)
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Simple Fast API server with JWT</h3>
+        <dl class="fa" style="min-width:80vw">
+            <script src="https://gist.github.com/ProgressBG-Python-Course/743eb286731549957373a002a3774523.js"></script>
+            <dt>Dependencies:</dt>
+            <pre><code rel="Terminal" class="bash">
+                pip install fastapi uvicorn
+                pip install python-jose
+                pip install python-multipart
+            </code></pre>
+            <dt>Run Server</dt>
+            <pre><code rel="Terminal" class="bash">
+                uvicorn server:app --reload
+            </code></pre>
+        </dl>
+    </section>
+    <section><h3>Simple Python Client using JWT</h3>
+        <dl class="fa" style="min-width:80vw">
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import requests
+
+                # If login is successful, extract the access token from the response
+                access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXNobyIsImV4cCI6MTcxMDAyODEyNn0.Pi2yTwbdd6NrYF7IVPQnj8TrJnf8SC0X2klTtlT2fLE'
+                # print(f"Access Token: {access_token}")
+
+                # use the access token to access protected endpoints
+                protected_url = 'http://127.0.0.1:8000/users/me'
+                headers = {'Authorization': f'Bearer {access_token}'}
+
+                protected_response = requests.get(protected_url, headers=headers)
+                print(protected_response.json())
+            </code></pre>
+        </dl>
+    </section>
+
+</section>
+
+
+<section class="sub-sections"><h2>Understanding OAuth</h2>
+    <section id="WhatIsOAuth"><h3>What is OAuth?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>OAuth is a more complex, secure authentication standard that allows users to approve application to act on their behalf without sharing passwords.</dt>
+            <dt>OAuth (Open Authorization) is an open standard for access delegation, used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</dt>
+            <dd>This is achieved through a process involving the user granting permission to the OAuth client to access their information from the OAuth service provider, without directly sharing login credentials.</dd>
+        </dl>
+    </section>
+    <section id="OAuthWorkflow"><h3>How OAuth Works</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>1. User Authorization: The user is asked to authorize the application to access their information from the service provider.</dt>
+            <dd>2. Granting Permission: If the user agrees, the service provider issues a unique code to the application.</dd>
+            <dd>3. Obtaining an Access Token: The application exchanges the code for an access token from the service provider.</dd>
+            <dd>4. Accessing Resources: The application uses the access token to request data from the service provider on behalf of the user.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # OAuth process overview
+                # 1. Redirect user to the service provider to request authorization
+                # 2. User grants permission
+                # 3. Receive authorization code
+                # 4. Exchange code for an access token
+                # 5. Use access token to request resources
+            </code></pre>
+        </dl>
+    </section>
+    <section id="OAuthVersions"><h3>OAuth Versions</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>OAuth 1.0: Introduced complex signatures to authenticate requests, making it secure but hard to implement.</dt>
+            <dd>OAuth 2.0: Provides a simplified workflow with multiple authentication flows to cover a wide range of scenarios, relying on HTTPS for security instead of signatures.</dd>
+        </dl>
+    </section>
+    <section id="UseCasesOfOAuth"><h3>Use Cases of OAuth</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Social Logins: Enables users to log into other applications using their social media accounts, enhancing convenience and security.</dt>
+            <dd>Accessing API Services: Allows applications to access user data from another service, like reading or sending emails on behalf of the user.</dd>
+            <dd>Third-party Access: Facilitates third-party applications to perform actions or access user data without needing to manage or store user credentials directly.</dd>
+        </dl>
+    </section>
+</section>
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+mouse click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
+</body>
+</html>
