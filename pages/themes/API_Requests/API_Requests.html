@@ -496,8 +496,9 @@
 <section class="sub-sections"><h2>Understanding JSON Web Tokens (JWT)</h2>
     <section id="WhatIsJWT"><h3>What is JWT?</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>JWT, or JSON Web Token, is a compact, URL-safe means of representing claims to be transferred between two parties.</dt>
-            <dd>The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.</dd>
+            <dt>JWT, or JSON Web Token, is a compact, URL-safe (using Base64) means of representing claims to be transferred between two parties.</dt>
+            <dt>The claims in a JWT are encoded as a JSON object and can be verified and trusted because <b>it is digitally signed</b>.</dt>
+            <dd>JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.</dd>
         </dl>
     </section>
     <section id="JWTStructure"><h3>JWT Structure</h3>
@@ -507,27 +508,31 @@
             <pre><code rel="JS" class="js" style="min-height: 1vh;">
                 Header.Payload.Signature
             </code></pre>
+            <dt>Reference: <a href="https://jwt.io/">jwt.io/</a></dt>
         </dl>
     </section>
     <section id="HowJWTWorks"><h3>How JWT Works</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>In authentication, when the user successfully logs in using their credentials, a JWT is returned.</dt>
-            <dd>Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the Authorization header using the Bearer schema. The server then validates the token and, if valid, returns the requested resource.</dd>
+            <dt>Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the Authorization header using the Bearer schema.</dt>
             <pre><code rel="JS" class="js" style="min-height: 1vh;">
-                Authorization: Bearer <token>
+                Authorization: Bearer &lt;token&gt;
             </code></pre>
+            <dt>The server then validates the token and, if valid, returns the requested resource.</dt>
         </dl>
     </section>
     <section id="SecurityConsiderations"><h3>Security Considerations</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>While JWTs are secure, they must be handled and stored securely to prevent common vulnerabilities.</dt>
-            <dd>Use HTTPS to prevent man-in-the-middle attacks, keep the payload concise to avoid header overflow attacks, and ensure the signature is verified every time a token is received to prevent tampering.</dd>
+            <dt>HTTPS must be used to prevent man-in-the-middle attacks.</dt>
+            <dt>The payload must be concise to avoid header overflow attacks.</dt>
+            <dt>The server must ensure the signature is verified every time a token is received to prevent tampering.</dt>
         </dl>
     </section>
     <section id="ImplementingJWTInPython"><h3>Implementing JWT in Python</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Python provides libraries such as PyJWT to work with JWTs. Below is an example of encoding and decoding a JWT.</dt>
-            <dd>This example requires the PyJWT library, which can be installed via pip. Ensure you handle exceptions for robustness.</dd>
+            <dt>Python provides libraries such as PyJWT to work with JWTs.</dt>
+            <dt>To run next example, install PyJWT by: <code>pip install PyJWT</code></dt>
             <pre><code rel="JS" class="js" style="min-height: 1vh;">
                 import jwt
                 encoded_jwt = jwt.encode({'some': 'payload'}, 'secret', algorithm='HS256')
@@ -574,29 +579,33 @@
 
 </section>
 
-
+<section><h1>Understanding OAuth</h1></section>
 <section class="sub-sections"><h2>Understanding OAuth</h2>
     <section id="WhatIsOAuth"><h3>What is OAuth?</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>OAuth is a more complex, secure authentication standard that allows users to approve application to act on their behalf without sharing passwords.</dt>
-            <dt>OAuth (Open Authorization) is an open standard for access delegation, used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</dt>
-            <dd>This is achieved through a process involving the user granting permission to the OAuth client to access their information from the OAuth service provider, without directly sharing login credentials.</dd>
+            <dt>OAuth (Open Authorization) is a complex, secure authentication standard that allows users to approve application to act on their behalf without sharing passwords.</dt>
+            <dt>OAuth enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook, GitHub, or Google.</dt>
+            <dt>This is achieved through a process involving the user granting permission to the OAuth client to access their information from the OAuth service provider, without directly sharing login credentials.</dt>
+        </dl>
+    </section>
+    <section><h3>OAuth client and the OAuth service provider</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>OAuth Service Provider</dt>
+            <dd>The OAuth service provider is the system that owns the user data and resources. It's capable of authenticating the user and providing access tokens to clients after successful authorization. Think of the service provider as a library that holds many books (data and resources). To access a book, you need permission from the library (service provider).
+            </dd>
+            <dd>Examples of OAuth service providers include large internet companies like Google, Facebook, and Twitter. They allow users to share information about their accounts with third-party applications without exposing their passwords.</dd>
+            <dt>OAuth Client</dt>
+            <dd>The OAuth client is the application that wants to access the user's data stored with the service provider. The client can be a web application, a mobile app, or a server-side application. Before it can access any data, the client must be authorized by the user and authenticated by the service provider.</dd>
+            <dd>Imagine you're developing a new app that can import photos from a user's Facebook account. In this scenario, your app is the OAuth client. To access the photos, your app must ask the user for permission and then communicate with Facebook (the service provider) to access the photos on the user's behalf.</dd>
         </dl>
     </section>
     <section id="OAuthWorkflow"><h3>How OAuth Works</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>1. User Authorization: The user is asked to authorize the application to access their information from the service provider.</dt>
-            <dd>2. Granting Permission: If the user agrees, the service provider issues a unique code to the application.</dd>
-            <dd>3. Obtaining an Access Token: The application exchanges the code for an access token from the service provider.</dd>
-            <dd>4. Accessing Resources: The application uses the access token to request data from the service provider on behalf of the user.</dd>
-            <pre><code rel="JS" class="js" style="min-height: 1vh;">
-                # OAuth process overview
-                # 1. Redirect user to the service provider to request authorization
-                # 2. User grants permission
-                # 3. Receive authorization code
-                # 4. Exchange code for an access token
-                # 5. Use access token to request resources
-            </code></pre>
+            <dt>1. User Authorization: The user is redirected to Facebook to authorize the photo-importing app to access their photo albums.</dt>
+            <dt>2. Granting Permission: If the user consents, Facebook generates a unique code and redirects the user back to the photo-importing app.</dt>
+            <dt>3. Obtaining an Access Token: The photo-importing app exchanges the code received from Facebook for an access token.</dt>
+            <dt>4. Accessing Resources: With the access token, the photo-importing app can now request the user's photos from Facebook and import them.</dt>
+            <dt>Example of OAuth flow for importing photos from Facebook</dt>
         </dl>
     </section>
     <section id="OAuthVersions"><h3>OAuth Versions</h3>
@@ -608,8 +617,8 @@
     <section id="UseCasesOfOAuth"><h3>Use Cases of OAuth</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>Social Logins: Enables users to log into other applications using their social media accounts, enhancing convenience and security.</dt>
-            <dd>Accessing API Services: Allows applications to access user data from another service, like reading or sending emails on behalf of the user.</dd>
-            <dd>Third-party Access: Facilitates third-party applications to perform actions or access user data without needing to manage or store user credentials directly.</dd>
+            <dt>Accessing API Services: Allows applications to access user data from another service, like reading or sending emails on behalf of the user.</dt>
+            <dt>Third-party Access: Facilitates third-party applications to perform actions or access user data without needing to manage or store user credentials directly.</dt>
         </dl>
     </section>
 </section>
