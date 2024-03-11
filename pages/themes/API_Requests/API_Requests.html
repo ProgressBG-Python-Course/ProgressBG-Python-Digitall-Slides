@@ -92,7 +92,7 @@
             <dd>3. PUT: Updates an existing resource or creates a new one if it does not exist.</dd>
             <dd>4. DELETE: Removes resources from the server.</dd>
             <dt>Examples of HTTP methods for CRUD operations:</dt>
-            <pre><code rel="Python" class="python" style="min-height: 70vh;">
+            <pre><code rel="" class="python" style="min-height: 60vh;">
                 # GET: Retrieve a list of resources or a single resource
                 GET /resources
                 GET /resources/{id}
@@ -119,7 +119,7 @@
     <section id="UnderstandingRestfulApiResponses"><h3>Understanding RESTful API Responses</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>RESTful APIs respond with standard HTTP status codes and data. The response typically contains a status line, headers, and the body, which contains the data (often in JSON or XML format).</dt>
-            <dd>1. 2XX codes indicate success, 4XX codes indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.), and 5XX codes indicate an error with the server.</dd>
+            <dd>Common status codes include <code>200 OK</code> for a successful request, <code>404 Not Found</code> if the resource cannot be found, and <code>500 Internal Server Error</code> for a server error.</dd>
             <dd>2. The response body, when not empty, usually contains the requested resource, details about the operation performed, or an error message.</dd>
             <dt>Examples:</dt>
             <pre><code rel="JS" class="js" style="min-height: 50vh;">
@@ -186,24 +186,19 @@
             <dd>For example, <code>GET /users?status=active&limit=10</code> could be used to retrieve only active users and limit the response to 10 users.</dd>
         </dl>
     </section>
-    <section id="StatusCode"><h3>Status Code</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>Status codes are part of the response in a REST API and indicate the result of the request.</dt>
-            <dt>They help identify whether a request has been successfully processed, encountered an error, or resulted in some other state.</dt>
-            <dd>Common status codes include <code>200 OK</code> for a successful request, <code>404 Not Found</code> if the resource cannot be found, and <code>500 Internal Server Error</code> for a server error.</dd>
-        </dl>
-    </section>
 </section>
 
 <section class="main-section-title" id="RequestsLibraryInPython"><h1>Requests Library in Python</h1></section>
 <section class="sub-sections"><h2>Requests Library in Python</h2>
-    <section><h3>Prerequisites: JSONPlaceholder</h3>
+    <section><h3>Prerequisites</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>To demonstrate how to make API request with Python we will need a free REST API Server.</dt>
-            <dt>JSONPlaceholder offers a free online REST API that you can use for testing and prototyping.</dt>
-            <dt>It simulates real server responses without the need for setting up a backend environment.</dt>
-            <dt>Official site: <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></dt>
-
+            <dt>JSONPlaceholder</dt>
+            <dd>To demonstrate how to make API request with Python we will need a free REST API Server.</dd>
+            <dd>JSONPlaceholder offers a free online REST API that you can use for testing and prototyping.</dd>
+            <dd>It simulates real server responses without the need for setting up a backend environment.</dd>
+            <dd>Official site: <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></dd>
+            <dt>RESTMan</dt>
+            <dd>To test the API Requests, before implementing them with Python, we will use <a href="https://chromewebstore.google.com/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi">RESTMan - a browser extension to work on http requests.</a></dd>
         </dl>
     </section>
     <section id="IntroductionToRequestsLibrary"><h3>Introduction to Requests Library</h3>
@@ -416,29 +411,59 @@
         </dl>
     </section>
 </section>
-
 <section class="sub-sections"><h2>Session-Based Authentication</h2>
     <section><h3>Overview</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>Session-Based Authentication is a traditional method for managing user sessions in web applications.</dt>
             <dt>When a user logs in, the server creates a session for that user and stores it either in memory or in a database.</dt>
             <dt>A session identifier (session ID) is then sent to the client, typically as a cookie, which the browser automatically sends back with every subsequent request to the server.</dt>
-            <a href="./images/session_auth_flow.webp"><img src="./images/session_auth_flow.webp" alt="session_auth_flow.webp"></a>
-            <dt>This method relies on the server to keep track of the session state, making it inherently stateful.</dt>
             <dt>The server checks the received session ID against the stored sessions for each request to verify if the user is authenticated and authorized to access the requested resources.</dt>
+            <a href="./images/session_auth_flow.webp"><img src="./images/session_auth_flow.webp" alt="session_auth_flow.webp"></a>
+            <dt class="note">This method relies on the server to keep track of the session state, making it inherently stateful.</dt>
         </dl>
     </section>
     <section id="UtilizingSessionTokens"><h3>Session-Based Authentication using Requests</h3>
         <dl class="fa" style="min-width:80vw">
-            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+            <pre><code rel="JS" class="js" style="min-height: 90vh;">
                 import requests
 
-                # Login to create a session and receive a session token
-                session = requests.Session()
-                session.post('https://api.example.com/login', data={'user': 'username', 'password': 'password'})
+                # The base URL of the server
+                BASE_URL = 'http://example.com'
 
-                # Use the session object for subsequent requests
-                response = session.get('https://api.example.com/data')
+                # Create a session object, which will be used to maintain cookies across requests
+                session = requests.Session()
+
+                # Data to be sent for login
+                login_data = {
+                    'username': 'your_username',
+                    'password': 'your_password'
+                }
+
+                # Login request
+                login_response = session.post(f'{BASE_URL}/login', data=login_data)
+
+                # Check if login was successful
+                if login_response.ok:
+                    print("Logged in successfully!")
+
+                    # Now that the session is established, we can access protected endpoints
+                    protected_response = session.get(f'{BASE_URL}/protected')
+
+                    if protected_response.ok:
+                        print("Accessed protected content:", protected_response.text)
+                    else:
+                        print("Failed to access protected content:", protected_response.status_code)
+
+                    # Logout to end the session
+                    logout_response = session.get(f'{BASE_URL}/logout')
+                    if logout_response.ok:
+                        print("Logged out successfully!")
+                    else:
+                        print("Failed to log out:", logout_response.status_code)
+
+                else:
+                    print("Login failed:", login_response.status_code)
+
             </code></pre>
         </dl>
     </section>
