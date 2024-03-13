@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataTransformationAndCleaning</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- css & themes include -->
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css" id="theme">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CUSTOM -->
+    <base target="_blank">
+</head>
+<body>
+    <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+        <div class="top_links">
+            <a class="home_link" href="/ProgressBG-Python-Digitall-Slides/pages/agenda/agenda.html#DataTransformationAndCleaning" target="_top"><i class="fa fa-home"></i></a>
+            <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+            <div class="help_text">
+                <div class="note">Keyboard shortcuts:</div>
+                <div><span>N/Спейс</span><span>Next Slide</span></div>
+                <div><span>P</span><span>Previous Slide</span></div>
+                <div><span>O</span><span>Slides Overview</span></div>
+                <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+                <div class="print-howto"><br>If you want print version => add '<code>?print-pdf</code>' <br> at the end of slides URL (remove '#' fragment) and then print. <br>
+                Like: https://wwwcourses.github.io/...CourseIntro.html?print-pdf </div>
+            </div>
+        </div>
+        <div class="footer theme_switch">
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python-Digitall-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+        </div>
+        <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Data Transformation and Cleaning</h1></section>
+<section data-transition="zoom">
+    <!-- linkedin badge -->
+    <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+    <section class="copyright" data-transition="zoom">
+        <div class="note">
+            <p>Created for</p>
+        </div>
+        <div class="company">
+            <a href="http://progressbg.net/програмиране-с-python-2/">
+            <img style="height:80%" src="/ProgressBG-Python-Digitall-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+            </a>
+        </div>
+        <div class="author">
+            <span class="note">Iva E. Popova, 2016-2024,</span>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+        </div>
+    </section>
+    <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+        <div class="company">
+             <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+        </div>
+    </section>
+</section>
+
+
+<section class="main-section-title" id="DataTransformationAndCleaning"><h1>Data Transformation and Cleaning</h1></section>
+<section class="sub-sections"><h2>Introduction to Data Cleaning</h2>
+    <section id="WhatIsDataCleaning"><h3>What Is Data Cleaning?</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Data cleaning is the second step in the ETL process and is crucial for ensuring the accuracy of insights derived from data analysis.</dt>
+            <dd>The 5 steps of the ETL process are: <b>extract</b>, <b>clean</b>, <b>transform</b>, <b>load</b>, and <b>analyze</b>.</dd>
+            <dt>Data cleaning involves identifying and correcting anomalies and inconsistencies in data.</dt>
+            <dt>Data cleaning aims to enhance data quality making subsequent analyses more reliable and to increase productivity by automating repetitive tasks.</dt>
+        </dl>
+    </section>
+    <section id="ExamplesOfAnomaliesAndInconsistencies"><h3>Examples of Anomalies and Inconsistencies</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Duplicate Records</dt>
+            <dd>Identical or very similar records that appear more than once in the dataset.</dd>
+            <dd>Example: Two customer profiles with the same email but different customer IDs.</dd>
+
+            <dt>Missing Values</dt>
+            <dd>Instances where information is absent for certain fields within a record.</dd>
+            <dd>Example: A dataset of patient records where some entries are missing the age or address.</dd>
+
+            <dt>Inconsistent Formats</dt>
+            <dd>Data entries that do not follow a uniform format, making analysis challenging.</dd>
+            <dd>Example: Dates entered as DD/MM/YYYY in some records and MM/DD/YYYY in others.</dd>
+
+            <dt>Outliers</dt>
+            <dd>Values that deviate significantly from the rest of the data, potentially indicating errors or extraordinary events.</dd>
+            <dd>Example: A transaction record showing a purchase amount significantly higher than typical values, which may indicate data entry error or fraud.</dd>
+
+            <dt>Incorrect Values</dt>
+            <dd>Entries that contain inaccurate information due to typos, misinterpretation, or misinformation.</dd>
+            <dd>Example: A product's price listed as $10000 instead of $100.00 due to a decimal placement error.</dd>
+        </dl>
+    </section>
+
+</section>
+
+<section class="sub-sections"><h2>Data Transformation Techniques</h2>
+    <section id="Normalization"><h3>Normalization</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Normalization involves adjusting the scale of data to a standard range.</dt>
+            <dd>Common methods include Min-Max scaling and Z-score normalization.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # Example of Min-Max scaling
+                def min_max_scaling(series):
+                    return (series - series.min()) / (series.max() - series.min())
+            </code></pre>
+        </dl>
+    </section>
+    <section id="DataEncoding"><h3>Data Encoding</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Transforming categorical data into a numerical format.</dt>
+            <dd>Techniques include one-hot encoding and label encoding.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # Example of one-hot encoding
+                def one_hot_encode(df, column_name):
+                    return pd.get_dummies(df, columns=[column_name])
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections"><h2>Common Data Cleaning Operations</h2>
+    <section id="HandlingMissingValues"><h3>Handling Missing Values</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Techniques include imputation, deletion, and interpolation.</dt>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # Example of mean imputation
+                def mean_impute(df, column_name):
+                    df[column_name].fillna(df[column_name].mean(), inplace=True)
+            </code></pre>
+        </dl>
+    </section>
+    <section id="DetectingAndRemovingOutliers"><h3>Detecting and Removing Outliers</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Outliers can be detected using statistical methods like Z-score and IQR.</dt>
+            <dd>Outliers may be removed or corrected based on the analysis requirements.</dd>
+            <pre><code rel="JS" class="js" style="min-height: 1vh;">
+                # Example of outlier removal using IQR
+                def remove_outliers_iqr(df, column_name):
+                    Q1 = df[column_name].quantile(0.25)
+                    Q3 = df[column_name].quantile(0.75)
+                    IQR = Q3 - Q1
+                    df = df[~((df[column_name] < (Q1 - 1.5 * IQR)) |(df[column_name] > (Q3 + 1.5 * IQR)))]
+                    return df
+            </code></pre>
+        </dl>
+    </section>
+</section>
+
+<section class="main-section-title" id="ApplyingDataValidationAndQualityChecks"><h1>Applying Data Validation and Quality Checks</h1></section>
+
+<section class="sub-sections">
+    <h2>Introduction to Data Quality</h2>
+    <section id="DefinitionOfDataQuality"><h3>Definition of Data Quality</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Data quality refers to the condition of data based on factors like accuracy, completeness, reliability, and relevance. High-quality data is crucial for making informed decisions.</dt>
+        </dl>
+    </section>
+    <section id="ImportanceOfDataQuality"><h3>Importance of Data Quality and Validation</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Ensuring data quality and validation is fundamental in data processing to avoid errors, make informed decisions, and support data-driven insights.</dt>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections">
+    <h2>Data Validation Techniques</h2>
+    <section id="TypeChecks"><h3>Type Checks</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Type checks involve verifying that each data item matches its expected data type, such as integers, strings, or dates.</dt>
+            <dd>Example: Ensuring numerical columns do not contain text.</dd>
+        </dl>
+    </section>
+    <section id="RangeChecks"><h3>Range Checks</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Range checks validate that data values fall within an acceptable set range.</dt>
+            <dd>Example: Verifying ages in a dataset are within 0 to 120.</dd>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections">
+    <h2>Implementing Data Validation in Pandas</h2>
+    <section id="UsingDtypeForTypeChecks"><h3>Using dtype for Type Checks</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>In Pandas, the dtype property can be used to check the data type of each column to ensure they match expected types.</dt>
+            <dd>Example: <code>df['age'].dtype == 'int'</code> checks if the 'age' column is of integer type.</dd>
+        </dl>
+    </section>
+    <section id="ApplyingQueryOrLocForRangeAndListChecks"><h3>Applying .query() or .loc[] for Range and List Checks</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The .query() and .loc[] methods can be used to filter data that does not meet specified criteria.</dt>
+            <dd>Example: <code>df.loc[df['age'] &lt; 0 | df['age'] &gt; 120]</code> identifies rows where 'age' is outside the 0 to 120 range.</dd>
+        </dl>
+    </section>
+</section>
+
+<section class="sub-sections">
+    <h2>Case Study: Data Validation in Action</h2>
+    <section id="RealWorldScenario"><h3>Brief Overview of a Real-world Scenario</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Detail a specific scenario where data validation and quality checks were applied to a dataset, highlighting the challenges, steps taken, and outcomes.</dt>
+            <dd>For example, a retail company may use data validation techniques to ensure the integrity of sales data, identifying and correcting anomalies like negative sales numbers or impossible discount percentages, leading to more accurate sales reports and forecasts.</dd>
+        </dl>
+    </section>
+</section>
+
+
+
+<section id="hw">
+    <section><h1>Homework</h1></section>
+    <section id="task1"><h3>Homework</h3>
+        <dl class="fa">
+            <dt>The tasks are given in next <a href="__URL__">gist file</a></dt>
+            <dt>You can copy it and work directly on it. Just put your code under "### Your code here".</dt>
+        </dl>
+    </section>
+</section>
+
+
+
+<!-- <section class="main-sesction-title" id="hw"><h1>Exercises</h1></section>
+<section class="sub-sections"><h2>Task1</h2>
+    <section><h3>The Task</h3>
+
+    </section>
+</section> -->
+
+<!-- <section><h3>Submission</h3>
+    <dl class="fa">
+        <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+        <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+        <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: DataTransformationAndCleaning">progressbg.python.course@gmail.com</a></dt>
+    </dl>
+</section> -->
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-Python-Digitall-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+     <p>These slides are based on</p>
+     <p>customised version of </p>
+     <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+     <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+        </div>
+    </div>
+    <!-- Custom processing -->
+    <script src="/ProgressBG-Python-Digitall-Slides/outfit/js/slides.js"></script>
+    <!-- external scripts -->
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/ProgressBG-Python-Digitall-Slides/lib/reveal.js/js/reveal.js"></script>
+     <!-- init reveal -->
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        var highlightjsTabSize = '  ';
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            history: true,
+            center: true,
+            width: 1920,
+            height: 1280,
+            // Bounds for smallest/largest possible scale to apply to content
+            // minScale: .5,
+            maxScale: 1,
+            // slide transition
+            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            // Factor of the display size that should remain empty around the content
+            margin: 0.1,
+            // shift+mouse click to zoom in/out element
+            zoomKey: 'ctrl',
+            // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            // transition: Reveal.getQueryHash().transition || 'default'
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure(); hljs.initHighlightingOnLoad(); } },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '/ProgressBG-Python-Digitall-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
+</body>
+</html>
