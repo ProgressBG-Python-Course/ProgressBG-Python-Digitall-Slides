@@ -80,11 +80,11 @@
     <section><h3>Overview</h3>
     <dl class="fa">
         <dt><a href="https://docs.jupyter.org/en/latest/">Project Jupyter</a> is a large umbrella project that covers many different software offerings and tools, including the popular Jupyter Notebook and JupyterLab web-based notebook authoring and editing applications.</dt>
-        <dt><a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a> is the next-generation <span class="note">user interface</span> for Project Jupyter, which offers an IDE-like experience to users.</dt>
+        <dt><a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a> is the next-generation <b>user interface</b> for Project Jupyter, which offers an IDE-like experience to users.</dt>
         <dt>It's a brand new implementation of the classic Jupyter Notebook, using the new Front-End technologies which allows for adding new features and extensions</dt>
         <dt>The notebook document format used in JupyterLab is the same as in the classic Jupyter Notebook</dt>
-        <dt>JupyterLab allows third-party sides to write extensions (<span class="note">npm packages</span>) for it through the JupyterLab public APIs</dt>
-        <dt>Visual Studio Code supports working with Jupyter Notebooks natively, i.e. without the need to use JupyterLab Interface.</dt>
+        <dt>JupyterLab allows third-party sides to write extensions for it through the JupyterLab public APIs</dt>
+        <dt class="note">Visual Studio Code supports working with Jupyter Notebooks natively, i.e. without the need to use JupyterLab Interface.</dt>
         <dd>Reference: <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Notebooks in VS Code</a></dd>
     </dl>
     </section>
@@ -403,9 +403,9 @@
     </section>
     <section><h3>All Examples</h3>
         <dl class="fa">
-            <dt>Examples as HTML: <a href="examples/pandas/Series/Series.html">Series.html</a></dt>
-            <dt>Examples as ipynb: <a href="examples/pandas/Series/Series.ipynb">Series.ipynb</a></dt>
-            <dt>Examples as ipynb on Google Colab: <a href="https://colab.research.google.com/drive/1_Y21Ri_8nWVHu0PuDF5ammpPSD0Tduw2">Series.ipynb on Google Colab</a></dt>
+            <dt>Examples as HTML: <a href="https://nbviewer.org/github/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/SeriesObject.ipynb">Series.html @nbviewer</a></dt>
+            <dt>Examples as ipynb: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/SeriesObject.ipynb">Series.ipynb @github</a></dt>
+            <dt>Examples as ipynb on Google Colab: <a href="https://colab.research.google.com/github/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/SeriesObject.ipynb">Series.ipynb on Google Colab</a></dt>
         </dl>
     </section>
     <section><h3>References</h3>
@@ -415,9 +415,9 @@
     </section>
 </section>
 
- <section><h1>pandas - DataFrame Object</h1></section>
+<section><h1>pandas - DataFrame Object</h1></section>
 <section><h2>pandas - DataFrame Object</h2>
-    <section><h3>Pandas DataFrame Object</h3>
+    <section><h3>Overview</h3>
         <dl class="fa">
             <dt>a DataFrame is an analogue of <span class="note">a two-dimensional array or table</span> with flexible <span class="note">row and column indices</span>.</dt>
             <dt>You can think of a DataFrame as a sequence of <span class="note">aligned (sharing same index) Series objects </span></dt>
@@ -427,6 +427,15 @@
             <dd>i.e. each column in a DataFrame is represented by a Series Object</dd>
         </dl>
     </section>
+    <section><h3>More on pandas.DataFrame() class</h3>
+        <dl class="fa">
+            <dt><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">class pandas.DataFrame() @pandas.pydata.org</a></dt>
+        </dl>
+    </section>
+</section>
+
+<section class="main-section-title"><h1>Create DataFrame Objects</h1></section>
+<section class="sub-sections"><h2>Create DataFrame Objects</h2>
     <section><h3>Create DataFrame from a single Series object.</h3>
         <dl class="fa">
             <dt>A DataFrame is a collection of Series objects, and a single-column DataFrame can be constructed from a single Series.</dt>
@@ -462,12 +471,16 @@
         <dl class="fa">
             <dt>A DataFrame can be thought as a dictionary of Series objects, where the dictionary <span class="note">keys</span> represent the <span class="note">columns names</span>.</dt>
         </dl>
-        <pre><code rel="Python" class="python" style="width: 100%; font-size: .9em;">
-            prices_ds = pd.Series([1.5, 2, 2.5, 3],
-                                    index=["apples", "oranges", "bananas", "strawberries"])
+        <pre><code rel="Python" class="python" style="min-height: 60vh;">
+            prices_ds = pd.Series(
+                [1.5, 2, 2.5, 3],
+                index=["apples", "oranges", "bananas", "strawberries"]
+            )
 
-            suppliers_ds = pd.Series(["supplier1", "supplier2", "supplier4", "supplier3"],
-                                         index=["apples", "oranges", "bananas", "strawberries"])
+            suppliers_ds = pd.Series(
+                ["supplier1", "supplier2", "supplier4", "supplier3"],
+                index=["apples", "oranges", "bananas", "strawberries"]
+            )
 
             fruits_df = pd.DataFrame({
                 "prices": prices_ds,
@@ -481,67 +494,67 @@
             #strawberries     3.0  supplier3
         </code></pre>
     </section>
-    <section><h3>All Examples</h3>
-        <dl class="fa">
-            <dt>Examples as HTML: <a href="examples/pandas/DataFrame/DataFrameOverview/DataFrameOverview.html">DataFrameOverview.html</a></dt>
-            <dt>Examples as ipynb: <a href="examples/pandas/DataFrame/DataFrameOverview/DataFrameOverview.ipynb">DataFrameOverview.ipynb</a></dt>
-        </dl>
-    </section>
-    <section><h3>More on pandas.DataFrame() class</h3>
-        <dl class="fa">
-            <dt><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">class pandas.DataFrame() @pandas.pydata.org</a></dt>
-        </dl>
-    </section>
-</section>
+    <section><h3>Create DataFrame form csv files</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Pandas <code>read_csv()</code> function provides a wide range of parameters to handle different CSV file formats and complexities</dt>
+            <dd>Note that the term <span class="note">csv</span> is used in its broader meaning - i.e. it will be used for <span class="note">tab/semicolon/whatsoever separated values</span></dd>
+            <dt>Exampe:</dt>
+            <dd>Let's have next csv:</dd>
+            <pre><code rel="data.csv" class="csv" style="min-height: 1vh;">
+                Ivan,34,Sofia
+                Maria,28,Plovdiv
+                Georgi,45,Varna
+            </code></pre>
+            <dd>You can read this CSV file into a DataFrame and manually specify the column names using the header parameter (set to None) and the names parameter:</dd>
+            <pre><code rel="Python" class="python" style="min-height: 1vh;">
+                import pandas as pd
 
-<section><h1>Create DataFrame form csv files</h1></section>
-<section><h2>DataFrame form csv files</h2>
-    <section><h3>note</h3>
-        <dl class="fa">
-            <dt>In next slides, the term <span class="note">csv</span> is used in its broader meaning - i.e. it will be used for <span class="note">tab/semicolon/whatsoever separated values</span></dt>
+                # Specify column names manually
+                column_names = ['Name', 'Age', 'City']
+
+                # Reading the CSV file without a header row, using the `header` parameter
+                df = pd.read_csv('example_no_header.csv', header=None, names=column_names)
+
+                # Display the DataFrame
+                print(df)
+
+            </code></pre>
+            <dt>Reference: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">pandas.read_csv</a></dt>
         </dl>
-    </section>
-    <section><h3>the Dataset</h3>
-        <dl class="fa">
-            <dt>In next examples the csv files used are taken from <a href="https://datasets.imdbws.com/">IMDb data files available for download</a></dt>
-            <dt>For test purposes, a shorten versions of the files, containing the first 500 records from each, are available:</dt>
-            <dd><a href="examples/pandas/read_csv/title.basics_sample_500.tsv">title.basics_sample_500.tsv</a></dd>
-            <dd><a href="examples/pandas/read_csv/name.basics_sample_500.tsv">name.basics_sample_500.tsv</a></dd>
-        </dl>
-    </section>
-    <section><h3><code>read_csv</code></h3>
-        <dl class="fa">
-            <dt><code>read_csv</code> is the preferred method for loading csv data into a DataFrame object</dt>
-            <dt>It provides a flourish amount of properties and methods for fine-tune loading, cleaning and manipulation of csv files.</dt>
     </section>
     <section><h3>Examples</h3>
         <dl class="fa">
-            <dt>examples as HTML: <a href="examples/pandas/read_csv/imdb.html">imdb.html</a></dt>
-            <dt>example as ipynb: <a href="examples/pandas/read_csv/imdb.ipynb">imdb.ipynb</a></dt>
-        </dl>
-        </dl>
-    </section>
-    <section><h3>More on pandas.read_csv</h3>
-        <dl class="fa">
-            <dt><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">pandas.read_csv @pandas.pydata.org</a></dt>
+            <dt>Examples as ipynb: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/DataFrame_create.ipynb">DataFrame_create.ipynb</a></dt>
         </dl>
     </section>
 </section>
 
-<section data-min="50"><h1>Processing various file formats with pandas</h1></section>
-<section><h2>Processing various file formats with pandas</h2>
-    <section><h3>CSV & text files</h3>
+<section class="main-section-title"><h1>Save DataFrame Object</h1></section>
+<section class="sub-sections"><h2>Save DataFrame Object</h2>
+    <section><h3>Overview</h3>
+        <dl class="fa" style="min-width:80vw">
+            <dt>Saving data from a pandas DataFrame to a CSV file is a common task in data processing. </dt>
+            <dt>This is done using the DataFrame.to_csv() method. </dt>
+            <dt>This method provides several parameters to customize the output CSV file according to your needs, such as specifying the separator character, whether to include the index, and which columns to write.</dt>
+        </dl>
+    </section>
+    <section><h3>Examples</h3>
+        <dl class="fa">
+            <dt>Examples as ipynb: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/DataFrame_save_to_file.ipynb">DataFrame_save_to_file.ipynb</a></dt>
+        </dl>
     </section>
 </section>
+
 
 <section><h1>DataFrames Manipulations</h1></section>
 <section><h2>DataFrames Manipulations</h2>
     <dl class="fa">
-        <dt>Examples as HTML: <a href="examples/pandas/DataFrame/DataFramesManipulations/DataFramesManipulations.html">DataFramesManipulations.html</a></dt>
-        <dt>Examples as ipynb: <a href="examples/pandas/DataFrame/DataFramesManipulations/DataFramesManipulations.ipynb">DataFramesManipulations.ipynb</a></dt>
+        <dt>DataFrame Indexing: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/DataFrame_index.ipynb">DataFrame_index.ipynb</a></dt>
+        <dt>DataFrame - useful properties and methods: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/DataFrame_useful_properties_and_methods.ipynb">DataFrame_useful_properties_and_methods.ipynb</a></dt>
+        <dt>DataFrame - common manipulations: <a href="https://github.com/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/numpy_and_pandas/DataFramesManipulations.ipynb">DataFramesManipulations.ipynb</a></dt>
     </dl>
 </section>
-
+<!--
 <section><h1>DataFrames Merge (aka SQL Join)</h1></section>
 <section><h2 class="advanced">DataFrames Merge</h2>
     <section><h3>Overview</h3>
@@ -678,8 +691,8 @@
     </section>
 </section>
 
-<section><h1>DataFrames Join</h1></section>
-<section><h2>DataFrames Join</h2>
+<section><h1 class="advanced">DataFrames Join</h1></section>
+<section><h2 class="advanced">DataFrames Join</h2>
     <section><h3>Overview</h3>
         <dl class="fa">
             <dt>Join columns with other DataFrame either <span class="note">on index</span> or on a key column</dt>
@@ -687,7 +700,6 @@
             <dt>Efficiently Join multiple DataFrame objects <span class="note">by index</span> at once by passing a list</dt>
         </dl>
     </section>
-
     <section><h3>All Examples</h3>
         <dl class="fa">
             <dt>Examples as HTML: <a href="examples/pandas/DataFrame/MergeJoin/DataFramesJoin.html">DataFramesJoin.html</a></dt>
@@ -704,7 +716,7 @@
     <section><h3>YouTube</h3>
         <iframe src="https://www.youtube.com/embed/8K8Bs7z6d2M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
-</section>
+</section> -->
 
 
 
