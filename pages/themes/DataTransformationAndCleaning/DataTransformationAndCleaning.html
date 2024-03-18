@@ -108,9 +108,20 @@
             <dd>Example: A product's price listed as $10000 instead of $100.00 due to a decimal placement error.</dd>
         </dl>
     </section>
-
 </section>
 
+<section class="sub-sections"><h1>Data Cleaning Techniques</h1></section>
+<section class="sub-sections"><h2>Data Cleaning Techniques</h2>
+    <section>
+        <dl class="fa" style="min-width:80vw">
+            <dt>The presentation is given in next Jupyter Notebook: <a href="https://nbviewer.org/github/geekcourses/JupyterNotebooksExamples/blob/master/Notebooks/ETL/Data_Cleaning_Techniques.ipynb">Data_Cleaning_Techniques.ipynb</a></dt>
+        </dl>
+    </section>
+</section>
+
+
+<!--
+<section class="sub-sections"><h1>Data Transformation Techniques</h1></section>
 <section class="sub-sections"><h2>Data Transformation Techniques</h2>
     <section id="Normalization"><h3>Normalization</h3>
         <dl class="fa" style="min-width:80vw">
@@ -135,53 +146,11 @@
         </dl>
     </section>
 </section>
+ -->
 
-<section class="sub-sections"><h2>Common Data Cleaning Operations</h2>
-    <section id="HandlingMissingValues"><h3>Handling Missing Values</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>Techniques include imputation, deletion, and interpolation.</dt>
-            <pre><code rel="JS" class="js" style="min-height: 1vh;">
-                # Example of mean imputation
-                def mean_impute(df, column_name):
-                    df[column_name].fillna(df[column_name].mean(), inplace=True)
-            </code></pre>
-        </dl>
-    </section>
-    <section id="DetectingAndRemovingOutliers"><h3>Detecting and Removing Outliers</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>Outliers can be detected using statistical methods like Z-score and IQR.</dt>
-            <dd>Outliers may be removed or corrected based on the analysis requirements.</dd>
-            <pre><code rel="JS" class="js" style="min-height: 1vh;">
-                # Example of outlier removal using IQR
-                def remove_outliers_iqr(df, column_name):
-                    Q1 = df[column_name].quantile(0.25)
-                    Q3 = df[column_name].quantile(0.75)
-                    IQR = Q3 - Q1
-                    df = df[~((df[column_name] < (Q1 - 1.5 * IQR)) |(df[column_name] > (Q3 + 1.5 * IQR)))]
-                    return df
-            </code></pre>
-        </dl>
-    </section>
-</section>
-
+<!--
 <section class="main-section-title" id="ApplyingDataValidationAndQualityChecks"><h1>Applying Data Validation and Quality Checks</h1></section>
-
-<section class="sub-sections">
-    <h2>Introduction to Data Quality</h2>
-    <section id="DefinitionOfDataQuality"><h3>Definition of Data Quality</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>Data quality refers to the condition of data based on factors like accuracy, completeness, reliability, and relevance. High-quality data is crucial for making informed decisions.</dt>
-        </dl>
-    </section>
-    <section id="ImportanceOfDataQuality"><h3>Importance of Data Quality and Validation</h3>
-        <dl class="fa" style="min-width:80vw">
-            <dt>Ensuring data quality and validation is fundamental in data processing to avoid errors, make informed decisions, and support data-driven insights.</dt>
-        </dl>
-    </section>
-</section>
-
-<section class="sub-sections">
-    <h2>Data Validation Techniques</h2>
+<section class="sub-sections"><h2>Data Validation Techniques</h2>
     <section id="TypeChecks"><h3>Type Checks</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>Type checks involve verifying that each data item matches its expected data type, such as integers, strings, or dates.</dt>
@@ -195,9 +164,7 @@
         </dl>
     </section>
 </section>
-
-<section class="sub-sections">
-    <h2>Implementing Data Validation in Pandas</h2>
+<section class="sub-sections"><h2>Implementing Data Validation in Pandas</h2>
     <section id="UsingDtypeForTypeChecks"><h3>Using dtype for Type Checks</h3>
         <dl class="fa" style="min-width:80vw">
             <dt>In Pandas, the dtype property can be used to check the data type of each column to ensure they match expected types.</dt>
@@ -211,28 +178,13 @@
         </dl>
     </section>
 </section>
-
-<section class="sub-sections">
-    <h2>Case Study: Data Validation in Action</h2>
+<section class="sub-sections"><h2>Case Study: Data Validation in Action</h2>
     <section id="RealWorldScenario"><h3>Brief Overview of a Real-world Scenario</h3>
         <dl class="fa" style="min-width:80vw">
-            <dt>Detail a specific scenario where data validation and quality checks were applied to a dataset, highlighting the challenges, steps taken, and outcomes.</dt>
             <dd>For example, a retail company may use data validation techniques to ensure the integrity of sales data, identifying and correcting anomalies like negative sales numbers or impossible discount percentages, leading to more accurate sales reports and forecasts.</dd>
         </dl>
     </section>
-</section>
-
-
-
-<section id="hw">
-    <section><h1>Homework</h1></section>
-    <section id="task1"><h3>Homework</h3>
-        <dl class="fa">
-            <dt>The tasks are given in next <a href="__URL__">gist file</a></dt>
-            <dt>You can copy it and work directly on it. Just put your code under "### Your code here".</dt>
-        </dl>
-    </section>
-</section>
+</section> -->
 
 
 
