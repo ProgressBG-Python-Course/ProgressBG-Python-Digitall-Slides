@@ -1,0 +1,22 @@
+{
+    "campaigns": [
+      {
+        "id": "campaign_001",
+        "date_sent": "2023-01-01",
+        "emails_sent": 5000,
+        "opens": 3500,
+        "clicks": 1750,
+        "bounce": 50,
+        "unsubscribe": 25
+      },
+      {
+        "id": "campaign_002",
+        "date_sent": "2023-01-02",
+        "emails_sent": 4500,
+        "opens": 3200,
+        "clicks": 1600,
+        "bounce": 40,
+        "unsubscribe": 20
+      }
+    ]
+  }

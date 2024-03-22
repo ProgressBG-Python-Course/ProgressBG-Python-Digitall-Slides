@@ -1,0 +1,28 @@
+{
+    "reports": [
+      {
+        "columnHeader": {
+          "dimensions": ["ga:date"],
+          "metricHeader": {
+            "metricHeaderEntries": [
+              {"name": "ga:sessions"},
+              {"name": "ga:pageviews"},
+              {"name": "ga:users"}
+            ]
+          }
+        },
+        "data": {
+          "rows": [
+            {
+              "dimensions": ["20230101"],
+              "metrics": [{"values": ["1000", "3000", "900"]}]
+            },
+            {
+              "dimensions": ["20230102"],
+              "metrics": [{"values": ["950", "2800", "850"]}]
+            }
+          ]
+        }
+      }
+    ]
+  }

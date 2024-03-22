@@ -1,0 +1,22 @@
+{
+    "data": [
+      {
+        "date": "2023-01-01",
+        "page_id": "123456789",
+        "post_impressions": 10000,
+        "post_reach": 7500,
+        "likes": 1200,
+        "comments": 150,
+        "shares": 100
+      },
+      {
+        "date": "2023-01-02",
+        "page_id": "123456789",
+        "post_impressions": 9500,
+        "post_reach": 7000,
+        "likes": 1100,
+        "comments": 140,
+        "shares": 90
+      }
+    ]
+}
