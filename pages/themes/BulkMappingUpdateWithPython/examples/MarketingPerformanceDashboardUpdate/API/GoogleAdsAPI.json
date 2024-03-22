@@ -1,20 +1,28 @@
 {
-    "reports": [
-      {
-        "campaignId": "78910",
-        "date": "2023-01-01",
-        "impressions": 12000,
-        "clicks": 800,
-        "cost": 600.00,
-        "conversions": 80
-      },
-      {
-        "campaignId": "78911",
-        "date": "2023-01-02",
-        "impressions": 11500,
-        "clicks": 750,
-        "cost": 580.00,
-        "conversions": 75
-      }
-    ]
-  }
+  "reports": [
+    {
+      "campaignId": "78910",
+      "date": "2023-01-01",
+      "impressions": 12000,
+      "clicks": 800,
+      "cost": 600.00,
+      "conversions": 80
+    },
+    {
+      "campaignId": "78911",
+      "date": "2023-01-02",
+      "impressions": 11500,
+      "clicks": 750,
+      "cost": 580.00,
+      "conversions": 75
+    },
+    {
+      "campaignId": "78912",
+      "date": "2023-01-03",
+      "impressions": 10000,
+      "clicks": 600,
+      "cost": 500.00,
+      "conversions": 70
+    }
+  ]
+}
