@@ -23,6 +23,62 @@
       "clicks": "600",
       "cost": 500.00,
       "conversions": 70
+    },
+    {
+      "campaignId": "78913",
+      "date": "2023-01-04",
+      "impressions": 9500,
+      "clicks": "650",
+      "cost": "",
+      "conversions": 65
+    },
+    {
+      "campaignId": "78914",
+      "date": "2023-01-05",
+      "impressions": 10500,
+      "clicks": "700",
+      "cost": 550.00,
+      "conversions": ""
+    },
+    {
+      "campaignId": "78915",
+      "date": "2023-01-06",
+      "impressions": 11000,
+      "clicks": "",
+      "cost": 575.00,
+      "conversions": 68
+    },
+    {
+      "campaignId": "78916",
+      "date": "2023-01-07",
+      "impressions": 9500,
+      "clicks": "640",
+      "cost": 525.00,
+      "conversions": ""
+    },
+    {
+      "campaignId": "78917",
+      "date": "2023-01-08",
+      "impressions": 9800,
+      "clicks": "670",
+      "cost": "",
+      "conversions": 72
+    },
+    {
+      "campaignId": "78918",
+      "date": "2023-01-09",
+      "impressions": "",
+      "clicks": "690",
+      "cost": 560.00,
+      "conversions": 74
+    },
+    {
+      "campaignId": "78919",
+      "date": "2023-01-10",
+      "impressions": 10200,
+      "clicks": "710",
+      "cost": 590.00,
+      "conversions": ""
     }
   ]
 }

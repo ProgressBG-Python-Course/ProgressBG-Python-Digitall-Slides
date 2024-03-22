@@ -2,52 +2,56 @@
   "reports": [
     {
       "columnHeader": {
-        "dimensions": [
-          "ga:date"
-        ],
+        "dimensions": ["ga:date"],
         "metricHeader": {
           "metricHeaderEntries": [
-            {
-              "name": "ga:sessions"
-            },
-            {
-              "name": "ga:pageviews"
-            },
-            {
-              "name": "ga:users"
-            }
+            {"name": "ga:sessions"},
+            {"name": "ga:pageviews"},
+            {"name": "ga:users"}
           ]
         }
       },
       "data": {
         "rows": [
           {
-            "dimensions": [
-              "20230101"
-            ],
-            "metrics": [
-              {
-                "values": [
-                  "1000",
-                  "3000",
-                  "900"
-                ]
-              }
-            ]
+            "dimensions": ["20230101"],
+            "metrics": [{"values": ["1000", "3000", "900"]}]
           },
           {
-            "dimensions": [
-              "20230102"
-            ],
-            "metrics": [
-              {
-                "values": [
-                  "950",
-                  "2800",
-                  "850"
-                ]
-              }
-            ]
+            "dimensions": ["20230102"],
+            "metrics": [{"values": ["950", "2800", "850"]}]
+          },
+          {
+            "dimensions": ["20230103"],
+            "metrics": [{"values": ["970", "2900", "870"]}]
+          },
+          {
+            "dimensions": ["20230104"],
+            "metrics": [{"values": ["", "3100", "890"]}]
+          },
+          {
+            "dimensions": ["20230105"],
+            "metrics": [{"values": ["1020", "", "910"]}]
+          },
+          {
+            "dimensions": ["20230106"],
+            "metrics": [{"values": ["980", "3200", ""]}]
+          },
+          {
+            "dimensions": ["20230107"],
+            "metrics": [{"values": ["960", "3000", "880"]}]
+          },
+          {
+            "dimensions": ["20230108"],
+            "metrics": [{"values": ["990", "3050", "900"]}]
+          },
+          {
+            "dimensions": ["20230109"],
+            "metrics": [{"values": ["1010", "3100", "920"]}]
+          },
+          {
+            "dimensions": ["20230110"],
+            "metrics": [{"values": ["", "", ""]}]
           }
         ]
       }
