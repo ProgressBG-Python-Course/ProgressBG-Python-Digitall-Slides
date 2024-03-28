@@ -1,0 +1,47 @@
+[
+    {
+      "campaign_id": 1001,
+      "date": "2024-03-01",
+      "metrics": {
+        "page_views": 1500,
+        "conversions": 50,
+        "bounce_rate": "40%"
+      }
+    },
+    {
+      "campaign_id": 1002,
+      "date": "2024-03-02",
+      "metrics": {
+        "page_views": 1800,
+        "conversions": 60,
+        "bounce_rate": "35%"
+      }
+    },
+    {
+      "campaign_id": 1003,
+      "date": "2024-03-03",
+      "metrics": {
+        "page_views": 1700,
+        "conversions": 55,
+        "bounce_rate": "42%"
+      }
+    },
+    {
+      "campaign_id": 1001,
+      "date": "2024-03-01",
+      "metrics": {
+        "page_views": 1500,
+        "conversions": 50,
+        "bounce_rate": "40%"
+      }
+    },
+    {
+      "campaign_id": 1004,
+      "date": "2024-03-04",
+      "metrics": {
+        "page_views": 1900,
+        "conversions": 70,
+        "bounce_rate": "30%"
+      }
+    }
+]

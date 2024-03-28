@@ -30,6 +30,8 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "diffEditor.hideUnchangedRegions.enabled": false,
+    "workbench.layoutControl.enabled": true,
+    "window.title": "${activeEditorMedium}",
     // "spellright.ignoreRegExpsByClass": {
     //     "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
     //     "cpp": [ "/#include\\s+\\\".+\\\"/g" ],

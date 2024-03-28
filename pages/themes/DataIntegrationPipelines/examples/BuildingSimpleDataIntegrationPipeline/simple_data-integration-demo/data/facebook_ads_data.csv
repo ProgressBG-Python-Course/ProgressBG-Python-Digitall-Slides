@@ -1,0 +1,7 @@
+campaign_id,campaign_name,date,impressions,clicks,spend
+1001,"Campaign Alpha","2024-03-01",1000,100,500
+1002,"Campaign Beta","2024-03-02",1500,150,750
+1003,"Campaign Gamma","2024-03-03",1200,110,600
+1001,"Campaign Alpha","2024-03-01",1000,100,500
+1004,"Campaign Delta","2024-03-04",2000,200,1000
+1005,"Campaign Epsilon","2024-03-05",500,50,250
